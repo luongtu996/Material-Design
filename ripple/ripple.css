@@ -12,15 +12,14 @@
     pointer-events: none;
     position: absolute;
     z-index: 1;
-    left: 50%;
-    top: 50%;
-    transform: translate3d(-50%, -50%, 0) translate3d(0, 0, 0);
-    width: 256px;
-    height: 256px;
+    left: var(--ripple-left, 50%);
+    top: var(--ripple-top, 50%);
+    transform: translate3d(-50%, -50%, 0) translate3d(var(--ripple-translateX, 0), var(--ripple-translateY, 0), 0);
+    width: var(--ripple-size, 256px);
+    height: var(--ripple-size, 256px);
     border-radius: 50%;
     background-color: #000000;
     opacity: 0;
-    transition: width 300ms ease-in-out, height 300ms ease-in-out, opacity 300ms ease-in-out;
 }
 
 .ripple:hover::after {
@@ -30,6 +29,7 @@
 .ripple.is-pressed::after {
     opacity: 0.16;
     animation: ripple-pressed 300ms linear;
+    transition: width 300ms ease-in-out, height 300ms ease-in-out, opacity 300ms ease-in-out;
 }
 
 .ripple.is-focus::after {
@@ -61,7 +61,7 @@
     }
 
     100% {
-        width: 256px;
-        height: 256px;
+        width: var(--ripple-size, 256px);
+        height: var(--ripple-size, 256px);
     }
 }
