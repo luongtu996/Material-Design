@@ -1,0 +1,86 @@
+.top-app-bar {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    z-index: 4;
+    left: 0;
+    top: 0;
+    width: 100%;
+    background-color: #6200ee;
+    color: #ffffff;
+    box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.2), 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12);
+}
+
+.top-app-bar__row {
+    display: flex;
+}
+
+.top-app-bar__section {
+    display: flex;
+    flex: 1;
+}
+
+.top-app-bar__section--start {
+    justify-content: flex-start;
+}
+
+.top-app-bar__section--end {
+    justify-content: flex-end;
+}
+
+.top-app-bar__icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    margin: 0 16px;
+    margin-top: calc((56px - 24px) / 2);
+    margin-bottom: calc((56px - 24px) / 2);
+}
+
+.top-app-bar__icon + .top-app-bar__icon {
+    margin-left: calc(24px - 16px);
+}
+
+.top-app-bar__icon--menu:empty,
+.top-app-bar__icon--navigation:empty {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1;
+    font-family: 'Segoe MDL2 Assets';
+}
+
+.top-app-bar__icon--menu:empty::before {
+    content: '\E712';
+}
+
+.top-app-bar__icon--navigation:empty::before {
+    content: '\E700';
+}
+
+.top-app-bar__title {
+    margin: 0 16px;
+    margin-top: calc((56px - 28px) / 2);
+    margin-bottom: calc((56px - 28px) / 2);
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 28px;
+}
+
+.top-app-bar__icon + .top-app-bar__title {
+    margin-left: calc(32px - 16px);
+}
+
+
+
+
+
+
+.top-app-bar--extended .top-app-bar__title {
+    margin-top: calc(128px - (36px - ((36px - 24px) / 2)) - 28px);
+    margin-bottom: calc(28px - ((36px - 24px) / 2));
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 36px;
+}

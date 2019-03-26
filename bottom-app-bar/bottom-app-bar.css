@@ -1,0 +1,164 @@
+.bottom-app-bar {
+    position: fixed;
+    z-index: 4;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.2), 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12);
+}
+
+.bottom-app-bar__container {
+    display: flex;
+    background-color: #6200ee;
+    color: #ffffff;
+}
+
+.bottom-app-bar__section {
+    display: flex;
+    flex: 1;
+}
+
+.bottom-app-bar__section--start {
+    justify-content: flex-start;
+}
+
+.bottom-app-bar__section--end {
+    justify-content: flex-end;
+}
+
+.bottom-app-bar__icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    margin: 0 16px;
+    margin-top: calc((56px - 24px) / 2);
+    margin-bottom: calc((56px - 24px) / 2);
+}
+
+.bottom-app-bar__icon + .bottom-app-bar__icon {
+    margin-left: calc(24px - 16px);
+}
+
+.bottom-app-bar__icon--menu:empty,
+.bottom-app-bar__icon--navigation:empty {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1;
+    font-family: 'Segoe MDL2 Assets';
+}
+
+.bottom-app-bar__icon--menu:empty::before {
+    content: '\E712';
+}
+
+.bottom-app-bar__icon--navigation:empty::before {
+    content: '\E700';
+}
+
+
+
+
+
+
+.bottom-app-bar .fab {
+    position: absolute;
+    left: calc(50% - 56px / 2);
+    top: calc(0% - 56px / 2);
+}
+
+
+
+
+
+
+.bottom-app-bar--fab-end .fab {
+    left: calc(100% - 56px - 16px);
+}
+
+
+
+
+
+
+.bottom-app-bar--fab-cut {
+    box-shadow: none;
+}
+
+.bottom-app-bar--fab-cut::before {
+    content: '';
+    position: absolute;
+    z-index: -2;
+    left: 0;
+    top: 0;
+    width: calc(50% - 72px / 2);
+    height: 100%;
+    box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.2), 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12);
+}
+
+.bottom-app-bar--fab-cut::after {
+    content: '';
+    position: absolute;
+    z-index: -2;
+    left: calc(50% + 72px / 2);
+    top: 0;
+    width: calc(50% - 72px / 2);
+    height: 100%;
+    box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.2), 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12);
+}
+
+.bottom-app-bar--fab-cut .bottom-app-bar__container {
+    position: relative;
+    overflow: hidden;
+    background-color: transparent;
+}
+
+.bottom-app-bar--fab-cut .bottom-app-bar__container::before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    left: calc(50% - 72px / 2);
+    top: calc(0% - 72px / 2);
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    box-shadow: 0 0 0 9999px #6200ee;
+}
+
+.bottom-app-bar--fab-cut .bottom-app-bar__container::after {
+    content: '';
+    position: absolute;
+    z-index: -2;
+    left: calc(50% - 72px / 2);
+    top: calc(0% - 72px / 2);
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.2), 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12);
+}
+
+
+
+
+
+.bottom-app-bar--fab-end.bottom-app-bar--fab-cut::before {
+    width: calc(100% - 72px - 16px);
+}
+
+.bottom-app-bar--fab-end.bottom-app-bar--fab-cut::after {
+    width: 16px;
+    left: calc(100% - 16px);
+}
+
+.bottom-app-bar--fab-end.bottom-app-bar--fab-cut .bottom-app-bar__container::before {
+    left: calc(100% - 72px - 16px);
+}
+
+.bottom-app-bar--fab-end.bottom-app-bar--fab-cut .bottom-app-bar__container::after {
+    left: calc(100% - 72px - 16px);
+}
+
+.bottom-app-bar--fab-end.bottom-app-bar--fab-cut .fab {
+    left: calc(100% - 56px - 16px - 8px);
+}

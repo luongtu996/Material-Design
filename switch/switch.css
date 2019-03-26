@@ -1,0 +1,50 @@
+.switch {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+    position: relative;
+    width: 36px;
+    height: 24px;
+}
+
+.switch__input {
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+}
+
+.switch__track {
+    display: inline-flex;
+    align-items: center;
+    position: relative;
+    width: 32px;
+    height: 14px;
+    border-radius: calc(14px / 2);
+    background-color: #9b9b9b;
+}
+
+.switch__thumb {
+    position: absolute;
+    left: calc(0px - ((36px - 32px) / 2));
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 1px 3px 0 rgba(0, 0, 0, 0.12);
+}
+
+
+
+
+
+
+.switch__input:checked ~ .switch__track {
+    background-color: rgba(98, 0, 238, 0.54);
+}
+
+.switch__input:checked ~ .switch__track .switch__thumb {
+    left: calc(36px - 20px - ((36px - 32px) / 2));
+    background-color: #6200ee;
+}

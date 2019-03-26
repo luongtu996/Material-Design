@@ -1,0 +1,67 @@
+.ripple {
+    cursor: pointer;
+    user-select: none;
+    position: relative;
+    /* overflow: hidden; */
+}
+
+/* .ripple::before {} */
+
+.ripple::after {
+    content: '';
+    pointer-events: none;
+    position: absolute;
+    z-index: 1;
+    left: 50%;
+    top: 50%;
+    transform: translate3d(-50%, -50%, 0) translate3d(0, 0, 0);
+    width: 256px;
+    height: 256px;
+    border-radius: 50%;
+    background-color: #000000;
+    opacity: 0;
+    transition: width 300ms ease-in-out, height 300ms ease-in-out, opacity 300ms ease-in-out;
+}
+
+.ripple:hover::after {
+    opacity: 0.04;
+}
+
+.ripple.is-pressed::after {
+    opacity: 0.16;
+    animation: ripple-pressed 300ms linear;
+}
+
+.ripple.is-focus::after {
+    opacity: 0.12;
+}
+
+.ripple.is-selected::after {
+    background-color: #6200ee;
+    opacity: 0.08;
+}
+
+.ripple.is-activated::after {
+    background-color: #6200ee;
+    opacity: 0.12;
+}
+
+.ripple.is-dragged::after {
+    opacity: 0.08;
+}
+
+.ripple.is-disabled::after {
+    opacity: 0;
+}
+
+@keyframes ripple-pressed {
+    0% {
+        width: 0;
+        height: 0;
+    }
+
+    100% {
+        width: 256px;
+        height: 256px;
+    }
+}

@@ -1,0 +1,66 @@
+.progress:not(.progress--circular) {
+    display: inline-flex;
+    align-items: center;
+    vertical-align: middle;
+    position: relative;
+    width: 240px;
+    height: 4px;
+    background-color: rgba(98, 0, 238, 0.12);
+}
+
+.progress:not(.progress--circular)::before {
+    content: '';
+    position: absolute;
+    width: var(--progress-before-width, 0);
+    height: 100%;
+    background-color: #6200ee;
+}
+
+/* .progress:not(.progress--circular)::after {} */
+
+.progress {
+    --progress-before-width: 75%;
+}
+
+
+
+
+
+
+.progress--circular {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+    position: relative;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    clip-path: polygon(var(--progress-circular-path, 50%) 0, 100% 0, 100% 100%, var(--progress-circular-path, 50%) 100%);
+}
+
+.progress--circular::before,
+.progress--circular::after {
+    content: '';
+    position: absolute;
+    width: calc(100% - (4px * 2));
+    height: calc(100% - (4px * 2));
+    border-radius: 50%;
+    border: 4px solid #6200ee;
+    clip-path: polygon(0 0, 50% 0, 50% 100%, 0 100%);
+    transform: rotate(var(--progress-circular-before-rotate, 0deg));
+}
+
+.progress--circular::after {
+    transform: rotate(var(--progress-circular-after-rotate, 0deg));
+}
+
+.progress--circular {
+    /* --progress-circular-path: 50%; */
+    /* --progress-circular-before-rotate: 180deg; */
+    /* --progress-circular-after-rotate: 0deg; */
+
+    --progress-circular-path: 0;
+    --progress-circular-before-rotate: 180deg;
+    --progress-circular-after-rotate: 270deg;
+}
