@@ -4,6 +4,7 @@ class MDButton extends HTMLElement {
 
     template = `
         <style>
+        @import '../foundation/foundation.css';
         @import '../icon/icon.css';
         @import './button.css';
         </style>

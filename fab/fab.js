@@ -4,6 +4,7 @@ class MDFab extends HTMLElement {
 
     template = `
         <style>
+        @import '../foundation/foundation.css';
         @import '../icon/icon.css';
         @import './fab.css';
         </style>

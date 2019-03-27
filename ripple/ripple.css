@@ -28,8 +28,8 @@
 
 .ripple.is-pressed::after {
     opacity: 0.16;
-    animation: ripple-pressed 300ms linear;
-    transition: width 300ms ease-in-out, height 300ms ease-in-out, opacity 300ms ease-in-out;
+    animation: ripple-pressed 250ms linear;
+    transition: width 250ms ease-in-out, height 250ms ease-in-out, opacity 250ms ease-in-out;
 }
 
 .ripple.is-focus::after {

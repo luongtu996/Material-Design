@@ -16,31 +16,51 @@
 
 <body>
 
-    <div class="checkbox">
-        <input type="checkbox" class="checkbox__input">
-        <div class="checkbox__track">
-            <div class="checkbox__thumb"></div>
+    <form action="POST">
+        <div class="checkbox">
+            <input type="checkbox" class="checkbox__input" name="a" value="a1">
+            <div class="checkbox__track">
+                <div class="checkbox__thumb"></div>
+            </div>
         </div>
-    </div>
-    <br><br>
+        <br><br>
+        
+        <div class="checkbox">
+            <input type="checkbox" class="checkbox__input" name="a" value="a2" indeterminate>
+            <div class="checkbox__track">
+                <div class="checkbox__thumb"></div>
+            </div>
+        </div>
+        <br><br>
+        
+        <div class="checkbox">
+            <input type="checkbox" class="checkbox__input" name="a" value="a3" checked>
+            <div class="checkbox__track">
+                <div class="checkbox__thumb"></div>
+            </div>
+        </div>
+        <br><br>
 
-    <div class="checkbox">
-        <input type="checkbox" class="checkbox__input" indeterminate>
-        <div class="checkbox__track">
-            <div class="checkbox__thumb"></div>
-        </div>
-    </div>
-    <br><br>
-
-    <div class="checkbox">
-        <input type="checkbox" class="checkbox__input" checked>
-        <div class="checkbox__track">
-            <div class="checkbox__thumb"></div>
-        </div>
-    </div>
-    <br><br>
+        <md-checkbox name="b" value="b1" required="true"></md-checkbox>
+        <br><br>
+        
+        <button type="submit">submit</button>
+    </form>
 
     <script src="../material.js"></script>
+    <script src="./checkbox.js" type="module"></script>
+    <script>
+        let form = document.querySelector('form');
+
+        form.addEventListener('submit', e => {
+            e.preventDefault();
+            var data = new FormData(form);
+            for (var value of data.entries()) {
+                console.log(value);
+            }
+            console.log(data);
+        });
+    </script>
 </body>
 
 </html>
