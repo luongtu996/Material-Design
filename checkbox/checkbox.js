@@ -25,7 +25,7 @@ class MDCheckbox extends HTMLElement {
         this.inputElement = this.querySelector('.checkbox__input');
 
         if (this.indeterminate) {
-            this.inputElement.indeterminate = this.indeterminate;
+            this.indeterminate = this.indeterminate;
         }
 
         let ripple = new MDRipple(this);
@@ -64,7 +64,8 @@ class MDCheckbox extends HTMLElement {
     }
 
     set indeterminate(value) {
-        return this.inputElement.setAttribute('indeterminate', value);
+        this.inputElement.setAttribute('indeterminate', value);
+        this.inputElement.indeterminate = this.indeterminate;
     }
 
     set checked(value) {
