@@ -1,25 +1,58 @@
 .progress:not(.progress--circular) {
     display: inline-flex;
-    align-items: center;
     vertical-align: middle;
     position: relative;
-    width: 240px;
+    overflow: hidden;
     height: 4px;
+    width: 240px;
     background-color: rgba(98, 0, 238, 0.12);
 }
 
-.progress:not(.progress--circular)::before {
+.progress:not(.progress--circular)::before,
+.progress:not(.progress--circular):indeterminate::after {
     content: '';
     position: absolute;
-    width: var(--progress-before-width, 0);
     height: 100%;
+    width: var(--progress-before-width);
     background-color: #6200ee;
 }
 
-/* .progress:not(.progress--circular)::after {} */
+.progress:not(.progress--circular):indeterminate::before {
+    animation: progress-indeterminate-before 1.8s linear infinite;
+}
 
-.progress {
-    --progress-before-width: 75%;
+.progress:not(.progress--circular):indeterminate::after {
+    animation: progress-indeterminate-after 1.8s linear calc(1.8s / 2) infinite;
+}
+
+@keyframes progress-indeterminate-before {
+    0% {
+        width: 25%;
+        left: -25%;
+    }
+    50% {
+        width: 75%;
+        left: 25%;
+    }
+    100% {
+        width: 100%;
+        left: 175%;
+    }
+}
+
+@keyframes progress-indeterminate-after {
+    0% {
+        width: 100%;
+        left: -175%;
+    }
+    50% {
+        width: 25%;
+        left: 75%;
+    }
+    100% {
+        width: 0;
+        left: 175%;
+    }
 }
 
 
@@ -36,31 +69,657 @@
     width: 48px;
     height: 48px;
     border-radius: 50%;
-    clip-path: polygon(var(--progress-circular-path, 50%) 0, 100% 0, 100% 100%, var(--progress-circular-path, 50%) 100%);
+    background-color: transparent;
 }
 
-.progress--circular::before,
-.progress--circular::after {
+.progress--circular::before {
     content: '';
     position: absolute;
     width: calc(100% - (4px * 2));
     height: calc(100% - (4px * 2));
     border-radius: 50%;
-    border: 4px solid #6200ee;
-    clip-path: polygon(0 0, 50% 0, 50% 100%, 0 100%);
-    transform: rotate(var(--progress-circular-before-rotate, 0deg));
+    background-image: 
+    linear-gradient(var(--progress-circular-before-left-angle), var(--progress-circular-before-left-color, #f5f5f5) 50%, transparent 50%, transparent), 
+    linear-gradient(var(--progress-circular-before-right-angle), var(--progress-circular-before-right-color, #6200ee) 50%, #f5f5f5 50%, #f5f5f5);
 }
 
 .progress--circular::after {
-    transform: rotate(var(--progress-circular-after-rotate, 0deg));
+    content: '';
+    position: absolute;
+    width: calc(100% - (8px * 2));
+    height: calc(100% - (8px * 2));
+    border-radius: 50%;
+    background-color: #f5f5f5;
 }
 
-.progress--circular {
-    /* --progress-circular-path: 50%; */
-    /* --progress-circular-before-rotate: 180deg; */
-    /* --progress-circular-after-rotate: 0deg; */
+.progress--circular:indeterminate {
+    animation: progress-circular-indeterminate calc(3.6s / 1) linear infinite;
+}
 
-    --progress-circular-path: 0;
-    --progress-circular-before-rotate: 180deg;
-    --progress-circular-after-rotate: 270deg;
+.progress--circular:indeterminate::before {
+    animation: progress-circular-indeterminate-before calc(3.6s / 3) linear infinite;
+}
+
+@keyframes progress-circular-indeterminate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes progress-circular-indeterminate-before {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(90deg);
+    }
+    0% {
+        --progress-circular-before-left-angle: 90deg;
+        --progress-circular-before-left-color: #f5f5f5;
+        --progress-circular-before-right-angle: 90deg;
+        --progress-circular-before-right-color: #6200ee;
+    }
+    1% {
+        --progress-circular-before-left-angle: 90deg;
+        --progress-circular-before-left-color: #f5f5f5;
+        --progress-circular-before-right-angle: 97.2deg;
+        --progress-circular-before-right-color: #6200ee;
+    }
+    2% {
+        --progress-circular-before-left-angle: 90deg;
+        --progress-circular-before-left-color: #f5f5f5;
+        --progress-circular-before-right-angle: 104.4deg;
+        --progress-circular-before-right-color: #6200ee;
+    }
+    3% {
+        --progress-circular-before-left-angle: 90deg;
+        --progress-circular-before-left-color: #f5f5f5;
+        --progress-circular-before-right-angle: 111.6deg;
+        --progress-circular-before-right-color: #6200ee;
+    }
+    4% {
+        --progress-circular-before-left-angle: 90deg;
+        --progress-circular-before-left-color: #f5f5f5;
+        --progress-circular-before-right-angle: 118.8deg;
+        --progress-circular-before-right-color: #6200ee;
+    }
+    5% {
+        --progress-circular-before-left-angle: 90deg;
+        --progress-circular-before-left-color: #f5f5f5;
+        --progress-circular-before-right-angle: 126deg;
+        --progress-circular-before-right-color: #6200ee;
+    }
+    6% {
+        --progress-circular-before-left-angle: 90deg;
+        --progress-circular-before-left-color: #f5f5f5;
+        --progress-circular-before-right-angle: 133.2deg;
+        --progress-circular-before-right-color: #6200ee;
+    }
+    7% {
+        --progress-circular-before-left-angle: 90deg;
+        --progress-circular-before-left-color: #f5f5f5;
+        --progress-circular-before-right-angle: 140.4deg;
+        --progress-circular-before-right-color: #6200ee;
+    }
+    8% {
+        --progress-circular-before-left-angle: 90deg;
+        --progress-circular-before-left-color: #f5f5f5;
+        --progress-circular-before-right-angle: 147.6deg;
+        --progress-circular-before-right-color: #6200ee;
+    }
+    9% {
+        --progress-circular-before-left-angle: 90deg;
+        --progress-circular-before-left-color: #f5f5f5;
+        --progress-circular-before-right-angle: 154.8deg;
+        --progress-circular-before-right-color: #6200ee;
+    }
+    10% {
+        --progress-circular-before-left-angle: 90deg;
+        --progress-circular-before-left-color: #f5f5f5;
+        --progress-circular-before-right-angle: 162deg;
+        --progress-circular-before-right-color: #6200ee;
+    }
+    11% {
+        --progress-circular-before-left-angle: 90deg;
+        --progress-circular-before-left-color: #f5f5f5;
+        --progress-circular-before-right-angle: 169.2deg;
+        --progress-circular-before-right-color: #6200ee;
+    }
+    12% {
+        --progress-circular-before-left-angle: 90deg;
+        --progress-circular-before-left-color: #f5f5f5;
+        --progress-circular-before-right-angle: 176.4deg;
+        --progress-circular-before-right-color: #6200ee;
+    }
+    13% {
+        --progress-circular-before-left-angle: 90deg;
+        --progress-circular-before-left-color: #f5f5f5;
+        --progress-circular-before-right-angle: 183.60000000000002deg;
+        --progress-circular-before-right-color: #6200ee;
+    }
+    14% {
+        --progress-circular-before-left-angle: 90deg;
+        --progress-circular-before-left-color: #f5f5f5;
+        --progress-circular-before-right-angle: 190.8deg;
+        --progress-circular-before-right-color: #6200ee;
+    }
+    15% {
+        --progress-circular-before-left-angle: 90deg;
+        --progress-circular-before-left-color: #f5f5f5;
+        --progress-circular-before-right-angle: 198deg;
+        --progress-circular-before-right-color: #6200ee;
+    }
+    16% {
+        --progress-circular-before-left-angle: 90deg;
+        --progress-circular-before-left-color: #f5f5f5;
+        --progress-circular-before-right-angle: 205.2deg;
+        --progress-circular-before-right-color: #6200ee;
+    }
+    17% {
+        --progress-circular-before-left-angle: 90deg;
+        --progress-circular-before-left-color: #f5f5f5;
+        --progress-circular-before-right-angle: 212.4deg;
+        --progress-circular-before-right-color: #6200ee;
+    }
+    18% {
+        --progress-circular-before-left-angle: 90deg;
+        --progress-circular-before-left-color: #f5f5f5;
+        --progress-circular-before-right-angle: 219.6deg;
+        --progress-circular-before-right-color: #6200ee;
+    }
+    19% {
+        --progress-circular-before-left-angle: 90deg;
+        --progress-circular-before-left-color: #f5f5f5;
+        --progress-circular-before-right-angle: 226.8deg;
+        --progress-circular-before-right-color: #6200ee;
+    }
+    20% {
+        --progress-circular-before-left-angle: 90deg;
+        --progress-circular-before-left-color: #f5f5f5;
+        --progress-circular-before-right-angle: 234deg;
+        --progress-circular-before-right-color: #6200ee;
+    }
+    21% {
+        --progress-circular-before-left-angle: 90deg;
+        --progress-circular-before-left-color: #f5f5f5;
+        --progress-circular-before-right-angle: 241.20000000000002deg;
+        --progress-circular-before-right-color: #6200ee;
+    }
+    22% {
+        --progress-circular-before-left-angle: 90deg;
+        --progress-circular-before-left-color: #f5f5f5;
+        --progress-circular-before-right-angle: 248.4deg;
+        --progress-circular-before-right-color: #6200ee;
+    }
+    23% {
+        --progress-circular-before-left-angle: 90deg;
+        --progress-circular-before-left-color: #f5f5f5;
+        --progress-circular-before-right-angle: 255.6deg;
+        --progress-circular-before-right-color: #6200ee;
+    }
+    24% {
+        --progress-circular-before-left-angle: 90deg;
+        --progress-circular-before-left-color: #f5f5f5;
+        --progress-circular-before-right-angle: 262.8deg;
+        --progress-circular-before-right-color: #6200ee;
+    }
+    25% {
+        --progress-circular-before-left-angle: -90deg;
+        --progress-circular-before-left-color: #6200ee;
+        --progress-circular-before-right-angle: 270deg;
+        --progress-circular-before-right-color: #6200ee;
+    }
+    26% {
+        --progress-circular-before-left-angle: -86.4deg;
+        --progress-circular-before-left-color: #6200ee;
+        --progress-circular-before-right-angle: 270deg;
+        --progress-circular-before-right-color: #6200ee;
+    }
+    27% {
+        --progress-circular-before-left-angle: -82.8deg;
+        --progress-circular-before-left-color: #6200ee;
+        --progress-circular-before-right-angle: 270deg;
+        --progress-circular-before-right-color: #6200ee;
+    }
+    28% {
+        --progress-circular-before-left-angle: -79.2deg;
+        --progress-circular-before-left-color: #6200ee;
+        --progress-circular-before-right-angle: 270deg;
+        --progress-circular-before-right-color: #6200ee;
+    }
+    29% {
+        --progress-circular-before-left-angle: -75.6deg;
+        --progress-circular-before-left-color: #6200ee;
+        --progress-circular-before-right-angle: 270deg;
+        --progress-circular-before-right-color: #6200ee;
+    }
+    30% {
+        --progress-circular-before-left-angle: -72deg;
+        --progress-circular-before-left-color: #6200ee;
+        --progress-circular-before-right-angle: 270deg;
+        --progress-circular-before-right-color: #6200ee;
+    }
+    31% {
+        --progress-circular-before-left-angle: -68.4deg;
+        --progress-circular-before-left-color: #6200ee;
+        --progress-circular-before-right-angle: 270deg;
+        --progress-circular-before-right-color: #6200ee;
+    }
+    32% {
+        --progress-circular-before-left-angle: -64.8deg;
+        --progress-circular-before-left-color: #6200ee;
+        --progress-circular-before-right-angle: 270deg;
+        --progress-circular-before-right-color: #6200ee;
+    }
+    33% {
+        --progress-circular-before-left-angle: -61.2deg;
+        --progress-circular-before-left-color: #6200ee;
+        --progress-circular-before-right-angle: 270deg;
+        --progress-circular-before-right-color: #6200ee;
+    }
+    34% {
+        --progress-circular-before-left-angle: -57.6deg;
+        --progress-circular-before-left-color: #6200ee;
+        --progress-circular-before-right-angle: 270deg;
+        --progress-circular-before-right-color: #6200ee;
+    }
+    35% {
+        --progress-circular-before-left-angle: -54deg;
+        --progress-circular-before-left-color: #6200ee;
+        --progress-circular-before-right-angle: 270deg;
+        --progress-circular-before-right-color: #6200ee;
+    }
+    36% {
+        --progress-circular-before-left-angle: -50.4deg;
+        --progress-circular-before-left-color: #6200ee;
+        --progress-circular-before-right-angle: 270deg;
+        --progress-circular-before-right-color: #6200ee;
+    }
+    37% {
+        --progress-circular-before-left-angle: -46.8deg;
+        --progress-circular-before-left-color: #6200ee;
+        --progress-circular-before-right-angle: 270deg;
+        --progress-circular-before-right-color: #6200ee;
+    }
+    38% {
+        --progress-circular-before-left-angle: -43.199999999999996deg;
+        --progress-circular-before-left-color: #6200ee;
+        --progress-circular-before-right-angle: 270deg;
+        --progress-circular-before-right-color: #6200ee;
+    }
+    39% {
+        --progress-circular-before-left-angle: -39.6deg;
+        --progress-circular-before-left-color: #6200ee;
+        --progress-circular-before-right-angle: 270deg;
+        --progress-circular-before-right-color: #6200ee;
+    }
+    40% {
+        --progress-circular-before-left-angle: -36deg;
+        --progress-circular-before-left-color: #6200ee;
+        --progress-circular-before-right-angle: 270deg;
+        --progress-circular-before-right-color: #6200ee;
+    }
+    41% {
+        --progress-circular-before-left-angle: -32.4deg;
+        --progress-circular-before-left-color: #6200ee;
+        --progress-circular-before-right-angle: 270deg;
+        --progress-circular-before-right-color: #6200ee;
+    }
+    42% {
+        --progress-circular-before-left-angle: -28.799999999999997deg;
+        --progress-circular-before-left-color: #6200ee;
+        --progress-circular-before-right-angle: 270deg;
+        --progress-circular-before-right-color: #6200ee;
+    }
+    43% {
+        --progress-circular-before-left-angle: -25.200000000000003deg;
+        --progress-circular-before-left-color: #6200ee;
+        --progress-circular-before-right-angle: 270deg;
+        --progress-circular-before-right-color: #6200ee;
+    }
+    44% {
+        --progress-circular-before-left-angle: -21.599999999999994deg;
+        --progress-circular-before-left-color: #6200ee;
+        --progress-circular-before-right-angle: 270deg;
+        --progress-circular-before-right-color: #6200ee;
+    }
+    45% {
+        --progress-circular-before-left-angle: -18deg;
+        --progress-circular-before-left-color: #6200ee;
+        --progress-circular-before-right-angle: 270deg;
+        --progress-circular-before-right-color: #6200ee;
+    }
+    46% {
+        --progress-circular-before-left-angle: -14.399999999999991deg;
+        --progress-circular-before-left-color: #6200ee;
+        --progress-circular-before-right-angle: 270deg;
+        --progress-circular-before-right-color: #6200ee;
+    }
+    47% {
+        --progress-circular-before-left-angle: -10.799999999999997deg;
+        --progress-circular-before-left-color: #6200ee;
+        --progress-circular-before-right-angle: 270deg;
+        --progress-circular-before-right-color: #6200ee;
+    }
+    48% {
+        --progress-circular-before-left-angle: -7.200000000000003deg;
+        --progress-circular-before-left-color: #6200ee;
+        --progress-circular-before-right-angle: 270deg;
+        --progress-circular-before-right-color: #6200ee;
+    }
+    49% {
+        --progress-circular-before-left-angle: -3.5999999999999943deg;
+        --progress-circular-before-left-color: #6200ee;
+        --progress-circular-before-right-angle: 270deg;
+        --progress-circular-before-right-color: #6200ee;
+    }
+    50% {
+        --progress-circular-before-left-angle: 0deg;
+        --progress-circular-before-left-color: #6200ee;
+        --progress-circular-before-right-angle: 270deg;
+        --progress-circular-before-right-color: #6200ee;
+    }
+    51% {
+        --progress-circular-before-left-angle: 0deg;
+        --progress-circular-before-left-color: #6200ee;
+        --progress-circular-before-right-angle: 273.6deg;
+        --progress-circular-before-right-color: #6200ee;
+    }
+    52% {
+        --progress-circular-before-left-angle: 0deg;
+        --progress-circular-before-left-color: #6200ee;
+        --progress-circular-before-right-angle: 277.2deg;
+        --progress-circular-before-right-color: #6200ee;
+    }
+    53% {
+        --progress-circular-before-left-angle: 0deg;
+        --progress-circular-before-left-color: #6200ee;
+        --progress-circular-before-right-angle: 280.8deg;
+        --progress-circular-before-right-color: #6200ee;
+    }
+    54% {
+        --progress-circular-before-left-angle: 0deg;
+        --progress-circular-before-left-color: #6200ee;
+        --progress-circular-before-right-angle: 284.4deg;
+        --progress-circular-before-right-color: #6200ee;
+    }
+    55% {
+        --progress-circular-before-left-angle: 0deg;
+        --progress-circular-before-left-color: #6200ee;
+        --progress-circular-before-right-angle: 288deg;
+        --progress-circular-before-right-color: #6200ee;
+    }
+    56% {
+        --progress-circular-before-left-angle: 0deg;
+        --progress-circular-before-left-color: #6200ee;
+        --progress-circular-before-right-angle: 291.6deg;
+        --progress-circular-before-right-color: #6200ee;
+    }
+    57% {
+        --progress-circular-before-left-angle: 0deg;
+        --progress-circular-before-left-color: #6200ee;
+        --progress-circular-before-right-angle: 295.2deg;
+        --progress-circular-before-right-color: #6200ee;
+    }
+    58% {
+        --progress-circular-before-left-angle: 0deg;
+        --progress-circular-before-left-color: #6200ee;
+        --progress-circular-before-right-angle: 298.8deg;
+        --progress-circular-before-right-color: #6200ee;
+    }
+    59% {
+        --progress-circular-before-left-angle: 0deg;
+        --progress-circular-before-left-color: #6200ee;
+        --progress-circular-before-right-angle: 302.4deg;
+        --progress-circular-before-right-color: #6200ee;
+    }
+    60% {
+        --progress-circular-before-left-angle: 0deg;
+        --progress-circular-before-left-color: #6200ee;
+        --progress-circular-before-right-angle: 306deg;
+        --progress-circular-before-right-color: #6200ee;
+    }
+    61% {
+        --progress-circular-before-left-angle: 0deg;
+        --progress-circular-before-left-color: #6200ee;
+        --progress-circular-before-right-angle: 309.6deg;
+        --progress-circular-before-right-color: #6200ee;
+    }
+    62% {
+        --progress-circular-before-left-angle: 0deg;
+        --progress-circular-before-left-color: #6200ee;
+        --progress-circular-before-right-angle: 313.2deg;
+        --progress-circular-before-right-color: #6200ee;
+    }
+    63% {
+        --progress-circular-before-left-angle: 0deg;
+        --progress-circular-before-left-color: #6200ee;
+        --progress-circular-before-right-angle: 316.8deg;
+        --progress-circular-before-right-color: #6200ee;
+    }
+    64% {
+        --progress-circular-before-left-angle: 0deg;
+        --progress-circular-before-left-color: #6200ee;
+        --progress-circular-before-right-angle: 320.4deg;
+        --progress-circular-before-right-color: #6200ee;
+    }
+    65% {
+        --progress-circular-before-left-angle: 0deg;
+        --progress-circular-before-left-color: #6200ee;
+        --progress-circular-before-right-angle: 324deg;
+        --progress-circular-before-right-color: #6200ee;
+    }
+    66% {
+        --progress-circular-before-left-angle: 0deg;
+        --progress-circular-before-left-color: #6200ee;
+        --progress-circular-before-right-angle: 327.6deg;
+        --progress-circular-before-right-color: #6200ee;
+    }
+    67% {
+        --progress-circular-before-left-angle: 0deg;
+        --progress-circular-before-left-color: #6200ee;
+        --progress-circular-before-right-angle: 331.2deg;
+        --progress-circular-before-right-color: #6200ee;
+    }
+    68% {
+        --progress-circular-before-left-angle: 0deg;
+        --progress-circular-before-left-color: #6200ee;
+        --progress-circular-before-right-angle: 334.8deg;
+        --progress-circular-before-right-color: #6200ee;
+    }
+    69% {
+        --progress-circular-before-left-angle: 0deg;
+        --progress-circular-before-left-color: #6200ee;
+        --progress-circular-before-right-angle: 338.4deg;
+        --progress-circular-before-right-color: #6200ee;
+    }
+    70% {
+        --progress-circular-before-left-angle: 0deg;
+        --progress-circular-before-left-color: #6200ee;
+        --progress-circular-before-right-angle: 342deg;
+        --progress-circular-before-right-color: #6200ee;
+    }
+    71% {
+        --progress-circular-before-left-angle: 0deg;
+        --progress-circular-before-left-color: #6200ee;
+        --progress-circular-before-right-angle: 345.6deg;
+        --progress-circular-before-right-color: #6200ee;
+    }
+    72% {
+        --progress-circular-before-left-angle: 0deg;
+        --progress-circular-before-left-color: #6200ee;
+        --progress-circular-before-right-angle: 349.2deg;
+        --progress-circular-before-right-color: #6200ee;
+    }
+    73% {
+        --progress-circular-before-left-angle: 0deg;
+        --progress-circular-before-left-color: #6200ee;
+        --progress-circular-before-right-angle: 352.8deg;
+        --progress-circular-before-right-color: #6200ee;
+    }
+    74% {
+        --progress-circular-before-left-angle: 0deg;
+        --progress-circular-before-left-color: #6200ee;
+        --progress-circular-before-right-angle: 356.4deg;
+        --progress-circular-before-right-color: #6200ee;
+    }
+    75% {
+        --progress-circular-before-left-angle: 180deg;
+        --progress-circular-before-left-color: #f5f5f5;
+        --progress-circular-before-right-angle: 360deg;
+        --progress-circular-before-right-color: #6200ee;
+    }
+    76% {
+        --progress-circular-before-left-angle: 187.2deg;
+        --progress-circular-before-left-color: #f5f5f5;
+        --progress-circular-before-right-angle: 360deg;
+        --progress-circular-before-right-color: #6200ee;
+    }
+    77% {
+        --progress-circular-before-left-angle: 194.4deg;
+        --progress-circular-before-left-color: #f5f5f5;
+        --progress-circular-before-right-angle: 360deg;
+        --progress-circular-before-right-color: #6200ee;
+    }
+    78% {
+        --progress-circular-before-left-angle: 201.6deg;
+        --progress-circular-before-left-color: #f5f5f5;
+        --progress-circular-before-right-angle: 360deg;
+        --progress-circular-before-right-color: #6200ee;
+    }
+    79% {
+        --progress-circular-before-left-angle: 208.8deg;
+        --progress-circular-before-left-color: #f5f5f5;
+        --progress-circular-before-right-angle: 360deg;
+        --progress-circular-before-right-color: #6200ee;
+    }
+    80% {
+        --progress-circular-before-left-angle: 216deg;
+        --progress-circular-before-left-color: #f5f5f5;
+        --progress-circular-before-right-angle: 360deg;
+        --progress-circular-before-right-color: #6200ee;
+    }
+    81% {
+        --progress-circular-before-left-angle: 223.2deg;
+        --progress-circular-before-left-color: #f5f5f5;
+        --progress-circular-before-right-angle: 360deg;
+        --progress-circular-before-right-color: #6200ee;
+    }
+    82% {
+        --progress-circular-before-left-angle: 230.4deg;
+        --progress-circular-before-left-color: #f5f5f5;
+        --progress-circular-before-right-angle: 360deg;
+        --progress-circular-before-right-color: #6200ee;
+    }
+    83% {
+        --progress-circular-before-left-angle: 237.6deg;
+        --progress-circular-before-left-color: #f5f5f5;
+        --progress-circular-before-right-angle: 360deg;
+        --progress-circular-before-right-color: #6200ee;
+    }
+    84% {
+        --progress-circular-before-left-angle: 244.8deg;
+        --progress-circular-before-left-color: #f5f5f5;
+        --progress-circular-before-right-angle: 360deg;
+        --progress-circular-before-right-color: #6200ee;
+    }
+    85% {
+        --progress-circular-before-left-angle: 252deg;
+        --progress-circular-before-left-color: #f5f5f5;
+        --progress-circular-before-right-angle: 360deg;
+        --progress-circular-before-right-color: #6200ee;
+    }
+    86% {
+        --progress-circular-before-left-angle: 259.2deg;
+        --progress-circular-before-left-color: #f5f5f5;
+        --progress-circular-before-right-angle: 360deg;
+        --progress-circular-before-right-color: #6200ee;
+    }
+    87% {
+        --progress-circular-before-left-angle: 266.4deg;
+        --progress-circular-before-left-color: #f5f5f5;
+        --progress-circular-before-right-angle: 360deg;
+        --progress-circular-before-right-color: #6200ee;
+    }
+    88% {
+        --progress-circular-before-left-angle: 273.6deg;
+        --progress-circular-before-left-color: #f5f5f5;
+        --progress-circular-before-right-angle: 360deg;
+        --progress-circular-before-right-color: #6200ee;
+    }
+    89% {
+        --progress-circular-before-left-angle: 280.8deg;
+        --progress-circular-before-left-color: #f5f5f5;
+        --progress-circular-before-right-angle: 360deg;
+        --progress-circular-before-right-color: #6200ee;
+    }
+    90% {
+        --progress-circular-before-left-angle: 288deg;
+        --progress-circular-before-left-color: #f5f5f5;
+        --progress-circular-before-right-angle: 360deg;
+        --progress-circular-before-right-color: #6200ee;
+    }
+    91% {
+        --progress-circular-before-left-angle: 295.2deg;
+        --progress-circular-before-left-color: #f5f5f5;
+        --progress-circular-before-right-angle: 360deg;
+        --progress-circular-before-right-color: #6200ee;
+    }
+    92% {
+        --progress-circular-before-left-angle: 302.4deg;
+        --progress-circular-before-left-color: #f5f5f5;
+        --progress-circular-before-right-angle: 360deg;
+        --progress-circular-before-right-color: #6200ee;
+    }
+    93% {
+        --progress-circular-before-left-angle: 309.6deg;
+        --progress-circular-before-left-color: #f5f5f5;
+        --progress-circular-before-right-angle: 360deg;
+        --progress-circular-before-right-color: #6200ee;
+    }
+    94% {
+        --progress-circular-before-left-angle: 316.8deg;
+        --progress-circular-before-left-color: #f5f5f5;
+        --progress-circular-before-right-angle: 360deg;
+        --progress-circular-before-right-color: #6200ee;
+    }
+    95% {
+        --progress-circular-before-left-angle: 324deg;
+        --progress-circular-before-left-color: #f5f5f5;
+        --progress-circular-before-right-angle: 360deg;
+        --progress-circular-before-right-color: #6200ee;
+    }
+    96% {
+        --progress-circular-before-left-angle: 331.20000000000005deg;
+        --progress-circular-before-left-color: #f5f5f5;
+        --progress-circular-before-right-angle: 360deg;
+        --progress-circular-before-right-color: #6200ee;
+    }
+    97% {
+        --progress-circular-before-left-angle: 338.4deg;
+        --progress-circular-before-left-color: #f5f5f5;
+        --progress-circular-before-right-angle: 360deg;
+        --progress-circular-before-right-color: #6200ee;
+    }
+    98% {
+        --progress-circular-before-left-angle: 345.6deg;
+        --progress-circular-before-left-color: #f5f5f5;
+        --progress-circular-before-right-angle: 360deg;
+        --progress-circular-before-right-color: #6200ee;
+    }
+    99% {
+        --progress-circular-before-left-angle: 352.8deg;
+        --progress-circular-before-left-color: #f5f5f5;
+        --progress-circular-before-right-angle: 360deg;
+        --progress-circular-before-right-color: #6200ee;
+    }
+    100% {
+        --progress-circular-before-left-angle: 360deg;
+        --progress-circular-before-left-color: #f5f5f5;
+        --progress-circular-before-right-angle: 360deg;
+        --progress-circular-before-right-color: #6200ee;
+    }
 }
