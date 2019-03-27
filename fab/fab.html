@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,19 +12,41 @@
         }
     </style>
 </head>
-
 <body>
-
-    <button class="fab"><span class="fab__icon icon">&#xEB52;</span></button>
+    <button class="fab">
+        <span class="fab__icon icon">&#xEB52;</span>
+    </button>
+    <br><br>
+    
+    <button class="fab fab--mini">
+        <span class="fab__icon icon">&#xEB52;</span>
+    </button>
+    <br><br>
+    
+    <button class="fab fab--extended">
+        <span class="fab__icon icon">&#xEB52;</span>
+        <span class="fab__text">fab</span>
+    </button>
     <br><br>
 
-    <button class="fab fab--mini"><span class="fab__icon icon">&#xEB52;</span></button>
+    <md-fab 
+    icon="&#xEB52;"
+    text="md-fab"></md-fab>
     <br><br>
 
-    <button class="fab fab--extended"><span class="fab__icon icon">&#xEB52;</span><span class="fab__text">fab</span></button>
+    <md-fab 
+    icon="&#xEB52;"
+    text="md-fab"
+    mini></md-fab>
     <br><br>
 
+    <md-fab 
+    icon="&#xEB52;"
+    text="md-fab"
+    extended></md-fab>
+    <br><br>
+    
     <script src="../material.js"></script>
+    <script src="./fab.js" type="module"></script>
 </body>
-
 </html>
