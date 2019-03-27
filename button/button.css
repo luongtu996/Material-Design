@@ -1,4 +1,4 @@
-:host,
+md-button,
 .button {
     display: inline-flex;
     align-items: center;
@@ -35,14 +35,14 @@
 
 
 
-:host([outlined]),
+md-button[outlined],
 .button--outlined {
     background-color: transparent;
     color: #6200ee;
     box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.12);
 }
 
-:host([outlined]) .button__text,
+md-button[outlined] .button__text,
 .button--outlined .button__text {
     margin: 0 16px;
 }
@@ -52,19 +52,19 @@
 
 
 
-:host([contained]),
+md-button[contained],
 .button--contained {
     background-color: #6200ee;
     color: #ffffff;
     box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
 }
 
-:host([contained]) .button__text,
+md-button[contained] .button__text,
 .button--contained .button__text {
     margin: 0 16px;
 }
 
-:host .button__icon + .button__text,
+md-button .button__icon + .button__text,
 .button__icon + .button__text {
     margin-left: -4px;
 }
@@ -74,7 +74,7 @@
 
 
 
-:host([toggle]),
+md-button[toggle],
 .button--toggle {
     min-width: 48px;
     height: 48px;
@@ -84,14 +84,14 @@
     box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.12);
 }
 
-:host([toggle]) .button__icon,
+md-button[toggle] .button__icon,
 .button--toggle .button__icon {
     width: 24px;
     height: 24px;
     font-size: 18px;
 }
 
-:host([toggle]) .button__text {
+md-button[toggle] .button__text {
     display: none;
 }
 

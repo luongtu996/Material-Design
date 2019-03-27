@@ -1,4 +1,4 @@
-:host,
+md-fab,
 .fab {
     display: inline-flex;
     align-items: center;
@@ -35,14 +35,14 @@
 
 
 
-:host([mini]),
+md-fab[mini],
 .fab--mini {
     min-width: 40px;
     max-width: 40px;
     height: 40px;
 }
 
-:host([mini]) .fab__icon,
+md-fab[mini] .fab__icon,
 .fab--mini .fab__icon {
     margin: 0 8px;
 }
@@ -52,7 +52,7 @@
 
 
 
-:host([extended]),
+md-fab[extended],
 .fab--extended {
     min-width: 48px;
     max-width: 100%;
@@ -60,16 +60,16 @@
     border-radius: calc(48px / 2);
 }
 
-:host([extended]) .fab__icon,
+md-fab[extended] .fab__icon,
 .fab--extended .fab__icon {
     margin: 0 12px;
 }
 
-:host .fab__icon + .fab__text,
+md-fab .fab__icon + .fab__text,
 .fab__icon + .fab__text {
     margin-left: -1px;
 }
 
-:host(:not([extended])) .fab__text {
+md-fab:not([extended]) .fab__text {
     display: none;
 }

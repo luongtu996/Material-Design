@@ -3,11 +3,6 @@ import MDRipple from '../ripple/ripple.js';
 class MDFab extends HTMLElement {
 
     template = `
-        <style>
-        @import '../foundation/foundation.css';
-        @import '../icon/icon.css';
-        @import './fab.css';
-        </style>
         ${this.icon ? `<span class="fab__icon icon">${this.icon}</span>` : ''} 
         ${this.text ? `<span class="fab__text">${this.text}</span>` : ''}
     `;
@@ -15,9 +10,7 @@ class MDFab extends HTMLElement {
     constructor() {
         super();
 
-        this.attachShadow({
-            mode: 'open'
-        }).innerHTML = this.template;
+        this.innerHTML = this.template;
 
         let ripple = new MDRipple(this);
     }
