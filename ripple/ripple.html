@@ -12,7 +12,7 @@
             margin: 64px;
         }
 
-        .ripple {
+        .demo {
             /* overflow: hidden; */
             width: calc(64px * 2);
             height: calc(64px * 2);
@@ -23,10 +23,14 @@
 
 <body>
 
-    <div class="ripple"></div>
+    <div class="demo"></div>
 
     <script src="../material.js"></script>
-    <script src="./ripple.js"></script>
+    <script type="module">
+        import MDRipple from './ripple.js';
+
+        document.querySelectorAll('.demo').forEach(el => new MDRipple(el));
+    </script>
 </body>
 
 </html>

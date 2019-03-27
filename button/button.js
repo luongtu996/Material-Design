@@ -1,3 +1,5 @@
+import MDRipple from '../ripple/ripple.js';
+
 class MDButton extends HTMLElement {
 
     template = `
@@ -15,6 +17,8 @@ class MDButton extends HTMLElement {
         this.attachShadow({
             mode: 'open'
         }).innerHTML = this.template;
+
+        let ripple = new MDRipple(this);
     }
 
     get icon() {
