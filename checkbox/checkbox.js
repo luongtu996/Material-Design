@@ -8,7 +8,9 @@ class MDCheckbox extends HTMLElement {
         class="checkbox__input"
         name="${this.name}"
         value="${this.value}"
-        required="${this.required}"
+        ${this.required ? `required`: ``}
+        ${this.indeterminate ? `indeterminate` : ``}
+        ${this.checked ? `checked` : ``}
         >
         <div class="checkbox__track">
             <div class="checkbox__thumb"></div>
@@ -18,13 +20,13 @@ class MDCheckbox extends HTMLElement {
     constructor() {
         super();
 
-        // this.attachShadow({
-        //     mode: 'open'
-        // }).innerHTML = this.template;
         this.innerHTML = this.template;
 
-        // this.inputElement = this.shadowRoot.querySelector('.checkbox__input');
         this.inputElement = this.querySelector('.checkbox__input');
+
+        if (this.indeterminate) {
+            this.inputElement.indeterminate = this.indeterminate;
+        }
 
         let ripple = new MDRipple(this);
     }
@@ -38,7 +40,15 @@ class MDCheckbox extends HTMLElement {
     }
 
     get required() {
-        return this.getAttribute('required');
+        return this.hasAttribute('required');
+    }
+
+    get indeterminate() {
+        return this.hasAttribute('indeterminate');
+    }
+
+    get checked() {
+        return this.hasAttribute('checked');
     }
 
     set name(value) {
@@ -51,6 +61,14 @@ class MDCheckbox extends HTMLElement {
 
     set required(value) {
         return this.inputElement.setAttribute('required', value);
+    }
+
+    set indeterminate(value) {
+        return this.inputElement.setAttribute('indeterminate', value);
+    }
+
+    set checked(value) {
+        return this.inputElement.setAttribute('checked', value);
     }
 
     connectedCallback() {
@@ -70,6 +88,8 @@ class MDCheckbox extends HTMLElement {
             'name',
             'value',
             'required',
+            'indeterminate',
+            'checked',
         ];
     }
 }
