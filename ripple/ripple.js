@@ -7,8 +7,8 @@ export default class MDRipple {
         this.render();
     
         this.ripple.addEventListener('mousedown', event => this.handleMousedown(event));
-        this.ripple.addEventListener('mouseup', event => this.handleMouseup(event));
-        this.ripple.addEventListener('blur', event => this.handleBlur(event));
+        // this.ripple.addEventListener('mouseup', event => this.handleMouseup(event));
+        // this.ripple.addEventListener('blur', event => this.handleBlur(event));
     }
 
     beforeRender() {
@@ -39,19 +39,22 @@ export default class MDRipple {
 
         this.render(event);
 
-        this.ripple.classList.remove('is-focus');
-        this.ripple.classList.remove('is-pressed');
+        // this.ripple.classList.remove('is-focus');
+        // this.ripple.classList.remove('is-pressed');
         
+        this.ripple.style.setProperty('--ripple-animation', `none`);
+
         void this.ripple.offsetWidth;
-        this.ripple.classList.add('is-pressed');
+        this.ripple.style.removeProperty('--ripple-animation');
+        // this.ripple.classList.add('is-pressed');
     }
 
-    handleMouseup(event) {
-        this.ripple.classList.add('is-focus');
-    }
+    // handleMouseup(event) {
+    //     this.ripple.classList.add('is-focus');
+    // }
 
-    handleBlur(event) {
-        this.ripple.classList.remove('is-focus');
-        this.ripple.classList.remove('is-pressed');
-    }
+    // handleBlur(event) {
+    //     this.ripple.classList.remove('is-focus');
+    //     this.ripple.classList.remove('is-pressed');
+    // }
 };

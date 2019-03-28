@@ -26,15 +26,20 @@
     opacity: 0.04;
 }
 
-.ripple.is-pressed::after {
-    opacity: 0.16;
-    animation: ripple-pressed 250ms linear;
+.ripple:focus::after {
+    opacity: 0.12;
+    animation: var(--ripple-animation, ripple-pressed 250ms linear);
     transition: width 250ms ease-in-out, height 250ms ease-in-out, opacity 250ms ease-in-out;
 }
 
-.ripple.is-focus::after {
-    opacity: 0.12;
+.ripple:active::after {
+    opacity: 0.16;
 }
+
+
+
+
+
 
 .ripple.is-selected::after {
     background-color: #6200ee;
