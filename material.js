@@ -1,7 +1,7 @@
 let cls = [];
 document.querySelectorAll('[class]').forEach(el => el.getAttribute('class').split(' ').map(c => cls.push(c)));
 cls = cls.filter((v, i, a) => a.indexOf(v) === i);
-cls = cls.sort((a, b) => a.localeCompare(b))
+// cls = cls.sort((a, b) => a.localeCompare(b))
 document.querySelector('body').insertAdjacentHTML('beforeend', 
 `
 <style>
