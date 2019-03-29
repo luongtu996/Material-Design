@@ -64,7 +64,7 @@ md-button[contained] .button__text,
     margin: 0 16px;
 }
 
-md-button .button__icon + .button__text,
+md-button:not([toggle]) .button__icon + .button__text,
 .button__icon + .button__text {
     margin-left: -4px;
 }
@@ -89,10 +89,6 @@ md-button[toggle] .button__icon,
     width: 24px;
     height: 24px;
     font-size: 18px;
-}
-
-md-button[toggle] .button__text {
-    display: none;
 }
 
 

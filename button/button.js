@@ -1,53 +1,72 @@
-import MDRipple from '../ripple/ripple.js';
-
 class MDButton extends HTMLElement {
 
     template = `
-        ${this.icon ? `<span class="button__icon icon">${this.icon}</span>` : ''} 
-        ${this.text ? `<span class="button__text">${this.text}</span>` : ''}
+    ${this.icon ? `<span class="button__icon icon">${this.icon}</span>` : ``}
+    ${this.text ? `<span class="button__text">${this.text}</span>`: ``}
     `;
 
     constructor() {
         super();
 
         this.innerHTML = this.template;
+    }
 
-        let ripple = new MDRipple(this);
+    connectedCallback() {}
+
+    disconnectedCallback() {}
+
+    adoptedCallback() {}
+
+    attributeChangedCallback(name, oldValue, newValue) {}
+
+    static get observedAttributes() {
+        return [
+            'icon', 
+            'text',
+            'outlined',
+            'contained',
+            'toggle'
+        ];
     }
 
     get icon() {
         return this.getAttribute('icon');
     }
 
+    set icon(value) {
+        this.setAttribute('icon', value);
+    }
+
     get text() {
         return this.getAttribute('text');
     }
 
-    set icon(value) {
-        return this.setAttribute('icon', value);
-    }
-
     set text(value) {
-        return this.setAttribute('text', value);
+        this.setAttribute('text', value);
     }
 
-    connectedCallback() {
-        // updateStyle(this);
+    get outlined() {
+        return this.hasAttribute('outlined');
     }
 
-    disconnectedCallback() {}
-
-    adoptedCallback() {}
-
-    attributeChangedCallback(name, oldValue, newValue) {
-        // updateStyle(this);
+    set outlined(value) {
+        this.setAttribute('outlined', '');
     }
 
-    static get observedAttributes() {
-        return [
-            'icon',
-            'text'
-        ];
+    get contained() {
+        return this.hasAttribute('contained');
+    }
+
+    set contained(value) {
+        this.setAttribute('contained', '');
+    }
+
+    get toggle() {
+        return this.hasAttribute('toggle');
+    }
+
+    set toggle(value) {
+        this.setAttribute('toggle', '');
     }
 }
 

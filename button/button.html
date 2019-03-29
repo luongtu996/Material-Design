@@ -17,19 +17,22 @@
         <span class="button__icon icon">&#xEB52;</span>
         <span class="button__text">button</span>
     </button>
-    <br><br>
+    <br>
+    <br>
 
     <button class="button button--outlined">
         <span class="button__icon icon">&#xEB52;</span>
         <span class="button__text">button</span>
     </button>
-    <br><br>
+    <br>
+    <br>
 
     <button class="button button--contained">
         <span class="button__icon icon">&#xEB52;</span>
         <span class="button__text">button</span>
     </button>
-    <br><br>
+    <br>
+    <br>
 
     <div class="button-group">
         <button class="button button--toggle">
@@ -42,43 +45,38 @@
             <span class="button__icon icon">&#xEB52;</span>
         </button>
     </div>
+    <br>
+    <br>
+
+    <hr class="divider">
+
+    <md-button
+        text="md-button"
+    ></md-button>
     <br><br>
 
     <md-button
-    icon="&#xEB52;"
-    text="md-button"></md-button>
+        text="md-button"
+        icon="&#xEB51"
+        outlined
+    ></md-button>
     <br><br>
 
     <md-button
-    icon="&#xEB52;"
-    text="md-button"
-    outlined></md-button>
-    <br><br>
-
-    <md-button
-    icon="&#xEB52;"
-    text="md-button"
-    contained></md-button>
+        text="md-button"
+        icon="&#xEB51"
+        contained
+    ></md-button>
     <br><br>
 
     <div class="button-group">
-        <md-button icon="&#xEB52;" text="md-button" toggle></md-button>
-        <md-button icon="&#xEB52;" text="md-button" toggle></md-button>
-        <md-button icon="&#xEB52;" text="md-button" toggle></md-button>
+        <md-button icon="&#xEB51" toggle></md-button>
+        <md-button icon="&#xEB51" toggle></md-button>
+        <md-button icon="&#xEB51" toggle></md-button>
     </div>
     <br><br>
 
     <script src="../material.js"></script>
     <script src="./button.js" type="module"></script>
-    <script>
-        document.querySelectorAll('md-button').forEach(btn => {
-            btn.addEventListener('click', () => {
-                console.log(
-                    btn.text,
-                    btn.icon,
-                );
-            });
-        });
-    </script>
 </body>
 </html>
