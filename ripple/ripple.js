@@ -14,7 +14,7 @@ export default class MDRipple {
     beforeRender() {
         this.ripple.setAttribute('tabIndex', 0);
 
-        this.ripple.classList.add('ripple');
+        // this.ripple.classList.add('ripple');
     }
 
     render(event = { pageX: 0, pageY: 0 }) {

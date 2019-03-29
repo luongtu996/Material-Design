@@ -1,3 +1,5 @@
+import MDRipple from '../ripple/ripple.js';
+
 class MDButton extends HTMLElement {
 
     template = `
@@ -9,6 +11,8 @@ class MDButton extends HTMLElement {
         super();
 
         this.innerHTML = this.template;
+
+        new MDRipple(this);
     }
 
     connectedCallback() {}

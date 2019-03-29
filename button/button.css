@@ -105,3 +105,76 @@ md-button[toggle] .button__icon,
 .button-group .button--toggle + .button--toggle {
     margin-left: -1px;
 }
+
+
+
+
+
+/* Ripple */
+md-button,
+.button {
+    cursor: pointer;
+    user-select: none;
+    position: relative;
+    /* overflow: hidden; */
+}
+
+/* md-button::before {} */
+
+md-button::after,
+.button::after {
+    content: '';
+    pointer-events: none;
+    position: absolute;
+    z-index: 1;
+    left: var(--ripple-left, 50%);
+    top: var(--ripple-top, 50%);
+    transform: translate3d(-50%, -50%, 0) translate3d(var(--ripple-translateX, 0), var(--ripple-translateY, 0), 0);
+    width: var(--ripple-size, 256px);
+    height: var(--ripple-size, 256px);
+    border-radius: 50%;
+    background-color: #6200ee;
+    opacity: 0;
+}
+
+md-button:hover::after,
+.button:hover::after {
+    opacity: 0.04;
+}
+
+md-button:focus::after,
+.button:focus::after {
+    opacity: 0.12;
+    animation: var(--ripple-animation, ripple-pressed 250ms linear);
+    transition: width 250ms ease-in-out, height 250ms ease-in-out, opacity 250ms ease-in-out;
+}
+
+md-button:active::after,
+.button:active::after {
+    opacity: 0.16;
+}
+
+
+
+
+
+md-button[contained]::after,
+.button--contained::after {
+    background-color: #ffffff;
+    opacity: 0;
+}
+
+md-button[contained]:hover::after,
+.button--contained:hover::after {
+    opacity: 0.08;
+}
+
+md-button[contained]:focus::after,
+.button--contained:focus::after {
+    opacity: 0.24;
+}
+
+md-button[contained]:active::after,
+.button--contained:active::after {
+    opacity: 0.32;
+}
