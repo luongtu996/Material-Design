@@ -3,8 +3,8 @@ import MDRipple from '../ripple/ripple.js';
 class MDFab extends HTMLElement {
 
     template = `
-        ${this.icon ? `<span class="fab__icon icon">${this.icon}</span>` : ''} 
-        ${this.text ? `<span class="fab__text">${this.text}</span>` : ''}
+    ${this.icon ? `<span class="fab__icon icon">${this.icon}</span>` : ``}
+    ${this.text ? `<span class="fab__text">${this.text}</span>` : ``}
     `;
 
     constructor() {
@@ -12,42 +12,57 @@ class MDFab extends HTMLElement {
 
         this.innerHTML = this.template;
 
-        let ripple = new MDRipple(this);
+        new MDRipple(this);
+    }
+
+    connectedCallback() { }
+
+    disconnectedCallback() { }
+
+    adoptedCallback() { }
+
+    attributeChangedCallback(name, oldValue, newValue) { }
+
+    static get observedAttributes() {
+        return [
+            'icon',
+            'text',
+            'mini',
+            'extended',
+            'toggle'
+        ];
     }
 
     get icon() {
         return this.getAttribute('icon');
     }
 
+    set icon(value) {
+        this.setAttribute('icon', value);
+    }
+
     get text() {
         return this.getAttribute('text');
     }
 
-    set icon(value) {
-        return this.setAttribute('icon', value);
-    }
-
     set text(value) {
-        return this.setAttribute('text', value);
+        this.setAttribute('text', value);
     }
 
-    connectedCallback() {
-        // updateStyle(this);
+    get mini() {
+        return this.hasAttribute('mini');
     }
 
-    disconnectedCallback() { }
-
-    adoptedCallback() { }
-
-    attributeChangedCallback(name, oldValue, newValue) {
-        // updateStyle(this);
+    set mini(value) {
+        this.setAttribute('mini', '');
     }
 
-    static get observedAttributes() {
-        return [
-            'icon',
-            'text'
-        ];
+    get extended() {
+        return this.hasAttribute('extended');
+    }
+
+    set extended(value) {
+        this.setAttribute('extended', '');
     }
 }
 

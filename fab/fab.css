@@ -65,11 +65,49 @@ md-fab[extended] .fab__icon,
     margin: 0 12px;
 }
 
-md-fab .fab__icon + .fab__text,
+md-fab[extended] .fab__icon + .fab__text,
 .fab__icon + .fab__text {
     margin-left: -1px;
 }
 
-md-fab:not([extended]) .fab__text {
-    display: none;
+
+
+
+
+md-fab {
+    cursor: pointer;
+    user-select: none;
+    position: relative;
+    /* overflow: hidden; */
+}
+
+/* md-fab::before {} */
+
+md-fab::after {
+    content: '';
+    pointer-events: none;
+    position: absolute;
+    z-index: 1;
+    left: var(--ripple-left, 50%);
+    top: var(--ripple-top, 50%);
+    transform: translate3d(-50%, -50%, 0) translate3d(var(--ripple-translateX, 0), var(--ripple-translateY, 0), 0);
+    width: var(--ripple-size, 256px);
+    height: var(--ripple-size, 256px);
+    border-radius: 50%;
+    background-color: #ffffff;
+    opacity: 0;
+}
+
+md-fab:hover::after {
+    opacity: 0.08;
+}
+
+md-fab:focus::after {
+    opacity: 0.24;
+    animation: var(--ripple-animation, ripple-pressed 250ms linear);
+    transition: width 250ms ease-in-out, height 250ms ease-in-out, opacity 250ms ease-in-out;
+}
+
+md-fab:active::after {
+    opacity: 0.32;
 }
