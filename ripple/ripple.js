@@ -1,5 +1,9 @@
 export default class MDRipple {
 
+    // _size = '';
+    // _delegate = '';
+    // _trigger = '';
+
     constructor(host) {
         this.delegate = this.delegate ? this.delegate : host;
         
