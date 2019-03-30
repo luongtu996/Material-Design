@@ -17,59 +17,50 @@
 <body>
 
     <button class="chip">
-        <span class="chip__thumb icon">&#xEB52;</span>
+        <span class="chip__icon icon">&#xEB52;</span>
         <span class="chip__text">Chip</span>
-        <span class="chip__icon"></span>
+        <span class="chip__action"></span>
     </button>
     <br><br>
 
     <button class="chip chip--outlined">
-        <span class="chip__thumb icon">&#xEB52;</span>
+        <span class="chip__icon icon">&#xEB52;</span>
         <span class="chip__text">Chip</span>
-        <span class="chip__icon"></span>
+        <span class="chip__action"></span>
     </button>
     <br><br>
 
     <div class="chip-group">
         <button class="chip">
-            <span class="chip__thumb icon">&#xEB52;</span>
+            <span class="chip__icon icon">&#xEB52;</span>
             <span class="chip__text">Chip</span>
-            <span class="chip__icon"></span>
+            <span class="chip__action"></span>
         </button>
         <button class="chip">
-            <span class="chip__thumb" style="background-image: url(https://avatars.dicebear.com/v2/avataaars/ndiing.svg);"></span>
+            <img src="https://avatars.dicebear.com/v2/avataaars/ndiing.svg" alt="" class="chip__thumb">
             <span class="chip__text">Chip</span>
-            <span class="chip__icon"></span>
+            <span class="chip__action"></span>
         </button>
     </div>
     <br><br>
-    
-    <hr class="divider">
-    
-    <md-chip 
-        text="md-chip"
-    ></md-chip>
-    <br><br>
-    
-    <md-chip 
-        icon="&#xEB52;"
-        text="md-chip"
-    ></md-chip>
+
+    <button class="chip">
+        <span class="chip__check">
+            <span class="chip__mark"></span>
+        </span>
+        <span class="chip__text">Chip</span>
+        <span class="chip__action"></span>
+    </button>
     <br><br>
 
-    <md-chip 
-        thumb="https://avatars.dicebear.com/v2/avataaars/ndiing.svg"
-        text="md-chip"
-        outlined
-    ></md-chip>
-    <br><br>
-
-    <md-chip 
-        thumb="https://avatars.dicebear.com/v2/avataaars/ndiing.svg"
-        text="md-chip"
-        removeable="true"
-        outlined
-    ></md-chip>
+    <button class="chip">
+        <span class="chip__icon icon">&#xEB52;</span>
+        <span class="chip__check">
+            <span class="chip__mark"></span>
+        </span>
+        <span class="chip__text">Chip</span>
+        <span class="chip__action"></span>
+    </button>
     <br><br>
 
     <script src="../material.js"></script>

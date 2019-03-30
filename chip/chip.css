@@ -1,9 +1,9 @@
-md-chip,
 .chip {
     display: inline-flex;
     align-items: center;
     justify-content: center;
     vertical-align: middle;
+    position: relative;
     overflow: hidden;
     height: 32px;
     border-radius: calc(32px / 2);
@@ -19,10 +19,76 @@ md-chip,
     height: 24px;
     margin: 0 4px;
     border-radius: 50%;
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
+}
+
+.chip__icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    margin: 0 4px;
+    border-radius: 50%;
     color: rgba(0, 0, 0, 0.54);
+}
+
+.chip__check {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 0;
+    height: 0;
+    margin: 0 4px;
+    border-radius: 50%;
+    background-color: transparent;
+    transition: 
+    left 100ms ease-in-out,
+    width 100ms ease-in-out,
+    height 100ms ease-in-out;
+}
+
+.chip__thumb ~ .chip__check,
+.chip__icon ~ .chip__check {
+    position: absolute;
+    left: 12px;
+    background-color: rgba(0, 0, 0, 0.54);
+}
+
+.chip__thumb ~ .chip__check .chip__mark::before,
+.chip__icon ~ .chip__check .chip__mark::before {
+    background-color: #ffffff;
+}
+
+.chip__thumb ~ .chip__check .chip__mark::after,
+.chip__icon ~ .chip__check .chip__mark::after {
+    background-color: #ffffff;
+}
+
+.chip__mark {
+    position: relative;
+    width: 16px;
+    height: 8px;
+    margin-top: -4px;
+    transform: rotate(-45deg);
+}
+
+.chip__mark::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 2px;
+    height: 0;
+    background-color: #676767;
+}
+
+.chip__mark::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 6px;
+    width: 0;
+    height: 2px;
+    background-color: #676767;
 }
 
 .chip__text {
@@ -32,7 +98,13 @@ md-chip,
     line-height: 20px;
 }
 
-.chip__icon {
+.chip__thumb ~ .chip__text,
+.chip__icon ~ .chip__text,
+.chip__check ~ .chip__text {
+    margin-left: 4px;
+}
+
+.chip__action {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -42,23 +114,41 @@ md-chip,
     color: rgba(0, 0, 0, 0.54);
 }
 
-.chip__icon:empty {
+.chip__text + .chip__action {
+    margin-left: -4px;
+}
+
+.chip__action:empty {
     font-weight: 400;
     font-size: 18px;
     line-height: 1;
     font-family: 'Segoe MDL2 Assets';
 }
 
-.chip__icon:empty::before {
+.chip__action:empty::before {
     content: '\EB90';
 }
 
-.chip__thumb + .chip__text {
-    margin-left: 4px;
+
+
+
+
+.chip.is-activated .chip__check {
+    width: 24px;
+    height: 24px;
+    left: 0;
 }
 
-.chip__text + .chip__icon {
-    margin-left: -4px;
+.chip.is-activated .chip__check .chip__mark::before {
+    height: 100%;
+    transition: 
+    height 100ms ease-in-out 100ms;
+}
+
+.chip.is-activated .chip__check .chip__mark::after {
+    width: 100%;
+    transition: 
+    width 100ms ease-in-out 200ms;
 }
 
 
@@ -66,7 +156,6 @@ md-chip,
 
 
 
-md-chip[outlined],
 .chip--outlined {
     background-color: transparent;
     color: rgba(0, 0, 0, 0.87);
@@ -91,7 +180,6 @@ md-chip[outlined],
 
 
 
-md-chip,
 .chip {
     cursor: pointer;
     user-select: none;
@@ -101,7 +189,6 @@ md-chip,
 
 /* .chip::before {} */
 
-md-chip::after,
 .chip::after {
     content: '';
     pointer-events: none;
@@ -117,19 +204,16 @@ md-chip::after,
     opacity: 0;
 }
 
-md-chip:hover::after,
 .chip:hover::after {
     opacity: 0.04;
 }
 
-md-chip:focus::after,
 .chip:focus::after {
     opacity: 0.12;
     animation: var(--ripple-animation, ripple-pressed 250ms linear);
     transition: width 250ms ease-in-out, height 250ms ease-in-out, opacity 250ms ease-in-out;
 }
 
-md-chip:active::after,
 .chip:active::after {
     opacity: 0.16;
 }
