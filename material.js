@@ -59,7 +59,8 @@ document.querySelectorAll(`
     md-fab,
     md-button,
     md-checkbox,
-    md-radio
+    md-radio,
+    md-switch
 `).forEach(el => {
     for (var i = el.attributes.length - 1; i >= 0; i--) {
         att.push(el.attributes[i].name);
