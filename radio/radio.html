@@ -16,23 +16,50 @@
 
 <body>
 
-    <div class="radio">
-        <input type="radio" class="radio__input" name="radio-1">
-        <div class="radio__track">
-            <div class="radio__thumb"></div>
+    <form action="">
+        <div class="radio">
+            <input type="radio" class="radio__input" name="radio-1">
+            <div class="radio__track">
+                <div class="radio__thumb"></div>
+            </div>
         </div>
-    </div>
-    <br><br>
+        <br><br>
+        
+        <div class="radio">
+            <input type="radio" class="radio__input" name="radio-1" checked>
+            <div class="radio__track">
+                <div class="radio__thumb"></div>
+            </div>
+        </div>
+        <br><br>
+        
+        <hr class="divider">
+        
+        <md-radio name="b" value="b1"></md-radio>
+        <br><br>
+        
+        <md-radio name="b" value="b2" checked></md-radio>
+        <br><br>
 
-    <div class="radio">
-        <input type="radio" class="radio__input" name="radio-1" checked>
-        <div class="radio__track">
-            <div class="radio__thumb"></div>
-        </div>
-    </div>
-    <br><br>
+        <input type="submit">
+        <input type="reset">
+    </form>
 
     <script src="../material.js"></script>
+    <script src="./radio.js" type="module"></script>
+    <script>
+        let form = document.querySelector('form');
+
+        form.addEventListener('submit', e => {
+            e.preventDefault();
+
+            let formData = new FormData(form);
+
+            for (let data of formData.entries()) {
+                alert(data);
+            }
+        });
+    </script>
 </body>
 
 </html>

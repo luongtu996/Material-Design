@@ -1,3 +1,4 @@
+md-radio,
 .radio {
     display: inline-flex;
     align-items: center;
@@ -39,4 +40,69 @@
     height: 10px;
     border-radius: 50%;
     background-color: #6200ee;
+}
+
+
+
+
+
+.radio__input ~ .radio__track {
+    --ripple-size: 40px;
+    cursor: pointer;
+    user-select: none;
+    position: relative;
+    /* overflow: hidden; */
+}
+
+/* .radio__input ~ .radio__track::before {} */
+
+.radio__input ~ .radio__track::after {
+    content: '';
+    pointer-events: none;
+    position: absolute;
+    z-index: 1;
+    left: var(--ripple-left, 50%);
+    top: var(--ripple-top, 50%);
+    transform: translate3d(-50%, -50%, 0) translate3d(var(--ripple-translateX, 0), var(--ripple-translateY, 0), 0);
+    width: var(--ripple-size, 40px);
+    height: var(--ripple-size, 40px);
+    border-radius: 50%;
+    background-color: #6200ee;
+    opacity: 0;
+}
+
+.radio__input:hover ~ .radio__track::after {
+    opacity: 0.04;
+}
+
+.radio__input:focus ~ .radio__track::after {
+    opacity: 0.12;
+    animation: var(--ripple-animation, ripple-pressed 250ms linear);
+    transition: width 250ms ease-in-out, height 250ms ease-in-out, opacity 250ms ease-in-out;
+}
+
+.radio__input:active ~ .radio__track::after {
+    opacity: 0.16;
+}
+
+
+
+
+
+
+.radio__input:not(:checked) ~ .radio__track::after {
+    background-color: #000000;
+    opacity: 0;
+}
+
+.radio__input:not(:checked):hover ~ .radio__track::after {
+    opacity: 0.04;
+}
+
+.radio__input:not(:checked):focus ~ .radio__track::after {
+    opacity: 0.12;
+}
+
+.radio__input:not(:checked):active ~ .radio__track::after {
+    opacity: 0.16;
 }
