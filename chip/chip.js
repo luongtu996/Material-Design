@@ -34,6 +34,7 @@ class MDChip extends HTMLElement {
 
     chipActionHandleClick(event) {
         event.stopPropagation();
+        this.remove();
     }
 
     connectedCallback() {}
