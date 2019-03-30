@@ -64,8 +64,6 @@ md-switch,
     /* overflow: hidden; */
 }
 
-/* .switch__input ~ .switch__track .switch__thumb::before {} */
-
 .switch__input ~ .switch__track .switch__thumb::after {
     content: '';
     pointer-events: none;

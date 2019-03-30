@@ -103,8 +103,6 @@ md-checkbox,
     /* overflow: hidden; */
 }
 
-/* .checkbox__input ~ .checkbox__track::before {} */
-
 .checkbox__input ~ .checkbox__track::after {
     content: '';
     pointer-events: none;

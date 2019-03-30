@@ -119,8 +119,6 @@ md-button,
     overflow: hidden;
 }
 
-/* md-button::before {} */
-
 md-button::after,
 .button::after {
     content: '';

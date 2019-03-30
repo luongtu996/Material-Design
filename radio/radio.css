@@ -54,8 +54,6 @@ md-radio,
     /* overflow: hidden; */
 }
 
-/* .radio__input ~ .radio__track::before {} */
-
 .radio__input ~ .radio__track::after {
     content: '';
     pointer-events: none;

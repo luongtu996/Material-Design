@@ -81,8 +81,6 @@ md-fab {
     /* overflow: hidden; */
 }
 
-/* md-fab::before {} */
-
 md-fab::after {
     content: '';
     pointer-events: none;
