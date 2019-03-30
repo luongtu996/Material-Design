@@ -29,7 +29,7 @@ class MDChip extends HTMLElement {
     }
 
     handleClick(event) {
-        this.classList.toggle('is-activated');
+        // this.classList.toggle('is-activated');
     }
 
     chipActionHandleClick(event) {
