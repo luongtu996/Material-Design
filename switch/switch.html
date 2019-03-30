@@ -16,23 +16,50 @@
 
 <body>
 
-    <div class="switch">
-        <input type="checkbox" class="switch__input">
-        <div class="switch__track">
-            <div class="switch__thumb"></div>
+    <form action="">
+        <div class="switch">
+            <input type="checkbox" class="switch__input">
+            <div class="switch__track">
+                <div class="switch__thumb"></div>
+            </div>
         </div>
-    </div>
-    <br><br>
+        <br><br>
+        
+        <div class="switch">
+            <input type="checkbox" class="switch__input" checked>
+            <div class="switch__track">
+                <div class="switch__thumb"></div>
+            </div>
+        </div>
+        <br><br>
+        
+        <hr class="divider">
+        
+        <md-switch name="b" value="b1"></md-switch>
+        <br><br>
+        
+        <md-switch name="b" value="b2" checked></md-switch>
+        <br><br>
 
-    <div class="switch">
-        <input type="checkbox" class="switch__input" checked>
-        <div class="switch__track">
-            <div class="switch__thumb"></div>
-        </div>
-    </div>
-    <br><br>
+        <input type="submit">
+        <input type="reset">
+    </form>
 
     <script src="../material.js"></script>
+    <script src="./switch.js" type="module"></script>
+    <script>
+        let form = document.querySelector('form');
+
+        form.addEventListener('submit', e => {
+            e.preventDefault();
+
+            let formData = new FormData(form);
+
+            for (let data of formData.entries()) {
+                alert(data);
+            }
+        });
+    </script>
 </body>
 
 </html>

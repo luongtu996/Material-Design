@@ -1,3 +1,4 @@
+md-switch,
 .switch {
     display: inline-flex;
     align-items: center;
@@ -9,6 +10,8 @@
 }
 
 .switch__input {
+    cursor: pointer;
+    user-select: none;
     position: absolute;
     z-index: 1;
     width: 100%;
@@ -49,4 +52,67 @@
 .switch__input:checked ~ .switch__track .switch__thumb {
     left: calc(36px - 20px - ((36px - 32px) / 2));
     background-color: #6200ee;
+}
+
+
+
+
+
+.switch__input ~ .switch__track .switch__thumb {
+    --ripple-size: 40px;
+    position: relative;
+    /* overflow: hidden; */
+}
+
+/* .switch__input ~ .switch__track .switch__thumb::before {} */
+
+.switch__input ~ .switch__track .switch__thumb::after {
+    content: '';
+    pointer-events: none;
+    position: absolute;
+    z-index: 1;
+    left: var(--ripple-left, 50%);
+    top: var(--ripple-top, 50%);
+    transform: translate3d(-50%, -50%, 0) translate3d(var(--ripple-translateX, 0), var(--ripple-translateY, 0), 0);
+    width: var(--ripple-size, 256px);
+    height: var(--ripple-size, 256px);
+    border-radius: 50%;
+    background-color: #6200ee;
+    opacity: 0;
+}
+
+.switch__input:hover ~ .switch__track .switch__thumb::after {
+    opacity: 0.04;
+}
+
+.switch__input:focus ~ .switch__track .switch__thumb::after {
+    opacity: 0.12;
+    animation: var(--ripple-animation, ripple-pressed 250ms linear);
+    transition: width 250ms ease-in-out, height 250ms ease-in-out, opacity 250ms ease-in-out;
+}
+
+.switch__input:active ~ .switch__track .switch__thumb::after {
+    opacity: 0.16;
+}
+
+
+
+
+
+
+.switch__input:not(:checked) ~ .switch__track .switch__thumb::after {
+    background-color: #000000;
+    opacity: 0;
+}
+
+.switch__input:not(:checked):hover ~ .switch__track .switch__thumb::after {
+    opacity: 0.04;
+}
+
+.switch__input:not(:checked):focus ~ .switch__track .switch__thumb::after {
+    opacity: 0.12;
+}
+
+.switch__input:not(:checked):active ~ .switch__track .switch__thumb::after {
+    opacity: 0.16;
 }
