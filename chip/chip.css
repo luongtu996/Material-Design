@@ -1,8 +1,10 @@
+md-chip,
 .chip {
     display: inline-flex;
     align-items: center;
     justify-content: center;
     vertical-align: middle;
+    overflow: hidden;
     height: 32px;
     border-radius: calc(32px / 2);
     background-color: rgba(0, 0, 0, 0.12);
@@ -64,6 +66,7 @@
 
 
 
+md-chip[outlined],
 .chip--outlined {
     background-color: transparent;
     color: rgba(0, 0, 0, 0.87);
@@ -82,4 +85,51 @@
 
 .chip-group .chip + .chip {
     margin-left: 8px;
+}
+
+
+
+
+
+md-chip,
+.chip {
+    cursor: pointer;
+    user-select: none;
+    position: relative;
+    /* overflow: hidden; */
+}
+
+/* .chip::before {} */
+
+md-chip::after,
+.chip::after {
+    content: '';
+    pointer-events: none;
+    position: absolute;
+    z-index: 1;
+    left: var(--ripple-left, 50%);
+    top: var(--ripple-top, 50%);
+    transform: translate3d(-50%, -50%, 0) translate3d(var(--ripple-translateX, 0), var(--ripple-translateY, 0), 0);
+    width: var(--ripple-size, 256px);
+    height: var(--ripple-size, 256px);
+    border-radius: 50%;
+    background-color: #000000;
+    opacity: 0;
+}
+
+md-chip:hover::after,
+.chip:hover::after {
+    opacity: 0.04;
+}
+
+md-chip:focus::after,
+.chip:focus::after {
+    opacity: 0.12;
+    animation: var(--ripple-animation, ripple-pressed 250ms linear);
+    transition: width 250ms ease-in-out, height 250ms ease-in-out, opacity 250ms ease-in-out;
+}
+
+md-chip:active::after,
+.chip:active::after {
+    opacity: 0.16;
 }
