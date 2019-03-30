@@ -10,6 +10,8 @@ md-checkbox,
 }
 
 .checkbox__input {
+    cursor: pointer;
+    user-select: none;
     position: absolute;
     z-index: 1;
     width: 100%;
@@ -95,8 +97,6 @@ md-checkbox,
 
 .checkbox__input ~ .checkbox__track {
     --ripple-size: 40px;
-    cursor: pointer;
-    user-select: none;
     position: relative;
     /* overflow: hidden; */
 }

@@ -10,6 +10,8 @@ md-radio,
 }
 
 .radio__input {
+    cursor: pointer;
+    user-select: none;
     position: absolute;
     z-index: 1;
     width: 100%;
@@ -48,8 +50,6 @@ md-radio,
 
 .radio__input ~ .radio__track {
     --ripple-size: 40px;
-    cursor: pointer;
-    user-select: none;
     position: relative;
     /* overflow: hidden; */
 }
