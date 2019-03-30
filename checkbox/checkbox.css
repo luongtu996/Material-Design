@@ -88,3 +88,67 @@ md-checkbox,
     transition: 
     width 100ms ease-in-out 100ms;
 }
+
+
+
+
+
+.checkbox__input ~ .checkbox__track {
+    --ripple-size: 40px;
+    cursor: pointer;
+    user-select: none;
+    position: relative;
+    /* overflow: hidden; */
+}
+
+/* .checkbox__input ~ .checkbox__track::before {} */
+
+.checkbox__input ~ .checkbox__track::after {
+    content: '';
+    pointer-events: none;
+    position: absolute;
+    z-index: 1;
+    left: var(--ripple-left, 50%);
+    top: var(--ripple-top, 50%);
+    transform: translate3d(-50%, -50%, 0) translate3d(var(--ripple-translateX, 0), var(--ripple-translateY, 0), 0);
+    width: var(--ripple-size, 40px);
+    height: var(--ripple-size, 40px);
+    border-radius: 50%;
+    background-color: #6200ee;
+    opacity: 0;
+}
+
+.checkbox__input:hover ~ .checkbox__track::after {
+    opacity: 0.04;
+}
+
+.checkbox__input:focus ~ .checkbox__track::after {
+    opacity: 0.12;
+    animation: var(--ripple-animation, ripple-pressed 250ms linear);
+    transition: width 250ms ease-in-out, height 250ms ease-in-out, opacity 250ms ease-in-out;
+}
+
+.checkbox__input:active ~ .checkbox__track::after {
+    opacity: 0.16;
+}
+
+
+
+
+
+.checkbox__input:not(:checked):not(:indeterminate) ~ .checkbox__track::after {
+    background-color: #000000;
+    opacity: 0;
+}
+
+.checkbox__input:not(:checked):not(:indeterminate):hover ~ .checkbox__track::after {
+    opacity: 0.04;
+}
+
+.checkbox__input:not(:checked):not(:indeterminate):focus ~ .checkbox__track::after {
+    opacity: 0.12;
+}
+
+.checkbox__input:not(:checked):not(:indeterminate):active ~ .checkbox__track::after {
+    opacity: 0.16;
+}

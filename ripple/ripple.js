@@ -1,25 +1,35 @@
 export default class MDRipple {
 
-    constructor(ripple) {
-        this.ripple = ripple;
+    constructor(host) {
+        this.delegate = this.delegate ? this.delegate : host;
+        
+        this.trigger = this.trigger ? this.trigger : host;
 
         this.beforeRender();
-        this.render();
     
-        this.ripple.addEventListener('mousedown', event => this.handleMousedown(event));
-        // this.ripple.addEventListener('mouseup', event => this.handleMouseup(event));
-        // this.ripple.addEventListener('blur', event => this.handleBlur(event));
+        this.trigger.addEventListener('mousedown', event => this.handleMousedown(event));
     }
 
-    beforeRender() {
-        this.ripple.setAttribute('tabIndex', 0);
+    set size(value) {this._size = value;}
+    get size() {return this._size}
 
-        // this.ripple.classList.add('ripple');
+    set delegate(value) {this._delegate = value;}
+    get delegate() {return this._delegate}
+
+    set trigger(value) {this._trigger = value;}
+    get trigger() {return this._trigger}
+
+    beforeRender() {
+        this.trigger.setAttribute('tabIndex', 0);
     }
 
     render(event = { pageX: 0, pageY: 0 }) {
-        let domRect = this.ripple.getBoundingClientRect();
-        let size = Math.sqrt(
+        let domRect = this.delegate.getBoundingClientRect();
+
+        domRect.width = this.delegate.clientWidth;
+        domRect.height = this.delegate.clientHeight;
+
+        let size = this.size ? this.size : Math.sqrt(
             Math.pow(domRect.width, 2) +
             Math.pow(domRect.height, 2)
         );
@@ -28,33 +38,19 @@ export default class MDRipple {
         let translateX = (0.5 - left) * (domRect.width / size);
         let translateY = (0.5 - top) * (domRect.width / size * (domRect.height / domRect.width));
 
-        this.ripple.style.setProperty('--ripple-size', `${size}px`);
-        this.ripple.style.setProperty('--ripple-left', `${left * 100}%`);
-        this.ripple.style.setProperty('--ripple-top', `${top * 100}%`);
-        this.ripple.style.setProperty('--ripple-translateX', `${translateX * 100}%`);
-        this.ripple.style.setProperty('--ripple-translateY', `${translateY * 100}%`);
+        this.delegate.style.setProperty('--ripple-size', `${size}px`);
+        this.delegate.style.setProperty('--ripple-left', `${left * 100}%`);
+        this.delegate.style.setProperty('--ripple-top', `${top * 100}%`);
+        this.delegate.style.setProperty('--ripple-translateX', `${translateX * 100}%`);
+        this.delegate.style.setProperty('--ripple-translateY', `${translateY * 100}%`);
     }
 
     handleMousedown(event) {
-
         this.render(event);
-
-        // this.ripple.classList.remove('is-focus');
-        // this.ripple.classList.remove('is-pressed');
         
-        this.ripple.style.setProperty('--ripple-animation', `none`);
+        this.delegate.style.setProperty('--ripple-animation', `none`);
 
-        void this.ripple.offsetWidth;
-        this.ripple.style.removeProperty('--ripple-animation');
-        // this.ripple.classList.add('is-pressed');
+        void this.delegate.offsetWidth;
+        this.delegate.style.removeProperty('--ripple-animation');
     }
-
-    // handleMouseup(event) {
-    //     this.ripple.classList.add('is-focus');
-    // }
-
-    // handleBlur(event) {
-    //     this.ripple.classList.remove('is-focus');
-    //     this.ripple.classList.remove('is-pressed');
-    // }
 };

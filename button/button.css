@@ -4,7 +4,7 @@ md-button,
     align-items: center;
     justify-content: center;
     vertical-align: middle;
-    overflow: hidden;
+    /* overflow: hidden; */
     min-width: 64px;
     height: 36px;
     border-radius: 4px;
@@ -116,7 +116,7 @@ md-button,
     cursor: pointer;
     user-select: none;
     position: relative;
-    /* overflow: hidden; */
+    overflow: hidden;
 }
 
 /* md-button::before {} */

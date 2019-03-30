@@ -16,7 +16,7 @@
 
 <body>
 
-    <form action="POST">
+    <form action="">
         <div class="checkbox">
             <input type="checkbox" class="checkbox__input" name="a" value="a1">
             <div class="checkbox__track">
@@ -40,17 +40,20 @@
             </div>
         </div>
         <br><br>
-
-        <md-checkbox name="b" value="b1" required></md-checkbox>
-        <br><br>
-
-        <md-checkbox name="b" value="b2" indeterminate></md-checkbox>
-        <br><br>
-
-        <md-checkbox name="b" value="b3" checked></md-checkbox>
+        
+        <hr class="divider">
+        
+        <md-checkbox name="b" value="b1"></md-checkbox>
         <br><br>
         
-        <button type="submit">submit</button>
+        <md-checkbox name="b" value="b2" indeterminate></md-checkbox>
+        <br><br>
+        
+        <md-checkbox name="b" value="b3" checked></md-checkbox>
+        <br><br>
+
+        <input type="submit">
+        <input type="reset">
     </form>
 
     <script src="../material.js"></script>
@@ -60,11 +63,12 @@
 
         form.addEventListener('submit', e => {
             e.preventDefault();
-            var data = new FormData(form);
-            for (var value of data.entries()) {
-                console.log(value);
+
+            let formData = new FormData(form);
+
+            for (let data of formData.entries()) {
+                alert(data);
             }
-            console.log(data);
         });
     </script>
 </body>
