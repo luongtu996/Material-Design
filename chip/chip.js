@@ -16,11 +16,27 @@ class MDChip extends HTMLElement {
         super();
 
         this.innerHTML = this.template;
+        
+        this.chipAction = this.querySelector('.chip__action');
 
         new MDRipple(this);
+
+        this.addEventListener('click', event => this.handleClick(event));
+
+        if (this.chipAction) {
+            this.chipAction.addEventListener('click', event => this.chipActionHandleClick(event));
+        }
     }
 
-    connectedCallback() { }
+    handleClick(event) {
+        this.classList.toggle('is-activated');
+    }
+
+    chipActionHandleClick(event) {
+        event.stopPropagation();
+    }
+
+    connectedCallback() {}
 
     disconnectedCallback() { }
 

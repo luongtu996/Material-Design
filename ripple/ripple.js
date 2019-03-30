@@ -15,12 +15,15 @@ export default class MDRipple {
     }
 
     set size(value) {this._size = value;}
+
     get size() {return this._size}
 
     set delegate(value) {this._delegate = value;}
+
     get delegate() {return this._delegate}
 
     set trigger(value) {this._trigger = value;}
+    
     get trigger() {return this._trigger}
 
     beforeRender() {

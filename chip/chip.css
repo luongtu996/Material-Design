@@ -134,18 +134,21 @@ md-chip,
 
 
 
+md-chip.is-activated .chip__check,
 .chip.is-activated .chip__check {
     width: 24px;
     height: 24px;
     left: 0;
 }
 
+md-chip.is-activated .chip__check .chip__mark::before,
 .chip.is-activated .chip__check .chip__mark::before {
     height: 100%;
     transition: 
     height 100ms ease-in-out 100ms;
 }
 
+md-chip.is-activated .chip__check .chip__mark::after,
 .chip.is-activated .chip__check .chip__mark::after {
     width: 100%;
     transition: 

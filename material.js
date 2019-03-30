@@ -60,7 +60,8 @@ document.querySelectorAll(`
     md-button,
     md-checkbox,
     md-radio,
-    md-switch
+    md-switch,
+    md-chip
 `).forEach(el => {
     for (var i = el.attributes.length - 1; i >= 0; i--) {
         att.push(el.attributes[i].name);
