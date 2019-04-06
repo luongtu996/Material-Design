@@ -41,7 +41,7 @@ export default class Router {
     get hash() {
         let hash = window.location.hash;
 
-        // hash = hash === '' ? '/' : hash;
+        hash = hash === '' ? '/' : hash;
         hash = hash.replace(/#/, '');
         hash = hash.replace(/\?.*/, '');
 
@@ -81,6 +81,8 @@ export default class Router {
                 routerComponent[matches.index].nextSibling.remove();
                 routerComponent[matches.index].insertAdjacentHTML('afterend', matches.component);
             }
+
+            console.log(matches);
         });
     }
 
