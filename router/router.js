@@ -1,126 +1,117 @@
-let hash = window.location.hash = '/path4/path4/path4/';
+/* 
+    @class Component
+*/
+class Component extends HTMLElement {
+    constructor() {
+        super();
+    }
+}
 
-let pathRegExp = (path) => new RegExp(
-    path
-        .replace(/:(\w+)/g, '([^\/]+)')
-        .replace(/\*/g, '(?:.*)')
-    + '(?:$)'
-);
+/* 
+    @class RouterComponent
+*/
+class RouterComponent extends Component {}
+customElements.define('md-router', RouterComponent);
 
-let route = {
-    path: undefined,
-    // pathName: '',
-    // pathRender: 0,
-    component: undefined,
-    children: [],
-    access: true,
-    accessChild: true,
-};
+/* 
+    @class Router
+*/
+export default class Router {
 
-let routesMap = (routes, pathName = '', pathRender = 0, accessChild) => routes.reduce((acc, value) => {
-    value.pathName = `${pathName}/${value.path}`.replace(/\/\//, '/');
-    // value.pathName = `${pathName}/${value.path}`.slice(1);
-    value.pathRender = pathRender;
-    value.access = accessChild;
-    acc = acc.concat(Object.assign({}, route, value));
-    
-    if (value.children) {
-        acc = acc.concat(routesMap(value.children, `${pathName}/${value.path}`, pathRender + 1, value.accessChild));
+    constructor(routes = []) {
+        this.routes = this.routesMap(routes);
+        this.listenHashchange = this.listenHashchange.bind(this);
+
+        window.addEventListener('DOMContentLoaded', this.listenHashchange);
+        window.addEventListener('hashchange', this.listenHashchange);
+    } 
+
+    set hash(path) {
+        window.location.hash = path;
     }
 
-    return acc;
-}, []);
+    get hash() {
+        let hash = window.location.hash;
 
-let hashMatch = (hash, path) => {
-    let matches = hash.match(pathRegExp(path));
+        // hash = hash === '' ? '/' : hash;
+        hash = hash.replace(/#/, '');
+        hash = hash.replace(/\?.*/, '');
 
-    if (matches && matches.index == 0) {
-        return matches;
+        return hash;
     }
 
-    return false;
-};
+    get queryParams() {
+        let query = window.location.hash.match(/\?.*(?:$)/);
 
-let routeMatch = (routes, hash) => routesMap(routes).find(value => hashMatch(hash, value.pathName));
+        if (query) {
+            return [...new URLSearchParams(query[0])].reduce((queryParams, param) => {
+                queryParams[param[0]] = param[1];
 
-let hashMap = hash.split('/').map((value, index, array) => {
-    let hashPath = array.slice(0, index);
-    hashPath.push(value === '' ? '/' : value);
-    return hashPath.join('/');
-});
+                return queryParams;
+            }, {});
+        }
 
-hashMap.map(console.log);
-
-class RouterElement extends HTMLElement { }
-customElements.define('md-router', RouterElement);
-
-let HomeComponent = `<div><h1>HomeComponent</h1><md-router></md-router><div>`;
-let DashboardComponent = `<div><h1>DashboardComponent</h1><md-router></md-router><div>`;
-let Path1Component = `<div><h1>Path1Component</h1><div>`;
-let Path3Component = `<div><h1>Path3Component</h1><md-router></md-router><div>`;
-let Path2Component = `<div><h1>Path2Component</h1><md-router></md-router><div>`;
-let Path4Component = `<div><h1>Path4Component</h1><md-router></md-router><div>`;
-let Path21Component = `<div><h1>Path21Component</h1><div>`;
-let PageNotFoundComponent = `<div><h1>PageNotFoundComponent</h1><div>`;
-
-class AccessAuth {
-    constructor() {}
-    get accessible() {
-        // window.location.hash = '/login'
-        return true;
-    }
-};
-
-let auth = (new AccessAuth()).accessible;
-
-console.log(auth, typeof auth)
-
-let routes = [
-    {
-        path: '', component: HomeComponent, children: [
-            // { path: '', component: DashboardComponent },
-            { path: 'path1', access: auth, component: Path1Component },
-            {
-                path: 'path2', access: auth, accessChild: auth, component: Path2Component, children: [
-                    { path: '', component: Path21Component },
-                    { path: ':id', component: Path21Component }
-                ]
-            },
-            { path: 'path3/:id/:text', component: Path3Component },
-            {
-                path: 'path4', component: Path4Component, access: auth, accessChild: auth, children: [
-                    { path: 'path1' },
-                    { path: 'path2' },
-                    { path: 'path3' },
-                    {
-                        path: 'path4', component: Path4Component, access: auth, accessChild: auth, children: [
-                            { path: 'path1' },
-                            { path: 'path2' },
-                            { path: 'path3' },
-                            { path: 'path4', component: Path4Component }
-                        ]
-                    }
-                ]
-            },
-            { path: '*', component: PageNotFoundComponent }
-        ]
-    },
-    { path: '*', component: PageNotFoundComponent }
-];
-
-routesMap(routes).map((value) => console.log(value));
-
-hashMap.map(value => {
-    let matches = routeMatch(routes, value);
-    let routerElement = document.querySelectorAll('md-router');
-    let routerElementNextSibling = routerElement[matches.pathRender].nextSibling;
-
-    if (matches.access == false) {
-        return false;
-    }
-    if (matches.path === '*' && routerElementNextSibling !== null) {
-        routerElementNextSibling.remove();
+        return {};
     }
 
-    routerElement[matches.pathRender].insertAdjacentHTML('afterend', matches.component);
-});
+    get hashMap() {
+        return this.hash.split('/').map((value, index, array) => {
+            let path = array.slice(0, index);
+            
+            path.push(value);
+
+            return path.join('/');
+        });
+    }
+
+    listenHashchange(event) {
+        this.hashMap.map(hash => {
+            let matches = this.routeMatch(hash);
+            let routerComponent = document.querySelectorAll('md-router');
+            
+            if (matches) {
+                routerComponent[matches.index].nextSibling.remove();
+                routerComponent[matches.index].insertAdjacentHTML('afterend', matches.component);
+            }
+        });
+    }
+
+    pathToRegExp(path) {
+        return new RegExp(
+            path
+                .replace(/:\w+/g, '([^\/]+)')
+                .replace(/\*/g, '(?:.*)')
+            + '(?:$)'
+        )
+    }
+
+    hashMatch(hash, path) {
+        return hash.match(this.pathToRegExp(path));
+    }
+
+    routesMap(routesTree, _path = '', index = 0) {
+        return routesTree.reduce((routes, route) => {
+            route._path = `${_path}/${route.path}`.slice(1);
+            route.index = index;
+            routes = routes.concat(route);
+            
+            if (route.children) {
+                routes = routes.concat(this.routesMap(route.children, `${_path}/${route.path}`, index + 1));
+            }
+
+            return routes;
+        }, []);
+    }
+
+    routeMatch(hash) {
+        return this.routes.find(route => {
+            let matches = this.hashMatch(hash, route._path);
+
+            if (matches && matches[0] == hash) {
+                return matches;
+            }
+
+            return null;
+        });
+    }
+}

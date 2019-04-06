@@ -5,23 +5,66 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Material</title>
-    <link rel="stylesheet" href="../material.css">
-    <style>
-        body {
-            margin: 64px;
-        }
-
-        :empty {
-            display: none;
-        }
-    </style>
+    <title>Document</title>
 </head>
 
 <body>
+
     <md-router></md-router>
-    <!-- <script src="../material.js"></script> -->
-    <script src="./router.js" type="module"></script>
+
+    <!-- <script src="./router.js" type="module"></script> -->
+    <script type="module">
+        import Router from './router.js';
+        // test
+        let HomeLayoutComponent = `<div>
+            <h1>HomeLayoutComponent</h1> 
+            <div>
+                <a href="#/home">HomeComponent</a>
+            </div>
+            <div>
+                <a href="#/users">UsersComponent</a>
+            </div>
+            <div>
+                <a href="#/users/1">UsersProfileComponent</a>
+            </div>
+            <div>
+                <a href="#/login">LoginComponent</a>
+            </div>
+            <div>
+                <a href="#/register">RegisterComponent</a>
+            </div>
+            <md-router></md-router> 
+        </div>`;
+        let HomeComponent = `<div> <h1>HomeComponent</h1> <md-router></md-router> </div>`;
+        let UsersComponent = `<div> <h1>UsersComponent</h1> <md-router></md-router> </div>`;
+        let UsersProfileComponent = `<div> <h1>UsersProfileComponent</h1> <md-router></md-router> </div>`;
+        let UserProfileComponent = `<div> <h1>UserProfileComponent</h1> <md-router></md-router> </div>`;
+        let LoginLayoutComponent = `<div> <h1>LoginLayoutComponent</h1> <md-router></md-router> </div>`;
+        let LoginComponent = `<div> <h1>LoginComponent</h1> <md-router></md-router> </div>`;
+        let RegisterComponent = `<div> <h1>RegisterComponent</h1> <md-router></md-router> </div>`;
+        let PageNotFoundComponent = `<div> <h1>PageNotFoundComponent</h1> <md-router></md-router> </div>`;
+
+        let routes = [
+            { path: '', component: HomeLayoutComponent, children: [
+                // { path: '', component: HomeComponent },
+                { path: 'home', component: HomeComponent },
+                { path: 'users', component: UsersComponent, children: [
+                    { path: '', component: UsersProfileComponent },
+                    { path: ':id', component: UserProfileComponent },
+                    { path: '*', component: PageNotFoundComponent },
+                ]},
+            ]},
+            { path: '', component: LoginLayoutComponent, children: [
+                // { path: '', component: LoginComponent },
+                { path: 'login', component: LoginComponent },
+                { path: 'register', component: RegisterComponent },
+            ]},
+        ];
+
+        let router = new Router(routes);
+
+        // router.hash = '/home/asdf';
+    </script>
 </body>
 
 </html>
