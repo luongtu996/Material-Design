@@ -18,6 +18,14 @@ customElements.define('md-router', RouterComponent);
 */
 export default class Router {
 
+    route = {
+        path: undefined,
+        component: undefined,
+        children: [],
+        access: true,
+        accessChild: true,
+    }
+
     constructor(routes = []) {
         this.routes = this.routesMap(routes);
         this.listenHashchange = this.listenHashchange.bind(this);
@@ -91,6 +99,7 @@ export default class Router {
 
     routesMap(routesTree, _path = '', index = 0) {
         return routesTree.reduce((routes, route) => {
+            route = Object.assign({}, this.route, route);
             route._path = `${_path}/${route.path}`.slice(1);
             route.index = index;
             routes = routes.concat(route);
