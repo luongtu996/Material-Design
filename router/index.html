@@ -45,28 +45,37 @@
         let UsersComponent = `<div> <h1>UsersComponent</h1> <md-router></md-router> </div>`;
         let UsersProfileComponent = `<div> <h1>UsersProfileComponent</h1> <md-router></md-router> </div>`;
         let UserProfileComponent = `<div> <h1>UserProfileComponent</h1> <md-router></md-router> </div>`;
+        let UserXProfileComponent = `<div> <h1>UserXProfileComponent</h1> <md-router></md-router> </div>`;
         let LoginLayoutComponent = `<div> <h1>LoginLayoutComponent</h1> <md-router></md-router> </div>`;
         let LoginComponent = `<div> <h1>LoginComponent</h1> <md-router></md-router> </div>`;
         let RegisterComponent = `<div> <h1>RegisterComponent</h1> <md-router></md-router> </div>`;
         let PageNotFoundComponent = `<div> <h1>PageNotFoundComponent</h1> <md-router></md-router> </div>`;
 
         let routes = [
-            { path: '', component: HomeLayoutComponent, children: [
-                { path: '', component: HomeComponent },
-                { path: 'home', component: HomeComponent },
-                { path: 'users', component: UsersComponent, children: [
-                    { path: '', component: UsersProfileComponent },
-                    { path: ':id', component: UserProfileComponent },
-                    { path: '*', component: PageNotFoundComponent },
-                ]},
-                // { path: '*', component: PageNotFoundComponent },
-            ]},
-            { path: '', component: LoginLayoutComponent, children: [
-                // { path: '', component: LoginComponent },
-                { path: 'login', component: LoginComponent },
-                { path: 'register', component: RegisterComponent },
-                // { path: '*', component: PageNotFoundComponent },
-            ]},
+            {
+                path: '', component: HomeLayoutComponent, children: [
+                    { path: '', component: HomeComponent },
+                    { path: 'home', component: HomeComponent },
+                    {
+                        path: 'users', component: UsersComponent, children: [
+                            { path: '', component: UsersProfileComponent },
+                            { path: ':id', component: UserProfileComponent, children: [
+                                { path: ':text', component: UserXProfileComponent, }
+                            ]},
+                            // { path: '*', component: PageNotFoundComponent },
+                        ]
+                    },
+                    // { path: '*', component: PageNotFoundComponent },
+                ]
+            },
+            {
+                path: '', component: LoginLayoutComponent, children: [
+                    // { path: '', component: LoginComponent },
+                    { path: 'login', component: LoginComponent },
+                    { path: 'register', component: RegisterComponent },
+                    // { path: '*', component: PageNotFoundComponent },
+                ]
+            },
             { path: '*', component: PageNotFoundComponent },
         ];
 
