@@ -16,8 +16,7 @@ customElements.define('md-router', RouterComponent);
 /* 
     @class Router
 */
-// export default 
-class Router {
+export default class Router {
 
     route = {
         path: undefined,
@@ -81,9 +80,14 @@ class Router {
         this.aliasMap.map(alias => {
             let matches = this.routeMatchAlias(alias);
             let routerComponent = document.querySelectorAll('md-router');
+            let routerComponentNextElementSibling = routerComponent[matches.pathId].nextElementSibling
 
             if (matches) {
-                routerComponent[matches.pathId].nextSibling.remove();
+
+                if (routerComponentNextElementSibling) {
+                    routerComponentNextElementSibling.remove();
+                }
+
                 routerComponent[matches.pathId].insertAdjacentHTML('afterend', matches.component);
             }
         });
