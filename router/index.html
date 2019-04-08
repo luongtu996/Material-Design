@@ -49,8 +49,8 @@
     <script type="module">
         import Router from './router.js';
 
-        let HomeLayoutComponent = 
-        `<div>
+        let HomeLayoutComponent = `
+        <div>
             <div class="top"></div>
             <div class="left">
                 <ul>
@@ -77,7 +77,8 @@
             <div class="center">
                 <md-router></md-router>
             </div>    
-        </div>`;
+        </div>
+        `;
         let HomeComponent = `<div> <h1>HomeComponent</h1> <md-router></md-router> </div>`;
         // let HomeComponent = `<div> <h1>HomeComponent</h1> <md-router></md-router> </div>`;
         let DashboardComponent = `<div> <h1>DashboardComponent</h1> <md-router></md-router> </div>`;
@@ -85,7 +86,15 @@
         let UsersProfileComponent = `<div> <h1>UsersProfileComponent</h1> <md-router></md-router> </div>`;
         let UserProfileComponent = `<div> <h1>UserProfileComponent</h1> <md-router></md-router> </div>`;
         let UserDetailProfileComponent = `<div> <h1>UserDetailProfileComponent</h1> <md-router></md-router> </div>`;
-        let AuthLayoutComponent = `<div> <h1>AuthLayoutComponent</h1> <md-router></md-router> </div>`;
+        let AuthLayoutComponent = `
+            <div>
+                <ul>
+                    <li><a href="#/login">LoginComponent</a></li>
+                    <li><a href="#/register">RegisterComponent</a></li>
+                </ul>
+                <md-router></md-router>
+            </div>
+        `;
         let LoginComponent = `<div> <h1>LoginComponent</h1> <md-router></md-router> </div>`;
         // let LoginComponent = `<div> <h1>LoginComponent</h1> <md-router></md-router> </div>`;
         let RegisterComponent = `<div> <h1>RegisterComponent</h1> <md-router></md-router> </div>`;
