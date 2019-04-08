@@ -130,7 +130,9 @@
             { path: '*', component: PageNotFoundComponent },
         ];
 
-        new Router(routes);
+        let router = new Router(routes);
+        // base path
+        router.hash = '/';
 
     </script>
 </body>
