@@ -1,165 +1,156 @@
-/* 
-    @class Component
-*/
-class Component extends HTMLElement {
-    constructor() {
-        super();
-    }
-}
+/**
+ * @class
+ * @extends {HTMLElement}
+ */
+class Component extends HTMLElement { }
 
-/* 
-    @class RouterComponent
-*/
+/**
+ * @class
+ * @extends {Component}
+ */
 class RouterComponent extends Component { }
+// <md-router></md-router>
 customElements.define('md-router', RouterComponent);
 
-/* 
-    @class Router
-*/
+/**
+ * @class
+ */
 export default class Router {
 
-    // user by system
-    // to compare with new alias
-    aliasing = '';
+    /**
+     * @private
+     * @property {object} queryParams
+     */
+    queryParams = {};
 
-    // base route template
+    /**
+     * @private
+     * @property {object} pathParams
+     */
+    pathParams = {};
+
+    /**
+     * @private
+     * @property {object} oldPath
+     */
+    oldPath = [];
+
+    /**
+     * @private
+     * @property {object} route
+     * @property {object} route.component
+     * @property {object} route.path
+     * @property {object} route.children
+     */
     route = {
+        component: `<div><md-router></md-router></div>`,
         path: undefined,
-        component: undefined,
         children: [],
-        access: true,
-        accessChild: true,
-    }
+    };
 
+    /**
+     * @constructor
+     * @param {array} routes 
+     */
     constructor(routes = []) {
-        // intialize route
-        this.routes = routes;
-        // binding `this` to listener
-        this.listenHashchange = this.listenHashchange.bind(this);
+        this.routes = this.routesReduce(routes);
+        this.hashChange = this.hashChange.bind(this);
 
-        // listener
-        window.addEventListener('DOMContentLoaded', this.listenHashchange);
-        window.addEventListener('hashchange', this.listenHashchange);
+        window.addEventListener('DOMContentLoaded', this.hashChange);
+        window.addEventListener('hashchange', this.hashChange);
     }
 
-    // routes map
-    set routes(routes = []) {
-        this._routes = this.routesMap(routes);
-    }
-
-    // current routes map
-    get routes() {
-        return this._routes;
-    }
-
-    // set hash
-    set hash(path) {
-        window.location.hash = path;
-    }
-
-    // get current hash
-    get hash() {
-        return window.location.hash.replace(/#/, '').replace(/\?.*/, '');
-    }
-
-    // change hash to path root
-    get alias() {
-        let matches = this.routeMatchName(this.hash);
-        return matches ? matches.pathAlias : matches;
-    }
-
-    // handle child route
-    get aliasMap() {
-        return this.alias.split('/').map((value, index, array) => {
-            let path = array.slice(0, index);
-            path.push(value);
-            return path.join('/');
-        });
-    }
-
-    // getting hash with query params
-    get queryParams() {
-        let query = window.location.hash.match(/\?.*(?:$)/);
-
-        if (query) {
-            return [...new URLSearchParams(query[0])].reduce((queryParams, param) => {
-                queryParams[param[0]] = param[1];
-                return queryParams;
-            }, {});
-        }
-
-        return {};
-    }
-    
-    // render...
-    listenHashchange(event) {
-        this.aliasMap.map((alias, index, array) => {
-            let matches = this.routeMatchAlias(alias);
-            let aliasingList = this.aliasing.split('/');
-            let aliasList = alias.split('/');
-            
-            if (aliasingList[index] !== aliasList[index] || (array.length - 1) == index) {
-
-                if (matches) {                    
-                    let routerComponent = document.querySelectorAll('md-router');
-                    let routerComponentNextElementSibling = routerComponent[matches.pathId].nextElementSibling
-                    
-                    if (routerComponentNextElementSibling) {
-                        routerComponentNextElementSibling.remove();
-                    }
-                    
-                    routerComponent[matches.pathId].insertAdjacentHTML('afterend', matches.component);
-                }
-
-                this.aliasing = alias;
-            }
-        });
-    }
-
-    // regexp for pathName & path alias
-    pathToRegExp(path) {
-        return new RegExp(path.replace(/:\w+/g, '([^\/]+)').replace(/\*/g, '(?:.*)') + '(?:$)');
-    }
-
-    // maching hash with path
-    // maching alias with path
-    hashMatch(hash, path) {
-        let matches = hash.match(this.pathToRegExp(path));
-
-        if (matches && matches[0] == hash) {
-            return matches;
-        }
-
-        return null;
-    }
-
-    // flatten routes
-    routesMap(routesTree, pathName = '', pathAlias = '', pathId = 0) {
-        return routesTree.reduce((routes, route, index) => {
+    /**
+     * routesReduce
+     * @param {array} routes 
+     * @param {string} name 
+     * @param {string} id 
+     * @param {number} level 
+     */
+    routesReduce(routes = [], name = '', id = '', level = 0) {
+        return routes.reduce((routes, route, index) => {
             route = Object.assign({}, this.route, route);
-            index = route.path.match(/:\w+/g) ? route.path : index;
-
-            route.pathName = `${pathName}/${route.path}`.slice(1);
-            route.pathAlias = `${pathAlias}/${index}`.slice(1);
-            route.pathId = pathId;
-
+            route.name = `${name}/${route.path}`.slice(1);
+            route.id = `${id}/${index}`.slice(1);
+            route.level = level;
             routes = routes.concat(route);
 
             if (route.children) {
-                routes = routes.concat(this.routesMap(route.children, `${pathName}/${route.path}`, `${pathAlias}/${index}`, pathId + 1));
+                routes = routes.concat(this.routesReduce(route.children, `${name}/${route.path}`, `${id}/${index}`, (level + 1)));
             }
 
             return routes;
         }, []);
     }
 
-    // matches by pathName
-    routeMatchName(hash) {
-        return this.routes.find(route => this.hashMatch(hash, route.pathName));
+    /**
+     * @type {string} hash
+     */
+    get hash() {
+        return window.location.hash.replace(/#|(?:\?)(.*)(?:$)/g, (search, query) => {
+            this.queryParams = [...new URLSearchParams(query)].reduce((result, param) => {
+                result[param[0]] = param[1];
+
+                return result;
+            }, {});
+
+            return '';
+        });
     }
-    
-    // matches by pathAlias
-    routeMatchAlias(hash) {
-        return this.routes.find(route => this.hashMatch(hash, route.pathAlias));
+
+    /**
+     * hashMatch
+     * @param {string} hash 
+     * @param {string} path 
+     */
+    hashMatch(hash, path) {
+        let params = [];
+        let matches = hash.match(new RegExp(path.replace(/(?:\:)(\w+)/g, (search, param) => {
+            if (params.indexOf(param) == -1) {
+                params.push(param);
+            }
+
+            return '([^\/]+)';
+        }).replace(/\*/g, '(?:.*)') + '(?:$)'));
+
+        if (matches && matches[0] === hash) {
+            if (params.length > 0) {
+                this.pathParams = matches.slice(1).reduce((result, param, index) => {
+                    result[params[index]] = param;
+
+                    return result;
+                }, {});
+            }
+
+            return matches;
+        }
+
+        return null;
+    }
+
+    /**
+     * @listens hashChange
+     */
+    hashChange() {
+        let route = this.routes.find(route => this.hashMatch(this.hash, route.name));
+
+        route.id.split('/').map((id, index, array) => {
+            let newPath = array.slice(0, index);
+            newPath.push(id);
+            let matches = this.routes.find(route => this.hashMatch(newPath.join('/'), route.id));
+
+            if (matches && this.oldPath[index] !== newPath[index] || (array.length - 1) == index) {
+
+                let mdRouter = document.querySelectorAll('md-router');
+
+                if (mdRouter[matches.level].nextElementSibling) {
+                    mdRouter[matches.level].nextElementSibling.remove();
+                }
+
+                mdRouter[matches.level].insertAdjacentHTML('afterend', matches.component);
+
+                this.oldPath = newPath;
+            }
+        });
     }
 }

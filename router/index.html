@@ -8,35 +8,8 @@
     <title>Material</title>
     <link rel="stylesheet" href="../material.css">
     <style>
-        /* body {
+        body {
             margin: 64px;
-        } */
-
-        .top {
-            position: fixed;
-            z-index: 4;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 64px;
-            background-color: #fff;
-            box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.12);
-        }
-
-        .left {
-            position: fixed;
-            z-index: 16;
-            left: 0;
-            top: 0;
-            width: 256px;
-            height: 100%;
-            background-color: #fff;
-            box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.12);
-        }
-
-        .center {
-            margin-left: calc(256px + 24px);
-            margin-top: calc(64px + 24px);
         }
     </style>
 </head>
@@ -49,91 +22,39 @@
     <script type="module">
         import Router from './router.js';
 
-        let HomeLayoutComponent = `
-        <div>
-            <div class="top"></div>
-            <div class="left">
-                <ul>
-                    <li><a href="#/">HomeComponent</a></li>
-                    <li><a href="#/dashboard">DashboardComponent</a></li>
-                    <li><a href="#/users">UsersComponent</a></li>
-                    <li><a href="#/users/id">UsersProfileComponent</a></li>
-                    <li><a href="#/users/id/name">UserDetailProfileComponent</a></li>
-                </ul>
-                <hr class="divider">
-                <ul>
-                    <li><a href="#/login">LoginComponent</a></li>
-                    <li><a href="#/register">RegisterComponent</a></li>
-                </ul>
-                <hr class="divider">
-                <ul>
-                    <li><a href="#/chat/id/name">ChatComponent</a></li>
-                </ul>
-                <hr class="divider">
-                <ul>
-                    <li><a href="#/PageNotFoundComponent">PageNotFoundComponent</a></li>
-                </ul>
-            </div>
-            <div class="center">
-                <md-router></md-router>
-            </div>    
-        </div>
-        `;
-        let HomeComponent = `<div> <h1>HomeComponent</h1> <md-router></md-router> </div>`;
-        // let HomeComponent = `<div> <h1>HomeComponent</h1> <md-router></md-router> </div>`;
-        let DashboardComponent = `<div> <h1>DashboardComponent</h1> <md-router></md-router> </div>`;
-        let UsersComponent = `<div> <h1>UsersComponent</h1> <md-router></md-router> </div>`;
-        let UsersProfileComponent = `<div> <h1>UsersProfileComponent</h1> <md-router></md-router> </div>`;
-        let UserProfileComponent = `<div> <h1>UserProfileComponent</h1> <md-router></md-router> </div>`;
-        let UserDetailProfileComponent = `<div> <h1>UserDetailProfileComponent</h1> <md-router></md-router> </div>`;
-        let AuthLayoutComponent = `
-            <div>
-                <ul>
-                    <li><a href="#/login">LoginComponent</a></li>
-                    <li><a href="#/register">RegisterComponent</a></li>
-                </ul>
-                <md-router></md-router>
-            </div>
-        `;
-        let LoginComponent = `<div> <h1>LoginComponent</h1> <md-router></md-router> </div>`;
-        // let LoginComponent = `<div> <h1>LoginComponent</h1> <md-router></md-router> </div>`;
-        let RegisterComponent = `<div> <h1>RegisterComponent</h1> <md-router></md-router> </div>`;
-        let ChatComponent = `<div> <h1>ChatComponent</h1> <md-router></md-router> </div>`;
-        let PageNotFoundComponent = `<div> <h1>PageNotFoundComponent</h1> <md-router></md-router> </div>`;
+        let HomeLayoutComponent = `<div><h1>HomeLayoutComponent</h1><md-router></md-router></div>`;
+        let HomeComponent = `<div><h1>HomeComponent</h1><md-router></md-router></div>`;
+        let UsersComponent = `<div><h1>UsersComponent</h1><md-router></md-router></div>`;
+        let UsersProfileComponent = `<div><h1>UsersProfileComponent</h1><md-router></md-router></div>`;
+        let UserProfileComponent = `<div><h1>UserProfileComponent</h1><md-router></md-router></div>`;
+        let LoginLayoutComponent = `<div><h1>LoginLayoutComponent</h1><md-router></md-router></div>`;
+        let LoginComponent = `<div><h1>LoginComponent</h1><md-router></md-router></div>`;
+        let RegisterComponent = `<div><h1>RegisterComponent</h1><md-router></md-router></div>`;
+        let DemoComponent = `<div><h1>DemoComponent</h1><md-router></md-router></div>`;
+        let PageNotFoundComponent = `<div><h1>PageNotFoundComponent</h1><md-router></md-router></div>`;
 
         let routes = [
-            {
-                path: '', component: HomeLayoutComponent, children: [
-                    { path: '', component: HomeComponent },
-                    { path: 'home', component: HomeComponent },
-                    { path: 'dashboard', component: DashboardComponent },
-                    {
-                        path: 'users', component: UsersComponent, children: [
-                            // { path: '', component: UsersProfileComponent },
-                            {
-                                path: ':id', component: UserProfileComponent, children: [
-                                    { path: ':name', component: UserDetailProfileComponent }
-                                ]
-                            },
-                        ]
-                    },
-                ]
-            },
-            {
-                path: '', component: AuthLayoutComponent, children: [
-                    // { path: '', component: LoginComponent },
-                    { path: 'login', component: LoginComponent },
-                    { path: 'register', component: RegisterComponent },
-                ]
-            },
-            { path: '/chat/:id/:name', component: ChatComponent },
-            { path: '*', component: PageNotFoundComponent },
+            { component: HomeLayoutComponent, path: '', children: [
+                // { component: HomeComponent, path: '' },
+                { component: HomeComponent, path: 'home' },
+                { component: UsersComponent, path: 'users', children: [
+                    { component: UsersProfileComponent, path: '' },
+                    { component: UserProfileComponent, path: ':id', children: [
+                        { component: UsersProfileComponent, path: '' },
+                        { component: UserProfileComponent, path: ':name' },
+                    ]},
+                ]},
+            ]},
+            { component: LoginLayoutComponent, path: '', children: [
+                // { component: LoginComponent, path: '' },
+                { component: LoginComponent, path: 'login' },
+                { component: RegisterComponent, path: 'register' },
+            ]},
+            { component: DemoComponent, path: '/demo/:path/:param' },
+            { component: PageNotFoundComponent, path: '*' },
         ];
 
-        let router = new Router(routes);
-        // base path
-        router.hash = '/';
-
+        new Router(routes);
     </script>
 </body>
 
