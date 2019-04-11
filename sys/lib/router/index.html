@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Material</title>
-    <link rel="stylesheet" href="../material.css">
+    <!-- <link rel="stylesheet" href="../material.css"> -->
     <style>
         body {
             margin: 64px;
@@ -52,24 +52,24 @@
         let PageNotFoundComponent = `<div><h1>PageNotFoundComponent</h1><md-router></md-router></div>`;
 
         let routes = [
-            { component: HomeLayoutComponent, path: '', children: [
-                // { component: HomeComponent, path: '' },
-                { component: HomeComponent, path: 'home' },
-                { component: UsersComponent, path: 'users', children: [
-                    { component: UsersProfileComponent, path: '' },
-                    { component: UserProfileComponent, path: ':id', children: [
-                        { component: UserDetailComponent, path: '' },
-                        { component: UserDetailComponent, path: ':name' },
+            { componentType: 'HTML', component: HomeLayoutComponent, path: '', children: [
+                // { componentType: 'HTML', component: HomeComponent, path: '' },
+                { componentType: 'HTML', component: HomeComponent, path: 'home' },
+                { componentType: 'HTML', component: UsersComponent, path: 'users', children: [
+                    { componentType: 'HTML', component: UsersProfileComponent, path: '' },
+                    { componentType: 'HTML', component: UserProfileComponent, path: ':id', children: [
+                        { componentType: 'HTML', component: UserDetailComponent, path: '' },
+                        { componentType: 'HTML', component: UserDetailComponent, path: ':name' },
                     ]},
                 ]},
             ]},
-            { component: LoginLayoutComponent, path: '', children: [
-                // { component: LoginComponent, path: '' },
-                { component: LoginComponent, path: 'login' },
-                { component: RegisterComponent, path: 'register' },
+            { componentType: 'HTML', component: LoginLayoutComponent, path: '', children: [
+                // { componentType: 'HTML', component: LoginComponent, path: '' },
+                { componentType: 'HTML', component: LoginComponent, path: 'login' },
+                { componentType: 'HTML', component: RegisterComponent, path: 'register' },
             ]},
-            { component: DemoComponent, path: '/demo/:path/:param' },
-            { component: PageNotFoundComponent, path: '*' },
+            { componentType: 'HTML', component: DemoComponent, path: '/demo/:path/:param' },
+            { componentType: 'HTML', component: PageNotFoundComponent, path: '*' },
         ];
 
         new Router(routes);

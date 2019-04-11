@@ -147,7 +147,12 @@ export default class Router {
                     mdRouter[matches.level].nextElementSibling.remove()
                 }
 
-                mdRouter[matches.level].insertAdjacentElement('afterend', matches.component)
+                if (matches.componentType && matches.componentType == 'HTML') {
+                    mdRouter[matches.level].insertAdjacentHTML('afterend', matches.component)
+                } else {
+                    mdRouter[matches.level].insertAdjacentElement('afterend', matches.component)
+                }
+
 
                 this.oldPath = newPath
             }
