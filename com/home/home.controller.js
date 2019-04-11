@@ -1,7 +1,7 @@
 import HomeModel from './home.model.js';
 import HomeView from './home.view.js';
 
-class HomeComponent extends HTMLElement {
+class HomeController extends HTMLElement {
     constructor() {
         super()
         this.homeModel = new HomeModel()
@@ -10,6 +10,6 @@ class HomeComponent extends HTMLElement {
     }
 }
 
-customElements.define('home-component', HomeComponent)
+customElements.define('home-component', HomeController)
 
-export default new HomeComponent()
+export default new HomeController()

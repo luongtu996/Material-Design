@@ -1,6 +1,17 @@
 import Router from './sys/lib/router/router.js';
-import HomeComponent from './com/home/home.component.js';
+import HomeController from './com/home/home.controller.js';
 
 new Router([
-    { path: '', component: HomeComponent }
+    { path: '', component: HomeController }
 ])
+
+/**
+ * app
+ *  /index.html
+ *  /app.js
+ *  com
+ *      /home
+ *          /home.controller.js
+ *          /home.model.js
+ *          /home.view.js
+ */
