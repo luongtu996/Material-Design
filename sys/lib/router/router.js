@@ -10,7 +10,7 @@ class Component extends HTMLElement { }
  */
 class RouterComponent extends Component { }
 // <md-router></md-router>
-customElements.define('md-router', RouterComponent);
+customElements.define('md-router', RouterComponent)
 
 /**
  * @class
@@ -21,19 +21,19 @@ export default class Router {
      * @private
      * @property {object} queryParams
      */
-    queryParams = {};
+    queryParams = {}
 
     /**
      * @private
      * @property {object} pathParams
      */
-    pathParams = {};
+    pathParams = {}
 
     /**
      * @private
      * @property {object} oldPath
      */
-    oldPath = [];
+    oldPath = []
 
     /**
      * @private
@@ -46,18 +46,18 @@ export default class Router {
         component: `<div><md-router></md-router></div>`,
         path: undefined,
         children: [],
-    };
+    }
 
     /**
      * @constructor
      * @param {array} routes 
      */
     constructor(routes = []) {
-        this.routes = this.routesReduce(routes);
-        this.hashChange = this.hashChange.bind(this);
+        this.routes = this.routesReduce(routes)
+        this.hashChange = this.hashChange.bind(this)
 
-        window.addEventListener('DOMContentLoaded', this.hashChange);
-        window.addEventListener('hashchange', this.hashChange);
+        window.addEventListener('DOMContentLoaded', this.hashChange)
+        window.addEventListener('hashchange', this.hashChange)
     }
 
     /**
@@ -69,17 +69,17 @@ export default class Router {
      */
     routesReduce(routes = [], name = '', id = '', level = 0) {
         return routes.reduce((routes, route, index) => {
-            route = Object.assign({}, this.route, route);
-            route.name = `${name}/${route.path}`.slice(1);
-            route.id = `${id}/${index}`.slice(1);
-            route.level = level;
-            routes = routes.concat(route);
+            route = Object.assign({}, this.route, route)
+            route.name = `${name}/${route.path}`.slice(1)
+            route.id = `${id}/${index}`.slice(1)
+            route.level = level
+            routes = routes.concat(route)
 
             if (route.children) {
-                routes = routes.concat(this.routesReduce(route.children, `${name}/${route.path}`, `${id}/${index}`, (level + 1)));
+                routes = routes.concat(this.routesReduce(route.children, `${name}/${route.path}`, `${id}/${index}`, (level + 1)))
             }
 
-            return routes;
+            return routes
         }, []);
     }
 
@@ -89,12 +89,12 @@ export default class Router {
     get hash() {
         return window.location.hash.replace(/#|(?:\?)(.*)(?:$)/g, (search, query) => {
             this.queryParams = [...new URLSearchParams(query)].reduce((result, param) => {
-                result[param[0]] = param[1];
+                result[param[0]] = param[1]
 
                 return result;
             }, {});
 
-            return '';
+            return ''
         });
     }
 
@@ -104,53 +104,55 @@ export default class Router {
      * @param {string} path 
      */
     hashMatch(hash, path) {
-        let params = [];
+        let params = []
         let matches = hash.match(new RegExp(path.replace(/(?:\:)(\w+)/g, (search, param) => {
             if (params.indexOf(param) == -1) {
-                params.push(param);
+                params.push(param)
             }
 
             return '([^\/]+)';
-        }).replace(/\*/g, '(?:.*)') + '(?:$)'));
+        }).replace(/\*/g, '(?:.*)') + '(?:$)'))
 
         if (matches && matches[0] === hash) {
             if (params.length > 0) {
                 this.pathParams = matches.slice(1).reduce((result, param, index) => {
-                    result[params[index]] = param;
+                    result[params[index]] = param
 
-                    return result;
+                    return result
                 }, {});
             }
 
-            return matches;
+            return matches
         }
 
-        return null;
+        return null
     }
 
     /**
      * @listens hashChange
      */
     hashChange() {
-        let route = this.routes.find(route => this.hashMatch(this.hash, route.name));
+        let route = this.routes.find(route => this.hashMatch(this.hash, route.name))
 
         route.id.split('/').map((id, index, array) => {
-            let newPath = array.slice(0, index);
-            newPath.push(id);
-            let matches = this.routes.find(route => this.hashMatch(newPath.join('/'), route.id));
+            let newPath = array.slice(0, index)
+            newPath.push(id)
+            let matches = this.routes.find(route => this.hashMatch(newPath.join('/'), route.id))
 
             if (matches && this.oldPath[index] !== newPath[index] || (array.length - 1) == index) {
 
-                let mdRouter = document.querySelectorAll('md-router');
+                let mdRouter = document.querySelectorAll('md-router')
 
                 if (mdRouter[matches.level].nextElementSibling) {
-                    mdRouter[matches.level].nextElementSibling.remove();
+                    mdRouter[matches.level].nextElementSibling.remove()
                 }
 
-                mdRouter[matches.level].insertAdjacentHTML('afterend', matches.component);
+                mdRouter[matches.level].insertAdjacentElement('afterend', matches.component)
 
-                this.oldPath = newPath;
+                this.oldPath = newPath
             }
         });
     }
 }
+
+// export default new Router()
