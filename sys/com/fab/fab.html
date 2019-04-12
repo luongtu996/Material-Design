@@ -5,7 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Material</title>
-    <link rel="stylesheet" href="../material.css">
+    <!-- <link rel="stylesheet" href="../foundation/foundation.css"> -->
+    <link rel="stylesheet" href="../layout/layout.css">
+    <!-- <link rel="stylesheet" href="../icon/icon.css"> -->
+    <!-- <link rel="stylesheet" href="./fab.css"> -->
     <style>
         body {
             margin: 64px;
@@ -13,7 +16,7 @@
     </style>
 </head>
 <body>
-    <button class="fab">
+    <!-- <button class="fab">
         <span class="fab__icon icon">&#xEB52;</span>
     </button>
     <br><br>
@@ -29,27 +32,167 @@
     </button>
     <br><br>
 
-    <hr class="divider">
+    <hr class="divider"> -->
 
-    <md-fab
-        icon="&#xEB52;"
-    ></md-fab>
-    <br><br>
+    <div class="layout">
+        <div class="layout__grid">
+            <div class="layout__column layout__column--3-desktop">
+                <wk-fab icon="&#xEB52;"></wk-fab>
+                <br>
+                <br>
+            </div>
+            <div class="layout__column layout__column--3-desktop">
+                <wk-fab mini icon="&#xEB52;"></wk-fab>
+                <br>
+                <br>
+            </div>
+            <div class="layout__column layout__column--3-desktop">
+                <wk-fab extended text="fab" icon="&#xEB52;"></wk-fab>
+                <br>
+                <br>
 
-    <md-fab
-        icon="&#xEB52;"
-        mini
-    ></md-fab>
-    <br><br>
+                <wk-fab extended text="long fab text"></wk-fab>
+                <br>
+                <br>
+            </div>
+            <div class="layout__column layout__column--3-desktop"></div>
+        </div>
+    </div>
 
-    <md-fab
-        text="md-fab"
-        icon="&#xEB52;"
-        extended
-    ></md-fab>
-    <br><br>
+    <style>
+        /* .doc-table {} */
     
-    <script src="../material.js"></script>
+        /* .doc-table thead {} */
+    
+        /* .doc-table tbody {} */
+    
+        /* .doc-table tr {} */
+    
+        .doc-table th,
+        .doc-table td {
+            height: 48px;
+            padding: 0 16px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+            border-right: 1px solid rgba(0, 0, 0, 0.12);
+        }
+    
+        .doc-table th {
+            border-top: 1px solid rgba(0, 0, 0, 0.12);
+        }
+    
+        .doc-table th:first-child,
+        .doc-table td:first-child {
+            border-left: 1px solid rgba(0, 0, 0, 0.12);
+        }
+    </style>
+    
+    <br>
+    <br>
+    
+    <table class="doc-table">
+        <thead>
+            <tr>
+                <th>Tag Name</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>wk-fab</td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <br>
+    <br>
+    
+    <table class="doc-table">
+        <thead>
+            <tr>
+                <th>CSS Class</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>fab</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>fab__icon</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>fab--mini</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>fab--extended</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>fab__text</td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <br>
+    <br>
+    
+    <table class="doc-table">
+        <thead>
+            <tr>
+                <th>Prop Name</th>
+                <th>Type</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>icon</td>
+                <td>String</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>text</td>
+                <td>String</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>mini</td>
+                <td>Boolean</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>extended</td>
+                <td>Boolean</td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <br>
+    <br>
+    
+    <table class="doc-table">
+        <thead>
+            <tr>
+                <th>Event Name</th>
+                <th>Params</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+    
     <script src="./fab.js" type="module"></script>
 </body>
 </html>

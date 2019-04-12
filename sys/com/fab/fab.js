@@ -1,18 +1,30 @@
-import MDRipple from '../ripple/ripple.js';
-
-class MDFab extends HTMLElement {
-
-    template = `
-    ${this.icon ? `<span class="fab__icon icon">${this.icon}</span>` : ``}
-    ${this.text ? `<span class="fab__text">${this.text}</span>` : ``}
-    `;
+class WKFAB extends HTMLElement {
 
     constructor() {
-        super();
+        super()
 
-        this.innerHTML = this.template;
+        this.template()
+        this.styles([
+            '../foundation/foundation.css',
+            '../icon/icon.css',
+            './fab.css'
+        ])
+    }
 
-        new MDRipple(this);
+    template() {
+        this.innerHTML = `
+            ${this.icon ? `<span class="fab__icon icon">${this.icon}</span>` : ``}
+            ${this.text ? `<span class="fab__text">${this.text}</span>` : ``}
+        `
+    }
+
+    styles(styles = []) {
+        styles.map(style => {
+            let link = document.querySelector(`link[href="${style}"]`)
+
+            if (!link)
+                document.querySelector('head').insertAdjacentHTML('beforeend', `<link rel="stylesheet" href="${style}">`)
+        })
     }
 
     connectedCallback() { }
@@ -21,49 +33,42 @@ class MDFab extends HTMLElement {
 
     adoptedCallback() { }
 
-    attributeChangedCallback(name, oldValue, newValue) { }
+    attributeChangedCallback(name, oldValue, newValue) {
+        this.template()
+    }
 
     static get observedAttributes() {
         return [
             'icon',
             'text',
             'mini',
-            'extended',
-            'toggle'
-        ];
+            'extended'
+        ]
     }
 
     get icon() {
-        return this.getAttribute('icon');
+        return this.getAttribute('icon')
     }
 
     set icon(value) {
-        this.setAttribute('icon', value);
+        this.setAttribute('icon', value)
     }
 
     get text() {
-        return this.getAttribute('text');
+        return this.getAttribute('text')
     }
 
     set text(value) {
-        this.setAttribute('text', value);
+        this.setAttribute('text', value)
     }
 
-    get mini() {
-        return this.hasAttribute('mini');
+    get toggle() {
+        this.hasAttribute('toggle')
     }
 
-    set mini(value) {
-        this.setAttribute('mini', '');
-    }
-
-    get extended() {
-        return this.hasAttribute('extended');
-    }
-
-    set extended(value) {
-        this.setAttribute('extended', '');
+    set toggle(value) {
+        this.setAttribute('toggle', '')
     }
 }
 
-customElements.define('md-fab', MDFab);
+customElements.define('wk-fab', WKFAB)

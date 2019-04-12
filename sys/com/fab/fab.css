@@ -1,4 +1,4 @@
-md-fab,
+wk-fab,
 .fab {
     display: inline-flex;
     align-items: center;
@@ -35,14 +35,14 @@ md-fab,
 
 
 
-md-fab[mini],
+wk-fab[mini],
 .fab--mini {
     min-width: 40px;
     max-width: 40px;
     height: 40px;
 }
 
-md-fab[mini] .fab__icon,
+wk-fab[mini] .fab__icon,
 .fab--mini .fab__icon {
     margin: 0 8px;
 }
@@ -52,7 +52,7 @@ md-fab[mini] .fab__icon,
 
 
 
-md-fab[extended],
+wk-fab[extended],
 .fab--extended {
     min-width: 48px;
     max-width: 100%;
@@ -60,12 +60,12 @@ md-fab[extended],
     border-radius: calc(48px / 2);
 }
 
-md-fab[extended] .fab__icon,
+wk-fab[extended] .fab__icon,
 .fab--extended .fab__icon {
     margin: 0 12px;
 }
 
-md-fab[extended] .fab__icon + .fab__text,
+wk-fab[extended] .fab__icon + .fab__text,
 .fab__icon + .fab__text {
     margin-left: -1px;
 }
@@ -74,14 +74,16 @@ md-fab[extended] .fab__icon + .fab__text,
 
 
 
-md-fab {
+wk-fab,
+.fab {
     cursor: pointer;
     user-select: none;
     position: relative;
     /* overflow: hidden; */
 }
 
-md-fab::after {
+wk-fab::after,
+.fab::after {
     content: '';
     pointer-events: none;
     position: absolute;
@@ -96,16 +98,19 @@ md-fab::after {
     opacity: 0;
 }
 
-md-fab:hover::after {
+wk-fab:hover::after,
+.fab:hover::after {
     opacity: 0.08;
 }
 
-md-fab:focus::after {
+wk-fab:focus::after,
+.fab:focus::after {
     opacity: 0.24;
     animation: var(--ripple-animation, ripple-pressed 250ms linear);
     transition: width 250ms ease-in-out, height 250ms ease-in-out, opacity 250ms ease-in-out;
 }
 
-md-fab:active::after {
+wk-fab:active::after,
+.fab:active::after {
     opacity: 0.32;
 }
