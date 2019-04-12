@@ -6,12 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Material</title>
-    <link rel="stylesheet" href="../material.css">
+    <link rel="stylesheet" href="../foundation/foundation.css">
+    <link rel="stylesheet" href="./layout.css">
     <style>
         body {
             margin: 64px;
         }
 
+        wk-layout-column,
         .layout__column {
             height: 64px;
             background-color: #f5f5f5;
@@ -21,7 +23,7 @@
 
 <body>
 
-    <div class="layout">
+    <!-- <div class="layout">
         <div class="layout__grid">
             <div class="layout__column layout__column--1-desktop"></div>
             <div class="layout__column layout__column--11-desktop"></div>
@@ -39,6 +41,8 @@
         </div>
     </div>
 
+    <br><br>
+
     <div class="layout">
         <div class="layout__grid">
             <div class="layout__column layout__column--3-desktop"></div>
@@ -46,9 +50,197 @@
             <div class="layout__column layout__column--3-desktop"></div>
             <div class="layout__column layout__column--3-desktop"></div>
         </div>
-    </div>
+    </div> -->
 
-    <script src="../material.js"></script>
+    <!-- <br><br> -->
+
+    <wk-layout>
+        <wk-layout-grid>
+            <wk-layout-column span="1" desktopSpan="1" tabletSpan="8" mobileSpan="4"></wk-layout-column>
+            <wk-layout-column span="11" desktopSpan="11" tabletSpan="8" mobileSpan="4"></wk-layout-column>
+            <wk-layout-column span="2" desktopSpan="2" tabletSpan="8" mobileSpan="4"></wk-layout-column>
+            <wk-layout-column span="10" desktopSpan="10" tabletSpan="8" mobileSpan="4"></wk-layout-column>
+            <wk-layout-column span="3" desktopSpan="3" tabletSpan="8" mobileSpan="4"></wk-layout-column>
+            <wk-layout-column span="9" desktopSpan="9" tabletSpan="8" mobileSpan="4"></wk-layout-column>
+            <wk-layout-column span="4" desktopSpan="4" tabletSpan="8" mobileSpan="4"></wk-layout-column>
+            <wk-layout-column span="8" desktopSpan="8" tabletSpan="8" mobileSpan="4"></wk-layout-column>
+            <wk-layout-column span="5" desktopSpan="5" tabletSpan="8" mobileSpan="4"></wk-layout-column>
+            <wk-layout-column span="7" desktopSpan="7" tabletSpan="8" mobileSpan="4"></wk-layout-column>
+            <wk-layout-column span="6" desktopSpan="6" tabletSpan="8" mobileSpan="4"></wk-layout-column>
+            <wk-layout-column span="6" desktopSpan="6" tabletSpan="8" mobileSpan="4"></wk-layout-column>
+            <wk-layout-column span="12" desktopSpan="12" tabletSpan="8" mobileSpan="4"></wk-layout-column>
+        </wk-layout-grid>
+    </wk-layout>
+
+    <br><br>
+
+    <wk-layout>
+        <wk-layout-grid>
+            <wk-layout-column span="3" desktopSpan="3" tabletSpan="8" mobileSpan="4"></wk-layout-column>
+            <wk-layout-column span="3" desktopSpan="3" tabletSpan="8" mobileSpan="4"></wk-layout-column>
+            <wk-layout-column span="3" desktopSpan="3" tabletSpan="8" mobileSpan="4"></wk-layout-column>
+            <wk-layout-column span="3" desktopSpan="3" tabletSpan="8" mobileSpan="4"></wk-layout-column>
+        </wk-layout-grid>
+    </wk-layout>
+
+    <style>
+        /* .doc-table {} */
+
+        .doc-table caption {
+            height: 48px;
+            line-height: 48px;
+            text-align: left;
+        }
+    
+        /* .doc-table thead {} */
+    
+        /* .doc-table tbody {} */
+    
+        /* .doc-table tr {} */
+    
+        .doc-table th,
+        .doc-table td {
+            height: 48px;
+            padding: 0 16px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+            border-right: 1px solid rgba(0, 0, 0, 0.12);
+        }
+    
+        .doc-table th {
+            border-top: 1px solid rgba(0, 0, 0, 0.12);
+        }
+    
+        .doc-table th:first-child,
+        .doc-table td:first-child {
+            border-left: 1px solid rgba(0, 0, 0, 0.12);
+        }
+    </style>
+    
+    <br>
+    <br>
+    
+    <table class="doc-table">
+        <thead>
+            <tr>
+                <th>Tag Name</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>wk-layout</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>wk-layout-grid</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>wk-layout-column</td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <br>
+    <br>
+    
+    <table class="doc-table">
+        <thead>
+            <tr>
+                <th>CSS Class</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>layout</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>layout__grid</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>layout__column</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>layout__column--{1-12}</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>layout__column--{1-12}-desktop</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>layout__column--{1-8}-tablet</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>layout__column--{1-4}-mobile</td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <br>
+    <br>
+    
+    <table class="doc-table">
+        <caption>wk-layout-column</caption>
+        <thead>
+            <tr>
+                <th>Prop Name</th>
+                <th>Type</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>span</td>
+                <td>String</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>desktopSpan</td>
+                <td>String</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>tabletSpan</td>
+                <td>String</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>mobileSpan</td>
+                <td>String</td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <br>
+    <br>
+    
+    <table class="doc-table">
+        <thead>
+            <tr>
+                <th>Event Name</th>
+                <th>Params</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script src="./layout.js" type="module"></script>
 </body>
 
 </html>

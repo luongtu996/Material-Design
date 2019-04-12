@@ -1,7 +1,4 @@
-import './layout-grid.js'
-import './layout-column.js'
-
-class WKLayout extends HTMLElement {
+class WKLayoutColumn extends HTMLElement {
 
     constructor() {
         super()
@@ -16,8 +13,13 @@ class WKLayout extends HTMLElement {
     attributeChangedCallback(name, oldValue, newValue) { }
 
     static get observedAttributes() {
-        return []
+        return [
+            'span',
+            'desktopSpan',
+            'tabletSpan',
+            'mobileSpan'
+        ]
     }
 }
 
-customElements.define('wk-layout', WKLayout)
+customElements.define('wk-layout-column', WKLayoutColumn)

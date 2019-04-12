@@ -1,7 +1,4 @@
-import './layout-grid.js'
-import './layout-column.js'
-
-class WKLayout extends HTMLElement {
+class WKLayoutGrid extends HTMLElement {
 
     constructor() {
         super()
@@ -20,4 +17,4 @@ class WKLayout extends HTMLElement {
     }
 }
 
-customElements.define('wk-layout', WKLayout)
+customElements.define('wk-layout-grid', WKLayoutGrid)
