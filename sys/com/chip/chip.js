@@ -1,99 +1,82 @@
-import MDRipple from '../ripple/ripple.js';
-
-class MDChip extends HTMLElement {
-
-    template = `
-    ${this.thumb ? `<img src="${this.thumb}" alt="" class="chip__thumb">`: ``}
-    ${this.icon ? `<span class="chip__icon icon">${this.icon}</span>`: ``}
-    <span class="chip__check">
-        <span class="chip__mark"></span>
-    </span>
-    ${this.text ? `<span class="chip__text">${this.text}</span>`: ``}
-    ${this.removeable ? `<span class="chip__action"></span>`: ``}
-    `;
+class WKChip extends HTMLElement {
 
     constructor() {
-        super();
-
-        this.innerHTML = this.template;
+        super()
         
-        this.chipAction = this.querySelector('.chip__action');
-
-        new MDRipple(this);
-
-        this.addEventListener('click', event => this.handleClick(event));
-
-        if (this.chipAction) {
-            this.chipAction.addEventListener('click', event => this.chipActionHandleClick(event));
-        }
+        this.template()
     }
 
-    handleClick(event) {
-        // this.classList.toggle('is-activated');
+    template() {
+        this.innerHTML = `
+            ${this.icon ? `<span class="chip__icon icon">${this.icon}</span>` : ``}
+            ${this.thumb ? `<img src="${this.thumb}" alt="" class="chip__thumb">` : ``}
+            <span class="chip__check">
+                <span class="chip__mark"></span>
+            </span>
+            ${this.text ? `<span class="chip__text">${this.text}</span>`: ``}
+            ${this.action ? `<span class="chip__action"></span>` : ``}
+        `
     }
 
-    chipActionHandleClick(event) {
-        event.stopPropagation();
-        this.remove();
-    }
-
-    connectedCallback() {}
+    connectedCallback() { }
 
     disconnectedCallback() { }
 
     adoptedCallback() { }
 
-    attributeChangedCallback(name, oldValue, newValue) { }
+    attributeChangedCallback(name, oldValue, newValue) {
+        this.template()
+    }
 
     static get observedAttributes() {
         return [
             'thumb',
             'icon',
             'text',
-            'removeable',
+            'action',
             'outlined',
-        ];
+        ]
     }
 
     get thumb() {
-        return this.getAttribute('thumb');
+        return this.getAttribute('thumb')
     }
 
     set thumb(value) {
-        this.setAttribute('thumb', value);
+        this.setAttribute('thumb', value)
     }
 
     get icon() {
-        return this.getAttribute('icon');
+        return this.getAttribute('icon')
     }
 
     set icon(value) {
-        this.setAttribute('icon', value);
+        this.setAttribute('icon', value)
     }
 
     get text() {
-        return this.getAttribute('text');
+        return this.getAttribute('text')
     }
 
     set text(value) {
-        this.setAttribute('text', value);
+        this.setAttribute('text', value)
     }
 
-    get removeable() {
-        return this.hasAttribute('removeable');
+    get action() {
+        return this.getAttribute('action')
     }
 
-    set removeable(value) {
-        this.setAttribute('removeable', '');
+    set action(value) {
+        this.setAttribute('action', value)
     }
 
     get outlined() {
-        return this.hasAttribute('outlined');
+        return this.hasAttribute('outlined')
     }
 
     set outlined(value) {
-        this.setAttribute('outlined', '');
+        this.setAttribute('outlined', '')
     }
 }
 
-customElements.define('md-chip', MDChip);
+customElements.define('wk-chip', WKChip)

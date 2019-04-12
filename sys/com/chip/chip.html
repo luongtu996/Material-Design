@@ -6,7 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Material</title>
-    <link rel="stylesheet" href="../material.css">
+    <link rel="stylesheet" href="../foundation/foundation.css">
+    <link rel="stylesheet" href="../layout/layout.css">
+    <link rel="stylesheet" href="../icon/icon.css">
+    <link rel="stylesheet" href="./chip.css">
     <style>
         body {
             margin: 64px;
@@ -16,7 +19,7 @@
 
 <body>
 
-    <button class="chip">
+    <!-- <button class="chip">
         <span class="chip__icon icon">&#xEB52;</span>
         <span class="chip__text">Chip</span>
         <span class="chip__action"></span>
@@ -44,7 +47,7 @@
     </div>
     <br><br>
 
-    <button class="chip">
+    <button class="chip is-activated">
         <span class="chip__check">
             <span class="chip__mark"></span>
         </span>
@@ -53,7 +56,7 @@
     </button>
     <br><br>
 
-    <button class="chip">
+    <button class="chip is-activated">
         <span class="chip__icon icon">&#xEB52;</span>
         <span class="chip__check">
             <span class="chip__mark"></span>
@@ -61,29 +64,182 @@
         <span class="chip__text">Chip</span>
         <span class="chip__action"></span>
     </button>
-    <br><br>
+    <br><br> -->
 
-    <hr class="divider">
+    <div class="layout">
+        <div class="layout__grid">
+            <div class="layout__column layout__column--3-desktop">
+                <wk-chip text="chip"></wk-chip><br><br>
+                <wk-chip text="chip" thumb="https://avatars.dicebear.com/v2/avataaars/ndiing.svg"></wk-chip><br><br>
+                <wk-chip text="chip" icon="&#xEB52;"></wk-chip><br><br>
+                <wk-chip text="chip" icon="&#xEB52;" action="true"></wk-chip><br><br>
+            </div>
+            <div class="layout__column layout__column--3-desktop">
+                <wk-chip outlined text="chip"></wk-chip><br><br>
+                <wk-chip outlined text="chip" thumb="https://avatars.dicebear.com/v2/avataaars/ndiing.svg"></wk-chip><br><br>
+                <wk-chip outlined text="chip" icon="&#xEB52;"></wk-chip><br><br>
+                <wk-chip outlined text="chip" icon="&#xEB52;" action="true"></wk-chip><br><br>
+            </div>
+            <div class="layout__column layout__column--3-desktop"></div>
+            <div class="layout__column layout__column--3-desktop"></div>
+        </div>
+    </div>
 
-    <md-chip text="md-chip"></md-chip>
-    <br><br>
+    <style>
+        /* .doc-table {} */
+    
+        /* .doc-table thead {} */
+    
+        /* .doc-table tbody {} */
+    
+        /* .doc-table tr {} */
+    
+        .doc-table th,
+        .doc-table td {
+            height: 48px;
+            padding: 0 16px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+            border-right: 1px solid rgba(0, 0, 0, 0.12);
+        }
+    
+        .doc-table th {
+            border-top: 1px solid rgba(0, 0, 0, 0.12);
+        }
+    
+        .doc-table th:first-child,
+        .doc-table td:first-child {
+            border-left: 1px solid rgba(0, 0, 0, 0.12);
+        }
+    </style>
+    
+    <br>
+    <br>
+    
+    <table class="doc-table">
+        <thead>
+            <tr>
+                <th>Tag Name</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>wk-chip</td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <br>
+    <br>
+    
+    <table class="doc-table">
+        <thead>
+            <tr>
+                <th>CSS Class</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>chip</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>chip__icon</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>chip__text</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>chip__action</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>chip--outlined</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>chip-group</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>chip__thumb</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>chip__check</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>chip__mark</td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <br>
+    <br>
+    
+    <table class="doc-table">
+        <thead>
+            <tr>
+                <th>Prop Name</th>
+                <th>Type</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>thumb</td>
+                <td>String</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>icon</td>
+                <td>String</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>text</td>
+                <td>String</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>action</td>
+                <td>Boolean</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>outlined</td>
+                <td>Boolean</td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <br>
+    <br>
+    
+    <table class="doc-table">
+        <thead>
+            <tr>
+                <th>Event Name</th>
+                <th>Params</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
 
-    <md-chip icon="&#xEB52;" text="md-chip"></md-chip>
-    <br><br>
-
-    <md-chip thumb="https://avatars.dicebear.com/v2/avataaars/ndiing.svg" text="md-chip"></md-chip>
-    <br><br>
-
-    <md-chip thumb="https://avatars.dicebear.com/v2/avataaars/ndiing.svg" text="md-chip" removeable></md-chip>
-    <br><br>
-
-    <md-chip text="md-chip" outlined removeable></md-chip>
-    <br><br>
-
-    <md-chip thumb="https://avatars.dicebear.com/v2/avataaars/ndiing.svg" text="md-chip" outlined removeable></md-chip>
-    <br><br>
-
-    <script src="../material.js"></script>
     <script src="./chip.js" type="module"></script>
 </body>
 

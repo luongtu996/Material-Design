@@ -1,4 +1,4 @@
-md-chip,
+wk-chip,
 .chip {
     display: inline-flex;
     align-items: center;
@@ -134,21 +134,18 @@ md-chip,
 
 
 
-md-chip.is-activated .chip__check,
 .chip.is-activated .chip__check {
     width: 24px;
     height: 24px;
     left: 0;
 }
 
-md-chip.is-activated .chip__check .chip__mark::before,
 .chip.is-activated .chip__check .chip__mark::before {
     height: 100%;
     transition: 
     height 100ms ease-in-out 100ms;
 }
 
-md-chip.is-activated .chip__check .chip__mark::after,
 .chip.is-activated .chip__check .chip__mark::after {
     width: 100%;
     transition: 
@@ -160,7 +157,7 @@ md-chip.is-activated .chip__check .chip__mark::after,
 
 
 
-md-chip[outlined],
+wk-chip[outlined],
 .chip--outlined {
     background-color: transparent;
     color: rgba(0, 0, 0, 0.87);
@@ -185,7 +182,7 @@ md-chip[outlined],
 
 
 
-md-chip,
+wk-chip,
 .chip {
     cursor: pointer;
     user-select: none;
@@ -193,7 +190,7 @@ md-chip,
     /* overflow: hidden; */
 }
 
-md-chip::after,
+wk-chip::after,
 .chip::after {
     content: '';
     pointer-events: none;
@@ -209,19 +206,19 @@ md-chip::after,
     opacity: 0;
 }
 
-md-chip:hover::after,
+wk-chip:hover::after,
 .chip:hover::after {
     opacity: 0.04;
 }
 
-md-chip:focus::after,
+wk-chip:focus::after,
 .chip:focus::after {
     opacity: 0.12;
     animation: var(--ripple-animation, ripple-pressed 250ms linear);
     transition: width 250ms ease-in-out, height 250ms ease-in-out, opacity 250ms ease-in-out;
 }
 
-md-chip:active::after,
+wk-chip:active::after,
 .chip:active::after {
     opacity: 0.16;
 }
