@@ -10,7 +10,7 @@ class Component extends HTMLElement { }
  */
 class RouterComponent extends Component { }
 // <md-router></md-router>
-customElements.define('md-router', RouterComponent)
+customElements.define('md-router', RouterComponent);
 
 /**
  * @class
@@ -21,19 +21,19 @@ export default class Router {
      * @private
      * @property {object} queryParams
      */
-    queryParams = {}
+    // queryParams = {}
 
     /**
      * @private
      * @property {object} pathParams
      */
-    pathParams = {}
+    // pathParams = {}
 
     /**
      * @private
      * @property {object} oldPath
      */
-    oldPath = []
+    // oldPath = []
 
     /**
      * @private
@@ -42,11 +42,11 @@ export default class Router {
      * @property {object} route.path
      * @property {object} route.children
      */
-    route = {
-        component: `<div><md-router></md-router></div>`,
-        path: undefined,
-        children: [],
-    }
+    // route = {
+    //     component: `<div><md-router></md-router></div>`,
+    //     path: undefined,
+    //     children: [],
+    // }
 
     /**
      * @constructor
@@ -55,6 +55,16 @@ export default class Router {
     constructor(routes = []) {
         this.routes = this.routesReduce(routes)
         this.hashChange = this.hashChange.bind(this)
+
+        this.queryParams = {}
+        this.pathParams = {}
+        this.oldPath = []
+
+        this.route = {
+            component: `<div><md-router></md-router></div>`,
+            path: undefined,
+            children: [],
+        }
 
         window.addEventListener('DOMContentLoaded', this.hashChange)
         window.addEventListener('hashchange', this.hashChange)

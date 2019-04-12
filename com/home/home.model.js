@@ -1,5 +1,9 @@
 export default class HomeModel {
-    data = []
+    // data = []
+    
+    constructor() {
+        this.data = []
+    }
 }
 
 // export default new HomeModel()
