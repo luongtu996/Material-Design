@@ -1,4 +1,4 @@
-class Component extends HTMLElement {
+class WKElement extends HTMLElement {
 
     constructor() {
         super()
@@ -16,3 +16,5 @@ class Component extends HTMLElement {
         return []
     }
 }
+
+// customElements.define('wk-element', WKElement)

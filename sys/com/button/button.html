@@ -1,39 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Material</title>
-    <link rel="stylesheet" href="../material.css">
+    <link rel="stylesheet" href="../foundation/foundation.css">
+    <link rel="stylesheet" href="../layout/layout.css">
+    <link rel="stylesheet" href="../icon/icon.css">
+    <link rel="stylesheet" href="./button.css">
     <style>
         body {
             margin: 64px;
         }
     </style>
 </head>
+
 <body>
-    <button class="button">
+    <!-- <button class="button">
         <span class="button__icon icon">&#xEB52;</span>
         <span class="button__text">button</span>
     </button>
     <br>
     <br>
-
     <button class="button button--outlined">
         <span class="button__icon icon">&#xEB52;</span>
         <span class="button__text">button</span>
     </button>
     <br>
     <br>
-
     <button class="button button--contained">
         <span class="button__icon icon">&#xEB52;</span>
         <span class="button__text">button</span>
     </button>
     <br>
     <br>
-
     <div class="button-group">
         <button class="button button--toggle">
             <span class="button__icon icon">&#xEB52;</span>
@@ -47,36 +49,167 @@
     </div>
     <br>
     <br>
+    <hr class="divider"> -->
 
-    <hr class="divider">
+    <div class="layout">
+        <div class="layout__grid">
+            <div class="layout__column--3">
+                <wk-button text="button"></wk-button>
+                <br><br>
 
-    <md-button
-        text="md-button"
-    ></md-button>
-    <br><br>
-
-    <md-button
-        text="md-button"
-        icon="&#xEB51"
-        outlined
-    ></md-button>
-    <br><br>
-
-    <md-button
-        text="md-button"
-        icon="&#xEB51"
-        contained
-    ></md-button>
-    <br><br>
-
-    <div class="button-group">
-        <md-button icon="&#xEB51" toggle></md-button>
-        <md-button icon="&#xEB51" toggle></md-button>
-        <md-button icon="&#xEB51" toggle></md-button>
+                <wk-button icon="&#xEB52;" text="button"></wk-button>
+                <br><br>
+            </div>
+            <div class="layout__column--3">
+                <wk-button outlined text="button"></wk-button>
+                <br><br>
+            </div>
+            <div class="layout__column--3">
+                <wk-button contained text="button"></wk-button>
+                <br><br>
+            </div>
+            <div class="layout__column--3">
+                <wk-button-group>
+                    <wk-button toggle icon="&#xEB52;"></wk-button>
+                    <wk-button toggle icon="&#xEB52;"></wk-button>
+                    <wk-button toggle icon="&#xEB52;"></wk-button>
+                </wk-button-group>
+                <br><br>
+            </div>
+        </div>
     </div>
-    <br><br>
 
-    <script src="../material.js"></script>
+    <style>
+        /* .doc-table {} */
+
+        /* .doc-table thead {} */
+
+        /* .doc-table tbody {} */
+
+        /* .doc-table tr {} */
+
+        .doc-table th,
+        .doc-table td {
+            height: 48px;
+            padding: 0 16px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+            border-right: 1px solid rgba(0, 0, 0, 0.12);
+        }
+
+        .doc-table th {
+            border-top: 1px solid rgba(0, 0, 0, 0.12);
+        }
+
+        .doc-table th:first-child,
+        .doc-table td:first-child {
+            border-left: 1px solid rgba(0, 0, 0, 0.12);
+        }
+    </style>
+
+    <br>
+    <br>
+
+    <table class="doc-table">
+        <thead>
+            <tr>
+                <th>CSS Class</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>button</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>button__icon</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>button__text</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>button--outlined</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>button--contained</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>button-group</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>button--toggle</td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <br>
+    <br>
+
+    <table class="doc-table">
+        <thead>
+            <tr>
+                <th>Prop Name</th>
+                <th>Type</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>text</td>
+                <td>String</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>icon</td>
+                <td>String</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>outlined</td>
+                <td>Boolean</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>contained</td>
+                <td>Boolean</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>toggle</td>
+                <td>Boolean</td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <br>
+    <br>
+
+    <table class="doc-table">
+        <thead>
+            <tr>
+                <th>Event Name</th>
+                <th>Params</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script src="./button-group.js" type="module"></script>
     <script src="./button.js" type="module"></script>
 </body>
+
 </html>

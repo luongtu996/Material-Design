@@ -1,4 +1,4 @@
-md-button,
+wk-button,
 .button {
     display: inline-flex;
     align-items: center;
@@ -35,14 +35,14 @@ md-button,
 
 
 
-md-button[outlined],
+wk-button[outlined],
 .button--outlined {
     background-color: transparent;
     color: #6200ee;
     box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.12);
 }
 
-md-button[outlined] .button__text,
+wk-button[outlined] .button__text,
 .button--outlined .button__text {
     margin: 0 16px;
 }
@@ -52,19 +52,18 @@ md-button[outlined] .button__text,
 
 
 
-md-button[contained],
+wk-button[contained],
 .button--contained {
     background-color: #6200ee;
     color: #ffffff;
     box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
 }
 
-md-button[contained] .button__text,
+wk-button[contained] .button__text,
 .button--contained .button__text {
     margin: 0 16px;
 }
 
-md-button:not([toggle]) .button__icon + .button__text,
 .button__icon + .button__text {
     margin-left: -4px;
 }
@@ -74,7 +73,7 @@ md-button:not([toggle]) .button__icon + .button__text,
 
 
 
-md-button[toggle],
+wk-button[toggle],
 .button--toggle {
     min-width: 48px;
     height: 48px;
@@ -84,7 +83,7 @@ md-button[toggle],
     box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.12);
 }
 
-md-button[toggle] .button__icon,
+wk-button[toggle] .button__icon,
 .button--toggle .button__icon {
     width: 24px;
     height: 24px;
@@ -96,12 +95,13 @@ md-button[toggle] .button__icon,
 
 
 
+wk-button-group,
 .button-group {
     display: inline-flex;
     vertical-align: middle;
 }
 
-.button-group md-button[toggle] + md-button[toggle],
+wk-button-group wk-button[toggle] + wk-button[toggle],
 .button-group .button--toggle + .button--toggle {
     margin-left: -1px;
 }
@@ -111,7 +111,7 @@ md-button[toggle] .button__icon,
 
 
 /* Ripple */
-md-button,
+wk-button,
 .button {
     cursor: pointer;
     user-select: none;
@@ -119,7 +119,7 @@ md-button,
     overflow: hidden;
 }
 
-md-button::after,
+wk-button::after,
 .button::after {
     content: '';
     pointer-events: none;
@@ -135,19 +135,19 @@ md-button::after,
     opacity: 0;
 }
 
-md-button:hover::after,
+wk-button:hover::after,
 .button:hover::after {
     opacity: 0.04;
 }
 
-md-button:focus::after,
+wk-button:focus::after,
 .button:focus::after {
     opacity: 0.12;
     animation: var(--ripple-animation, ripple-pressed 250ms linear);
     transition: width 250ms ease-in-out, height 250ms ease-in-out, opacity 250ms ease-in-out;
 }
 
-md-button:active::after,
+wk-button:active::after,
 .button:active::after {
     opacity: 0.16;
 }
@@ -156,23 +156,23 @@ md-button:active::after,
 
 
 
-md-button[contained]::after,
+wk-button[contained]::after,
 .button--contained::after {
     background-color: #ffffff;
     opacity: 0;
 }
 
-md-button[contained]:hover::after,
+wk-button[contained]:hover::after,
 .button--contained:hover::after {
     opacity: 0.08;
 }
 
-md-button[contained]:focus::after,
+wk-button[contained]:focus::after,
 .button--contained:focus::after {
     opacity: 0.24;
 }
 
-md-button[contained]:active::after,
+wk-button[contained]:active::after,
 .button--contained:active::after {
     opacity: 0.32;
 }
