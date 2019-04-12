@@ -4,11 +4,6 @@ class WKButton extends HTMLElement {
         super()
 
         this.template()
-        this.styles([
-            '../foundation/foundation.css',
-            '../icon/icon.css',
-            './button.css'
-        ])
     }
 
     template() {
@@ -16,15 +11,6 @@ class WKButton extends HTMLElement {
             ${this.icon ? `<span class="button__icon icon">${this.icon}</span>` : ``}
             ${this.text ? `<span class="button__text">${this.text}</span>` : ``}
         `
-    }
-
-    styles(styles = []) {
-        styles.map(style => {
-            let link = document.querySelector(`link[href="${style}"]`)
-
-            if (!link)
-                document.querySelector('head').insertAdjacentHTML('beforeend', `<link rel="stylesheet" href="${style}">`)
-        })
     }
 
     connectedCallback() { }

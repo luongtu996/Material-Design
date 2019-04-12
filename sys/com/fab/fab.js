@@ -4,11 +4,6 @@ class WKFAB extends HTMLElement {
         super()
 
         this.template()
-        this.styles([
-            '../foundation/foundation.css',
-            '../icon/icon.css',
-            './fab.css'
-        ])
     }
 
     template() {
@@ -16,15 +11,6 @@ class WKFAB extends HTMLElement {
             ${this.icon ? `<span class="fab__icon icon">${this.icon}</span>` : ``}
             ${this.text ? `<span class="fab__text">${this.text}</span>` : ``}
         `
-    }
-
-    styles(styles = []) {
-        styles.map(style => {
-            let link = document.querySelector(`link[href="${style}"]`)
-
-            if (!link)
-                document.querySelector('head').insertAdjacentHTML('beforeend', `<link rel="stylesheet" href="${style}">`)
-        })
     }
 
     connectedCallback() { }
