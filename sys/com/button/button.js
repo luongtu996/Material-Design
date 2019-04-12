@@ -1,3 +1,5 @@
+import './button-group.js'
+
 class WKButton extends HTMLElement {
 
     constructor() {
