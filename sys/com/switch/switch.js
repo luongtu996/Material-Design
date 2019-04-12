@@ -1,38 +1,21 @@
-import MDRipple from '../ripple/ripple.js';
-
-class MDSwitch extends HTMLElement {
-
-    template = `
-    <input type="checkbox" class="switch__input">
-    <div class="switch__track">
-        <div class="switch__thumb"></div>
-    </div>
-    `;
+class WKSwitch extends HTMLElement {
 
     constructor() {
-        super();
+        super()
+        this.template() 
+    }
 
-        this.innerHTML = this.template;
-
-        this.switchInput = this.querySelector('.switch__input');
-        let switchThumb = this.querySelector('.switch__thumb');
-
-        let ripple = new MDRipple(this);
-        ripple.delegate = switchThumb;
-        ripple.trigger = this.switchInput;
-        ripple.size = 40;
-
-        if (this.name) {
-            this.name = this.name;
-        }
-
-        if (this.value) {
-            this.value = this.value;
-        }
-
-        if (this.checked) {
-            this.checked = this.checked;
-        }
+    template() {
+        this.innerHTML = `
+            <input type="checkbox" class="switch__input" 
+            ${this.value ? `value="${this.value}"`: ``} 
+            ${this.name ? `name="${this.name}"`: ``} 
+            ${this.checked ? `checked` : ``}
+            >
+            <div class="switch__track">
+                <div class="switch__thumb"></div>
+            </div>
+        `
     }
 
     connectedCallback() { }
@@ -41,42 +24,41 @@ class MDSwitch extends HTMLElement {
 
     adoptedCallback() { }
 
-    attributeChangedCallback(name, oldValue, newValue) { }
+    attributeChangedCallback(name, oldValue, newValue) {
+        this.template()
+    }
 
     static get observedAttributes() {
         return [
-            'name',
             'value',
-            'checked'
-        ];
-    }
-
-    get name() {
-        return this.getAttribute('name');
-    }
-
-    set name(value) {
-        this.switchInput.setAttribute('name', value);
-        this.removeAttribute('name');
+            'name',
+            'checked',
+        ]
     }
 
     get value() {
-        return this.getAttribute('value');
+        return this.getAttribute('value')
     }
-
+    
     set value(value) {
-        this.switchInput.setAttribute('value', value);
-        this.removeAttribute('value');
+        this.setAttribute('value', value)
     }
-
+    
+    get name() {
+        return this.getAttribute('name')
+    }
+    
+    set name(value) {
+        this.setAttribute('name', value)
+    }
+    
     get checked() {
-        return this.hasAttribute('checked');
+        return this.hasAttribute('checked')
     }
-
+    
     set checked(value) {
-        this.switchInput.setAttribute('checked', '');
-        this.removeAttribute('checked');
+        this.setAttribute('checked', '')
     }
 }
 
-customElements.define('md-switch', MDSwitch);
+customElements.define('wk-switch', WKSwitch)
