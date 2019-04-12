@@ -169,11 +169,13 @@ wk-chip[outlined],
 
 
 
+wk-chip-group,
 .chip-group {
     display: inline-flex;
     vertical-align: middle;
 }
 
+wk-chip-group wk-chip + wk-chip,
 .chip-group .chip + .chip {
     margin-left: 8px;
 }

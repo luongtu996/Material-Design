@@ -1,3 +1,5 @@
+import './chip-group.js';
+
 class WKChip extends HTMLElement {
 
     constructor() {
