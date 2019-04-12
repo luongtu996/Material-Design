@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Material</title>
-    <link rel="stylesheet" href="../material.css">
+    <link rel="stylesheet" href="../foundation/foundation.css">
+    <link rel="stylesheet" href="./typography.css">
     <style>
         body {
             margin: 64px;
@@ -20,7 +21,7 @@
 
 <body>
 
-    <h1 class="typography--h1">H1</h1>
+    <!-- <h1 class="typography--h1">H1</h1>
     <h2 class="typography--h2">H2</h2>
     <h3 class="typography--h3">H3</h3>
     <h4 class="typography--h4">H4</h4>
@@ -32,9 +33,189 @@
     <p class="typography--body2">Body2</p>
     <div><span class="typography--button">BUTTON</span></div>
     <div><span class="typography--caption">Caption</span></div>
-    <div><span class="typography--overline">OVERLINE</span></div>
+    <div><span class="typography--overline">OVERLINE</span></div> -->
 
-    <script src="../material.js"></script>
+    <wk-layout>
+        <wk-layout-grid>
+            <wk-layout-column span="3" desktopSpan="3" tabletSpan="8" mobileSpan="4">
+                <wk-typography scale="h1">H1</wk-typography>
+                <wk-typography scale="h2">H2</wk-typography>
+                <wk-typography scale="h3">H3</wk-typography>
+                <wk-typography scale="h4">H4</wk-typography>
+                <wk-typography scale="h5">H5</wk-typography>
+                <wk-typography scale="h6">H6</wk-typography>
+                <wk-typography scale="subtitle1">Subtitle1</wk-typography>
+                <wk-typography scale="subtitle2">Subtitle2</wk-typography>
+                <wk-typography scale="body1">Body1</wk-typography>
+                <wk-typography scale="body2">Body2</wk-typography>
+                <wk-typography scale="button">Button</wk-typography>
+                <wk-typography scale="caption">Caption</wk-typography>
+                <wk-typography scale="overline">Overline</wk-typography>
+            </wk-layout-column>
+            <wk-layout-column span="3" desktopSpan="3" tabletSpan="8" mobileSpan="4"></wk-layout-column>
+            <wk-layout-column span="3" desktopSpan="3" tabletSpan="8" mobileSpan="4"></wk-layout-column>
+            <wk-layout-column span="3" desktopSpan="3" tabletSpan="8" mobileSpan="4"></wk-layout-column>
+        </wk-layout-grid>
+    </wk-layout>
+
+    <style>
+        /* .doc-table {} */
+    
+        /* .doc-table thead {} */
+    
+        /* .doc-table tbody {} */
+    
+        /* .doc-table tr {} */
+    
+        .doc-table th,
+        .doc-table td {
+            height: 48px;
+            padding: 0 16px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+            border-right: 1px solid rgba(0, 0, 0, 0.12);
+        }
+    
+        .doc-table th {
+            border-top: 1px solid rgba(0, 0, 0, 0.12);
+        }
+    
+        .doc-table th:first-child,
+        .doc-table td:first-child {
+            border-left: 1px solid rgba(0, 0, 0, 0.12);
+        }
+    </style>
+    
+    <br>
+    <br>
+    
+    <table class="doc-table">
+        <thead>
+            <tr>
+                <th>Tag Name</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>wk-typography</td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <br>
+    <br>
+    
+    <table class="doc-table">
+        <thead>
+            <tr>
+                <th>CSS Class</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>typography</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>typography--h1</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>typography--h2</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>typography--h3</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>typography--h4</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>typography--h5</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>typography--h6</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>typography--subtitle1</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>typography--subtitle2</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>typography--body1</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>typography--body2</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>typography--button</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>typography--caption</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>typography--overline</td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <br>
+    <br>
+    
+    <table class="doc-table">
+        <thead>
+            <tr>
+                <th>Prop Name</th>
+                <th>Type</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>scale</td>
+                <td>String</td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <br>
+    <br>
+    
+    <table class="doc-table">
+        <thead>
+            <tr>
+                <th>Event Name</th>
+                <th>Params</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script src="../layout/layout.js"></script>
+    <script src="./typography.js"></script>
+
 </body>
 
 </html>
