@@ -3,14 +3,28 @@ class WKButton extends HTMLElement {
     constructor() {
         super()
 
-        this.view()
+        this.template()
+        this.styles([
+            '../foundation/foundation.css',
+            '../icon/icon.css',
+            './button.css'
+        ])
     }
 
-    view() {
+    template() {
         this.innerHTML = `
             ${this.icon ? `<span class="button__icon icon">${this.icon}</span>` : ``}
             ${this.text ? `<span class="button__text">${this.text}</span>` : ``}
         `
+    }
+
+    styles(styles = []) {
+        styles.map(style => {
+            let link = document.querySelector(`link[href="${style}"]`)
+
+            if (!link)
+                document.querySelector('head').insertAdjacentHTML('beforeend', `<link rel="stylesheet" href="${style}">`)
+        })
     }
 
     connectedCallback() { }
@@ -20,7 +34,7 @@ class WKButton extends HTMLElement {
     adoptedCallback() { }
 
     attributeChangedCallback(name, oldValue, newValue) {
-        this.view()
+        this.template()
     }
 
     static get observedAttributes() {
@@ -29,18 +43,18 @@ class WKButton extends HTMLElement {
             'text',
             'outlined',
             'contained',
-            'toggle',
+            'toggle'
         ]
     }
 
     get icon() {
         return this.getAttribute('icon')
     }
-    
+
     set icon(value) {
         this.setAttribute('icon', value)
     }
-    
+
     get text() {
         return this.getAttribute('text')
     }
@@ -52,7 +66,7 @@ class WKButton extends HTMLElement {
     get outlined() {
         this.hasAttribute('outlined')
     }
-    
+
     set outlined(value) {
         this.setAttribute('outlined', '')
     }
@@ -60,7 +74,7 @@ class WKButton extends HTMLElement {
     get contained() {
         this.hasAttribute('contained')
     }
-    
+
     set contained(value) {
         this.setAttribute('contained', '')
     }
@@ -68,7 +82,7 @@ class WKButton extends HTMLElement {
     get toggle() {
         this.hasAttribute('toggle')
     }
-    
+
     set toggle(value) {
         this.setAttribute('toggle', '')
     }
