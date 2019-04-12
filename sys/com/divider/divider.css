@@ -1,4 +1,8 @@
+wk-divider,
 .divider {
+    display: block;
+    /* display: flex; */
+    width: 100%;
     border-bottom: 1px solid rgba(0, 0, 0, 0.12);
     margin: 8px 0 7px 0;
 }
