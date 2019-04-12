@@ -1,97 +1,79 @@
-import MDRipple from '../ripple/ripple.js';
-
-class MDCheckbox extends HTMLElement {
-
-    template = `
-    <input type="checkbox" class="checkbox__input">
-    <div class="checkbox__track">
-        <div class="checkbox__thumb"></div>
-    </div>
-    `;
+class WKCheckbox extends HTMLElement {
 
     constructor() {
-        super();
-
-        this.innerHTML = this.template;
-
-        this.checkboxInput = this.querySelector('.checkbox__input');
-        let checkboxTrack = this.querySelector('.checkbox__track');
-
-        let ripple = new MDRipple(this);
-        ripple.delegate = checkboxTrack;
-        ripple.trigger = this.checkboxInput;
-        ripple.size = 40;
-
-        if (this.name) {
-            this.name = this.name;
-        }
-
-        if (this.value) {
-            this.value = this.value;
-        }
-
-        if (this.checked) {
-            this.checked = this.checked;
-        }
-
-        if (this.indeterminate) {
-            this.indeterminate = this.indeterminate;
-        }
+        super()
+        this.template()
     }
 
-    connectedCallback() { }
+    template() {
+        this.innerHTML = `
+            <input type="checkbox" class="checkbox__input" 
+            ${this.name ? `name="${this.name}"` : ``} 
+            ${this.value ? `value="${this.value}"` : ``} 
+            ${this.checked ? `checked` : ``}
+            ${this.indeterminate ? `indeterminate` : ``}
+            >
+            <div class="checkbox__track">
+                <div class="checkbox__thumb"></div>
+            </div>
+        `
+    }
+
+    connectedCallback() {
+        if (this.indeterminate) {
+            this.querySelector('.checkbox__input').indeterminate = this.indeterminate
+        }
+    }
 
     disconnectedCallback() { }
 
     adoptedCallback() { }
 
-    attributeChangedCallback(name, oldValue, newValue) {}
+    attributeChangedCallback(name, oldValue, newValue) {
+        this.template()
+    }
 
     static get observedAttributes() {
         return [
             'name',
             'value',
+            'checked',
             'indeterminate',
-            'checked'
-        ];
+        ]
     }
 
     get name() {
-        return this.getAttribute('name');
+        return this.getAttribute('name')
     }
 
     set name(value) {
-        this.checkboxInput.setAttribute('name', value);
-        this.removeAttribute('name');
+        this.setAttribute('name', value)
     }
 
     get value() {
-        return this.getAttribute('value');
+        return this.getAttribute('value')
     }
 
     set value(value) {
-        this.checkboxInput.setAttribute('value', value);
-        this.removeAttribute('value');
-    }
-
-    get indeterminate() {
-        return this.hasAttribute('indeterminate');
-    }
-
-    set indeterminate(value) {
-        this.checkboxInput.setAttribute('indeterminate', '');
-        this.checkboxInput.indeterminate = this.indeterminate;
-        this.removeAttribute('indeterminate');
+        this.setAttribute('value', value)
     }
 
     get checked() {
-        return this.hasAttribute('checked');
+        return this.hasAttribute('checked')
     }
 
     set checked(value) {
-        this.checkboxInput.setAttribute('checked', '');
-        this.removeAttribute('checked');
+        this.setAttribute('checked', '')
     }
+
+    get indeterminate() {
+        return this.hasAttribute('indeterminate')
+    }
+
+    set indeterminate(value) {
+        this.setAttribute('indeterminate', '')
+    }
+
 }
 
-customElements.define('md-checkbox', MDCheckbox);
+customElements.define('wk-checkbox', WKCheckbox)
