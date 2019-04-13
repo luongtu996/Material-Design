@@ -1,3 +1,5 @@
+import './bottom-sheet-scrim.js'
+
 class WKBottomSheet extends HTMLElement {
 
     constructor() {
