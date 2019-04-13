@@ -1,4 +1,4 @@
-# Button
+# Chip
 
 ### Tag
 Tag Name | Description
