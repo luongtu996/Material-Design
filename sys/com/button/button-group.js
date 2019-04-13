@@ -1,20 +1,3 @@
-class WKButtonGroup extends HTMLElement {
-
-    constructor() {
-        super()
-    }
-
-    connectedCallback() { }
-
-    disconnectedCallback() { }
-
-    adoptedCallback() { }
-
-    attributeChangedCallback(name, oldValue, newValue) { }
-
-    static get observedAttributes() {
-        return []
-    }
-}
+class WKButtonGroup extends HTMLElement { }
 
 customElements.define('wk-button-group', WKButtonGroup)
