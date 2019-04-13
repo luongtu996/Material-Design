@@ -1,10 +1,5 @@
 # Typography
 
-### Tag
-Tag Name | Description
---- | --- 
- | 
-
 ### Prop
 Prop Name | Type | Description
 --- | --- | ---
@@ -21,11 +16,6 @@ wkTypographyBody2 | Boolean |
 wkTypographyButton | Boolean |
 wkTypographyCaption | Boolean |
 wkTypographyOverline | Boolean |
-
-### Event
-Event Name | Params | Description
---- | --- | ---
- |  | 
 
 ### CSS
 CSS Class | Description
