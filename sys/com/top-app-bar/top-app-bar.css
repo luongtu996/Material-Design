@@ -1,3 +1,4 @@
+wk-top-app-bar,
 .top-app-bar {
     display: flex;
     flex-direction: column;
@@ -11,6 +12,7 @@
     box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.2), 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12);
 }
 
+wk-top-app-bar-row,
 .top-app-bar__row {
     display: flex;
 }
@@ -77,6 +79,7 @@
 
 
 
+wk-top-app-bar[extended] .top-app-bar__title,
 .top-app-bar--extended .top-app-bar__title {
     margin-top: calc(128px - (36px - ((36px - 24px) / 2)) - 28px);
     margin-bottom: calc(28px - ((36px - 24px) / 2));

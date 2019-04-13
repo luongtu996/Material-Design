@@ -6,7 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Material</title>
-    <link rel="stylesheet" href="../material.css">
+    <link rel="stylesheet" href="../foundation/foundation.css">
+    <link rel="stylesheet" href="../icon/icon.css">
+    <link rel="stylesheet" href="./top-app-bar.css">
     <style>
         body {
             margin: 64px;
@@ -16,7 +18,7 @@
 
 <body>
 
-    <div class="top-app-bar">
+    <!-- <div class="top-app-bar">
         <div class="top-app-bar__row">
             <div class="top-app-bar__section top-app-bar__section--start">
                 <div class="top-app-bar__icon top-app-bar__icon--navigation"></div>
@@ -28,9 +30,13 @@
                 <div class="top-app-bar__icon top-app-bar__icon--menu"></div>
             </div>
         </div>
-    </div>
+    </div> -->
 
-    <script src="../material.js"></script>
+    <wk-top-app-bar title="Title" navigation menu>
+        <wk-top-app-bar-row></wk-top-app-bar-row>
+    </wk-top-app-bar>
+
+    <script src="./top-app-bar.js" type="module"></script>
 </body>
 
 </html>
