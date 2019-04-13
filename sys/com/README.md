@@ -1,7 +1,7 @@
 # WK Component
 
 ### Component
-Component | Spec | Page
+Component | Spec | Link
 --- | --- | ---
 backdrop | [Backdrop](https://material.io/design/) | [Backdrop](https://github.com/ndiing/Material-Web-Components/tree/master/sys/com/backdrop)
 banner | [Banner](https://material.io/design/) | [Banner](https://github.com/ndiing/Material-Web-Components/tree/master/sys/com/banner)
