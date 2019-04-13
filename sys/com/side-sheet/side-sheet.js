@@ -1,3 +1,5 @@
+import './side-sheet-scrim.js'
+
 class WKSideSheet extends HTMLElement {
 
     constructor() {
