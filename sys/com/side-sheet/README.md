@@ -11,6 +11,7 @@ Prop Name | Type | Description
 --- | --- | ---
 title | String | 
 action | Boolean | 
+modal | Boolean | 
 
 ### Event
 Event Name | Params | Description
