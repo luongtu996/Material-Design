@@ -1,20 +1,3 @@
-class WKChipGroup extends HTMLElement {
-
-    constructor() {
-        super()
-    }
-
-    connectedCallback() { }
-
-    disconnectedCallback() { }
-
-    adoptedCallback() { }
-
-    attributeChangedCallback(name, oldValue, newValue) { }
-
-    static get observedAttributes() {
-        return []
-    }
-}
+class WKChipGroup extends HTMLElement { }
 
 customElements.define('wk-chip-group', WKChipGroup)
