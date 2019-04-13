@@ -1,80 +1,80 @@
-wk-typography,
+[wkTypography],
 .typography {
     display: block;
     font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
 }
 
-wk-typography[scale="h1"],
+[wkTypographyH1],
 .typography--h1 {
     font-weight: 300;
     font-size: 96px;
     line-height: 144px;
 }
 
-wk-typography[scale="h2"],
+[wkTypographyH2],
 .typography--h2 {
     font-weight: 300;
     font-size: 60px;
     line-height: 88px;
 }
 
-wk-typography[scale="h3"],
+[wkTypographyH3],
 .typography--h3 {
     font-weight: 400;
     font-size: 48px;
     line-height: 72px;
 }
 
-wk-typography[scale="h4"],
+[wkTypographyH4],
 .typography--h4 {
     font-weight: 400;
     font-size: 34px;
     line-height: 48px;
 }
 
-wk-typography[scale="h5"],
+[wkTypographyH5],
 .typography--h5 {
     font-weight: 400;
     font-size: 24px;
     line-height: 36px;
 }
 
-wk-typography[scale="h6"],
+[wkTypographyH6],
 .typography--h6 {
     font-weight: 500;
     font-size: 20px;
     line-height: 28px;
 }
 
-wk-typography[scale="subtitle1"],
+[wkTypographySubtitle1],
 .typography--subtitle1 {
     font-weight: 400;
     font-size: 16px;
     line-height: 24px;
 }
 
-wk-typography[scale="subtitle2"],
+[wkTypographySubtitle2],
 .typography--subtitle2 {
     font-weight: 500;
     font-size: 14px;
     line-height: 20px;
 }
 
-wk-typography[scale="body1"],
+[wkTypographyBody1],
 .typography--body1 {
     font-weight: 400;
     font-size: 16px;
     line-height: 24px;
 }
 
-wk-typography[scale="body2"],
+[wkTypographyBody2],
 .typography--body2 {
     font-weight: 400;
     font-size: 14px;
     line-height: 20px;
 }
 
-wk-typography[scale="button"],
+[wkTypographyButton],
 .typography--button {
     font-weight: 500;
     font-size: 14px;
@@ -82,14 +82,14 @@ wk-typography[scale="button"],
     text-transform: uppercase;
 }
 
-wk-typography[scale="caption"],
+[wkTypographyCaption],
 .typography--caption {
     font-weight: 400;
     font-size: 12px;
     line-height: 16px;
 }
 
-wk-typography[scale="overline"],
+[wkTypographyOverline],
 .typography--overline {
     font-weight: 400;
     font-size: 10px;
@@ -101,7 +101,7 @@ wk-typography[scale="overline"],
 
 
 
-wk-typography,
+[wkTypography],
 h1,
 h2,
 h3,
