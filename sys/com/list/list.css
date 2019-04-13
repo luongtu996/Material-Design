@@ -1,14 +1,18 @@
+wk-list,
 .list {
+    display: block;
     padding: 8px 0;
     background-color: #ffffff;
     color: rgba(0, 0, 0, 0.87);
 }
 
+wk-list-row,
 .list__row {
     display: flex;
     flex-direction: column;
 }
 
+wk-list-item,
 .list__item {
     display: flex;
     align-items: center;
@@ -22,10 +26,11 @@
     width: 40px;
     height: 40px;
     margin: 8px 16px;
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
+    /* background-position: center; */
+    /* background-size: cover; */
+    /* background-repeat: no-repeat; */
     color: rgba(0, 0, 0, 0.54);
+    object-fit: cover;
 }
 
 .list__thumb:not(.list__thumb--square):not(.list__thumb--rectangle) {
@@ -99,7 +104,22 @@
     color: rgba(0, 0, 0, 0.54);
 }
 
-.list__text + .list__icon {
+.list__action {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    margin: 16px;
+    color: rgba(0, 0, 0, 0.54);
+}
+
+/* .list__text + .list__icon {
+    margin-top: 12px;
+    margin-bottom: 12px;
+} */
+
+.list__text + .list__action {
     margin-top: 12px;
     margin-bottom: 12px;
 }
@@ -109,20 +129,29 @@
 
 
 
+wk-list[twoLine] wk-list-item,
 .list--two-line .list__item {
     min-height: 64px;
 }
 
+wk-list[twoLine] .list__icon,
 .list--two-line .list__icon {
     margin-top: 16px;
     margin-bottom: calc(72px - 16px - 24px);
 }
 
-.list--two-line .list__text + .list__icon {
+/* .list--two-line .list__text + .list__icon {
+    margin-top: calc((72px - 24px) / 2);
+    margin-bottom: calc((72px - 24px) / 2);
+} */
+
+wk-list[twoLine] .list__text + .list__action,
+.list--two-line .list__text + .list__action {
     margin-top: calc((72px - 24px) / 2);
     margin-bottom: calc((72px - 24px) / 2);
 }
 
+wk-list[twoLine] .list__thumb--square,
 .list--two-line .list__thumb--square {
     width: 40px;
     height: 40px;
@@ -133,34 +162,47 @@
 
 
 
+wk-list[threeLine] wk-list-item,
 .list--three-line .list__item {
     height: 88px;
 }
 
+wk-list[threeLine] .list__text-secondary,
 .list--three-line .list__text-secondary {
     overflow: hidden;
     height: 40px;
 }
 
+wk-list[threeLine] .list__text-overline ~ .list__text-secondary,
 .list--three-line .list__text-overline ~ .list__text-secondary {
     height: 20px;
 }
 
+wk-list[threeLine] .list__icon,
 .list--three-line .list__icon {
     margin-top: 16px;
     margin-bottom: calc(88px - 16px - 24px);
 }
 
+wk-list[threeLine] .list__text + .list__action,
+.list--three-line .list__text + .list__action {
+    margin-top: 16px;
+    margin-bottom: calc(88px - 16px - 24px);
+}
+
+wk-list[threeLine] .list__thumb,
 .list--three-line .list__thumb {
     margin-top: 16px;
     margin-bottom: calc(88px - 16px - 40px);
 }
 
+wk-list[threeLine] .list__thumb--square,
 .list--three-line .list__thumb--square {
     width: 40px;
     height: 40px;
 }
 
+wk-list[threeLine] .list__thumb--rectangle,
 .list--three-line .list__thumb--rectangle {
     margin-top: 16px;
     margin-right: 20px;
@@ -171,6 +213,7 @@
 
 
 
+wk-list wk-list,
 .list .list {
     padding-top: 0;
     padding-bottom: 0;
