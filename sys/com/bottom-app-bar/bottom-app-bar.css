@@ -1,3 +1,4 @@
+wk-bottom-app-bar,
 .bottom-app-bar {
     position: fixed;
     z-index: 4;
@@ -62,8 +63,11 @@
 
 
 
+wk-bottom-app-bar wk-fab,
+.bottom-app-bar wk-fab,
 .bottom-app-bar .fab {
     position: absolute;
+    z-index: 1;
     left: calc(50% - 56px / 2);
     top: calc(0% - 56px / 2);
 }
@@ -73,6 +77,8 @@
 
 
 
+wk-bottom-app-bar[fabEnd] wk-fab,
+.bottom-app-bar--fab-end wk-fab,
 .bottom-app-bar--fab-end .fab {
     left: calc(100% - 56px - 16px);
 }
@@ -82,10 +88,12 @@
 
 
 
+wk-bottom-app-bar[fabCut],
 .bottom-app-bar--fab-cut {
     box-shadow: none;
 }
 
+wk-bottom-app-bar[fabCut]::before,
 .bottom-app-bar--fab-cut::before {
     content: '';
     position: absolute;
@@ -97,6 +105,7 @@
     box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.2), 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12);
 }
 
+wk-bottom-app-bar[fabCut]::after,
 .bottom-app-bar--fab-cut::after {
     content: '';
     position: absolute;
@@ -108,12 +117,14 @@
     box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.2), 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12);
 }
 
+wk-bottom-app-bar[fabCut] .bottom-app-bar__container,
 .bottom-app-bar--fab-cut .bottom-app-bar__container {
     position: relative;
     overflow: hidden;
     background-color: transparent;
 }
 
+wk-bottom-app-bar[fabCut] .bottom-app-bar__container::before,
 .bottom-app-bar--fab-cut .bottom-app-bar__container::before {
     content: '';
     position: absolute;
@@ -126,6 +137,7 @@
     box-shadow: 0 0 0 9999px #6200ee;
 }
 
+wk-bottom-app-bar[fabCut] .bottom-app-bar__container::after,
 .bottom-app-bar--fab-cut .bottom-app-bar__container::after {
     content: '';
     position: absolute;
@@ -142,23 +154,29 @@
 
 
 
+wk-bottom-app-bar[fabEnd][fabCut]::before,
 .bottom-app-bar--fab-end.bottom-app-bar--fab-cut::before {
     width: calc(100% - 72px - 16px);
 }
 
+wk-bottom-app-bar[fabEnd][fabCut]::after,
 .bottom-app-bar--fab-end.bottom-app-bar--fab-cut::after {
     width: 16px;
     left: calc(100% - 16px);
 }
 
+wk-bottom-app-bar[fabEnd][fabCut] .bottom-app-bar__container::before,
 .bottom-app-bar--fab-end.bottom-app-bar--fab-cut .bottom-app-bar__container::before {
     left: calc(100% - 72px - 16px);
 }
 
+wk-bottom-app-bar[fabEnd][fabCut] .bottom-app-bar__container::after,
 .bottom-app-bar--fab-end.bottom-app-bar--fab-cut .bottom-app-bar__container::after {
     left: calc(100% - 72px - 16px);
 }
 
+wk-bottom-app-bar[fabEnd][fabCut] wk-fab,
+.bottom-app-bar--fab-end.bottom-app-bar--fab-cut wk-fab,
 .bottom-app-bar--fab-end.bottom-app-bar--fab-cut .fab {
     left: calc(100% - 56px - 16px - 8px);
 }
