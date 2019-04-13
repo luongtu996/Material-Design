@@ -6,17 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Material</title>
-    <link rel="stylesheet" href="../material.css">
+    <link rel="stylesheet" href="../foundation/foundation.css">
+    <link rel="stylesheet" href="../icon/icon.css">
+    <link rel="stylesheet" href="./tab.css">
     <style>
         body {
             margin: 64px;
             background-color: #f5f5f5;
         }
 
+        wk-tab-bar,
         .tab-bar {
             width: 360px;
         }
 
+        wk-tab-bar[scrollable]::before,
         .tab-bar.tab-bar--scrollable::before {
             left: 52px;
             width: 90px;
@@ -26,7 +30,7 @@
 
 <body>
 
-    <div class="tab-bar">
+    <!-- <div class="tab-bar">
         <div class="tab is-activated">
             <div class="tab__text">tab 1</div>
         </div>
@@ -85,9 +89,197 @@
             <div class="tab__text">tab 5</div>
         </div>
     </div>
-    <br><br>
+    <br><br> -->
 
-    <script src="../material.js"></script>
+    <wk-layout>
+        <wk-layout-grid>
+            <wk-layout-column span="3" desktopSpan="3" tabletSpan="8" mobileSpan="4">
+                <wk-tab-bar>
+                    <wk-tab text="Tab 1"></wk-tab>
+                    <wk-tab text="Tab 2"></wk-tab>
+                    <wk-tab text="Tab 3"></wk-tab>
+                </wk-tab-bar>
+                <br><br>
+            </wk-layout-column>
+            <wk-layout-column span="3" desktopSpan="3" tabletSpan="8" mobileSpan="4">
+                <wk-tab-bar>
+                    <wk-tab text="Tab 1" icon="&#xEB52;"></wk-tab>
+                    <wk-tab text="Tab 2" icon="&#xEB52;"></wk-tab>
+                    <wk-tab text="Tab 3" icon="&#xEB52;"></wk-tab>
+                </wk-tab-bar>
+                <br><br>
+            </wk-layout-column>
+            <wk-layout-column span="3" desktopSpan="3" tabletSpan="8" mobileSpan="4">
+                <wk-tab-bar scrollable>
+                    <wk-tab text="Tab 1"></wk-tab>
+                    <wk-tab text="Tab 2"></wk-tab>
+                    <wk-tab text="Tab 3"></wk-tab>
+                    <wk-tab text="Tab 4"></wk-tab>
+                    <wk-tab text="Tab 5"></wk-tab>
+                </wk-tab-bar>
+                <br><br>
+            </wk-layout-column>
+            <wk-layout-column span="3" desktopSpan="3" tabletSpan="8" mobileSpan="4"></wk-layout-column>
+        </wk-layout-grid>
+    </wk-layout>
+
+    <style>
+        /* .doc-table {} */
+
+        .doc-table caption {
+            height: 48px;
+            line-height: 48px;
+            text-align: left;
+        }
+    
+        /* .doc-table thead {} */
+    
+        /* .doc-table tbody {} */
+    
+        /* .doc-table tr {} */
+    
+        .doc-table th,
+        .doc-table td {
+            height: 48px;
+            padding: 0 16px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+            border-right: 1px solid rgba(0, 0, 0, 0.12);
+        }
+    
+        .doc-table th {
+            border-top: 1px solid rgba(0, 0, 0, 0.12);
+        }
+    
+        .doc-table th:first-child,
+        .doc-table td:first-child {
+            border-left: 1px solid rgba(0, 0, 0, 0.12);
+        }
+    </style>
+    
+    <br>
+    <br>
+    
+    <table class="doc-table">
+        <thead>
+            <tr>
+                <th>Tag Name</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>wk-tab-bar</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>wk-tab</td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <br>
+    <br>
+    
+    <table class="doc-table">
+        <thead>
+            <tr>
+                <th>CSS Class</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>tab-bar</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>tab</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>tab__text</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>tab__icon</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>tab-bar--scrollable</td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <br>
+    <br>
+    
+    <table class="doc-table">
+        <caption>wk-tab-bar</caption>
+        <thead>
+            <tr>
+                <th>Prop Name</th>
+                <th>Type</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>scrollable</td>
+                <td>Boolean</td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <br>
+    <br>
+    
+    <table class="doc-table">
+        <caption>wk-tab</caption>
+        <thead>
+            <tr>
+                <th>Prop Name</th>
+                <th>Type</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>icon</td>
+                <td>String</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>text</td>
+                <td>String</td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <br>
+    <br>
+    
+    <table class="doc-table">
+        <thead>
+            <tr>
+                <th>Event Name</th>
+                <th>Params</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script src="./tab.js" type="module"></script>
 </body>
 
 </html>

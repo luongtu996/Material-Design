@@ -1,3 +1,4 @@
+wk-tab-bar,
 .tab-bar {
     display: flex;
     position: relative;
@@ -5,6 +6,7 @@
     background-color: #ffffff;
 }
 
+wk-tab-bar::before,
 .tab-bar::before {
     content: '';
     position: absolute;
@@ -15,6 +17,7 @@
     background-color: #6200ee;
 }
 
+wk-tab,
 .tab {
     display: inline-flex;
     align-items: center;
@@ -64,18 +67,22 @@
 
 
 
+wk-tab-bar[scrollable],
 .tab-bar--scrollable {
     overflow: auto;
 }
 
+wk-tab-bar[scrollable]::-webkit-scrollbar,
 .tab-bar--scrollable::-webkit-scrollbar {
     display: none;
 }
 
+wk-tab-bar[scrollable] wk-tab,
 .tab-bar--scrollable .tab {
     padding: 0 24px;
 }
 
+wk-tab-bar[scrollable] wk-tab:first-child,
 .tab-bar--scrollable .tab:first-child {
     margin-left: 52px;
 }
@@ -85,6 +92,7 @@
 
 
 
+wk-tab-bar:not([scrollable]) wk-tab,
 .tab-bar:not(.tab-bar--scrollable) .tab {
     flex: 1;
 }
