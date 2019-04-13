@@ -6,7 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Material</title>
-    <link rel="stylesheet" href="../material.css">
+    <link rel="stylesheet" href="../foundation/foundation.css">
+    <link rel="stylesheet" href="../icon/icon.css">
+    <link rel="stylesheet" href="../list/list.css">
+    <link rel="stylesheet" href="../divider/divider.css">
+    <link rel="stylesheet" href="./navigation-drawer.css">
     <style>
         body {
             margin: 64px;
@@ -17,7 +21,7 @@
 
 <body>
 
-    <div class="navigation-drawer">
+    <!-- <div class="navigation-drawer">
         <div class="navigation-drawer__header">
             <div class="navigation-drawer__title">Title</div>
             <div class="navigation-drawer__subtitle">Subtitle</div>
@@ -107,9 +111,15 @@
                 </li>
             </ul>
         </div>
-    </div>
+    </div> -->
 
-    <script src="../material.js"></script>
+    <wk-navigation-drawer title="Title" subtitle="Subtitle">
+        <!-- content -->
+    </wk-navigation-drawer>
+    <!-- <wk-navigation-drawer-scrim></wk-navigation-drawer-scrim> -->
+
+    <script src="../list/list.js" type="module"></script>
+    <script src="./navigation-drawer.js" type="module"></script>
 </body>
 
 </html>
