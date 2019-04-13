@@ -5,5 +5,3 @@ export default class HomeModel {
         this.data = []
     }
 }
-
-// export default new HomeModel()
