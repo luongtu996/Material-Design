@@ -34,6 +34,7 @@ class WKSideSheet extends HTMLElement {
         return [
             'title',
             'action',
+            'modal',
         ]
     }
 
