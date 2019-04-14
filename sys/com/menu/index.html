@@ -6,7 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Material</title>
-    <link rel="stylesheet" href="../material.css">
+    <link rel="stylesheet" href="../foundation/foundation.css">
+    <link rel="stylesheet" href="../icon/icon.css">
+    <link rel="stylesheet" href="../list/list.css">
+    <link rel="stylesheet" href="./menu.css">
     <style>
         body {
             margin: 64px;
@@ -16,7 +19,7 @@
 
 <body>
 
-    <div class="menu">
+    <!-- <div class="menu">
         <ul class="list">
             <li class="list__row">
                 <div class="list__item">
@@ -35,9 +38,9 @@
             </li>
         </ul>
     </div>
-    <br><br>
+    <br><br> -->
 
-    <div class="menu">
+    <!-- <div class="menu">
         <ul class="list">
             <li class="list__row">
                 <div class="list__item">
@@ -67,9 +70,9 @@
             </li>
         </ul>
     </div>
-    <br><br>
+    <br><br> -->
 
-    <div class="menu">
+    <!-- <div class="menu">
         <ul class="list">
             <li class="list__row">
                 <div class="list__item">
@@ -104,9 +107,9 @@
             </li>
         </ul>
     </div>
-    <br><br>
+    <br><br> -->
 
-    <div class="menu">
+    <!-- <div class="menu">
         <ul class="list">
             <li class="list__row">
                 <div class="list__item">
@@ -145,9 +148,38 @@
             </li>
         </ul>
     </div>
-    <br><br>
+    <br><br> -->
 
-    <script src="../material.js"></script>
+    <wk-menu>
+        <wk-list>
+            <wk-list-row>
+                <wk-list-item primaryText="Item 1" action="&#xEB52;"></wk-list-item>
+            </wk-list-row>
+            <wk-list-row>
+                <wk-list-item primaryText="Item 1"></wk-list-item>
+            </wk-list-row>
+            <wk-list-row>
+                <wk-list-item primaryText="Item 1" icon="&#xEB52;"></wk-list-item>
+            </wk-list-row>
+            <wk-list-row>
+                <wk-list-item primaryText="Item 1" thumb="https://avatars.dicebear.com/v2/avataaars/ndiing.svg"
+                    action="&#xEB52;"></wk-list-item>
+            </wk-list-row>
+            <wk-list-row>
+                <wk-list-item squareThumb primaryText="Item 1" thumb="https://avatars.dicebear.com/v2/avataaars/ndiing.svg"
+                    action="&#xEB52;">
+                </wk-list-item>
+            </wk-list-row>
+            <wk-list-row>
+                <wk-list-item rectangleThumb primaryText="Item 1" thumb="https://avatars.dicebear.com/v2/avataaars/ndiing.svg"
+                    action="&#xEB52;">
+                </wk-list-item>
+            </wk-list-row>
+        </wk-list>
+    </wk-menu>
+    
+    <!-- <script src="../list/list.js" type="module"></script> -->
+    <script src="./menu.js" type="module"></script>
 </body>
 
 </html>
