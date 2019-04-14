@@ -1,15 +1,18 @@
+wk-image-list:not([masonry]),
 .image-list:not(.image-list--masonry) {
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
     grid-gap: 4px;
 }
 
+wk-image-list:not([masonry]) .image-list__figure::before,
 .image-list:not(.image-list--masonry) .image-list__figure::before {
     content: '';
     display: block;
     padding-top: 100%;
 }
 
+wk-image-list:not([masonry]) .image-list__img,
 .image-list:not(.image-list--masonry) .image-list__img {
     position: absolute;
     left: 0;
@@ -90,17 +93,23 @@
 
 
 
+wk-image-list[quilted] wk-image-list-item:nth-child(8n+1),
+wk-image-list[quilted] wk-image-list-item:nth-child(8n+6),
 .image-list--quilted .image-list__item:nth-child(8n+1),
 .image-list--quilted .image-list__item:nth-child(8n+6) {
     grid-column-end: span 2;
     grid-row-end: span 2;
 }
 
+wk-image-list[quilted] wk-image-list-item:nth-child(8n+4),
+wk-image-list[quilted] wk-image-list-item:nth-child(8n+5),
 .image-list--quilted .image-list__item:nth-child(8n+4),
 .image-list--quilted .image-list__item:nth-child(8n+5) {
     grid-column-end: span 2;
 }
 
+wk-image-list[quilted] wk-image-list-item:nth-child(8n+4) .image-list__figure::before,
+wk-image-list[quilted] wk-image-list-item:nth-child(8n+5) .image-list__figure::before, 
 .image-list--quilted .image-list__item:nth-child(8n+4) .image-list__figure::before,
 .image-list--quilted .image-list__item:nth-child(8n+5) .image-list__figure::before {
     padding-top: 50%;
@@ -111,10 +120,15 @@
 
 
 
+wk-image-list[woven],
 .image-list--woven {
     align-items: center;
 }
 
+wk-image-list[woven] wk-image-list-item:nth-child(8n+2) .image-list__figure::before,
+wk-image-list[woven] wk-image-list-item:nth-child(8n+4) .image-list__figure::before,
+wk-image-list[woven] wk-image-list-item:nth-child(8n+5) .image-list__figure::before,
+wk-image-list[woven] wk-image-list-item:nth-child(8n+7) .image-list__figure::before,
 .image-list--woven .image-list__item:nth-child(8n+2) .image-list__figure::before,
 .image-list--woven .image-list__item:nth-child(8n+4) .image-list__figure::before,
 .image-list--woven .image-list__item:nth-child(8n+5) .image-list__figure::before,
@@ -127,12 +141,14 @@
 
 
 
+wk-image-list[masonry],
 .image-list--masonry {
     display: block;
     column-count: 4;
     column-gap: 4px;
 }
 
+wk-image-list[masonry] wk-image-list-item,
 .image-list--masonry .image-list__item {
     break-inside: avoid-column;
     font-size: 0;
