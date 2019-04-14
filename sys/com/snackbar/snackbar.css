@@ -1,3 +1,4 @@
+wk-snackbar,
 .snackbar {
     display: flex;
     align-items: center;
@@ -21,6 +22,8 @@
     line-height: 20px;
 }
 
+wk-snackbar .button,
+.snackbar .button,
 .snackbar__action {
     margin: 6px 8px;
     margin-bottom: 0;
