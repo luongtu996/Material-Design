@@ -1,3 +1,4 @@
+wk-banner,
 .banner {
     display: flex;
     width: 720px;
@@ -53,10 +54,12 @@
 
 
 
+.banner__actions wk-button,
 .banner__actions .button {
     margin: 8px;
 }
 
+.banner__actions wk-button + wk-button,
 .banner__actions .button + .button {
     margin-left: calc(8px - 8px);
 }
@@ -66,6 +69,7 @@
 
 
 @media (max-width: 480px) {
+    wk-banner,
     .banner {
         flex-wrap: wrap;
         padding-top: 2px;

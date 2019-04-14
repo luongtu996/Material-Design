@@ -6,7 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Material</title>
-    <link rel="stylesheet" href="../material.css">
+    <link rel="stylesheet" href="../foundation/foundation.css">
+    <link rel="stylesheet" href="../button/button.css">
+    <link rel="stylesheet" href="./banner.css">
     <style>
         body {
             /* margin: 64px; */
@@ -17,7 +19,7 @@
 
 <body>
 
-    <div class="banner">
+    <!-- <div class="banner">
         <div class="banner__content">
             <div class="banner__thumb" style="background-image: url(https://avatars.dicebear.com/v2/avataaars/ndiing.svg);"></div>
             <div class="banner__text">Two line text string with two actions. One to two lines is preferable on mobile.</div>
@@ -26,9 +28,17 @@
             <button class="banner__action button"><span class="button__text">action</span></button>
             <button class="banner__action button"><span class="button__text">action</span></button>
         </div>
+    </div> -->
+
+    <wk-banner actions="#actions" thumb="https://avatars.dicebear.com/v2/avataaars/ndiing.svg" text="Two line text string with two actions. One to two lines is preferable on mobile."></wk-banner>
+
+    <div id="actions">
+        <wk-button text="action"></wk-button>
+        <wk-button text="action"></wk-button>
     </div>
 
-    <script src="../material.js"></script>
+    <script src="../button/button.js" type="module"></script>
+    <script src="./banner.js" type="module"></script>
 </body>
 
 </html>
