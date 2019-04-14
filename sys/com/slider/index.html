@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Material</title>
-    <link rel="stylesheet" href="../material.css">
+    <link rel="stylesheet" href="../foundation/foundation.css">
+    <link rel="stylesheet" href="./slider.css">
     <style>
         body {
             margin: 64px;
@@ -16,11 +17,18 @@
 
 <body>
 
-    <div class="slider">
+    <!-- <div class="slider">
         <input type="range" min="0" max="100" value="50" class="slider__input">
-    </div>
+    </div> -->
 
-    <script src="../material.js"></script>
+    <wk-slider min="0" max="100" value="50"></wk-slider>
+
+    <script src="./slider.js" type="module"></script>
+    <script>
+        document.querySelector('wk-slider').addEventListener('onInput', e => {
+            console.log(e.detail.value)
+        })
+    </script>
 </body>
 
 </html>

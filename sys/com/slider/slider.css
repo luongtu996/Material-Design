@@ -1,3 +1,4 @@
+wk-slider,
 .slider {
     display: inline-flex;
     vertical-align: middle;
@@ -13,7 +14,7 @@
     height: 2px;
     background-image: linear-gradient(#6022ee, #6022ee);
     background-position: 0 100%;
-    background-size: 50% 100%;
+    background-size: var(--slider-input-value) 100%;
     background-repeat: no-repeat;
     background-color: rgba(96, 34, 238, 0.24);
 }
