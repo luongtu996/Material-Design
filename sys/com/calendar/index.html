@@ -6,7 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Material</title>
-    <link rel="stylesheet" href="../material.css">
+    <link rel="stylesheet" href="../foundation/foundation.css">
+    <link rel="stylesheet" href="../divider/divider.css">
+    <link rel="stylesheet" href="../button/button.css">
+    <link rel="stylesheet" href="../icon/icon.css">
+    <link rel="stylesheet" href="./calendar.css">
     <style>
         body {
             margin: 64px;
@@ -16,76 +20,191 @@
 
 <body>
 
-    <div class="calendar">
+    <div class="calendar calendar--week">
         <div class="calendar__header">
-            <div class="calendar__header-section calendar__header-section--start">
-                <div class="calendar__title">March 2019</div>
+            <div class="calendar__section calendar__section--start">
+                <div class="calendar__title">April 2019</div>
             </div>
-            <div class="calendar__header-section calendar__header-section--end">
+            <div class="calendar__section calendar__section--end">
                 <div class="calendar__icon icon">&#xE973;</div>
                 <div class="calendar__icon icon">&#xE974;</div>
             </div>
         </div>
-        <div class="calendar__content">
-            <div class="calendar__grid">
-                <div class="calendar__column">S</div>
-                <div class="calendar__column">M</div>
-                <div class="calendar__column">T</div>
-                <div class="calendar__column">W</div>
-                <div class="calendar__column">T</div>
-                <div class="calendar__column">F</div>
-                <div class="calendar__column">S</div>
-            </div>
-            <hr class="divider">
-            <div class="calendar__grid">
-                <div class="calendar__column"></div>
-                <div class="calendar__column"></div>
-                <div class="calendar__column"></div>
-                <div class="calendar__column"></div>
-                <div class="calendar__column"></div>
-                <div class="calendar__column">1</div>
-                <div class="calendar__column">2</div>
-                <div class="calendar__column">3</div>
-                <div class="calendar__column">4</div>
-                <div class="calendar__column">5</div>
-                <div class="calendar__column">6</div>
-                <div class="calendar__column">7</div>
-                <div class="calendar__column">8</div>
-                <div class="calendar__column">9</div>
-                <div class="calendar__column">10</div>
-                <div class="calendar__column">11</div>
-                <div class="calendar__column">12</div>
-                <div class="calendar__column">13</div>
-                <div class="calendar__column">14</div>
-                <div class="calendar__column">15</div>
-                <div class="calendar__column">16</div>
-                <div class="calendar__column">17</div>
-                <div class="calendar__column">18</div>
-                <div class="calendar__column">19</div>
-                <div class="calendar__column">20</div>
-                <div class="calendar__column">21</div>
-                <div class="calendar__column">22</div>
-                <div class="calendar__column">23</div>
-                <div class="calendar__column">24</div>
-                <div class="calendar__column">25</div>
-                <div class="calendar__column">26</div>
-                <div class="calendar__column">27</div>
-                <div class="calendar__column">28</div>
-                <div class="calendar__column">29</div>
-                <div class="calendar__column">30</div>
-                <div class="calendar__column">31</div>
-                <div class="calendar__column"></div>
-                <div class="calendar__column"></div>
-                <div class="calendar__column"></div>
-                <div class="calendar__column"></div>
-                <div class="calendar__column"></div>
-                <div class="calendar__column"></div>
+        <div class="calendar__body">
+            <div class="calendar__layout">
+                <div class="calendar__grid calendar__grid--header">
+                    <div class="calendar__column">S</div>
+                    <div class="calendar__column">M</div>
+                    <div class="calendar__column">T</div>
+                    <div class="calendar__column">W</div>
+                    <div class="calendar__column">T</div>
+                    <div class="calendar__column">F</div>
+                    <div class="calendar__column">S</div>
+                </div>
+                <div class="calendar__grid calendar__grid--body">
+                    <div class="calendar__column"></div>
+                    <div class="calendar__column">1</div>
+                    <div class="calendar__column">2</div>
+                    <div class="calendar__column">3</div>
+                    <div class="calendar__column">4</div>
+                    <div class="calendar__column">5</div>
+                    <div class="calendar__column">6</div>
+                    <div class="calendar__column">7</div>
+                    <div class="calendar__column">8</div>
+                    <div class="calendar__column">9</div>
+                    <div class="calendar__column">10</div>
+                    <div class="calendar__column">11</div>
+                    <div class="calendar__column">12</div>
+                    <div class="calendar__column">13</div>
+                    <div class="calendar__column">14</div>
+                    <div class="calendar__column is-activated">15</div>
+                    <div class="calendar__column">16</div>
+                    <div class="calendar__column">17</div>
+                    <div class="calendar__column">18</div>
+                    <div class="calendar__column">19</div>
+                    <div class="calendar__column">20</div>
+                    <div class="calendar__column">21</div>
+                    <div class="calendar__column">22</div>
+                    <div class="calendar__column">23</div>
+                    <div class="calendar__column">24</div>
+                    <div class="calendar__column">25</div>
+                    <div class="calendar__column">26</div>
+                    <div class="calendar__column">27</div>
+                    <div class="calendar__column">28</div>
+                    <div class="calendar__column">29</div>
+                    <div class="calendar__column">30</div>
+                    <div class="calendar__column"></div>
+                    <div class="calendar__column"></div>
+                    <div class="calendar__column"></div>
+                    <div class="calendar__column"></div>
+                    <div class="calendar__column"></div>
+                    <div class="calendar__column"></div>
+                    <div class="calendar__column"></div>
+                    <div class="calendar__column"></div>
+                    <div class="calendar__column"></div>
+                    <div class="calendar__column"></div>
+                    <div class="calendar__column"></div>
+                </div>
             </div>
         </div>
+        <!-- <div class="calendar__footer">
+            <button class="button">
+                <span class="button__text">today</span>
+            </button>
+        </div> -->
     </div>
+    <br><br>
 
-    <script src="../material.js"></script>
-    <script src="./calendar.js"></script>
+    <div class="calendar calendar--month">
+        <div class="calendar__header">
+            <div class="calendar__section calendar__section--start">
+                <div class="calendar__title">2019</div>
+            </div>
+            <div class="calendar__section calendar__section--end">
+                <div class="calendar__icon icon">&#xE973;</div>
+                <div class="calendar__icon icon">&#xE974;</div>
+            </div>
+        </div>
+        <div class="calendar__body">
+            <div class="calendar__layout">
+                <div class="calendar__grid calendar__grid--body">
+                    <div class="calendar__column">Jan</div>
+                    <div class="calendar__column">Feb</div>
+                    <div class="calendar__column">Mar</div>
+                    <div class="calendar__column is-activated">Apr</div>
+                    <div class="calendar__column">May</div>
+                    <div class="calendar__column">Jun</div>
+                    <div class="calendar__column">Jul</div>
+                    <div class="calendar__column">Aug</div>
+                    <div class="calendar__column">Sep</div>
+                    <div class="calendar__column">Oct</div>
+                    <div class="calendar__column">Nov</div>
+                    <div class="calendar__column">Dec</div>
+                    <div class="calendar__column"></div>
+                    <div class="calendar__column"></div>
+                    <div class="calendar__column"></div>
+                    <div class="calendar__column"></div>
+                    <div class="calendar__column"></div>
+                    <div class="calendar__column"></div>
+                    <div class="calendar__column"></div>
+                    <div class="calendar__column"></div>
+                    <div class="calendar__column"></div>
+                    <div class="calendar__column"></div>
+                    <div class="calendar__column"></div>
+                    <div class="calendar__column"></div>
+                    <div class="calendar__column"></div>
+                    <div class="calendar__column"></div>
+                    <div class="calendar__column"></div>
+                    <div class="calendar__column"></div>
+                </div>
+            </div>
+        </div>
+        <!-- <div class="calendar__footer">
+            <button class="button">
+                <span class="button__text">today</span>
+            </button>
+        </div> -->
+    </div>
+    <br><br>
+
+    <div class="calendar calendar--year">
+        <div class="calendar__header">
+            <div class="calendar__section calendar__section--start">
+                <div class="calendar__title">2001-2028</div>
+            </div>
+            <div class="calendar__section calendar__section--end">
+                <div class="calendar__icon icon">&#xE973;</div>
+                <div class="calendar__icon icon">&#xE974;</div>
+            </div>
+        </div>
+        <div class="calendar__body">
+            <div class="calendar__layout">
+                <div class="calendar__grid calendar__grid--body">
+                    <div class="calendar__column">2001</div>
+                    <div class="calendar__column">2002</div>
+                    <div class="calendar__column">2003</div>
+                    <div class="calendar__column">2004</div>
+                    <div class="calendar__column">2005</div>
+                    <div class="calendar__column">2006</div>
+                    <div class="calendar__column">2007</div>
+                    <div class="calendar__column">2008</div>
+                    <div class="calendar__column">2009</div>
+                    <div class="calendar__column">2010</div>
+                    <div class="calendar__column">2011</div>
+                    <div class="calendar__column">2012</div>
+                    <div class="calendar__column">2013</div>
+                    <div class="calendar__column">2014</div>
+                    <div class="calendar__column">2015</div>
+                    <div class="calendar__column">2016</div>
+                    <div class="calendar__column">2017</div>
+                    <div class="calendar__column">2018</div>
+                    <div class="calendar__column is-activated">2019</div>
+                    <div class="calendar__column">2020</div>
+                    <div class="calendar__column">2021</div>
+                    <div class="calendar__column">2022</div>
+                    <div class="calendar__column">2023</div>
+                    <div class="calendar__column">2024</div>
+                    <div class="calendar__column">2025</div>
+                    <div class="calendar__column">2026</div>
+                    <div class="calendar__column">2027</div>
+                    <div class="calendar__column">2028</div>
+                </div>
+            </div>
+        </div>
+        <!-- <div class="calendar__footer">
+            <button class="button">
+                <span class="button__text">today</span>
+            </button>
+        </div> -->
+    </div>
+    <br><br>
+
+    <!--  -->
+
+    <!-- year, month, day, hours, minutes, seconds, milliseconds -->
+    <wk-calendar value="2020"></wk-calendar><br><br>
+
+    <script src="./calendar.js" type="module"></script>
 </body>
 
 </html>
