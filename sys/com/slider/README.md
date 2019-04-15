@@ -15,7 +15,7 @@ value | Number |
 ### Event
 Event Name | Params | Description
 --- | --- | ---
- |  | 
+onInput | event | 
 
 ### CSS
 CSS Class | Description
