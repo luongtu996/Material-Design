@@ -1,3 +1,4 @@
+wk-dialog,
 .dialog {
     display: flex;
     flex-direction: column;
@@ -58,6 +59,7 @@
     margin-top: calc(12px - 8px);
 }
 
+wk-dialog-scrim,
 .dialog__scrim {
     position: fixed;
     z-index: 23;

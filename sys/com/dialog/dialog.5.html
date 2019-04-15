@@ -6,7 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Material</title>
-    <link rel="stylesheet" href="../material.css">
+    <link rel="stylesheet" href="../foundation/foundation.css">
+    <link rel="stylesheet" href="../button/button.css">
+    <link rel="stylesheet" href="./dialog.css">
     <style>
         body {
             margin: 64px;
@@ -17,7 +19,7 @@
 
 <body>
 
-    <div class="dialog">
+    <!-- <div class="dialog">
         <div class="dialog__header">
             <div class="dialog__title">Two-line<br>dialog header</div>
         </div>
@@ -33,9 +35,24 @@
             <button class="button"><span class="button__text">no thanks</span></button>
         </div>
     </div>
-    <div class="dialog__scrim"></div>
+    <div class="dialog__scrim"></div> -->
 
-    <script src="../material.js"></script>
+    <wk-dialog title="Two-line<br>dialog header" actions="#actions">
+        Lorem ipsum dolor sit amet,
+        consectetur adipisicing elit,
+        sed do eiusmod tempor
+        incididunt ut labore et dolore
+        magna aliqua.
+    </wk-dialog>
+    <wk-dialog-scrim></wk-dialog-scrim>
+    
+    <div id="actions">
+        <button class="button"><span class="button__text">turn on speed boost</span></button>
+        <button class="button"><span class="button__text">no thanks</span></button>
+    </div>
+
+    <script src="../button/button.js" type="module"></script>
+    <script src="./dialog.js" type="module"></script>
 </body>
 
 </html>

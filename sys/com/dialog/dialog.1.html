@@ -6,7 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Material</title>
-    <link rel="stylesheet" href="../material.css">
+    <link rel="stylesheet" href="../foundation/foundation.css">
+    <link rel="stylesheet" href="../button/button.css">
+    <link rel="stylesheet" href="./dialog.css">
     <style>
         body {
             margin: 64px;
@@ -17,16 +19,20 @@
 
 <body>
 
-    <div class="dialog">
+    <!-- <div class="dialog">
         <div class="dialog__header">
             <div class="dialog__title">Dialog header</div>
         </div>
         <div class="dialog__content">
         </div>
     </div>
-    <div class="dialog__scrim"></div>
+    <div class="dialog__scrim"></div> -->
 
-    <script src="../material.js"></script>
+    <wk-dialog title="Dialog header"></wk-dialog>
+    <wk-dialog-scrim></wk-dialog-scrim>
+
+    <script src="../button/button.js" type="module"></script>
+    <script src="./dialog.js" type="module"></script>
 </body>
 
 </html>
