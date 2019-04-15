@@ -6,7 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Material</title>
-    <link rel="stylesheet" href="../material.css">
+    <link rel="stylesheet" href="../foundation/foundation.css">
+    <link rel="stylesheet" href="../icon/icon.css">
+    <link rel="stylesheet" href="../layout/layout.css">
+    <link rel="stylesheet" href="./text-field.css">
     <style>
         body {
             margin: 64px;
@@ -16,7 +19,7 @@
 
 <body>
 
-    <div class="layout__grid">
+    <!-- <div class="layout__grid">
         <div class="layout__column layout__column--3-desktop">
             <div class="text-field">
                 <input type="email" class="text-field__input" placeholder="Text field" maxlength="10" minlength="5">
@@ -205,9 +208,39 @@
             </div>
             <br><br>
         </div>
-    </div>
+    </div> -->
 
-    <script src="../material.js"></script>
+    <wk-layout>
+        <wk-layout-grid>
+            <wk-layout-column span="3" desktopSpan="3" tabletSpan="8" mobileSpan="4">
+
+                <wk-text-field placeholder="Placeholder"></wk-text-field><br><br>
+                <wk-text-field label="Label" placeholder="Placeholder"></wk-text-field><br><br>
+
+            </wk-layout-column>
+            <wk-layout-column span="3" desktopSpan="3" tabletSpan="8" mobileSpan="4">
+
+                <wk-text-field prefixIcon="&#xEB52;" placeholder="Placeholder"></wk-text-field><br><br>
+                <wk-text-field suffixIcon="&#xEB52;" label="Label" placeholder="Placeholder"></wk-text-field><br><br>
+
+            </wk-layout-column>
+            <wk-layout-column span="3" desktopSpan="3" tabletSpan="8" mobileSpan="4">
+
+                <wk-text-field prefixMeta="Rp&nbsp;" placeholder="Placeholder"></wk-text-field><br><br>
+                <wk-text-field suffixMeta=".00" label="Label" placeholder="Placeholder"></wk-text-field><br><br>
+
+            </wk-layout-column>
+            <wk-layout-column span="3" desktopSpan="3" tabletSpan="8" mobileSpan="4">
+
+                <wk-text-field outlined placeholder="Placeholder"></wk-text-field><br><br>
+                <wk-text-field outlined label="Label" placeholder="Placeholder"></wk-text-field><br><br>
+
+            </wk-layout-column>
+        </wk-layout-grid>
+    </wk-layout>
+
+    <script src="../layout/layout.js" type="module"></script>
+    <script src="./text-field.js" type="module"></script>
 </body>
 
 </html>

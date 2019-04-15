@@ -1,3 +1,4 @@
+wk-text-field,
 .text-field {
     display: inline-grid;
     align-items: center;
@@ -127,33 +128,40 @@
 
 
 
+wk-text-field[prefixIcon] .text-field__input,
 .text-field--with-prefix-icon .text-field__input {
     padding-left: 0;
 }
 
+wk-text-field[prefixMeta] .text-field__input,
 .text-field--with-prefix-meta .text-field__input {
     padding-left: 0;
 }
 
+wk-text-field[suffixIcon] .text-field__input,
 .text-field--with-suffix-icon .text-field__input {
     padding-right: 0;
 }
 
+wk-text-field[suffixMeta] .text-field__input,
 .text-field--with-suffix-meta .text-field__input {
     padding-right: 0;
 }
 
 /* .text-field--with-label {} */
 
+wk-text-field[label][prefixIcon] .text-field__label,
 .text-field--with-label.text-field--with-prefix-icon .text-field__label {
     left: calc(48px - 4px);
 }
 
+wk-text-field[label]:not([outlined]) .text-field__input,
 .text-field--with-label:not(.text-field--outlined) .text-field__input {
     padding-top: calc(40px - (24px - ((24px - 16px) / 2)));
     padding-bottom: calc(56px - 40px - ((24px - 16px) / 2));
 }
 
+wk-text-field[label]:not([outlined]) .text-field__meta,
 .text-field--with-label:not(.text-field--outlined) .text-field__meta {
     padding-top: calc(40px - (24px - ((24px - 16px) / 2)));
     padding-bottom: calc(56px - 40px - ((24px - 16px) / 2));
@@ -170,15 +178,19 @@
     display: none;
 }
 
+wk-text-field[label] .text-field__input:not(:focus):placeholder-shown::placeholder,
 .text-field--with-label .text-field__input:not(:focus):placeholder-shown::placeholder {
     color: transparent;
 }
 
+wk-text-field[label] .text-field__input:not(:focus):placeholder-shown ~ .text-field__section .text-field__meta,
 .text-field--with-label .text-field__input:not(:focus):placeholder-shown ~ .text-field__section .text-field__meta {
     color: transparent;
 }
 
+wk-text-field[label] .text-field__input:focus ~ .text-field__label,
 .text-field--with-label .text-field__input:focus ~ .text-field__label,
+wk-text-field[label] .text-field__input:not(:placeholder-shown) ~ .text-field__label,
 .text-field--with-label .text-field__input:not(:placeholder-shown) ~ .text-field__label {
     top: calc(20px - (16px - ((16px - 12px) / 2)));
     font-weight: 400;
@@ -220,18 +232,21 @@
 
 /* .text-field--outlined {} */
 
+wk-text-field[outlined] .text-field__container,
 .text-field--outlined .text-field__container {
     border-radius: 4px;
     background-color: transparent;
     box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.12);
 }
 
+wk-text-field[outlined][label] .text-field__label,
 .text-field--outlined.text-field--with-label .text-field__label {
     display: inline-flex;
     align-items: center;
     justify-content: center;
 }
 
+wk-text-field[outlined][label] .text-field__label::before,
 .text-field--outlined.text-field--with-label .text-field__label::before {
     content: '';
     position: absolute;
@@ -245,13 +260,17 @@
     width 100ms ease-in-out;
 }
 
+wk-text-field[outlined][label] .text-field__input:focus ~ .text-field__label,
 .text-field--outlined.text-field--with-label .text-field__input:focus ~ .text-field__label,
+wk-text-field[outlined][label] .text-field__input:not(:placeholder-shown) ~ .text-field__label,
 .text-field--outlined.text-field--with-label .text-field__input:not(:placeholder-shown) ~ .text-field__label {
     left: calc(12px - 4px);
     top: calc(0px - (16px / 2));
 }
 
+wk-text-field[outlined][label] .text-field__input:focus ~ .text-field__label::before,
 .text-field--outlined.text-field--with-label .text-field__input:focus ~ .text-field__label::before,
+wk-text-field[outlined][label] .text-field__input:not(:placeholder-shown) ~ .text-field__label::before,
 .text-field--outlined.text-field--with-label .text-field__input:not(:placeholder-shown) ~ .text-field__label::before {
     top: calc((16px / 2));
     width: 100%;
@@ -262,10 +281,12 @@
 
 
 
+wk-text-field[outlined] .text-field__input:focus ~ .text-field__container,
 .text-field--outlined .text-field__input:focus ~ .text-field__container {
     box-shadow: inset 0 0 0 2px #6200ee;
 }
 
+wk-text-field[outlined] .text-field__input:not(:placeholder-shown):invalid ~ .text-field__container,
 .text-field--outlined .text-field__input:not(:placeholder-shown):invalid ~ .text-field__container {
     box-shadow: inset 0 0 0 2px #b00020;
 }
