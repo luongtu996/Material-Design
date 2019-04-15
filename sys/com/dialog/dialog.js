@@ -1,5 +1,4 @@
 import './dialog-scrim.js'
-import '../button/button.js'
 
 class WKDialog extends HTMLElement {
 

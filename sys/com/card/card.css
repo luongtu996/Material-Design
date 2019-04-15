@@ -1,3 +1,4 @@
+wk-card,
 .card {
     display: flex;
     flex-direction: column;
@@ -126,6 +127,7 @@
 
 
 
+wk-card[outlined],
 .card--outlined {
     box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.12);
 }
