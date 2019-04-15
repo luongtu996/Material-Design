@@ -20,5 +20,5 @@ Event Name | Params | Description
 ### CSS
 CSS Class | Description
 --- | --- 
-.progress |
-.progress--circular |
+progress |
+progress--circular |
