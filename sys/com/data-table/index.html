@@ -6,18 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Material</title>
-    <link rel="stylesheet" href="../material.css">
+    <link rel="stylesheet" href="../foundation/foundation.css">
+    <link rel="stylesheet" href="../icon/icon.css">
+    <link rel="stylesheet" href="../card/card.css">
+    <link rel="stylesheet" href="./data-table.css">
     <style>
         body {
             margin: 64px;
         }
 
+        wk-card,
         .card {
             width: calc(100% / 2);
             height: calc((48px * 6) + 64px + 56px);
         }
         
-        /* .data-table {
+        /* wk-data-table,
+        .data-table {
             width: calc(100% / 2);
             height: calc((48px * 6) + 64px + 56px);
         } */
@@ -26,7 +31,7 @@
 
 <body>
 
-    <div class="card">
+    <!-- <div class="card">
         <div class="data-table">
             <div class="data-table__header">
                 <div class="data-table__section data-table__section--start">
@@ -135,9 +140,18 @@
             </div>
         </div>
     </div>
-    <br><br>
+    <br><br> -->
 
-    <script src="../material.js"></script>
+    <wk-card>
+        <wk-data-table
+            title="Data table"
+            columns='[{"text":"Name","field":"name"},{"text":"Address","field":"address"},{"text":"Email","field":"email"},{"text":"Phone","field":"phone"}]'
+            data='[{"name":"Ridho","address":"Pacitan","email":"ridho@me.com","phone":"087758753654"},{"name":"Andi","address":"Pacitan","email":"andi@me.com","phone":"087758312354"},{"name":"Budi","address":"Pacitan","email":"budi@me.com","phone":"0877583211234"},{"name":"Shinta","address":"Pacitan","email":"shinta@me.com","phone":"087712321654"},{"name":"Hero","address":"Pacitan","email":"hero@me.com","phone":"0877583123654"},{"name":"Deni","address":"Pacitan","email":"deni@me.com","phone":"0877583465654"},{"name":"Rosi","address":"Pacitan","email":"rosi@me.com","phone":"0877584654"},{"name":"Sarni","address":"Pacitan","email":"sarni@me.com","phone":"087758378954"},{"name":"Kamto","address":"Pacitan","email":"kamto@me.com","phone":"08775845654"},{"name":"Suparman","address":"Pacitan","email":"suparman@me.com","phone":"087755364554"},{"name":"Kolaman","address":"Pacitan","email":"kolaman@me.com","phone":"087778931654"},{"name":"Wasalam","address":"Pacitan","email":"wasalam@me.com","phone":"0877123654"}]'>
+        </wk-data-table>
+    </wk-card>
+    
+    <script src="../card/card.js" type="module"></script>
+    <script src="./data-table.js" type="module"></script>
 </body>
 
 </html>
