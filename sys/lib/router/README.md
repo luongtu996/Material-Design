@@ -15,8 +15,3 @@ segmentParams | Object |
 Event Name | Params | Description
 --- | --- | ---
  |  | 
-
-### CSS
-CSS Class | Description
---- | --- 
- | 
