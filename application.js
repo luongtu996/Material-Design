@@ -9,7 +9,3 @@ new Router([
         { component: HomeComponent, path: 'home' },
     ]},
 ])
-
-/* 
-    
-*/
