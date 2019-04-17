@@ -1,23 +1,18 @@
+/**
+ * @class
+ */
 class WKRouter extends HTMLElement { }
 customElements.define('wk-router', WKRouter)
 
-class WKApp extends HTMLElement {
-    
-    constructor() {
-        super()
+/**
+ * @class
+ */
+export default class Router {
 
-        this.innerHTML = `
-            <h1>Welcome App Component</h1>
-            <wk-router></wk-router>
-        `
-    }
-}
-customElements.define('wk-app', WKApp)
-
-let AppComponent = `<wk-app></wk-app>`
-
-class Router {
-
+    /**
+     * 
+     * @param {array} routes 
+     */
     constructor(routes = []) {
         this.hashChange = this.hashChange.bind(this)
 
@@ -29,6 +24,13 @@ class Router {
         window.addEventListener('hashchange', this.hashChange)
     }
 
+    /**
+     * 
+     * @param {array} routes 
+     * @param {string} name 
+     * @param {string} node 
+     * @param {number} depth 
+     */
     reduceRoutes(routes = [], name = '', node = '', depth = 0) {
 
         return routes.reduce((routes, route, index) => {
@@ -53,6 +55,11 @@ class Router {
         }, [])
     }
 
+    /**
+     * 
+     * @param {string} state 
+     * @param {string} name 
+     */
     matchState(state, name) {
         let segment = []
         let matches = state.match(
@@ -85,6 +92,10 @@ class Router {
         return null
     }
 
+    /**
+     * 
+     * @param {object} event 
+     */
     hashChange(event) {
         let hash = window.location.hash
 
@@ -144,36 +155,5 @@ class Router {
                 this.oldNode = newNode
             }
         })
-
-        console.log(this, event)
     }
 }
-
-// test running router
-
-let routes = [
-    // root 1
-    { component: AppComponent, path: '', children: [
-        { component: AppComponent, path: '', },
-        { component: AppComponent, path: 'home', },
-        { component: AppComponent, path: 'users', children: [
-            { component: AppComponent, path: '', },
-            { component: AppComponent, path: ':asdf', children: [
-                { component: AppComponent, path: '', },
-                { component: AppComponent, path: ':qwer', },
-            ]},
-        ]},
-    ]},
-    // root 2
-    { component: AppComponent, path: '', children: [
-        { component: AppComponent, path: '', },
-        { component: AppComponent, path: 'login', },
-        { component: AppComponent, path: 'register', },
-    ]},
-    // root 3
-    { component: AppComponent, path: '/demo/:asdf/:qwer', },
-    // wildcard
-    { component: AppComponent, path: '*', },
-]
-
-new Router(routes)

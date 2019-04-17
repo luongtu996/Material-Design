@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Material</title>
-    <link rel="stylesheet" href="./foundation.css">
+    <link rel="stylesheet" href="./router.css">
     <style>
         body {
             margin: 64px;
@@ -16,7 +16,85 @@
 
 <body>
     <wk-router></wk-router>
-    <script src="./foundation.js"></script>
+
+    <script type="module">
+        import Router from './router.js'
+
+        let HomeLayoutComponent = `
+            <div>
+                <h1>HomeLayoutComponent</h1>
+                <ul>
+                    <li><a href="#/home">#/home</a></li>
+                    <li><a href="#/users">#/users</a></li>
+                    <li><a href="#/users/">#/users/</a></li>
+                    <li><a href="#/users/1">#/users/1</a></li>
+                    <li><a href="#/users/1/">#/users/1/</a></li>
+                    <li><a href="#/users/1/1">#/users/1/1</a></li>
+                    <li><a href="#/login">#/login</a></li>
+                    <li><a href="#/register">#/register</a></li>
+                    <li><a href="#/demo/1/1">#/demo/1/1</a></li>
+                    <li><a href="#/asdfqwer">#/asdfqwer</a></li>
+                </ul>
+                <wk-router></wk-router>    
+            </div>
+        `
+        let HomeComponent = `<div><h1>HomeComponent</h1><wk-router></wk-router></div>`
+        let UsersComponent = `<div><h1>UsersComponent</h1><wk-router></wk-router></div>`
+        let UsersProfileComponent = `<div><h1>UsersProfileComponent</h1><wk-router></wk-router></div>`
+        let UserProfileComponent = `<div><h1>UserProfileComponent</h1><wk-router></wk-router></div>`
+        let UsersDetailComponent = `<div><h1>UsersDetailComponent</h1><wk-router></wk-router></div>`
+        let UserDetailComponent = `<div><h1>UserDetailComponent</h1><wk-router></wk-router></div>`
+        let AuthLayoutComponent = `
+            <div>
+                <h1>AuthLayoutComponent</h1>
+                <ul>
+                    <li><a href="#/home">#/home</a></li>
+                    <li><a href="#/users">#/users</a></li>
+                    <li><a href="#/users/">#/users/</a></li>
+                    <li><a href="#/users/1">#/users/1</a></li>
+                    <li><a href="#/users/1/">#/users/1/</a></li>
+                    <li><a href="#/users/1/1">#/users/1/1</a></li>
+                    <li><a href="#/login">#/login</a></li>
+                    <li><a href="#/register">#/register</a></li>
+                    <li><a href="#/demo/1/1">#/demo/1/1</a></li>
+                    <li><a href="#/asdfqwer">#/asdfqwer</a></li>
+                </ul>
+                <wk-router></wk-router>    
+            </div>
+        `
+        let LoginComponent = `<div><h1>LoginComponent</h1><wk-router></wk-router></div>`
+        let RegisterComponent = `<div><h1>RegisterComponent</h1><wk-router></wk-router></div>`
+        let DemoComponent = `<div><h1>DemoComponent</h1><wk-router></wk-router></div>`
+        let PageNotFoundComponent = `<div><h1>PageNotFoundComponent</h1><wk-router></wk-router></div>`
+
+        // test running router
+        let routes = [
+            // root 1
+            { component: HomeLayoutComponent, path: '', children: [
+                { component: HomeComponent, path: '', },
+                { component: HomeComponent, path: 'home', },
+                { component: UsersComponent, path: 'users', children: [
+                    { component: UsersProfileComponent, path: '', },
+                    { component: UserProfileComponent, path: ':asdf', children: [
+                        { component: UsersDetailComponent, path: '', },
+                        { component: UserDetailComponent, path: ':qwer', },
+                    ]},
+                ]},
+            ]},
+            // root 2
+            { component: AuthLayoutComponent, path: '', children: [
+                { component: LoginComponent, path: '', },
+                { component: LoginComponent, path: 'login', },
+                { component: RegisterComponent, path: 'register', },
+            ]},
+            // root 3
+            { component: DemoComponent, path: '/demo/:asdf/:qwer', },
+            // wildcard
+            { component: PageNotFoundComponent, path: '*', },
+        ]
+
+        new Router(routes)
+    </script>
 </body>
 
 </html>
