@@ -29,15 +29,8 @@ th {
 }
 
 input,
-input::-webkit-slider-thumb,
-progress {
+input::-webkit-slider-thumb {
     -webkit-appearance: none;
-}
-
-progress::-webkit-progress-inner-element,
-progress::-webkit-progress-bar,
-progress::-webkit-progress-value {
-    display: none;
 }
 
 body {
