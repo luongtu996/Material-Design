@@ -1,135 +1,82 @@
-/**
- * @class
- * @extends {HTMLElement}
- */
-class Component extends HTMLElement { }
+class WKRouter extends HTMLElement { }
+customElements.define('wk-router', WKRouter)
 
-/**
- * @class
- * @extends {Component}
- */
-class RouterComponent extends Component { }
-// <md-router></md-router>
-customElements.define('md-router', RouterComponent);
+class WKApp extends HTMLElement {
+    
+    constructor() {
+        super()
 
-/**
- * @class
- */
-export default class Router {
+        this.innerHTML = `
+            <h1>Welcome App Component</h1>
+            <wk-router></wk-router>
+        `
+    }
+}
+customElements.define('wk-app', WKApp)
 
-    /**
-     * @private
-     * @property {object} queryParams
-     */
-    // queryParams = {}
+let AppComponent = `<wk-app></wk-app>`
 
-    /**
-     * @private
-     * @property {object} pathParams
-     */
-    // pathParams = {}
+class Router {
 
-    /**
-     * @private
-     * @property {object} oldPath
-     */
-    // oldPath = []
-
-    /**
-     * @private
-     * @property {object} route
-     * @property {object} route.component
-     * @property {object} route.path
-     * @property {object} route.children
-     */
-    // route = {
-    //     component: `<div><md-router></md-router></div>`,
-    //     path: undefined,
-    //     children: [],
-    // }
-
-    /**
-     * @constructor
-     * @param {array} routes 
-     */
     constructor(routes = []) {
-        this.routes = this.routesReduce(routes)
         this.hashChange = this.hashChange.bind(this)
 
-        this.queryParams = {}
-        this.pathParams = {}
-        this.oldPath = []
+        this.routes = this.reduceRoutes(routes)
 
-        this.route = {
-            component: `<div><md-router></md-router></div>`,
-            path: undefined,
-            children: [],
-        }
+        this.oldNode = []
 
         window.addEventListener('DOMContentLoaded', this.hashChange)
         window.addEventListener('hashchange', this.hashChange)
     }
 
-    /**
-     * routesReduce
-     * @param {array} routes 
-     * @param {string} name 
-     * @param {string} id 
-     * @param {number} level 
-     */
-    routesReduce(routes = [], name = '', id = '', level = 0) {
-        return routes.reduce((routes, route, index) => {
-            route = Object.assign({}, this.route, route)
-            route.name = `${name}/${route.path}`.slice(1)
-            route.id = `${id}/${index}`.slice(1)
-            route.level = level
-            routes = routes.concat(route)
+    reduceRoutes(routes = [], name = '', node = '', depth = 0) {
 
+        return routes.reduce((routes, route, index) => {
+            route.name = `${name}/${route.path}`.slice(1)
+            route.node = `${node}/${index}`.slice(1)
+            route.depth = depth
+            
+            routes = routes.concat(route)
+            
             if (route.children) {
-                routes = routes.concat(this.routesReduce(route.children, `${name}/${route.path}`, `${id}/${index}`, (level + 1)))
+                routes = routes.concat(
+                    this.reduceRoutes(
+                        route.children, 
+                        `${name}/${route.path}`, 
+                        `${node}/${index}`, 
+                        depth + 1
+                    )
+                )
             }
 
             return routes
-        }, []);
+        }, [])
     }
 
-    /**
-     * @type {string} hash
-     */
-    get hash() {
-        return window.location.hash.replace(/#|(?:\?)(.*)(?:$)/g, (search, query) => {
-            this.queryParams = [...new URLSearchParams(query)].reduce((result, param) => {
-                result[param[0]] = param[1]
+    matchState(state, name) {
+        let segment = []
+        let matches = state.match(
+            new RegExp(
+                name
+                .replace(/(?:\:)(\w+)/g, (match, value) => {
+                    if (segment.indexOf(value) == -1) {
+                        segment.push(value)
+                    }
 
-                return result;
-            }, {});
+                    return '([^\/]+)'
+                })
+                .replace(/\*/g, '(?:.*)')
+                + '(?:$)'
+            )
+        )
 
-            return ''
-        });
-    }
-
-    /**
-     * hashMatch
-     * @param {string} hash 
-     * @param {string} path 
-     */
-    hashMatch(hash, path) {
-        let params = []
-        let matches = hash.match(new RegExp(path.replace(/(?:\:)(\w+)/g, (search, param) => {
-            if (params.indexOf(param) == -1) {
-                params.push(param)
-            }
-
-            return '([^\/]+)';
-        }).replace(/\*/g, '(?:.*)') + '(?:$)'))
-
-        if (matches && matches[0] === hash) {
-            if (params.length > 0) {
-                this.pathParams = matches.slice(1).reduce((result, param, index) => {
-                    result[params[index]] = param
-
-                    return result
-                }, {});
+        if (matches && matches[0] == state) {
+            if (segment.length > 0) {
+                this.segmentParams = matches.slice(1).reduce((acc, value, index) => {
+                    acc[segment[index]] = value
+                    
+                    return acc
+                }, {})
             }
 
             return matches
@@ -138,36 +85,95 @@ export default class Router {
         return null
     }
 
-    /**
-     * @listens hashChange
-     */
-    hashChange() {
-        let route = this.routes.find(route => this.hashMatch(this.hash, route.name))
+    hashChange(event) {
+        let hash = window.location.hash
 
-        route.id.split('/').map((id, index, array) => {
-            let newPath = array.slice(0, index)
-            newPath.push(id)
-            let matches = this.routes.find(route => this.hashMatch(newPath.join('/'), route.id))
+        if (!hash.match(/^#\//)) {
+            window.location.hash = '/'
+        }
 
-            if (matches && this.oldPath[index] !== newPath[index] || (array.length - 1) == index) {
+        if (!hash.match(/^#\//)) {
 
-                let mdRouter = document.querySelectorAll('md-router')
+            return
+        }
 
-                if (mdRouter[matches.level].nextElementSibling) {
-                    mdRouter[matches.level].nextElementSibling.remove()
+        let query = ''
+
+        let state = hash
+        .replace(/^#/, '')
+        .replace(/(?:\?)(.*)(?:$)/, (search, value) => {
+            query = value
+
+            return ''
+        })
+
+        this.queryParams = {}
+
+        if (query) {
+            this.queryParams = [...(new URLSearchParams(query))].reduce((acc, value) => {
+                acc[value[0]] = value[1]
+
+                return acc
+            }, {})
+        }
+
+        this.segmentParams = {}
+        
+        let route = this.routes.find((route) => this.matchState(state, route.name))
+
+        if (!route) {
+
+            return
+        }
+
+        route.node.split('/').map((value, index, array) => {
+            let newNode = array.slice(0, index)
+            newNode.push(value)
+
+            let node = this.routes.find((route) => this.matchState(newNode.join('/'), route.node))
+
+            if (node && this.oldNode[index] !== newNode[index] || (array.length - 1) == index) {
+                let wkRouter = document.querySelectorAll('wk-router')
+
+                if (wkRouter[node.depth].nextElementSibling) {
+                    wkRouter[node.depth].nextElementSibling.remove()
                 }
 
-                if (matches.componentType && matches.componentType == 'HTML') {
-                    mdRouter[matches.level].insertAdjacentHTML('afterend', matches.component)
-                } else {
-                    mdRouter[matches.level].insertAdjacentElement('afterend', matches.component)
-                }
+                wkRouter[node.depth].insertAdjacentHTML('afterend', node.component)
 
-
-                this.oldPath = newPath
+                this.oldNode = newNode
             }
-        });
+        })
+
+        console.log(this, event)
     }
 }
 
-// export default new Router()
+// test running router
+
+let routes = [
+    // root 1
+    { component: AppComponent, path: '', children: [
+        { component: AppComponent, path: '', },
+        { component: AppComponent, path: 'home', },
+        { component: AppComponent, path: 'users', children: [
+            { component: AppComponent, path: '', },
+            { component: AppComponent, path: ':asdf', children: [
+                { component: AppComponent, path: '', },
+                { component: AppComponent, path: ':qwer', },
+            ]},
+        ]},
+    ]},
+    // root 2
+    { component: AppComponent, path: '', children: [
+        { component: AppComponent, path: '', },
+        { component: AppComponent, path: 'login', },
+        { component: AppComponent, path: 'register', },
+    ]},
+    // root 3
+    { component: AppComponent, path: '/demo/:asdf/:qwer', },
+    // wildcard
+    { component: AppComponent, path: '*', },
+]
+
+new Router(routes)
