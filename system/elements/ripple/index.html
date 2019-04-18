@@ -6,30 +6,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Material</title>
-    <link rel="stylesheet" href="../material.css">
+    <link rel="stylesheet" href="../foundation/foundation.css">
+    <link rel="stylesheet" href="../button/button.css">
+    <link rel="stylesheet" href="../checkbox/checkbox.css">
+    <link rel="stylesheet" href="./ripple.css">
     <style>
         body {
             margin: 64px;
-        }
-
-        .demo {
-            /* overflow: hidden; */
-            width: calc(64px * 2);
-            height: calc(64px * 2);
-            background-color: #f5f5f5;
         }
     </style>
 </head>
 
 <body>
 
-    <div class="demo ripple"></div>
+    <wk-button wkRipple wkRippleDelegate="" wkRippleTrigger="" text="button"></wk-button><br><br>
+    
+    <wk-checkbox 
+    wkRipple 
+    wkRippleDelegate=".checkbox__track" 
+    wkRippleTrigger=".checkbox__input" 
+    wkRippleSize="40" 
+    name="checkbox" value="987"></wk-checkbox><br><br><br><br>
 
-    <script src="../material.js"></script>
+    <script src="../button/button.js" type="module"></script>
+    <script src="../checkbox/checkbox.js" type="module"></script>
+
     <script type="module">
-        import MDRipple from './ripple.js';
+        import WKRipple from './ripple.js'
 
-        document.querySelectorAll('.demo').forEach(el => new MDRipple(el));
+        document.querySelectorAll('[wkRipple]').forEach(el => new WKRipple(el))
     </script>
 </body>
 
