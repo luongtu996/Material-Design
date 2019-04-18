@@ -99,6 +99,7 @@ class WKChip extends HTMLElement {
             'filter',
             'activated',
             'selected',
+            'outlined',
         ]
     }
 
@@ -142,6 +143,13 @@ class WKChip extends HTMLElement {
     }
     set filter(value) {
         this.setAttribute('filter', '')
+    }
+
+    get outlined() {
+        return this.hasAttribute('outlined')
+    }
+    set outlined(value) {
+        this.setAttribute('outlined', '')
     }
 
     get activated() {

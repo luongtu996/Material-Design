@@ -17,6 +17,7 @@ choice | Boolean |
 filter | Boolean |
 activated | Boolean |
 selected | Boolean |
+outlined | Boolean | Variant
 
 ### Event
 Event Name | Params | Description

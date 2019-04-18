@@ -79,11 +79,31 @@
         <wk-chip choice text="Choice 4"></wk-chip>
     </wk-chip-group><br><br>
 
+    <wk-chip outlined text="Chip"></wk-chip><br><br>
+    <wk-chip outlined text="Chip" thumb="https://avatars.dicebear.com/v2/avataaars/ndiing.svg"></wk-chip><br><br>
+    <wk-chip outlined text="Chip" icon="&#xEB52;"></wk-chip><br><br>
+    <wk-chip outlined text="Chip" action></wk-chip><br><br>
+    <wk-chip-group>
+        <wk-chip outlined filter text="Filter 1"></wk-chip>
+        <wk-chip outlined filter text="Filter 2"></wk-chip>
+        <wk-chip outlined selected filter text="Filter 3"></wk-chip>
+        <wk-chip outlined filter text="Filter 4"></wk-chip>
+    </wk-chip-group><br><br>
+    <wk-chip-group>
+        <wk-chip outlined choice text="Choice 1"></wk-chip>
+        <wk-chip outlined choice text="Choice 2"></wk-chip>
+        <wk-chip outlined activated choice text="Choice 3"></wk-chip>
+        <wk-chip outlined choice text="Choice 4"></wk-chip>
+    </wk-chip-group><br><br>
+
     <script src="./chip.js" type="module"></script>
     <script>
         document.querySelectorAll('wk-chip').forEach(chip => {
             chip.addEventListener('onActionClick', event => {
-                window.alert(event.target.textContent.trim())
+                let confirm = window.confirm('remove ?')
+                if (confirm) {
+                    chip.remove()
+                }
             })
         })
     </script>
