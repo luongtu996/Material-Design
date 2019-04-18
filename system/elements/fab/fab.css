@@ -74,6 +74,7 @@ wk-fab[extended] .fab__icon + .fab__text,
 
 
 
+/* Ripple */
 wk-fab,
 .fab {
     cursor: pointer;
@@ -81,6 +82,9 @@ wk-fab,
     position: relative;
     /* overflow: hidden; */
 }
+
+/* wk-fab::before {} ,
+/* .fab::before {} */
 
 wk-fab::after,
 .fab::after {
@@ -113,4 +117,14 @@ wk-fab:focus::after,
 wk-fab:active::after,
 .fab:active::after {
     opacity: 0.32;
+}
+
+
+
+
+
+
+wk-fab.is-disabled::after,
+.fab.is-disabled::after {
+    opacity: 0;
 }

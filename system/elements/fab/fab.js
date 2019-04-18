@@ -1,19 +1,24 @@
+import Ripple from '../ripple/ripple.js';
+
 class WKFAB extends HTMLElement {
 
     constructor() {
         super()
-
         this.template()
     }
 
     template() {
         this.innerHTML = `
-            ${this.icon ? `<span class="fab__icon icon">${this.icon}</span>` : ``}
-            ${this.text ? `<span class="fab__text">${this.text}</span>` : ``}
+            ${this.icon?`<span class="fab__icon icon">${this.icon}</span>`:``}
+            ${this.text?`<span class="fab__text">${this.text}</span>`:``}
         `
     }
 
-    connectedCallback() { }
+    connectedCallback() { 
+        new Ripple({
+            element: this
+        })
+    }
 
     disconnectedCallback() { }
 
@@ -28,14 +33,13 @@ class WKFAB extends HTMLElement {
             'icon',
             'text',
             'mini',
-            'extended'
+            'extended',
         ]
     }
 
     get icon() {
         return this.getAttribute('icon')
     }
-
     set icon(value) {
         this.setAttribute('icon', value)
     }
@@ -43,17 +47,22 @@ class WKFAB extends HTMLElement {
     get text() {
         return this.getAttribute('text')
     }
-
     set text(value) {
         this.setAttribute('text', value)
     }
 
-    get toggle() {
-        this.hasAttribute('toggle')
+    get mini() {
+        return this.hasAttribute('mini')
+    }
+    set mini(value) {
+        this.setAttribute('mini', '')
     }
 
-    set toggle(value) {
-        this.setAttribute('toggle', '')
+    get extended() {
+        return this.hasAttribute('extended')
+    }
+    set extended(value) {
+        this.setAttribute('extended', '')
     }
 }
 

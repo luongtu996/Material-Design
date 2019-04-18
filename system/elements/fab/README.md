@@ -13,11 +13,6 @@ text | String |
 mini | Boolean |
 extended | Boolean |
 
-### Event
-Event Name | Params | Description
---- | --- | ---
- |  | 
-
 ### CSS
 CSS Class | Description
 --- | --- 

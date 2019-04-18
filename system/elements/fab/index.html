@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Material</title>
     <link rel="stylesheet" href="../foundation/foundation.css">
-    <link rel="stylesheet" href="../layout/layout.css">
+    <link rel="stylesheet" href="../ripple/ripple.css">
     <link rel="stylesheet" href="../icon/icon.css">
     <link rel="stylesheet" href="./fab.css">
     <style>
@@ -30,21 +30,13 @@
         <span class="fab__text">fab</span>
     </button> -->
 
-    <div class="layout">
-        <div class="layout__grid">
-            <div class="layout__column layout__column--3-desktop">
-                <wk-fab icon="&#xEB52;"></wk-fab><br><br>
-            </div>
-            <div class="layout__column layout__column--3-desktop">
-                <wk-fab mini icon="&#xEB52;"></wk-fab><br><br>
-            </div>
-            <div class="layout__column layout__column--3-desktop">
-                <wk-fab extended text="fab" icon="&#xEB52;"></wk-fab><br><br>
-                <wk-fab extended text="long fab text"></wk-fab><br><br>
-            </div>
-            <div class="layout__column layout__column--3-desktop"></div>
-        </div>
-    </div>
+    <wk-fab icon="&#xEB52;"></wk-fab><br><br>
+
+    <wk-fab mini icon="&#xEB52;"></wk-fab><br><br>
+
+    <wk-fab extended icon="&#xEB52;" text="fab"></wk-fab><br><br>
+
+    <wk-fab extended text="floating action button"></wk-fab><br><br>
     
     <script src="./fab.js" type="module"></script>
 </body>
