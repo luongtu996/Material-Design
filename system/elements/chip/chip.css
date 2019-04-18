@@ -134,19 +134,25 @@ wk-chip,
 
 
 
-.chip.is-activated .chip__check {
+wk-chip[selected] .chip__check,
+wk-chip.is-selected .chip__check,
+.chip.is-selected .chip__check {
     width: 24px;
     height: 24px;
     left: 0;
 }
 
-.chip.is-activated .chip__check .chip__mark::before {
+wk-chip[selected] .chip__check .chip__mark::before,
+wk-chip.is-selected .chip__check .chip__mark::before,
+.chip.is-selected .chip__check .chip__mark::before {
     height: 100%;
     transition: 
     height 100ms ease-in-out 100ms;
 }
 
-.chip.is-activated .chip__check .chip__mark::after {
+wk-chip[selected] .chip__check .chip__mark::after,
+wk-chip.is-selected .chip__check .chip__mark::after,
+.chip.is-selected .chip__check .chip__mark::after {
     width: 100%;
     transition: 
     width 100ms ease-in-out 200ms;
@@ -184,6 +190,7 @@ wk-chip-group wk-chip + wk-chip,
 
 
 
+/* Ripple */
 wk-chip,
 .chip {
     cursor: pointer;
@@ -191,6 +198,9 @@ wk-chip,
     position: relative;
     /* overflow: hidden; */
 }
+
+/* wk-chip::before {} ,
+/* .chip::before {} */
 
 wk-chip::after,
 .chip::after {
@@ -223,4 +233,41 @@ wk-chip:focus::after,
 wk-chip:active::after,
 .chip:active::after {
     opacity: 0.16;
+}
+
+
+
+
+
+
+wk-chip[selected]::after,
+wk-chip.is-selected::after,
+.chip.is-selected::after {
+    background-color: #6200ee;
+    opacity: 0.08;
+}
+
+wk-chip[activated],
+wk-chip.is-activated,
+.chip.is-activated {
+    color: #6200ee;
+}
+
+wk-chip[activated]::after,
+wk-chip.is-activated::after,
+.chip.is-activated::after {
+    background-color: #6200ee;
+    opacity: 0.12;
+}
+
+wk-chip[dragged]::after,
+wk-chip.is-dragged::after,
+.chip.is-dragged::after {
+    opacity: 0.08;
+}
+
+wk-chip[disabled]::after,
+wk-chip.is-disabled::after,
+.chip.is-disabled::after {
+    opacity: 0;
 }

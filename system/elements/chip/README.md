@@ -9,16 +9,21 @@ wk-chip |
 ### Prop
 Prop Name | Type | Description
 --- | --- | ---
-thumb | String | 
-icon | String | 
-text | String | 
-action | Boolean | 
-outlined | Boolean | 
+thumb | String |
+icon | String |
+text | String |
+action | Boolean |
+choice | Boolean |
+filter | Boolean |
+activated | Boolean |
+selected | Boolean |
 
 ### Event
 Event Name | Params | Description
 --- | --- | ---
- |  | 
+onActionClick | Event | Element
+onFilterClick | Event | Element
+onChoiceClick | Event | Element
 
 ### CSS
 CSS Class | Description
