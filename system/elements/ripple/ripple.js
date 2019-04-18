@@ -3,63 +3,34 @@
  */
 export default class Ripple {
 
-    constructor(element) {
-        // selector
-        this.element = element
-        
-        // delegate child element
-        this.delegate = element
-        
-        if (this.wkRippleDelegate) {
-            this.delegate = this.element.querySelector(this.wkRippleDelegate)
-        }
-        
-        // trigger child element
-        this.trigger = element
+    constructor(config = {
+        element,
+        delegate,
+        trigger,
+        size,
+    }) {
+        this.config = config
 
-        if (this.wkRippleTrigger) {
-            this.trigger = this.element.querySelector(this.wkRippleTrigger)
-        }
+        this.delegate = this.config.delegate ? this.config.delegate : this.config.element
 
-        // custom diameter size
-        if (this.wkRippleSize) {
-            this.size = this.wkRippleSize
-        }
+        this.trigger = this.config.trigger ? this.config.trigger : this.config.element
 
-        // set attribute style
-        this.delegate.setAttribute('wkRippleState', '')
-
-        // set tabIndex handle focus
         this.trigger.setAttribute('tabIndex', 0)
 
-        // first time render
-        this.mousedown({
-            pageX: 0,
-            pageY: 0
-        })
+        this.mousedown()
 
-        // render on mousedown
         this.trigger.addEventListener('mousedown', this.mousedown.bind(this))
     }
 
-    get wkRippleDelegate() {
-        return this.element.getAttribute('wkRippleDelegate')
-    }
-
-    get wkRippleTrigger() {
-        return this.element.getAttribute('wkRippleTrigger')
-    }
-
-    get wkRippleSize() {
-        return this.element.getAttribute('wkRippleSize')
-    }
-
-    mousedown(event) {
+    mousedown(event = {
+        pageX: 0,
+        pageY: 0
+    }) {
         let domRect = this.delegate.getBoundingClientRect()
         domRect.width = this.delegate.clientWidth
         domRect.height = this.delegate.clientHeight
 
-        let size = this.size ? this.size : Math.sqrt(
+        let size = this.config.size ? this.config.size : Math.sqrt(
             Math.pow(domRect.width, 2) +
             Math.pow(domRect.height, 2)
         )

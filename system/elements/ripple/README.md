@@ -3,10 +3,10 @@
 ### Prop
 Prop Name | Type | Description
 --- | --- | ---
-wkRipple | String |
-wkRippleDelegate | Selector |
-wkRippleTrigger | Selector |
-wkRippleSize | Number |
+element | Selector |
+delegate | Selector |
+trigger | Selector |
+size | Number |
 
 ### CSS
 CSS Class | Description

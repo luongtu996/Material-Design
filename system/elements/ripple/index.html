@@ -19,23 +19,29 @@
 
 <body>
 
-    <wk-button wkRipple wkRippleDelegate="" wkRippleTrigger="" text="button"></wk-button><br><br>
+    <wk-button text="button"></wk-button><br><br>
     
-    <wk-checkbox 
-    wkRipple 
-    wkRippleDelegate=".checkbox__track" 
-    wkRippleTrigger=".checkbox__input" 
-    wkRippleSize="40" 
-    name="checkbox" value="987"></wk-checkbox><br><br><br><br>
+    <wk-checkbox name="checkbox" value="987"></wk-checkbox><br><br><br><br>
 
     <script src="../button/button.js" type="module"></script>
     <script src="../checkbox/checkbox.js" type="module"></script>
     <script src="./ripple.js" type="module"></script>
 
     <script type="module">
-        import WKRipple from './ripple.js'
+        import Ripple from './ripple.js'
 
-        document.querySelectorAll('[wkRipple]').forEach(el => new WKRipple(el))
+        document.querySelectorAll('wk-button').forEach(el => new Ripple({
+            element: el
+        }))
+
+        document.querySelectorAll('wk-checkbox').forEach(el => {
+            let ripple = new Ripple({
+                element: el,
+                trigger: el.querySelector('.checkbox__input'),
+                delegate: el.querySelector('.checkbox__track'),
+                size: 40
+            })
+        })
     </script>
 </body>
 
