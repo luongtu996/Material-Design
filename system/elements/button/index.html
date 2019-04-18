@@ -70,7 +70,7 @@
     <script>
         document.querySelectorAll('wk-button').forEach((button) => {
             button.addEventListener('onToggleClick', e => {
-                console.log(e)
+                window.alert(e.detail.activated)
             })
         })
     </script>
