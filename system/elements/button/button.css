@@ -4,7 +4,7 @@ wk-button,
     align-items: center;
     justify-content: center;
     vertical-align: middle;
-    /* overflow: hidden; */
+    overflow: hidden;
     min-width: 64px;
     height: 36px;
     border-radius: 4px;
@@ -64,6 +64,7 @@ wk-button[contained] .button__text,
     margin: 0 16px;
 }
 
+wk-button .button__icon + .button__text,
 .button__icon + .button__text {
     margin-left: -4px;
 }
@@ -116,7 +117,6 @@ wk-button,
     cursor: pointer;
     user-select: none;
     position: relative;
-    overflow: hidden;
 }
 
 wk-button::after,
@@ -156,23 +156,112 @@ wk-button:active::after,
 
 
 
+
+wk-button[selected]::after,
+.button[selected]::after {
+    background-color: #6200ee;
+    opacity: 0.08;
+}
+
+wk-button[activated]::after,
+.button[activated]::after {
+    background-color: #6200ee;
+    opacity: 0.12;
+}
+
+wk-button[disabled]::after,
+.button[disabled]::after {
+    opacity: 0;
+}
+
+
+
+
+
+
 wk-button[contained]::after,
-.button--contained::after {
+.button.button--contained::after {
     background-color: #ffffff;
     opacity: 0;
 }
 
 wk-button[contained]:hover::after,
-.button--contained:hover::after {
+.button.button--contained:hover::after {
     opacity: 0.08;
 }
 
 wk-button[contained]:focus::after,
-.button--contained:focus::after {
+.button.button--contained:focus::after {
     opacity: 0.24;
 }
 
 wk-button[contained]:active::after,
-.button--contained:active::after {
+.button.button--contained:active::after {
     opacity: 0.32;
+}
+
+
+
+
+
+
+wk-button[contained][selected]::after,
+.button.button--contained.is-selected::after {
+    opacity: 0.16;
+}
+
+wk-button[contained][activated]::after,
+.button.button--contained.is-activated::after {
+    opacity: 0.24;
+}
+
+wk-button[contained][disabled]::after,
+.button.button--contained.is-disabled::after {
+    opacity: 0;
+}
+
+
+
+
+
+
+wk-button[toggle]::after,
+.button.button--toggle::after {
+    background-color: #000000;
+    opacity: 0;
+}
+
+wk-button[toggle]:hover::after,
+.button.button--toggle:hover::after {
+    opacity: 0.04;
+}
+
+wk-button[toggle]:focus::after,
+.button.button--toggle:focus::after {
+    opacity: 0.12;
+}
+
+wk-button[toggle]:active::after,
+.button.button--toggle:active::after {
+    opacity: 0.16;
+}
+
+
+
+
+
+
+wk-button[toggle][selected]::after,
+.button.button--toggle.is-selected::after {
+    opacity: 0.08;
+}
+
+wk-button[toggle][activated]::after,
+.button.button--toggle.is-activated::after {
+    opacity: 0.12;
+}
+
+wk-button[toggle][disabled]::after,
+.button.button--toggle.is-disabled::after {
+    opacity: 0;
 }

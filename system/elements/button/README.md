@@ -6,19 +6,25 @@ Tag Name | Description
 wk-button | 
 wk-button-group | 
 
-### Prop
+### wk-button Prop
 Prop Name | Type | Description
 --- | --- | ---
-icon | String | 
-text | String | 
-outlined | Boolean | 
-contained | Boolean | 
-toggle | Boolean | 
+icon | String |
+text | String |
+outlined | Boolean |
+contained | Boolean |
+toggle | Boolean |
+activated | Boolean |
+
+### wk-button-group Prop
+Prop Name | Type | Description
+--- | --- | ---
+multiple | Boolean | 
 
 ### Event
 Event Name | Params | Description
 --- | --- | ---
- |  | 
+onToggleClick | Event | Event.detail.activated
 
 ### CSS
 CSS Class | Description

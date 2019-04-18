@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Material</title>
     <link rel="stylesheet" href="../foundation/foundation.css">
-    <link rel="stylesheet" href="../layout/layout.css">
+    <link rel="stylesheet" href="../ripple/ripple.css">
     <link rel="stylesheet" href="../icon/icon.css">
     <link rel="stylesheet" href="./button.css">
     <style>
@@ -46,32 +46,34 @@
         </button>
     </div> -->
 
-    <div class="layout">
-        <div class="layout__grid">
-            <div class="layout__column--3">
-                <wk-button text="button"></wk-button><br><br>
+    <wk-button text="button"></wk-button><br><br>
+    <wk-button icon="&#xEB52;" text="button"></wk-button><br><br>
 
-                <wk-button icon="&#xEB52;" text="button"></wk-button><br><br>
-            </div>
-            <div class="layout__column--3">
-                <wk-button outlined text="button"></wk-button><br><br>
-            </div>
-            <div class="layout__column--3">
-                <wk-button contained text="button"></wk-button><br><br>
-            </div>
-            <div class="layout__column--3">
-                <wk-button-group>
-                    <wk-button toggle icon="&#xEB52;"></wk-button>
-                    <wk-button toggle icon="&#xEB52;"></wk-button>
-                    <wk-button toggle icon="&#xEB52;"></wk-button>
-                </wk-button-group>
-                <br><br>
-            </div>
-        </div>
-    </div>
+    <wk-button outlined text="button"></wk-button><br><br>
+    <wk-button outlined icon="&#xEB52;" text="button"></wk-button><br><br>
 
-    <script src="./button-group.js" type="module"></script>
+    <wk-button contained text="button"></wk-button><br><br>
+    <wk-button contained icon="&#xEB52;" text="button"></wk-button><br><br>
+
+    <wk-button-group>
+        <wk-button toggle icon="&#xEB52;"></wk-button>
+        <wk-button toggle icon="&#xEB52;"></wk-button>
+        <wk-button toggle icon="&#xEB52;"></wk-button>
+    </wk-button-group><br><br>
+    <wk-button-group multiple>
+        <wk-button toggle icon="&#xEB52;"></wk-button>
+        <wk-button toggle icon="&#xEB52;"></wk-button>
+        <wk-button toggle icon="&#xEB52;"></wk-button>
+    </wk-button-group><br><br>
+
     <script src="./button.js" type="module"></script>
+    <script>
+        document.querySelectorAll('wk-button').forEach((button) => {
+            button.addEventListener('onToggleClick', e => {
+                console.log(e)
+            })
+        })
+    </script>
 </body>
 
 </html>
