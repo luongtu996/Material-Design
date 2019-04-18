@@ -79,5 +79,3 @@ export default class Ripple {
         this.delegate.style.setProperty('--ripple-translateY', `${translateY * 100}%`)
     }
 }
-
-document.querySelectorAll('[wkRipple]').forEach(el => new Ripple(el))
