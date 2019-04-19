@@ -36,8 +36,8 @@
     transform: 
     translate3d(-50%, -50%, 0) 
     translate3d(var(--ripple-translateX, 0), var(--ripple-translateY, 0), 0);
-    width: var(--ripple-size, 0);
-    height: var(--ripple-size, 0);
+    width: 0;
+    height: 0;
     border-radius: 50%;
     background-color: #000000;
     opacity: 0;
