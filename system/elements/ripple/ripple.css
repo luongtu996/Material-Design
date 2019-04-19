@@ -66,13 +66,13 @@
 }
 
 .state.is-filter:not(.is-selected):focus::after {
-    width: 75%;
-    height: 75%;
     left: 50%;
     top: 50%;
     transform: 
     translate3d(-50%, -50%, 0) 
     translate3d(0, 0, 0);
+    width: 75%;
+    height: 75%;
 }
 .state.is-filter:not(.is-selected):active::after {
     width: 0;
@@ -87,13 +87,13 @@
 }
 
 .state.is-choice:not(.is-activated):focus::after {
-    width: 75%;
-    height: 75%;
     left: 50%;
     top: 50%;
     transform: 
     translate3d(-50%, -50%, 0) 
     translate3d(0, 0, 0);
+    width: 75%;
+    height: 75%;
 }
 .state.is-choice:not(.is-activated):active::after {
     width: 0;
