@@ -1,11 +1,6 @@
 # Icon
 
-### Prop
-Prop Name | Type | Description
+### Attribute
+Attribute Name | Type | Description
 --- | --- | ---
-wkIcon | String |
-
-### CSS
-CSS Class | Description
---- | --- 
-icon | 
+wkIcon | Boolean |
