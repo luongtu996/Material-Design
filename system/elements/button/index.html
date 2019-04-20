@@ -109,6 +109,13 @@
     </wk-button-group><br><br>
 
     <script src="./button.js" type="module"></script>
+    <script type="module">
+        document.querySelectorAll('wk-button').forEach(button => {
+            button.addEventListener('onToggleClick', event => {
+                window.alert(event.detail.activated)
+            })
+        })
+    </script>
 </body>
 
 </html>
