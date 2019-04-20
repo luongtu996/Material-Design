@@ -11,10 +11,7 @@ size | Number |
 ### CSS
 CSS Class | Description
 --- | --- 
-.state |
-.state--filter |
-.state--filter.is-selected |
-.state--choice |
-.state--choice.is-activated |
-.state.is-dragged |
-.state.is-disabled |
+state | 
+state--filter | 
+state--choice | 
+state--on-colored | 

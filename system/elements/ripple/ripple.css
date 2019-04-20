@@ -1,3 +1,6 @@
+/* 
+    States
+*/
 .state {
     position: relative;
     overflow: hidden;
@@ -16,6 +19,9 @@
     opacity: 0.38;
 }
 
+/* 
+    Touch target
+*/
 .state::before {
     content: '';
     position: absolute;
@@ -24,6 +30,9 @@
     height: 100%;
 }
 
+/* 
+    Overlay
+*/
 .state::after {
     content: '';
     position: absolute;
@@ -59,7 +68,8 @@
 }
 
 .state--filter:focus::after {
-    --ripple-animation-duration: 300ms; }
+    --ripple-animation-duration: 300ms; 
+}
 
 .state--filter:not(.is-selected):focus:not(:active)::after {
     left: 50%;
@@ -84,7 +94,8 @@
 }
 
 .state--choice:focus::after {
-    --ripple-animation-duration: 300ms; }
+    --ripple-animation-duration: 300ms; 
+}
 
 .state--choice:not(.is-activated):focus:not(:active)::after {
     left: 50%;
@@ -117,6 +128,60 @@
     opacity: 0;
 }
 
+
+
+
+
+.state--on-colored.state--choice.is-activated {
+    color: #ffffff;
+}
+
+.state--on-colored.state:disabled,
+.state--on-colored.state.is-disabled {}
+
+.state--on-colored.state::after {
+    background-color: #ffffff;
+    opacity: 0;
+}
+
+.state--on-colored.state:hover::after {
+    opacity: 0.08;
+}
+
+.state--on-colored.state:focus::after {
+    opacity: 0.24;
+}
+
+.state--on-colored.state:active::after {
+    opacity: 0.32;
+}
+
+.state--on-colored.state--filter.is-selected::after {
+    background-color: #ffffff;
+    opacity: 0.16;
+}
+
+.state--on-colored.state--choice.is-activated::after {
+    background-color: #ffffff;
+    opacity: 0.24;
+}
+
+.state--on-colored.state.is-dragged::after {
+    opacity: 0.16;
+}
+
+.state--on-colored.state:disabled::after,
+.state--on-colored.state.is-disabled::after {
+    opacity: 0;
+}
+
+
+
+
+
+/* 
+    Ripple
+*/
 @keyframes ripple {
     from {
         width: 0;

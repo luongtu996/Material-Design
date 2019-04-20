@@ -13,36 +13,66 @@
             margin: 64px;
         }
 
-        .state {
+        .demo-state {
+            display: grid;
+            grid-template-columns: repeat(7, minmax(0, 1fr));
+            grid-gap: 64px;
+        }
+
+        .demo-state .state::before {
+            content: '';
+            display: block;
+            position: relative;
+            min-width: auto;
+            min-height: auto;
+            height: auto;
+            padding-top: 100%;
+        }
+
+        .demo-state .state {
             display: inline-flex;
             align-items: center;
             justify-content: center;
             vertical-align: middle;
-            width: 128px;
-            height: 128px;
             border-radius: 4px;
-            margin-bottom: 24px;
-            margin-right: 24px;
             background-color: #ffffff;
             box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 1px 3px 0 rgba(0, 0, 0, 0.12);
         }
 
-        .state.is-disabled {
+        .demo-state .state.is-disabled {
             background-color: rgba(0, 0, 0, 0.12);
+            color: #000000;
             box-shadow: none;
+        }
+
+        .demo-state-colored .state {
+            background-color: #6200ee;
+            color: #ffffff;
         }
     </style>
 </head>
 
 <body>
 
-    <div class="state"></div>
-    <div class="state state--filter">selected</div>
-    <div class="state state--choice">activated</div>
-    <div class="state state--filter is-selected">selected</div>
-    <div class="state state--choice is-activated">activated</div>
-    <div class="state is-dragged">dragged</div>
-    <div class="state is-disabled">disabled</div>
+    <div class="demo-state">
+        <div class="state"></div>
+        <div class="state state--filter">selected</div>
+        <div class="state state--choice">activated</div>
+        <div class="state state--filter is-selected">selected</div>
+        <div class="state state--choice is-activated">activated</div>
+        <div class="state is-dragged">dragged</div>
+        <div class="state is-disabled">disabled</div>
+    </div><br><br>
+
+    <div class="demo-state demo-state-colored">
+        <div class="state state--on-colored"></div>
+        <div class="state state--on-colored state--filter">selected</div>
+        <div class="state state--on-colored state--choice">activated</div>
+        <div class="state state--on-colored state--filter is-selected">selected</div>
+        <div class="state state--on-colored state--choice is-activated">activated</div>
+        <div class="state state--on-colored is-dragged">dragged</div>
+        <div class="state state--on-colored is-disabled">disabled</div>
+    </div><br><br>
 
     <script src="./ripple.js" type="module"></script>
 
