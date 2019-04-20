@@ -5,7 +5,7 @@
     user-select: none;
 }
 
-.state.is-choice.is-activated {
+.state--choice.is-activated {
     color: #6200ee;
 }
 
@@ -58,10 +58,10 @@
     opacity: 0.16;
 }
 
-.state.is-filter:focus::after {
+.state--filter:focus::after {
     --ripple-animation-duration: 300ms; }
 
-.state.is-filter:not(.is-selected):focus:not(:active)::after {
+.state--filter:not(.is-selected):focus:not(:active)::after {
     left: 50%;
     top: 50%;
     transform: translate3d(-50%, -50%, 0) translate3d(0, 0, 0);
@@ -69,12 +69,12 @@
     height: 75%;
 }
 
-.state.is-filter:not(.is-selected):active::after {
+.state--filter:not(.is-selected):active::after {
     width: var(--ripple-size, 256px);
     height: var(--ripple-size, 256px);
 }
 
-.state.is-filter.is-selected::after {
+.state--filter.is-selected::after {
     width: var(--ripple-size, 256px);
     height: var(--ripple-size, 256px);
     background-color: #6200ee;
@@ -83,10 +83,10 @@
     animation-duration: var(--ripple-animation-duration, 0s);
 }
 
-.state.is-choice:focus::after {
+.state--choice:focus::after {
     --ripple-animation-duration: 300ms; }
 
-.state.is-choice:not(.is-activated):focus:not(:active)::after {
+.state--choice:not(.is-activated):focus:not(:active)::after {
     left: 50%;
     top: 50%;
     transform: translate3d(-50%, -50%, 0) translate3d(0, 0, 0);
@@ -94,12 +94,12 @@
     height: 75%;
 }
 
-.state.is-choice:not(.is-activated):active::after {
+.state--choice:not(.is-activated):active::after {
     width: var(--ripple-size, 256px);
     height: var(--ripple-size, 256px);
 }
 
-.state.is-choice.is-activated::after {
+.state--choice.is-activated::after {
     width: var(--ripple-size, 256px);
     height: var(--ripple-size, 256px);
     background-color: #6200ee;

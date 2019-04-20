@@ -37,10 +37,10 @@
 <body>
 
     <div class="state"></div>
-    <div class="state is-filter">selected</div>
-    <div class="state is-choice">activated</div>
-    <div class="state is-filter is-selected">selected</div>
-    <div class="state is-choice is-activated">activated</div>
+    <div class="state state--filter">selected</div>
+    <div class="state state--choice">activated</div>
+    <div class="state state--filter is-selected">selected</div>
+    <div class="state state--choice is-activated">activated</div>
     <div class="state is-dragged">dragged</div>
     <div class="state is-disabled">disabled</div>
 
@@ -55,10 +55,10 @@
             })
 
             state.addEventListener('click', event => { 
-                if (state.classList.contains('is-choice')) {
+                if (state.classList.contains('state--choice')) {
                     state.classList.toggle('is-activated')
                 }
-                if (state.classList.contains('is-filter')) {
+                if (state.classList.contains('state--filter')) {
                     state.classList.toggle('is-selected')
                 }
             })
