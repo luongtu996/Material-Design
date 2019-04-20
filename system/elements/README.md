@@ -1,7 +1,7 @@
 # WK Elements
 
-### Elements
-Elements | Spec | Link
+### Element
+Element | Spec | Link
 --- | --- | ---
 wk-backdrop | [Backdrop](https://material.io/design/) | [Backdrop](https://github.com/ndiing/Material-Web-Components/tree/master/system/elements/backdrop)
 wk-banner | [Banner](https://material.io/design/) | [Banner](https://github.com/ndiing/Material-Web-Components/tree/master/system/elements/banner)
