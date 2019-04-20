@@ -5,10 +5,11 @@
     user-select: none;
 }
 
-.state.is-activated {
+.state.is-choice.is-activated {
     color: #6200ee;
 }
 
+.state:disabled,
 .state.is-disabled {
     cursor: default;
     pointer-events: none;
@@ -111,6 +112,7 @@
     opacity: 0.08;
 }
 
+.state:disabled::after,
 .state.is-disabled::after {
     opacity: 0;
 }
