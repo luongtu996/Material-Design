@@ -14,7 +14,7 @@ class WKFAB extends HTMLElement {
 
     template() {
         this.innerHTML = `
-        ${this.icon?`<span class="fab__icon icon">${this.icon}</span>`:``}
+        ${this.icon?`<span wkIcon class="fab__icon">${this.icon}</span>`:``}
         ${this.text?`<span class="fab__text">${this.text}</span>`:``}
         `
     }
