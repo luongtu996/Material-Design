@@ -1,96 +1,82 @@
-[wkTypography],
-.typography {
-    display: block;
+[wkTypography] {
+    /* display: block; */
     font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
 }
 
-[wkTypographyH1],
-.typography--h1 {
+[wkTypographyH1] {
     font-weight: 300;
     font-size: 96px;
     line-height: 144px;
 }
 
-[wkTypographyH2],
-.typography--h2 {
+[wkTypographyH2] {
     font-weight: 300;
     font-size: 60px;
     line-height: 88px;
 }
 
-[wkTypographyH3],
-.typography--h3 {
+[wkTypographyH3] {
     font-weight: 400;
     font-size: 48px;
     line-height: 72px;
 }
 
-[wkTypographyH4],
-.typography--h4 {
+[wkTypographyH4] {
     font-weight: 400;
     font-size: 34px;
     line-height: 48px;
 }
 
-[wkTypographyH5],
-.typography--h5 {
+[wkTypographyH5] {
     font-weight: 400;
     font-size: 24px;
     line-height: 36px;
 }
 
-[wkTypographyH6],
-.typography--h6 {
+[wkTypographyH6] {
     font-weight: 500;
     font-size: 20px;
     line-height: 28px;
 }
 
-[wkTypographySubtitle1],
-.typography--subtitle1 {
+[wkTypographySubtitle1] {
     font-weight: 400;
     font-size: 16px;
     line-height: 24px;
 }
 
-[wkTypographySubtitle2],
-.typography--subtitle2 {
+[wkTypographySubtitle2] {
     font-weight: 500;
     font-size: 14px;
     line-height: 20px;
 }
 
-[wkTypographyBody1],
-.typography--body1 {
+[wkTypographyBody1] {
     font-weight: 400;
     font-size: 16px;
     line-height: 24px;
 }
 
-[wkTypographyBody2],
-.typography--body2 {
+[wkTypographyBody2] {
     font-weight: 400;
     font-size: 14px;
     line-height: 20px;
 }
 
-[wkTypographyButton],
-.typography--button {
+[wkTypographyButton] {
     font-weight: 500;
     font-size: 14px;
     line-height: 20px;
     text-transform: uppercase;
 }
 
-[wkTypographyCaption],
-.typography--caption {
+[wkTypographyCaption] {
     font-weight: 400;
     font-size: 12px;
     line-height: 16px;
 }
 
-[wkTypographyOverline],
-.typography--overline {
+[wkTypographyOverline] {
     font-weight: 400;
     font-size: 10px;
     line-height: 12px;
@@ -100,7 +86,7 @@
 
 
 
-
+/* ? */
 h1,
 h2,
 h3,
