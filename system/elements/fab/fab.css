@@ -1,5 +1,4 @@
-wk-fab,
-.fab {
+wk-fab {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -35,15 +34,13 @@ wk-fab,
 
 
 
-wk-fab[mini],
-.fab--mini {
+wk-fab[mini] {
     min-width: 40px;
     max-width: 40px;
     height: 40px;
 }
 
-wk-fab[mini] .fab__icon,
-.fab--mini .fab__icon {
+wk-fab[mini] .fab__icon {
     margin: 0 8px;
 }
 
@@ -52,20 +49,17 @@ wk-fab[mini] .fab__icon,
 
 
 
-wk-fab[extended],
-.fab--extended {
+wk-fab[extended] {
     min-width: 48px;
     max-width: 100%;
     height: 48px;
     border-radius: calc(48px / 2);
 }
 
-wk-fab[extended] .fab__icon,
-.fab--extended .fab__icon {
+wk-fab[extended] .fab__icon {
     margin: 0 12px;
 }
 
-wk-fab[extended] .fab__icon + .fab__text,
 .fab__icon + .fab__text {
     margin-left: -1px;
 }
@@ -74,57 +68,70 @@ wk-fab[extended] .fab__icon + .fab__text,
 
 
 
-/* Ripple */
-wk-fab,
-.fab {
+/* 
+    States
+*/
+wk-fab {
+    position: relative;
+    overflow: hidden;
     cursor: pointer;
     user-select: none;
-    position: relative;
-    /* overflow: hidden; */
 }
 
-/* wk-fab::before {} ,
-/* .fab::before {} */
-
-wk-fab::after,
-.fab::after {
-    content: '';
+wk-fab[disabled] {
+    cursor: default;
     pointer-events: none;
+    opacity: 0.38;
+}
+
+/* 
+    Touch target
+*/
+wk-fab::before {
+    content: '';
     position: absolute;
-    z-index: 1;
+    min-width: 100%;
+    min-height: 48px;
+    height: 100%;
+}
+
+/* 
+    Overlay
+*/
+wk-fab::after {
+    content: '';
+    position: absolute;
+    pointer-events: none;
     left: var(--ripple-left, 50%);
     top: var(--ripple-top, 50%);
     transform: translate3d(-50%, -50%, 0) translate3d(var(--ripple-translateX, 0), var(--ripple-translateY, 0), 0);
-    width: var(--ripple-size, 256px);
-    height: var(--ripple-size, 256px);
+    width: 0;
+    height: 0;
     border-radius: 50%;
     background-color: #ffffff;
     opacity: 0;
 }
 
-wk-fab:hover::after,
-.fab:hover::after {
+wk-fab:hover::after {
+    width: var(--ripple-size, 256px);
+    height: var(--ripple-size, 256px);
     opacity: 0.08;
 }
 
-wk-fab:focus::after,
-.fab:focus::after {
+wk-fab:focus::after {
+    width: var(--ripple-size, 256px);
+    height: var(--ripple-size, 256px);
     opacity: 0.24;
-    animation: var(--ripple-animation, ripple-pressed 250ms linear);
-    transition: width 250ms ease-in-out, height 250ms ease-in-out, opacity 250ms ease-in-out;
+    transition: width 300ms ease-in-out, height 300ms ease-in-out, opacity 300ms ease-in-out;
+    animation: var(--ripple-animation, ripple 300ms ease-in-out);
 }
 
-wk-fab:active::after,
-.fab:active::after {
+wk-fab:active::after {
+    width: var(--ripple-size, 256px);
+    height: var(--ripple-size, 256px);
     opacity: 0.32;
 }
 
-
-
-
-
-
-wk-fab.is-disabled::after,
-.fab.is-disabled::after {
+wk-fab[disabled]::after {
     opacity: 0;
 }

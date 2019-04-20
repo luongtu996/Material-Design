@@ -4,17 +4,22 @@ class WKFAB extends HTMLElement {
 
     constructor() {
         super()
+
+        if (!this.text && this.textContent) {
+            this.text = this.textContent
+        }
+
         this.template()
     }
 
     template() {
         this.innerHTML = `
-            ${this.icon?`<span class="fab__icon icon">${this.icon}</span>`:``}
-            ${this.text?`<span class="fab__text">${this.text}</span>`:``}
+        ${this.icon?`<span class="fab__icon icon">${this.icon}</span>`:``}
+        ${this.text?`<span class="fab__text">${this.text}</span>`:``}
         `
     }
 
-    connectedCallback() { 
+    connectedCallback() {
         new Ripple({
             element: this
         })
@@ -25,7 +30,12 @@ class WKFAB extends HTMLElement {
     adoptedCallback() { }
 
     attributeChangedCallback(name, oldValue, newValue) {
-        this.template()
+        if ([
+            'icon',
+            'text',
+        ].includes(name)) {
+            this.template()
+        }
     }
 
     static get observedAttributes() {
@@ -37,33 +47,17 @@ class WKFAB extends HTMLElement {
         ]
     }
 
-    get icon() {
-        return this.getAttribute('icon')
-    }
-    set icon(value) {
-        this.setAttribute('icon', value)
-    }
+    get icon() { return this.getAttribute('icon') }
+    set icon(value) { this.setAttribute('icon', value) }
 
-    get text() {
-        return this.getAttribute('text')
-    }
-    set text(value) {
-        this.setAttribute('text', value)
-    }
+    get text() { return this.getAttribute('text') }
+    set text(value) { this.setAttribute('text', value) }
 
-    get mini() {
-        return this.hasAttribute('mini')
-    }
-    set mini(value) {
-        this.setAttribute('mini', '')
-    }
+    get mini() { return this.hasAttribute('mini') }
+    set mini(value) { this.setAttribute('mini', '') }
 
-    get extended() {
-        return this.hasAttribute('extended')
-    }
-    set extended(value) {
-        this.setAttribute('extended', '')
-    }
+    get extended() { return this.hasAttribute('extended') }
+    set extended(value) { this.setAttribute('extended', '') }
 }
 
 customElements.define('wk-fab', WKFAB)
