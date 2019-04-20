@@ -15,7 +15,7 @@ class WKButton extends HTMLElement {
 
     template() {
         this.innerHTML = `
-        ${this.icon?`<span class="button__icon icon">${this.icon}</span>`:``}
+        ${this.icon ?`<span wkIcon class="button__icon">${this.icon}</span>`:``}
         ${this.text?`<span class="button__text">${this.text}</span>`:``}
         `
     }
