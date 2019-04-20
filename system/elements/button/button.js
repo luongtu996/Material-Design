@@ -1,3 +1,4 @@
+import './button-group.js'
 import Ripple from '../ripple/ripple.js';
 
 class WKButton extends HTMLElement {
@@ -42,7 +43,7 @@ class WKButton extends HTMLElement {
     adoptedCallback() { }
 
     attributeChangedCallback(name, oldValue, newValue) {
-        // this.template()
+        this.template()
     }
 
     static get observedAttributes() {
