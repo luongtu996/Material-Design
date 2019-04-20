@@ -1,27 +1,14 @@
 # Checkbox
 
-### Tag
-Tag Name | Description
+### Element
+Element Name | Description
 --- | --- 
 wk-checkbox | 
 
-### Prop
-Prop Name | Type | Description
+### Attribute
+Attribute Name | Type | Description
 --- | --- | ---
+indeterminate | Boolean | 
+checked | Boolean | 
 name | String | 
 value | String | 
-checked | Boolean | 
-indeterminate | Boolean | 
-
-### Event
-Event Name | Params | Description
---- | --- | ---
- |  | 
-
-### CSS
-CSS Class | Description
---- | --- 
-checkbox |
-checkbox__input |
-checkbox__track |
-checkbox__thumb |

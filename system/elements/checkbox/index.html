@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Material</title>
     <link rel="stylesheet" href="../foundation/foundation.css">
+    <link rel="stylesheet" href="../ripple/ripple.css">
     <link rel="stylesheet" href="./checkbox.css">
     <style>
         body {
@@ -17,39 +18,9 @@
 
 <body>
 
-    <!-- <div class="checkbox">
-        <input type="checkbox" class="checkbox__input" name="a" value="a1">
-        <div class="checkbox__track">
-            <div class="checkbox__thumb"></div>
-        </div>
-    </div> -->
-    
-    <!-- <div class="checkbox">
-        <input type="checkbox" class="checkbox__input" name="a" value="a2" indeterminate>
-        <div class="checkbox__track">
-            <div class="checkbox__thumb"></div>
-        </div>
-    </div> -->
-    
-    <!-- <div class="checkbox">
-        <input type="checkbox" class="checkbox__input" name="a" value="a3" checked>
-        <div class="checkbox__track">
-            <div class="checkbox__thumb"></div>
-        </div>
-    </div> -->
-
-    <div class="layout">
-        <div class="layout__grid">
-            <div class="layout__column layout__column--3-desktop">
-                <wk-checkbox name="checkbox" value="987"></wk-checkbox><br><br>
-                <wk-checkbox name="checkbox" value="654" indeterminate></wk-checkbox><br><br>
-                <wk-checkbox name="checkbox" value="321" checked></wk-checkbox><br><br>
-            </div>
-            <div class="layout__column layout__column--3-desktop"></div>
-            <div class="layout__column layout__column--3-desktop"></div>
-            <div class="layout__column layout__column--3-desktop"></div>
-        </div>
-    </div>
+    <wk-checkbox></wk-checkbox><br><br>
+    <wk-checkbox indeterminate></wk-checkbox><br><br>
+    <wk-checkbox checked></wk-checkbox><br><br>
 
     <script src="./checkbox.js" type="module"></script>
 </body>

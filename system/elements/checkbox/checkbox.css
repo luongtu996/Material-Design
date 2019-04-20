@@ -1,5 +1,4 @@
-wk-checkbox,
-.checkbox {
+wk-checkbox {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -97,40 +96,75 @@ wk-checkbox,
 
 
 
+/* 
+    States
+*/
 .checkbox__input ~ .checkbox__track {
-    --ripple-size: 40px;
     position: relative;
     /* overflow: hidden; */
+    cursor: pointer;
+    user-select: none;
 }
 
+.checkbox__input[disabled] ~ .checkbox__track {
+    cursor: default;
+    pointer-events: none;
+    opacity: 0.38;
+}
+
+/* 
+    Touch target
+*/
+.checkbox__input ~ .checkbox__track::before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    min-width: 100%;
+    min-height: 48px;
+    height: 100%;
+}
+
+/* 
+    Overlay
+*/
 .checkbox__input ~ .checkbox__track::after {
     content: '';
-    pointer-events: none;
     position: absolute;
-    z-index: 1;
+    pointer-events: none;
     left: var(--ripple-left, 50%);
     top: var(--ripple-top, 50%);
     transform: translate3d(-50%, -50%, 0) translate3d(var(--ripple-translateX, 0), var(--ripple-translateY, 0), 0);
-    width: var(--ripple-size, 40px);
-    height: var(--ripple-size, 40px);
+    width: 0;
+    height: 0;
     border-radius: 50%;
     background-color: #6200ee;
     opacity: 0;
 }
 
 .checkbox__input:hover ~ .checkbox__track::after {
+    width: var(--ripple-size, 40px);
+    height: var(--ripple-size, 40px);
     opacity: 0.04;
 }
 
 .checkbox__input:focus ~ .checkbox__track::after {
+    width: var(--ripple-size, 40px);
+    height: var(--ripple-size, 40px);
     opacity: 0.12;
-    animation: var(--ripple-animation, ripple-pressed 250ms linear);
-    transition: width 250ms ease-in-out, height 250ms ease-in-out, opacity 250ms ease-in-out;
+    transition: width 300ms ease-in-out, height 300ms ease-in-out, opacity 300ms ease-in-out;
+    animation: var(--ripple-animation, ripple 300ms ease-in-out);
 }
 
 .checkbox__input:active ~ .checkbox__track::after {
+    width: var(--ripple-size, 40px);
+    height: var(--ripple-size, 40px);
     opacity: 0.16;
 }
+
+.checkbox__input[disabled] ~ .checkbox__track::after {
+    opacity: 0;
+}
+
 
 
 
@@ -151,4 +185,8 @@ wk-checkbox,
 
 .checkbox__input:not(:checked):not(:indeterminate):active ~ .checkbox__track::after {
     opacity: 0.16;
+}
+
+.checkbox__input:not(:checked):not(:indeterminate)[disabled] ~ .checkbox__track::after {
+    opacity: 0;
 }
