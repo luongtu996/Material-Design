@@ -1,26 +1,13 @@
 # Switch
 
-### Tag
-Tag Name | Description
+### Element
+Element Name | Description
 --- | --- 
 wk-switch | 
 
-### Prop
-Prop Name | Type | Description
+### Attribute
+Attribute Name | Type | Description
 --- | --- | ---
+checked | Boolean |
 name | String |
 value | String |
-checked | Boolean |
-
-### Event
-Event Name | Params | Description
---- | --- | ---
- |  | 
-
-### CSS
-CSS Class | Description
---- | --- 
-switch |
-switch__input |
-switch__track |
-switch__thumb |

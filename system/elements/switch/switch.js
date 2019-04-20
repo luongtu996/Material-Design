@@ -1,24 +1,34 @@
+import Ripple from '../ripple/ripple.js'
+
 class WKSwitch extends HTMLElement {
 
     constructor() {
         super()
-        this.template() 
+        this.template()
     }
 
     template() {
         this.innerHTML = `
-            <input type="checkbox" class="switch__input" 
-            ${this.value ? `value="${this.value}"`: ``} 
-            ${this.name ? `name="${this.name}"`: ``} 
-            ${this.checked ? `checked` : ``}
-            >
-            <div class="switch__track">
-                <div class="switch__thumb"></div>
-            </div>
+        <input class="switch__input" 
+        type="checkbox" 
+        ${this.name?`name="${this.name}"`:``} 
+        ${this.value?`value="${this.value}"`:``} 
+        ${this.checked ?`checked`:``} 
+        >
+        <div class="switch__track">
+            <div class="switch__thumb"></div>
+        </div>
         `
     }
 
-    connectedCallback() { }
+    connectedCallback() { 
+        new Ripple({
+            element: this,
+            delegate: this.querySelector('.switch__thumb'),
+            trigger: this.querySelector('.switch__input'),
+            size: 40
+        })
+    }
 
     disconnectedCallback() { }
 
@@ -30,35 +40,20 @@ class WKSwitch extends HTMLElement {
 
     static get observedAttributes() {
         return [
-            'value',
-            'name',
             'checked',
+            'name',
+            'value',
         ]
     }
 
-    get value() {
-        return this.getAttribute('value')
-    }
-    
-    set value(value) {
-        this.setAttribute('value', value)
-    }
-    
-    get name() {
-        return this.getAttribute('name')
-    }
-    
-    set name(value) {
-        this.setAttribute('name', value)
-    }
-    
-    get checked() {
-        return this.hasAttribute('checked')
-    }
-    
-    set checked(value) {
-        this.setAttribute('checked', '')
-    }
+    get checked() { return this.hasAttribute('checked') }
+    set checked(value) { this.setAttribute('checked', '') }
+
+    get name() { return this.getAttribute('name') }
+    set name(value) { this.setAttribute('name', value) }
+
+    get value() { return this.getAttribute('value') }
+    set value(value) { this.setAttribute('value', value) }
 }
 
 customElements.define('wk-switch', WKSwitch)
