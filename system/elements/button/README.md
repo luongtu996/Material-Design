@@ -1,13 +1,13 @@
 # Button
 
-### Tag
-Tag Name | Description
+### Element
+Element Name | Description
 --- | --- 
 wk-button | 
 wk-button-group | 
 
-### wk-button Prop
-Prop Name | Type | Description
+### Attribute
+Attribute Name | Type | Description
 --- | --- | ---
 icon | String | 
 text | String | 
@@ -17,18 +17,7 @@ contained | Boolean |
 toggle | Boolean | 
 activated | Boolean | 
 
-### Event
+### Event Listener
 Event Name | Params | Description
 --- | --- | ---
-onToggleClick | Event | Event.detail
-
-### CSS
-CSS Class | Description
---- | --- 
-button |
-button__text |
-button__icon |
-button--outlined |
-button--contained |
-button-group |
-button--toggle |
+onToggleClick | event | event.detail

@@ -2,12 +2,7 @@ class WKButtonGroup extends HTMLElement {
 
     constructor() {
         super()
-        // this.template()
     }
-
-    // template() {
-    //     this.innerHTML = ``
-    // }
 
     connectedCallback() { }
 
@@ -15,9 +10,7 @@ class WKButtonGroup extends HTMLElement {
 
     adoptedCallback() { }
 
-    attributeChangedCallback(name, oldValue, newValue) {
-        // this.template()
-    }
+    attributeChangedCallback(name, oldValue, newValue) { }
 
     static get observedAttributes() {
         return []

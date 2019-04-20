@@ -43,7 +43,12 @@ class WKButton extends HTMLElement {
     adoptedCallback() { }
 
     attributeChangedCallback(name, oldValue, newValue) {
-        this.template()
+        if ([
+            'icon',
+            'text',
+        ].includes(name)) {
+            this.template()
+        }
     }
 
     static get observedAttributes() {
@@ -65,7 +70,14 @@ class WKButton extends HTMLElement {
     set text(value) { this.setAttribute('text', value) }
 
     get disabled() { return this.hasAttribute('disabled') }
-    set disabled(value) { this.setAttribute('disabled', '') }
+    set disabled(value) {
+        if (value) {
+            this.setAttribute('disabled', '')
+        }
+        else {
+            this.removeAttribute('disabled')
+        }
+    }
 
     get outlined() { return this.hasAttribute('outlined') }
     set outlined(value) { this.setAttribute('outlined', '') }

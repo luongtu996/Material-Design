@@ -12,7 +12,6 @@
     color: #6200ee;
 }
 
-.state:disabled,
 .state.is-disabled {
     cursor: default;
     pointer-events: none;
@@ -123,7 +122,6 @@
     opacity: 0.08;
 }
 
-.state:disabled::after,
 .state.is-disabled::after {
     opacity: 0;
 }
@@ -136,7 +134,6 @@
     color: #ffffff;
 }
 
-.state--on-colored:disabled,
 .state--on-colored.is-disabled {}
 
 .state--on-colored::after {
@@ -170,7 +167,6 @@
     opacity: 0.16;
 }
 
-.state--on-colored:disabled::after,
 .state--on-colored.is-disabled::after {
     opacity: 0;
 }
