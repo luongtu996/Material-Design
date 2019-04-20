@@ -5,14 +5,10 @@
     user-select: none;
 }
 
-/* .state:hover {} */
-/* .state:focus {} */
-/* .state:active {} */
-/* .state.is-selected {} */
 .state.is-activated {
     color: #6200ee;
 }
-/* .state.is-dragged {} */
+
 .state.is-disabled {
     cursor: default;
     pointer-events: none;
@@ -23,7 +19,7 @@
     content: '';
     position: absolute;
     min-width: 100%;
-    min-height: 48%;
+    min-height: 48px;
     height: 100%;
 }
 
@@ -33,9 +29,7 @@
     pointer-events: none;
     left: var(--ripple-left, 50%);
     top: var(--ripple-top, 50%);
-    transform: 
-    translate3d(-50%, -50%, 0) 
-    translate3d(var(--ripple-translateX, 0), var(--ripple-translateY, 0), 0);
+    transform: translate3d(-50%, -50%, 0) translate3d(var(--ripple-translateX, 0), var(--ripple-translateY, 0), 0);
     width: 0;
     height: 0;
     border-radius: 50%;
@@ -44,80 +38,91 @@
 }
 
 .state:hover::after {
-    width: var(--ripple-size, 0);
-    height: var(--ripple-size, 0);
+    width: var(--ripple-size, 256px);
+    height: var(--ripple-size, 256px);
     opacity: 0.04;
 }
+
 .state:focus::after {
-    width: var(--ripple-size, 0);
-    height: var(--ripple-size, 0);
+    width: var(--ripple-size, 256px);
+    height: var(--ripple-size, 256px);
     opacity: 0.12;
-    /* transition: 
-    width 300ms ease-in-out,
-    height 300ms ease-in-out,
-    opacity 300ms ease-in-out; */
+    transition: width 300ms ease-in-out, height 300ms ease-in-out, opacity 300ms ease-in-out;
     animation: var(--ripple-animation, ripple 300ms ease-in-out);
 }
+
 .state:active::after {
-    /* width: 0; */
-    /* height: 0; */
+    width: var(--ripple-size, 256px);
+    height: var(--ripple-size, 256px);
     opacity: 0.16;
-    /* transition: none; */
 }
 
-.state.is-filter:not(.is-selected):focus::after {
+.state.is-filter:focus::after {
+    --ripple-animation-duration: 300ms; }
+
+.state.is-filter:not(.is-selected):focus:not(:active)::after {
     left: 50%;
     top: 50%;
-    transform: 
-    translate3d(-50%, -50%, 0) 
-    translate3d(0, 0, 0);
+    transform: translate3d(-50%, -50%, 0) translate3d(0, 0, 0);
     width: 75%;
     height: 75%;
 }
+
 .state.is-filter:not(.is-selected):active::after {
-    width: 0;
-    height: 0;
-    transition: none;
+    width: var(--ripple-size, 256px);
+    height: var(--ripple-size, 256px);
 }
+
 .state.is-filter.is-selected::after {
-    width: var(--ripple-size, 0);
-    height: var(--ripple-size, 0);
+    width: var(--ripple-size, 256px);
+    height: var(--ripple-size, 256px);
     background-color: #6200ee;
+    opacity: 0.08;
+    animation: ripple 300ms ease-in-out;
+    animation-duration: var(--ripple-animation-duration, 0s);
+}
+
+.state.is-choice:focus::after {
+    --ripple-animation-duration: 300ms; }
+
+.state.is-choice:not(.is-activated):focus:not(:active)::after {
+    left: 50%;
+    top: 50%;
+    transform: translate3d(-50%, -50%, 0) translate3d(0, 0, 0);
+    width: 75%;
+    height: 75%;
+}
+
+.state.is-choice:not(.is-activated):active::after {
+    width: var(--ripple-size, 256px);
+    height: var(--ripple-size, 256px);
+}
+
+.state.is-choice.is-activated::after {
+    width: var(--ripple-size, 256px);
+    height: var(--ripple-size, 256px);
+    background-color: #6200ee;
+    opacity: 0.12;
+    animation: ripple 300ms ease-in-out;
+    animation-duration: var(--ripple-animation-duration, 0s);
+}
+
+.state.is-dragged::after {
     opacity: 0.08;
 }
 
-.state.is-choice:not(.is-activated):focus::after {
-    left: 50%;
-    top: 50%;
-    transform: 
-    translate3d(-50%, -50%, 0) 
-    translate3d(0, 0, 0);
-    width: 75%;
-    height: 75%;
+.state.is-disabled::after {
+    opacity: 0;
 }
-.state.is-choice:not(.is-activated):active::after {
-    width: 0;
-    height: 0;
-    transition: none;
-}
-.state.is-choice.is-activated::after {
-    width: var(--ripple-size, 0);
-    height: var(--ripple-size, 0);
-    background-color: #6200ee;
-    opacity: 0.12;
-}
-
-.state.is-dragged::after { opacity: 0.08; }
-.state.is-disabled::after { opacity: 0; }
 
 @keyframes ripple {
-    0% {
+    from {
         width: 0;
         height: 0;
     }
 
-    100% {
-        width: var(--ripple-size, 0);
-        height: var(--ripple-size, 0);
+    to {
+        width: var(--ripple-size, 256px);
+        height: var(--ripple-size, 256px);
     }
 }
