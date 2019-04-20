@@ -236,16 +236,16 @@ wk-chip:hover::after {
 }
 
 wk-chip:focus::after {
-    width: var(--ripple-size, 256px);
-    height: var(--ripple-size, 256px);
+    width: 150%;
+    height: 150%;
     opacity: 0.12;
     transition: width 300ms ease-in-out, height 300ms ease-in-out, opacity 300ms ease-in-out;
     animation: var(--ripple-animation, ripple 300ms ease-in-out);
 }
 
 wk-chip:active::after {
-    width: var(--ripple-size, 256px);
-    height: var(--ripple-size, 256px);
+    width: 150%;
+    height: 150%;
     opacity: 0.16;
 }
 
@@ -253,22 +253,22 @@ wk-chip[filter]:focus::after {
     --ripple-animation-duration: 300ms; 
 }
 
-wk-chip[filter]:not([selected]):focus:not(:active)::after {
+/* wk-chip[filter]:not([selected]):focus:not(:active)::after {
     left: 50%;
     top: 50%;
     transform: translate3d(-50%, -50%, 0) translate3d(0, 0, 0);
     width: 75%;
     height: 75%;
-}
+} */
 
 wk-chip[filter]:not([selected]):active::after {
-    width: var(--ripple-size, 256px);
-    height: var(--ripple-size, 256px);
+    width: 150%;
+    height: 150%;
 }
 
 wk-chip[filter][selected]::after {
-    width: var(--ripple-size, 256px);
-    height: var(--ripple-size, 256px);
+    width: 150%;
+    height: 150%;
     background-color: #6200ee;
     opacity: 0.08;
     animation: ripple 300ms ease-in-out;
@@ -279,22 +279,22 @@ wk-chip[choice]:focus::after {
     --ripple-animation-duration: 300ms; 
 }
 
-wk-chip[choice]:not([activated]):focus:not(:active)::after {
+/* wk-chip[choice]:not([activated]):focus:not(:active)::after {
     left: 50%;
     top: 50%;
     transform: translate3d(-50%, -50%, 0) translate3d(0, 0, 0);
     width: 75%;
     height: 75%;
-}
+} */
 
 wk-chip[choice]:not([activated]):active::after {
-    width: var(--ripple-size, 256px);
-    height: var(--ripple-size, 256px);
+    width: 150%;
+    height: 150%;
 }
 
 wk-chip[choice][activated]::after {
-    width: var(--ripple-size, 256px);
-    height: var(--ripple-size, 256px);
+    width: 150%;
+    height: 150%;
     background-color: #6200ee;
     opacity: 0.12;
     animation: ripple 300ms ease-in-out;
