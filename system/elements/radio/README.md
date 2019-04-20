@@ -1,26 +1,13 @@
 # Radio
 
-### Tag
-Tag Name | Description
+### Element
+Element Name | Description
 --- | --- 
 wk-radio | 
 
-### Prop
-Prop Name | Type | Description
+### Attribute
+Attribute Name | Type | Description
 --- | --- | ---
+checked | Boolean |
 name | String |
 value | String |
-checked | Boolean |
-
-### Event
-Event Name | Params | Description
---- | --- | ---
- |  | 
-
-### CSS
-CSS Class | Description
---- | --- 
-radio |
-radio__input |
-radio__track |
-radio__thumb |

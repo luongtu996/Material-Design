@@ -101,7 +101,6 @@ wk-checkbox {
 */
 .checkbox__input ~ .checkbox__track {
     position: relative;
-    /* overflow: hidden; */
     cursor: pointer;
     user-select: none;
 }

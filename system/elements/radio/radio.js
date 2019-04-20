@@ -1,3 +1,5 @@
+import Ripple from '../ripple/ripple.js'
+
 class WKRadio extends HTMLElement {
 
     constructor() {
@@ -7,18 +9,26 @@ class WKRadio extends HTMLElement {
 
     template() {
         this.innerHTML = `
-            <input type="radio" class="radio__input" 
-            ${this.name ? `name="${this.name}"` : ``} 
-            ${this.value ? `value="${this.value}"` : ``} 
-            ${this.checked ? `checked` : ``}
-            >
-            <div class="radio__track">
-                <div class="radio__thumb"></div>
-            </div>
+        <input class="radio__input" 
+        type="radio" 
+        ${this.name?`name="${this.name}"`:``} 
+        ${this.value?`value="${this.value}"`:``} 
+        ${this.checked ?`checked`:``} 
+        >
+        <div class="radio__track">
+            <div class="radio__thumb"></div>
+        </div>
         `
     }
 
-    connectedCallback() { }
+    connectedCallback() { 
+        new Ripple({
+            element: this,
+            delegate: this.querySelector('.radio__track'),
+            trigger: this.querySelector('.radio__input'),
+            size: 40
+        })
+    }
 
     disconnectedCallback() { }
 
@@ -30,36 +40,20 @@ class WKRadio extends HTMLElement {
 
     static get observedAttributes() {
         return [
+            'checked',
             'name',
             'value',
-            'checked',
         ]
     }
 
-    get name() {
-        return this.getAttribute('name')
-    }
+    get checked() { return this.hasAttribute('checked') }
+    set checked(value) { this.setAttribute('checked', '') }
 
-    set name(value) {
-        this.setAttribute('name', value)
-    }
+    get name() { return this.getAttribute('name') }
+    set name(value) { this.setAttribute('name', value) }
 
-    get value() {
-        return this.getAttribute('value')
-    }
-
-    set value(value) {
-        this.setAttribute('value', value)
-    }
-
-    get checked() {
-        return this.hasAttribute('checked')
-    }
-
-    set checked(value) {
-        this.setAttribute('checked', '')
-    }
-
+    get value() { return this.getAttribute('value') }
+    set value(value) { this.setAttribute('value', value) }
 }
 
 customElements.define('wk-radio', WKRadio)
