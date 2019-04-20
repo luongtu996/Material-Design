@@ -19,21 +19,61 @@
 
 <body>
 
+    <!-- Button -->
+    <!-- <button class="button">
+        <span class="button__text">button</span>
+    </button><br><br> -->
+    <wk-button>button</wk-button><br><br>
+    
     <!-- <button class="button">
         <span class="button__icon icon">&#xEB52;</span>
         <span class="button__text">button</span>
-    </button> -->
+    </button><br><br> -->
+    <wk-button icon="&#xEB52;">button</wk-button><br><br>
+    
+    <!-- <button class="button" disabled>
+        <span class="button__icon icon">&#xEB52;</span>
+        <span class="button__text">button</span>
+    </button><br><br> -->
+    <wk-button icon="&#xEB52;" disabled>button</wk-button><br><br>
+
+    <!-- Outlined -->
+    <!-- <button class="button button--outlined">
+        <span class="button__text">button</span>
+    </button><br><br> -->
+    <wk-button outlined>button</wk-button><br><br>
 
     <!-- <button class="button button--outlined">
         <span class="button__icon icon">&#xEB52;</span>
         <span class="button__text">button</span>
-    </button> -->
+    </button><br><br> -->
+    <wk-button outlined icon="&#xEB52;">button</wk-button><br><br>
+
+    <!-- <button class="button button--outlined" disabled>
+        <span class="button__icon icon">&#xEB52;</span>
+        <span class="button__text">button</span>
+    </button><br><br> -->
+    <wk-button outlined icon="&#xEB52;" disabled>button</wk-button><br><br>
+
+    <!-- Contained -->
+    <!-- <button class="button button--contained">
+        <span class="button__text">button</span>
+    </button><br><br> -->
+    <wk-button contained>button</wk-button><br><br>
 
     <!-- <button class="button button--contained">
         <span class="button__icon icon">&#xEB52;</span>
         <span class="button__text">button</span>
-    </button> -->
-
+    </button><br><br> -->
+    <wk-button contained icon="&#xEB52;">button</wk-button><br><br>
+    
+    <!-- <button class="button button--contained" disabled>
+        <span class="button__icon icon">&#xEB52;</span>
+        <span class="button__text">button</span>
+    </button><br><br> -->
+    <wk-button contained icon="&#xEB52;" disabled>button</wk-button><br><br>
+    
+    <!-- Toggle Group -->
     <!-- <div class="button-group">
         <button class="button button--toggle">
             <span class="button__icon icon">&#xEB52;</span>
@@ -44,36 +84,31 @@
         <button class="button button--toggle">
             <span class="button__icon icon">&#xEB52;</span>
         </button>
-    </div> -->
-
-    <wk-button text="button"></wk-button><br><br>
-    <wk-button icon="&#xEB52;" text="button"></wk-button><br><br>
-
-    <wk-button outlined text="button"></wk-button><br><br>
-    <wk-button outlined icon="&#xEB52;" text="button"></wk-button><br><br>
-
-    <wk-button contained text="button"></wk-button><br><br>
-    <wk-button contained icon="&#xEB52;" text="button"></wk-button><br><br>
-
+    </div><br><br> -->
     <wk-button-group>
         <wk-button toggle icon="&#xEB52;"></wk-button>
         <wk-button toggle icon="&#xEB52;"></wk-button>
         <wk-button toggle icon="&#xEB52;"></wk-button>
     </wk-button-group><br><br>
-    <wk-button-group multiple>
+
+    <!-- <div class="button-group">
+        <button class="button button--toggle">
+            <span class="button__icon icon">&#xEB52;</span>
+        </button>
+        <button class="button button--toggle" disabled>
+            <span class="button__icon icon">&#xEB52;</span>
+        </button>
+        <button class="button button--toggle">
+            <span class="button__icon icon">&#xEB52;</span>
+        </button>
+    </div><br><br> -->
+    <wk-button-group>
         <wk-button toggle icon="&#xEB52;"></wk-button>
-        <wk-button toggle icon="&#xEB52;"></wk-button>
+        <wk-button toggle icon="&#xEB52;" disabled></wk-button>
         <wk-button toggle icon="&#xEB52;"></wk-button>
     </wk-button-group><br><br>
 
     <script src="./button.js" type="module"></script>
-    <script>
-        document.querySelectorAll('wk-button').forEach((button) => {
-            button.addEventListener('onToggleClick', e => {
-                window.alert(e.detail.activated)
-            })
-        })
-    </script>
 </body>
 
 </html>

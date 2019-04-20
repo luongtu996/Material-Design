@@ -1,17 +1,21 @@
-import './button-group.js'
 import Ripple from '../ripple/ripple.js';
 
 class WKButton extends HTMLElement {
 
     constructor() {
         super()
+
+        if (!this.text && this.textContent) {
+            this.text = this.textContent
+        }
+
         this.template()
     }
 
     template() {
         this.innerHTML = `
-            ${this.icon?`<span class="button__icon icon">${this.icon}</span>`:``}
-            ${this.text?`<span class="button__text">${this.text}</span>`:``}
+        ${this.icon?`<span class="button__icon icon">${this.icon}</span>`:``}
+        ${this.text?`<span class="button__text">${this.text}</span>`:``}
         `
     }
 
@@ -26,18 +30,10 @@ class WKButton extends HTMLElement {
     }
 
     toggleClick(event) {
-        if (!this.parentNode.multiple) {
-            Array.from(this.parentNode.children).forEach(element => {
-                element.activated = false
-            });
-        }
-
         this.activated = !this.activated
 
         this.dispatchEvent(new CustomEvent('onToggleClick', {
-            detail: {
-                activated: this.activated
-            }
+            detail: this
         }))
     }
 
@@ -46,13 +42,14 @@ class WKButton extends HTMLElement {
     adoptedCallback() { }
 
     attributeChangedCallback(name, oldValue, newValue) {
-        this.template()
+        // this.template()
     }
 
     static get observedAttributes() {
         return [
             'icon',
             'text',
+            'disabled',
             'outlined',
             'contained',
             'toggle',
@@ -60,44 +57,25 @@ class WKButton extends HTMLElement {
         ]
     }
 
-    get icon() {
-        return this.getAttribute('icon')
-    }
-    set icon(value) {
-        this.setAttribute('icon', value)
-    }
+    get icon() { return this.getAttribute('icon') }
+    set icon(value) { this.setAttribute('icon', value) }
 
-    get text() {
-        return this.getAttribute('text')
-    }
-    set text(value) {
-        this.setAttribute('text', value)
-    }
+    get text() { return this.getAttribute('text') }
+    set text(value) { this.setAttribute('text', value) }
 
-    get outlined() {
-        return this.hasAttribute('outlined')
-    }
-    set outlined(value) {
-        this.setAttribute('outlined', '')
-    }
+    get disabled() { return this.hasAttribute('disabled') }
+    set disabled(value) { this.setAttribute('disabled', '') }
 
-    get contained() {
-        return this.hasAttribute('contained')
-    }
-    set contained(value) {
-        this.setAttribute('contained', '')
-    }
+    get outlined() { return this.hasAttribute('outlined') }
+    set outlined(value) { this.setAttribute('outlined', '') }
 
-    get toggle() {
-        return this.hasAttribute('toggle')
-    }
-    set toggle(value) {
-        this.setAttribute('toggle', '')
-    }
+    get contained() { return this.hasAttribute('contained') }
+    set contained(value) { this.setAttribute('contained', '') }
 
-    get activated() {
-        return this.hasAttribute('activated')
-    }
+    get toggle() { return this.hasAttribute('toggle') }
+    set toggle(value) { this.setAttribute('toggle', '') }
+
+    get activated() { return this.hasAttribute('activated') }
     set activated(value) {
         if (value) {
             this.setAttribute('activated', '')

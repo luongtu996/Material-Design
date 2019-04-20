@@ -136,23 +136,23 @@
     color: #ffffff;
 }
 
-.state--on-colored.state:disabled,
-.state--on-colored.state.is-disabled {}
+.state--on-colored:disabled,
+.state--on-colored.is-disabled {}
 
-.state--on-colored.state::after {
+.state--on-colored::after {
     background-color: #ffffff;
     opacity: 0;
 }
 
-.state--on-colored.state:hover::after {
+.state--on-colored:hover::after {
     opacity: 0.08;
 }
 
-.state--on-colored.state:focus::after {
+.state--on-colored:focus::after {
     opacity: 0.24;
 }
 
-.state--on-colored.state:active::after {
+.state--on-colored:active::after {
     opacity: 0.32;
 }
 
@@ -166,12 +166,12 @@
     opacity: 0.24;
 }
 
-.state--on-colored.state.is-dragged::after {
+.state--on-colored.is-dragged::after {
     opacity: 0.16;
 }
 
-.state--on-colored.state:disabled::after,
-.state--on-colored.state.is-disabled::after {
+.state--on-colored:disabled::after,
+.state--on-colored.is-disabled::after {
     opacity: 0;
 }
 

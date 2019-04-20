@@ -2,8 +2,12 @@ class WKButtonGroup extends HTMLElement {
 
     constructor() {
         super()
+        // this.template()
     }
 
+    // template() {
+    //     this.innerHTML = ``
+    // }
 
     connectedCallback() { }
 
@@ -11,19 +15,12 @@ class WKButtonGroup extends HTMLElement {
 
     adoptedCallback() { }
 
-    attributeChangedCallback(name, oldValue, newValue) { }
+    attributeChangedCallback(name, oldValue, newValue) {
+        // this.template()
+    }
 
     static get observedAttributes() {
-        return [
-            'multiple'
-        ]
-    }
-
-    get multiple() {
-        return this.hasAttribute('multiple')
-    }
-    set multiple(value) {
-        this.setAttribute('multiple', '')
+        return []
     }
 }
 

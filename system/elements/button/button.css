@@ -1,3 +1,6 @@
+/* 
+    Button
+*/
 wk-button,
 .button {
     display: inline-flex;
@@ -35,6 +38,9 @@ wk-button,
 
 
 
+/* 
+    Outlined
+*/
 wk-button[outlined],
 .button--outlined {
     background-color: transparent;
@@ -52,6 +58,9 @@ wk-button[outlined] .button__text,
 
 
 
+/* 
+    Contained
+*/
 wk-button[contained],
 .button--contained {
     background-color: #6200ee;
@@ -64,7 +73,8 @@ wk-button[contained] .button__text,
     margin: 0 16px;
 }
 
-wk-button .button__icon + .button__text,
+wk-button[contained] .button__icon + .button__text,
+wk-button[outlined] .button__icon + .button__text,
 .button__icon + .button__text {
     margin-left: -4px;
 }
@@ -74,6 +84,9 @@ wk-button .button__icon + .button__text,
 
 
 
+/* 
+    Toggle
+*/
 wk-button[toggle],
 .button--toggle {
     min-width: 48px;
@@ -96,6 +109,9 @@ wk-button[toggle] .button__icon,
 
 
 
+/* 
+    Group
+*/
 wk-button-group,
 .button-group {
     display: inline-flex;
@@ -103,33 +119,80 @@ wk-button-group,
 }
 
 wk-button-group wk-button[toggle] + wk-button[toggle],
+wk-button-group .button--toggle + .button--toggle,
 .button-group .button--toggle + .button--toggle {
     margin-left: -1px;
 }
 
-
-
-
-
-/* Ripple */
-wk-button,
-.button {
-    cursor: pointer;
-    user-select: none;
-    position: relative;
+wk-button-group wk-button[toggle][activated],
+wk-button-group .button--toggle.is-activated,
+.button-group .button--toggle.is-activated {
+    z-index: 2;
 }
 
+wk-button-group wk-button[toggle][activated] + wk-button[toggle]:hover,
+wk-button-group .button--toggle.is-activated + .button--toggle:hover,
+.button-group .button--toggle.is-activated + .button--toggle:hover {
+    z-index: 1;
+}
+
+
+
+
+
+/* 
+    States
+*/
+wk-button,
+.button {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    user-select: none;
+}
+
+wk-button[toggle][activated],
+wk-button[toggle].is-activated,
+.button--toggle.is-activated {
+    color: #6200ee;
+}
+
+wk-button[disabled],
+wk-button:disabled,
+wk-button.is-disabled,
+.button:disabled,
+.button.is-disabled {
+    cursor: default;
+    pointer-events: none;
+    background-color: transparent;
+    color: rgba(0, 0, 0, 0.38);
+}
+
+/* 
+    Touch target
+*/
+wk-button::before,
+.button::before {
+    content: '';
+    position: absolute;
+    min-width: 100%;
+    min-height: 48px;
+    height: 100%;
+}
+
+/* 
+    Overlay
+*/
 wk-button::after,
 .button::after {
     content: '';
-    pointer-events: none;
     position: absolute;
-    z-index: 1;
+    pointer-events: none;
     left: var(--ripple-left, 50%);
     top: var(--ripple-top, 50%);
     transform: translate3d(-50%, -50%, 0) translate3d(var(--ripple-translateX, 0), var(--ripple-translateY, 0), 0);
-    width: var(--ripple-size, 256px);
-    height: var(--ripple-size, 256px);
+    width: 0;
+    height: 0;
     border-radius: 50%;
     background-color: #6200ee;
     opacity: 0;
@@ -137,40 +200,65 @@ wk-button::after,
 
 wk-button:hover::after,
 .button:hover::after {
+    width: var(--ripple-size, 256px);
+    height: var(--ripple-size, 256px);
     opacity: 0.04;
 }
 
 wk-button:focus::after,
 .button:focus::after {
+    width: var(--ripple-size, 256px);
+    height: var(--ripple-size, 256px);
     opacity: 0.12;
-    animation: var(--ripple-animation, ripple-pressed 250ms linear);
-    transition: width 250ms ease-in-out, height 250ms ease-in-out, opacity 250ms ease-in-out;
+    transition: width 300ms ease-in-out, height 300ms ease-in-out, opacity 300ms ease-in-out;
+    animation: var(--ripple-animation, ripple 300ms ease-in-out);
 }
 
 wk-button:active::after,
 .button:active::after {
+    width: var(--ripple-size, 256px);
+    height: var(--ripple-size, 256px);
     opacity: 0.16;
 }
 
-
-
-
-
-
-wk-button[selected]::after,
-.button[selected]::after {
-    background-color: #6200ee;
-    opacity: 0.08;
+wk-button[toggle]:focus::after,
+.button--toggle:focus::after {
+    --ripple-animation-duration: 300ms; 
 }
 
-wk-button[activated]::after,
-.button[activated]::after {
+wk-button[toggle]:not([activated]):focus:not(:active)::after,
+/* wk-button[toggle]:not(.is-activated):focus:not(:active)::after, */
+.button--toggle:not(.is-activated):focus:not(:active)::after {
+    left: 50%;
+    top: 50%;
+    transform: translate3d(-50%, -50%, 0) translate3d(0, 0, 0);
+    width: 75%;
+    height: 75%;
+}
+
+wk-button[toggle]:not([activated]):active::after,
+wk-button[toggle]:not(.is-activated):active::after,
+.button--toggle:not(.is-activated):active::after {
+    width: var(--ripple-size, 256px);
+    height: var(--ripple-size, 256px);
+}
+
+wk-button[toggle][activated]::after,
+wk-button[toggle].is-activated::after,
+.button--toggle.is-activated::after {
+    width: var(--ripple-size, 256px);
+    height: var(--ripple-size, 256px);
     background-color: #6200ee;
     opacity: 0.12;
+    animation: ripple 300ms ease-in-out;
+    animation-duration: var(--ripple-animation-duration, 0s);
 }
 
 wk-button[disabled]::after,
-.button[disabled]::after {
+wk-button:disabled::after,
+wk-button.is-disabled::after,
+.button:disabled::after,
+.button.is-disabled::after {
     opacity: 0;
 }
 
@@ -178,45 +266,53 @@ wk-button[disabled]::after,
 
 
 
+wk-button[contained].button--toggle.is-activated,
+.button--contained.button--toggle.is-activated {
+    color: #ffffff;
+}
+
+wk-button[contained][disabled],
+wk-button[contained]:disabled,
+wk-button[contained].is-disabled,
+.button--contained:disabled,
+.button--contained.is-disabled {
+    background-color: rgba(0, 0, 0, 0.12);
+    color: rgba(0, 0, 0, 0.38);
+    box-shadow: none;
+}
 
 wk-button[contained]::after,
-.button.button--contained::after {
+.button--contained::after {
     background-color: #ffffff;
     opacity: 0;
 }
 
 wk-button[contained]:hover::after,
-.button.button--contained:hover::after {
+.button--contained:hover::after {
     opacity: 0.08;
 }
 
 wk-button[contained]:focus::after,
-.button.button--contained:focus::after {
+.button--contained:focus::after {
     opacity: 0.24;
 }
 
 wk-button[contained]:active::after,
-.button.button--contained:active::after {
+.button--contained:active::after {
     opacity: 0.32;
 }
 
-
-
-
-
-
-wk-button[contained][selected]::after,
-.button.button--contained.is-selected::after {
-    opacity: 0.16;
-}
-
-wk-button[contained][activated]::after,
-.button.button--contained.is-activated::after {
+wk-button[contained].button--toggle.is-activated::after,
+.button--contained.button--toggle.is-activated::after {
+    background-color: #ffffff;
     opacity: 0.24;
 }
 
 wk-button[contained][disabled]::after,
-.button.button--contained.is-disabled::after {
+wk-button[contained]:disabled::after,
+wk-button[contained].is-disabled::after,
+.button--contained:disabled::after,
+.button--contained.is-disabled::after {
     opacity: 0;
 }
 
@@ -224,44 +320,53 @@ wk-button[contained][disabled]::after,
 
 
 
+wk-button[toggle][activated],
+wk-button[toggle].is-activated,
+.button--toggle.is-activated {
+    color: #6200ee;
+}
+
+wk-button[toggle][disabled],
+wk-button[toggle]:disabled,
+.button--toggle:disabled,
+wk-button[toggle].is-disabled,
+.button--toggle.is-disabled {
+    background-color: #ffffff;
+    color: rgba(0, 0, 0, 0.38);
+}
 
 wk-button[toggle]::after,
-.button.button--toggle::after {
+.button--toggle::after {
     background-color: #000000;
     opacity: 0;
 }
 
 wk-button[toggle]:hover::after,
-.button.button--toggle:hover::after {
+.button--toggle:hover::after {
     opacity: 0.04;
 }
 
 wk-button[toggle]:focus::after,
-.button.button--toggle:focus::after {
+.button--toggle:focus::after {
     opacity: 0.12;
 }
 
 wk-button[toggle]:active::after,
-.button.button--toggle:active::after {
+.button--toggle:active::after {
     opacity: 0.16;
 }
 
-
-
-
-
-
-wk-button[toggle][selected]::after,
-.button.button--toggle.is-selected::after {
-    opacity: 0.08;
-}
-
 wk-button[toggle][activated]::after,
-.button.button--toggle.is-activated::after {
+wk-button[toggle].is-activated::after,
+.button--toggle.is-activated::after {
+    background-color: #6200ee;
     opacity: 0.12;
 }
 
 wk-button[toggle][disabled]::after,
-.button.button--toggle.is-disabled::after {
+wk-button[toggle]:disabled::after,
+wk-button[toggle].is-disabled::after,
+.button--toggle:disabled::after,
+.button--toggle.is-disabled::after {
     opacity: 0;
 }
