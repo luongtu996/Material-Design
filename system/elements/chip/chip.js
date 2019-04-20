@@ -94,12 +94,12 @@ class WKChip extends HTMLElement {
             'icon',
             'text',
             'action',
-            'outlined',
-            'filter',
-            'choice',
             'disabled',
+            'filter',
             'selected',
+            'choice',
             'activated',
+            'outlined',
         ]
     }
 
@@ -115,15 +115,6 @@ class WKChip extends HTMLElement {
     get action() { return this.hasAttribute('action') }
     set action(value) { this.setAttribute('action', '') }
 
-    get outlined() { return this.hasAttribute('outlined') }
-    set outlined(value) { this.setAttribute('outlined', '') }
-
-    get filter() { return this.hasAttribute('filter') }
-    set filter(value) { this.setAttribute('filter', '') }
-
-    get choice() { return this.hasAttribute('choice') }
-    set choice(value) { this.setAttribute('choice', '') }
-
     get disabled() { return this.hasAttribute('disabled') }
     set disabled(value) {
         if (value) {
@@ -133,6 +124,9 @@ class WKChip extends HTMLElement {
             this.removeAttribute('disabled')
         }
     }
+    
+    get filter() { return this.hasAttribute('filter') }
+    set filter(value) { this.setAttribute('filter', '') }
 
     get selected() { return this.hasAttribute('selected') }
     set selected(value) {
@@ -144,6 +138,9 @@ class WKChip extends HTMLElement {
         }
     }
 
+    get choice() { return this.hasAttribute('choice') }
+    set choice(value) { this.setAttribute('choice', '') }
+
     get activated() { return this.hasAttribute('activated') }
     set activated(value) {
         if (value) {
@@ -153,6 +150,9 @@ class WKChip extends HTMLElement {
             this.removeAttribute('activated')
         }
     }
+
+    get outlined() { return this.hasAttribute('outlined') }
+    set outlined(value) { this.setAttribute('outlined', '') }
 }
 
 customElements.define('wk-chip', WKChip)
