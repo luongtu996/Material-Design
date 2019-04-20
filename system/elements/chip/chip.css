@@ -1,5 +1,4 @@
-wk-chip,
-.chip {
+wk-chip {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -134,25 +133,19 @@ wk-chip,
 
 
 
-wk-chip[selected] .chip__check,
-wk-chip.is-selected .chip__check,
-.chip.is-selected .chip__check {
+wk-chip[filter][selected] .chip__check {
     width: 24px;
     height: 24px;
     left: 0;
 }
 
-wk-chip[selected] .chip__check .chip__mark::before,
-wk-chip.is-selected .chip__check .chip__mark::before,
-.chip.is-selected .chip__check .chip__mark::before {
+wk-chip[filter][selected] .chip__check .chip__mark::before {
     height: 100%;
     transition: 
     height 100ms ease-in-out 100ms;
 }
 
-wk-chip[selected] .chip__check .chip__mark::after,
-wk-chip.is-selected .chip__check .chip__mark::after,
-.chip.is-selected .chip__check .chip__mark::after {
+wk-chip[filter][selected] .chip__check .chip__mark::after {
     width: 100%;
     transition: 
     width 100ms ease-in-out 200ms;
@@ -163,8 +156,7 @@ wk-chip.is-selected .chip__check .chip__mark::after,
 
 
 
-wk-chip[outlined],
-.chip--outlined {
+wk-chip[outlined] {
     background-color: transparent;
     color: rgba(0, 0, 0, 0.87);
     box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.12);
@@ -175,14 +167,12 @@ wk-chip[outlined],
 
 
 
-wk-chip-group,
-.chip-group {
+wk-chip-group {
     display: inline-flex;
     vertical-align: middle;
 }
 
-wk-chip-group wk-chip + wk-chip,
-.chip-group .chip + .chip {
+wk-chip-group wk-chip + wk-chip {
     margin-left: 8px;
 }
 
@@ -190,84 +180,131 @@ wk-chip-group wk-chip + wk-chip,
 
 
 
-/* Ripple */
-wk-chip,
-.chip {
+/* 
+    States
+*/
+wk-chip {
+    position: relative;
+    overflow: hidden;
     cursor: pointer;
     user-select: none;
-    position: relative;
-    /* overflow: hidden; */
 }
 
-/* wk-chip::before {} ,
-/* .chip::before {} */
+wk-chip[choice][activated] {
+    color: #6200ee;
+}
 
-wk-chip::after,
-.chip::after {
-    content: '';
+wk-chip[disabled] {
+    cursor: default;
     pointer-events: none;
+    opacity: 0.38;
+}
+
+/* 
+    Touch target
+*/
+wk-chip::before {
+    content: '';
     position: absolute;
-    z-index: 1;
+    z-index: -1;
+    min-width: 100%;
+    min-height: 48px;
+    height: 100%;
+}
+
+/* 
+    Overlay
+*/
+wk-chip::after {
+    content: '';
+    position: absolute;
+    pointer-events: none;
     left: var(--ripple-left, 50%);
     top: var(--ripple-top, 50%);
     transform: translate3d(-50%, -50%, 0) translate3d(var(--ripple-translateX, 0), var(--ripple-translateY, 0), 0);
-    width: var(--ripple-size, 256px);
-    height: var(--ripple-size, 256px);
+    width: 0;
+    height: 0;
     border-radius: 50%;
     background-color: #000000;
     opacity: 0;
 }
 
-wk-chip:hover::after,
-.chip:hover::after {
+wk-chip:hover::after {
+    width: var(--ripple-size, 256px);
+    height: var(--ripple-size, 256px);
     opacity: 0.04;
 }
 
-wk-chip:focus::after,
-.chip:focus::after {
+wk-chip:focus::after {
+    width: var(--ripple-size, 256px);
+    height: var(--ripple-size, 256px);
     opacity: 0.12;
-    animation: var(--ripple-animation, ripple-pressed 250ms linear);
-    transition: width 250ms ease-in-out, height 250ms ease-in-out, opacity 250ms ease-in-out;
+    transition: width 300ms ease-in-out, height 300ms ease-in-out, opacity 300ms ease-in-out;
+    animation: var(--ripple-animation, ripple 300ms ease-in-out);
 }
 
-wk-chip:active::after,
-.chip:active::after {
+wk-chip:active::after {
+    width: var(--ripple-size, 256px);
+    height: var(--ripple-size, 256px);
     opacity: 0.16;
 }
 
+wk-chip[filter]:focus::after {
+    --ripple-animation-duration: 300ms; 
+}
 
+wk-chip[filter]:not([selected]):focus:not(:active)::after {
+    left: 50%;
+    top: 50%;
+    transform: translate3d(-50%, -50%, 0) translate3d(0, 0, 0);
+    width: 75%;
+    height: 75%;
+}
 
+wk-chip[filter]:not([selected]):active::after {
+    width: var(--ripple-size, 256px);
+    height: var(--ripple-size, 256px);
+}
 
-
-
-wk-chip[selected]::after,
-wk-chip.is-selected::after,
-.chip.is-selected::after {
+wk-chip[filter][selected]::after {
+    width: var(--ripple-size, 256px);
+    height: var(--ripple-size, 256px);
     background-color: #6200ee;
     opacity: 0.08;
+    animation: ripple 300ms ease-in-out;
+    animation-duration: var(--ripple-animation-duration, 0s);
 }
 
-wk-chip[activated],
-wk-chip.is-activated,
-.chip.is-activated {
-    color: #6200ee;
+wk-chip[choice]:focus::after {
+    --ripple-animation-duration: 300ms; 
 }
 
-wk-chip[activated]::after,
-wk-chip.is-activated::after,
-.chip.is-activated::after {
+wk-chip[choice]:not([activated]):focus:not(:active)::after {
+    left: 50%;
+    top: 50%;
+    transform: translate3d(-50%, -50%, 0) translate3d(0, 0, 0);
+    width: 75%;
+    height: 75%;
+}
+
+wk-chip[choice]:not([activated]):active::after {
+    width: var(--ripple-size, 256px);
+    height: var(--ripple-size, 256px);
+}
+
+wk-chip[choice][activated]::after {
+    width: var(--ripple-size, 256px);
+    height: var(--ripple-size, 256px);
     background-color: #6200ee;
     opacity: 0.12;
+    animation: ripple 300ms ease-in-out;
+    animation-duration: var(--ripple-animation-duration, 0s);
 }
 
-wk-chip[dragged]::after,
-wk-chip.is-dragged::after,
-.chip.is-dragged::after {
+wk-chip[dragged]::after {
     opacity: 0.08;
 }
 
-wk-chip[disabled]::after,
-wk-chip.is-disabled::after,
-.chip.is-disabled::after {
+wk-chip[disabled]::after {
     opacity: 0;
 }

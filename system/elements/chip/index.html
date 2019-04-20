@@ -19,94 +19,30 @@
 
 <body>
 
-    <!-- <button class="chip">
-        <span class="chip__icon icon">&#xEB52;</span>
-        <span class="chip__text">Chip</span>
-        <span class="chip__action"></span>
-    </button> -->
+    <wk-chip>Chip</wk-chip><br><br>
+    <wk-chip outlined>Chip</wk-chip><br><br>
+    <wk-chip disabled>Chip</wk-chip><br><br>
+    <wk-chip disabled outlined>Chip</wk-chip><br><br>
+    <wk-chip icon="&#xEB52;">Chip</wk-chip><br><br>
+    <wk-chip thumb="https://avatars.dicebear.com/v2/avataaars/ndiing.svg">Chip</wk-chip><br><br>
+    <wk-chip action>Chip</wk-chip><br><br>
 
-    <!-- <button class="chip chip--outlined">
-        <span class="chip__icon icon">&#xEB52;</span>
-        <span class="chip__text">Chip</span>
-        <span class="chip__action"></span>
-    </button> -->
-
-    <!-- <div class="chip-group">
-        <button class="chip">
-            <span class="chip__icon icon">&#xEB52;</span>
-            <span class="chip__text">Chip</span>
-            <span class="chip__action"></span>
-        </button>
-        <button class="chip">
-            <img src="https://avatars.dicebear.com/v2/avataaars/ndiing.svg" alt="" class="chip__thumb">
-            <span class="chip__text">Chip</span>
-            <span class="chip__action"></span>
-        </button>
-    </div> -->
-
-    <!-- <button class="chip is-activated">
-        <span class="chip__check">
-            <span class="chip__mark"></span>
-        </span>
-        <span class="chip__text">Chip</span>
-        <span class="chip__action"></span>
-    </button> -->
-
-    <!-- <button class="chip is-activated">
-        <img src="https://avatars.dicebear.com/v2/avataaars/ndiing.svg" alt="" class="chip__thumb">
-        <span class="chip__icon icon">&#xEB52;</span>
-        <span class="chip__check">
-            <span class="chip__mark"></span>
-        </span>
-        <span class="chip__text">Chip</span>
-        <span class="chip__action"></span>
-    </button> -->
-
-    <wk-chip text="Chip"></wk-chip><br><br>
-    <wk-chip text="Chip" thumb="https://avatars.dicebear.com/v2/avataaars/ndiing.svg"></wk-chip><br><br>
-    <wk-chip text="Chip" icon="&#xEB52;"></wk-chip><br><br>
-    <wk-chip text="Chip" action></wk-chip><br><br>
     <wk-chip-group>
-        <wk-chip filter text="Filter 1"></wk-chip>
-        <wk-chip filter text="Filter 2"></wk-chip>
-        <wk-chip selected filter text="Filter 3"></wk-chip>
-        <wk-chip filter text="Filter 4"></wk-chip>
-    </wk-chip-group><br><br>
-    <wk-chip-group>
-        <wk-chip choice text="Choice 1"></wk-chip>
-        <wk-chip choice text="Choice 2"></wk-chip>
-        <wk-chip activated choice text="Choice 3"></wk-chip>
-        <wk-chip choice text="Choice 4"></wk-chip>
+        <wk-chip filter>Chip</wk-chip>
+        <wk-chip filter selected>Chip</wk-chip>
+        <wk-chip filter>Chip</wk-chip>
+        <wk-chip filter>Chip</wk-chip>
     </wk-chip-group><br><br>
 
-    <wk-chip outlined text="Chip"></wk-chip><br><br>
-    <wk-chip outlined text="Chip" thumb="https://avatars.dicebear.com/v2/avataaars/ndiing.svg"></wk-chip><br><br>
-    <wk-chip outlined text="Chip" icon="&#xEB52;"></wk-chip><br><br>
-    <wk-chip outlined text="Chip" action></wk-chip><br><br>
     <wk-chip-group>
-        <wk-chip outlined filter text="Filter 1"></wk-chip>
-        <wk-chip outlined filter text="Filter 2"></wk-chip>
-        <wk-chip outlined selected filter text="Filter 3"></wk-chip>
-        <wk-chip outlined filter text="Filter 4"></wk-chip>
-    </wk-chip-group><br><br>
-    <wk-chip-group>
-        <wk-chip outlined choice text="Choice 1"></wk-chip>
-        <wk-chip outlined choice text="Choice 2"></wk-chip>
-        <wk-chip outlined activated choice text="Choice 3"></wk-chip>
-        <wk-chip outlined choice text="Choice 4"></wk-chip>
+        <wk-chip choice>Chip</wk-chip>
+        <wk-chip choice activated>Chip</wk-chip>
+        <wk-chip choice>Chip</wk-chip>
+        <wk-chip choice>Chip</wk-chip>
     </wk-chip-group><br><br>
 
     <script src="./chip.js" type="module"></script>
-    <script>
-        document.querySelectorAll('wk-chip').forEach(chip => {
-            chip.addEventListener('onActionClick', event => {
-                let confirm = window.confirm('remove ?')
-                if (confirm) {
-                    chip.remove()
-                }
-            })
-        })
-    </script>
+
 </body>
 
 </html>

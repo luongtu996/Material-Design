@@ -1,40 +1,28 @@
 # Chip
 
-### Tag
-Tag Name | Description
+### Element
+Element Name | Description
 --- | --- 
 wk-chip-group | 
 wk-chip | 
 
-### Prop
-Prop Name | Type | Description
+### Attribute
+Attribute Name | Type | Description
 --- | --- | ---
 thumb | String |
 icon | String |
 text | String |
 action | Boolean |
-choice | Boolean |
+outlined | Boolean |
 filter | Boolean |
-activated | Boolean |
+choice | Boolean |
+disabled | Boolean |
 selected | Boolean |
-outlined | Boolean | Variant
+activated | Boolean |
 
-### Event
+### Event Listener
 Event Name | Params | Description
 --- | --- | ---
-onActionClick | Event | Element
-onFilterClick | Event | Element
-onChoiceClick | Event | Element
-
-### CSS
-CSS Class | Description
---- | --- 
-chip |
-chip__icon |
-chip__text |
-chip__action |
-chip--outlined |
-chip-group |
-chip__thumb |
-chip__check |
-chip__mark |
+onFilterClick | event | event.detail
+onChoiceClick | event | event.detail
+onActionClick | event | event.detail

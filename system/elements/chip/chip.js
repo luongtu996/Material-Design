@@ -5,50 +5,42 @@ class WKChip extends HTMLElement {
 
     constructor() {
         super()
+
+        if (!this.text && this.textContent) {
+            this.text = this.textContent
+        }
+
         this.template()
     }
 
     template() {
         this.innerHTML = `
-            ${this.thumb?`<img class="chip__thumb" src="${this.thumb}">`:``}
-            ${this.icon?`<span class="chip__icon icon">${this.icon}</span>`:``}
-            ${this.filter?`<span class="chip__check">
-                <span class="chip__mark"></span>
-            </span>`:``}
-            ${this.text?`<span class="chip__text">${this.text}</span>`:``}
-            ${this.action?`<span class="chip__action"></span>`:``}
+        ${this.thumb?`<img class="chip__thumb" src="${this.thumb}">`:``}
+        ${this.icon?`<span class="chip__icon icon">${this.icon}</span>`:``}
+        ${this.filter?`<span class="chip__check">
+            <span class="chip__mark"></span>
+        </span>`:``}
+        ${this.text?`<span class="chip__text">${this.text}</span>`:``}
+        ${this.action?`<span class="chip__action"></span>`:``}
         `
     }
 
-    connectedCallback() {
+    connectedCallback() { 
         new Ripple({
-            element: this,
-            size: 200
+            element: this
         })
 
-        this.addEventListener('click', this.click.bind(this))
-
-        if (this.action) {
-            this.querySelector('.chip__action').addEventListener('click', this.actionClick.bind(this))
-        }
-    }
-
-    actionClick(event) {
-        event.preventDefault()
-        event.stopPropagation()
-
-        this.dispatchEvent(new CustomEvent('onActionClick', {
-            detail: this
-        }))
-    }
-
-    click(event) {
         if (this.filter) {
-            this.filterClick(event)
+            this.addEventListener('click', this.filterClick.bind(this))
         }
-
+        
         if (this.choice) {
-            this.choiceClick(event)
+            this.addEventListener('click', this.choiceClick.bind(this))
+        }
+        
+        if (this.action) {
+            this.chipAction = this.querySelector('.chip__action')
+            this.chipAction.addEventListener('click', this.actionClick.bind(this))
         }
     }
 
@@ -59,17 +51,23 @@ class WKChip extends HTMLElement {
             detail: this
         }))
     }
-
+    
     choiceClick(event) {
-        if (!this.parentNode.multiple) {
-            Array.from(this.parentNode.children).forEach(element => {
-                element.activated = false
-            });
-        }
+        Array.from(this.parentNode.children).forEach(chip => {
+            chip.activated = false
+        })
 
         this.activated = !this.activated
 
         this.dispatchEvent(new CustomEvent('onChoiceClick', {
+            detail: this
+        }))
+    }
+
+    actionClick(event) {
+        this.remove()
+
+        this.dispatchEvent(new CustomEvent('onActionClick', {
             detail: this
         }))
     }
@@ -83,6 +81,8 @@ class WKChip extends HTMLElement {
             'thumb',
             'icon',
             'text',
+            'action',
+            'filter',
         ].includes(name)) {
             this.template()
         }
@@ -94,85 +94,63 @@ class WKChip extends HTMLElement {
             'icon',
             'text',
             'action',
-            // 'input',
-            'choice',
-            'filter',
-            'activated',
-            'selected',
             'outlined',
+            'filter',
+            'choice',
+            'disabled',
+            'selected',
+            'activated',
         ]
     }
 
-    get thumb() {
-        return this.getAttribute('thumb')
-    }
-    set thumb(value) {
-        this.setAttribute('thumb', value)
-    }
+    get thumb() { return this.getAttribute('thumb') }
+    set thumb(value) { this.setAttribute('thumb', value) }
 
-    get icon() {
-        return this.getAttribute('icon')
-    }
-    set icon(value) {
-        this.setAttribute('icon', value)
-    }
+    get icon() { return this.getAttribute('icon') }
+    set icon(value) { this.setAttribute('icon', value) }
 
-    get text() {
-        return this.getAttribute('text')
-    }
-    set text(value) {
-        this.setAttribute('text', value)
-    }
+    get text() { return this.getAttribute('text') }
+    set text(value) { this.setAttribute('text', value) }
 
-    get action() {
-        return this.hasAttribute('action')
-    }
-    set action(value) {
-        this.setAttribute('action', '')
-    }
+    get action() { return this.hasAttribute('action') }
+    set action(value) { this.setAttribute('action', '') }
 
-    get choice() {
-        return this.hasAttribute('choice')
-    }
-    set choice(value) {
-        this.setAttribute('choice', '')
-    }
+    get outlined() { return this.hasAttribute('outlined') }
+    set outlined(value) { this.setAttribute('outlined', '') }
 
-    get filter() {
-        return this.hasAttribute('filter')
-    }
-    set filter(value) {
-        this.setAttribute('filter', '')
-    }
+    get filter() { return this.hasAttribute('filter') }
+    set filter(value) { this.setAttribute('filter', '') }
 
-    get outlined() {
-        return this.hasAttribute('outlined')
-    }
-    set outlined(value) {
-        this.setAttribute('outlined', '')
-    }
+    get choice() { return this.hasAttribute('choice') }
+    set choice(value) { this.setAttribute('choice', '') }
 
-    get activated() {
-        return this.hasAttribute('activated')
-    }
-    set activated(value) {
+    get disabled() { return this.hasAttribute('disabled') }
+    set disabled(value) {
         if (value) {
-            this.setAttribute('activated', '')
+            this.setAttribute('disabled', '')
         }
         else {
-            this.removeAttribute('activated')
+            this.removeAttribute('disabled')
         }
     }
 
-    get selected() {
-        return this.hasAttribute('selected')
-    }
+    get selected() { return this.hasAttribute('selected') }
     set selected(value) {
         if (value) {
             this.setAttribute('selected', '')
         }
         else {
             this.removeAttribute('selected')
+        }
+    }
+
+    get activated() { return this.hasAttribute('activated') }
+    set activated(value) {
+        if (value) {
+            this.setAttribute('activated', '')
+        }
+        else {
+            this.removeAttribute('activated')
         }
     }
 }

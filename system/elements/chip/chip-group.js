@@ -2,12 +2,8 @@ class WKChipGroup extends HTMLElement {
 
     constructor() {
         super()
-        // this.template()
     }
 
-    // template() {
-    //     this.innerHTML = ``
-    // }
 
     connectedCallback() { }
 
@@ -15,9 +11,7 @@ class WKChipGroup extends HTMLElement {
 
     adoptedCallback() { }
 
-    attributeChangedCallback(name, oldValue, newValue) {
-        // this.template()
-    }
+    attributeChangedCallback(name, oldValue, newValue) { }
 
     static get observedAttributes() {
         return []
