@@ -14,10 +14,10 @@ class WKLayoutColumn extends HTMLElement {
 
     static get observedAttributes() {
         return [
-            'span',
-            'desktopSpan',
-            'tabletSpan',
-            'mobileSpan'
+            'column',
+            'desktopColumn',
+            'tabletColumn',
+            'mobileColumn',
         ]
     }
 }

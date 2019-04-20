@@ -1,79 +1,64 @@
-wk-layout,
-.layout {
+wk-layout {
     display: block;
     /* display: flex; */
     margin: 0 24px;
 }
 
-wk-layout-grid,
-.layout__grid {
+wk-layout-grid {
     display: grid;
     grid-template-columns: repeat(12, minmax(0, 1fr));
     grid-gap: 24px;
 }
 
-wk-layout-column,
-.layout__column {
+wk-layout-column {
     grid-column-end: span 4;
 }
 
-wk-layout-column[span="1"],
-.layout__column--1 {
+wk-layout-column[column="1"] {
     grid-column-end: span 1;
 }
 
-wk-layout-column[span="2"],
-.layout__column--2 {
+wk-layout-column[column="2"] {
     grid-column-end: span 2;
 }
 
-wk-layout-column[span="3"],
-.layout__column--3 {
+wk-layout-column[column="3"] {
     grid-column-end: span 3;
 }
 
-wk-layout-column[span="4"],
-.layout__column--4 {
+wk-layout-column[column="4"] {
     grid-column-end: span 4;
 }
 
-wk-layout-column[span="5"],
-.layout__column--5 {
+wk-layout-column[column="5"] {
     grid-column-end: span 5;
 }
 
-wk-layout-column[span="6"],
-.layout__column--6 {
+wk-layout-column[column="6"] {
     grid-column-end: span 6;
 }
 
-wk-layout-column[span="7"],
-.layout__column--7 {
+wk-layout-column[column="7"] {
     grid-column-end: span 7;
 }
 
-wk-layout-column[span="8"],
-.layout__column--8 {
+wk-layout-column[column="8"] {
     grid-column-end: span 8;
 }
 
-wk-layout-column[span="9"],
-.layout__column--9 {
+wk-layout-column[column="9"] {
     grid-column-end: span 9;
 }
 
-wk-layout-column[span="10"],
-.layout__column--10 {
+wk-layout-column[column="10"] {
     grid-column-end: span 10;
 }
 
-wk-layout-column[span="11"],
-.layout__column--11 {
+wk-layout-column[column="11"] {
     grid-column-end: span 11;
 }
 
-wk-layout-column[span="12"],
-.layout__column--12 {
+wk-layout-column[column="12"] {
     grid-column-end: span 12;
 }
 
@@ -82,74 +67,60 @@ wk-layout-column[span="12"],
 
 
 @media (min-width: 840px) {
-    wk-layout,
-    .layout {
+    wk-layout {
         margin: 0 24px;
     }
 
-    wk-layout-grid,
-    .layout__grid {
+    wk-layout-grid {
         grid-template-columns: repeat(12, minmax(0, 1fr));
         grid-gap: 24px;
     }
 
-    wk-layout-column[desktopSpan="1"],
-    .layout__column--1-desktop {
+    wk-layout-column[desktopColumn="1"] {
         grid-column-end: span 1;
     }
 
-    wk-layout-column[desktopSpan="2"],
-    .layout__column--2-desktop {
+    wk-layout-column[desktopColumn="2"] {
         grid-column-end: span 2;
     }
 
-    wk-layout-column[desktopSpan="3"],
-    .layout__column--3-desktop {
+    wk-layout-column[desktopColumn="3"] {
         grid-column-end: span 3;
     }
 
-    wk-layout-column[desktopSpan="4"],
-    .layout__column--4-desktop {
+    wk-layout-column[desktopColumn="4"] {
         grid-column-end: span 4;
     }
 
-    wk-layout-column[desktopSpan="5"],
-    .layout__column--5-desktop {
+    wk-layout-column[desktopColumn="5"] {
         grid-column-end: span 5;
     }
 
-    wk-layout-column[desktopSpan="6"],
-    .layout__column--6-desktop {
+    wk-layout-column[desktopColumn="6"] {
         grid-column-end: span 6;
     }
 
-    wk-layout-column[desktopSpan="7"],
-    .layout__column--7-desktop {
+    wk-layout-column[desktopColumn="7"] {
         grid-column-end: span 7;
     }
 
-    wk-layout-column[desktopSpan="8"],
-    .layout__column--8-desktop {
+    wk-layout-column[desktopColumn="8"] {
         grid-column-end: span 8;
     }
 
-    wk-layout-column[desktopSpan="9"],
-    .layout__column--9-desktop {
+    wk-layout-column[desktopColumn="9"] {
         grid-column-end: span 9;
     }
 
-    wk-layout-column[desktopSpan="10"],
-    .layout__column--10-desktop {
+    wk-layout-column[desktopColumn="10"] {
         grid-column-end: span 10;
     }
 
-    wk-layout-column[desktopSpan="11"],
-    .layout__column--11-desktop {
+    wk-layout-column[desktopColumn="11"] {
         grid-column-end: span 11;
     }
 
-    wk-layout-column[desktopSpan="12"],
-    .layout__column--12-desktop {
+    wk-layout-column[desktopColumn="12"] {
         grid-column-end: span 12;
     }
 }
@@ -160,54 +131,44 @@ wk-layout-column[span="12"],
 
 
 @media (min-width: 480px) and  (max-width: 840px) {
-    wk-layout,
-    .layout {
+    wk-layout {
         margin: 0 24px;
     }
 
-    wk-layout-grid,
-    .layout__grid {
+    wk-layout-grid {
         grid-template-columns: repeat(8, minmax(0, 1fr));
         grid-gap: 24px;
     }
 
-    wk-layout-column[tabletSpan="1"],
-    .layout__column--1-tablet {
+    wk-layout-column[tabletColumn="1"] {
         grid-column-end: span 1;
     }
 
-    wk-layout-column[tabletSpan="2"],
-    .layout__column--2-tablet {
+    wk-layout-column[tabletColumn="2"] {
         grid-column-end: span 2;
     }
 
-    wk-layout-column[tabletSpan="3"],
-    .layout__column--3-tablet {
+    wk-layout-column[tabletColumn="3"] {
         grid-column-end: span 3;
     }
 
-    wk-layout-column[tabletSpan="4"],
-    .layout__column--4-tablet {
+    wk-layout-column[tabletColumn="4"] {
         grid-column-end: span 4;
     }
 
-    wk-layout-column[tabletSpan="5"],
-    .layout__column--5-tablet {
+    wk-layout-column[tabletColumn="5"] {
         grid-column-end: span 5;
     }
 
-    wk-layout-column[tabletSpan="6"],
-    .layout__column--6-tablet {
+    wk-layout-column[tabletColumn="6"] {
         grid-column-end: span 6;
     }
 
-    wk-layout-column[tabletSpan="7"],
-    .layout__column--7-tablet {
+    wk-layout-column[tabletColumn="7"] {
         grid-column-end: span 7;
     }
 
-    wk-layout-column[tabletSpan="8"],
-    .layout__column--8-tablet {
+    wk-layout-column[tabletColumn="8"] {
         grid-column-end: span 8;
     }
 }
@@ -218,34 +179,28 @@ wk-layout-column[span="12"],
 
 
 @media (max-width: 480px) {
-    wk-layout,
-    .layout {
+    wk-layout {
         margin: 0 16px;
     }
 
-    wk-layout-grid,
-    .layout__grid {
+    wk-layout-grid {
         grid-template-columns: repeat(4, minmax(0, 1fr));
         grid-gap: 16px;
     }
 
-    wk-layout-column[mobileSpan="1"],
-    .layout__column--1-mobile {
+    wk-layout-column[mobileColumn="1"] {
         grid-column-end: span 1;
     }
 
-    wk-layout-column[mobileSpan="2"],
-    .layout__column--2-mobile {
+    wk-layout-column[mobileColumn="2"] {
         grid-column-end: span 2;
     }
 
-    wk-layout-column[mobileSpan="3"],
-    .layout__column--3-mobile {
+    wk-layout-column[mobileColumn="3"] {
         grid-column-end: span 3;
     }
 
-    wk-layout-column[mobileSpan="4"],
-    .layout__column--4-mobile {
+    wk-layout-column[mobileColumn="4"] {
         grid-column-end: span 4;
     }
 }
