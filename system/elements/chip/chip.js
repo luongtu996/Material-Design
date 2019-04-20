@@ -16,7 +16,7 @@ class WKChip extends HTMLElement {
     template() {
         this.innerHTML = `
         ${this.thumb?`<img class="chip__thumb" src="${this.thumb}">`:``}
-        ${this.icon?`<span class="chip__icon icon">${this.icon}</span>`:``}
+        ${this.icon ?`<span wkIcon class="chip__icon">${this.icon}</span>`:``}
         ${this.filter?`<span class="chip__check">
             <span class="chip__mark"></span>
         </span>`:``}
