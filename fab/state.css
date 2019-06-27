@@ -1,0 +1,69 @@
+/* 
+    @state fab
+*/
+.fab {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    user-select: none;
+}
+.fab::after {
+    content: "";
+    position: absolute;
+    overflow: hidden;
+    pointer-events: none;
+    left: var(--ripple-left, 50%);
+    top: var(--ripple-top, 50%);
+    width: var(--ripple-circumference, 141.4213562373095%);
+    padding-top: var(--ripple-circumference, 141.4213562373095%);
+    border-radius: 50%;
+    transform: translate3d(-50%, -50%, 0) translate3d(var(--ripple-translateX, 0), var(--ripple-translateY, 0), 0);
+    background-color: var(--color-on-surface);
+    opacity: 0;
+}
+
+/* .fab:hover {} */
+.fab:hover::after { opacity: 0.04; /* dark: 0.08; */ }
+
+/* .fab:focus {} */
+.fab:focus::after { 
+    opacity: 0.12; /* dark: 0.24; */ 
+    animation: var(--ripple-animation, ripple-out) 300ms ease-in-out;
+}
+
+/* .fab:active {} */
+.fab:active::after { opacity: 0.16; /* dark: 0.32; */ }
+
+/* .fab[selected] {} */
+.fab[selected]::after { 
+    background-color: var(--color-primary);
+    opacity: 0.08; /* dark: 0.16; */ 
+}
+
+.fab[activated] {
+    color: var(--color-primary);
+}
+.fab[activated]::after { 
+    background-color: var(--color-primary);
+    opacity: 0.12; /* dark: 0.24; */ 
+}
+
+/* .fab[dragged] {} */
+.fab[dragged]::after { opacity: 0.08; /* dark: 0.16; */ }
+
+.fab[disabled] {
+    cursor: default;
+    pointer-events: none;
+    opacity: 0.38;
+}
+.fab[disabled]::after { opacity: 0; }
+
+/* 
+	@undefined undefined 
+*/
+.fab--bottom-right {
+    position: fixed;
+    right: 16px;
+    bottom: 16px;
+    z-index: 6; /* 12 */
+}

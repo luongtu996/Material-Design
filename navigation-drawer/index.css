@@ -5,6 +5,7 @@
     display: flex;
     flex-direction: column;
     position: fixed;
+    overflow: hidden auto;
     left: 0;
     top: 0;
     z-index: 8; /* 16 */
@@ -21,6 +22,7 @@
     display: flex;
     flex-direction: column;
     min-height: 64px;
+    flex-shrink: 0;
 }
 
 /* 
@@ -109,7 +111,7 @@
 */
 .navigation-drawer__body {
     flex: 1;
-    overflow: hidden auto;
+    /* overflow: hidden auto; */
 }
 
 /* 

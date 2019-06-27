@@ -1,0 +1,113 @@
+/* 
+	@block button 
+*/
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+    min-width: 64px;
+    height: 36px;
+    border-radius: 4px;
+    background-color: transparent;
+    color: var(--color-primary);
+}
+
+/* 
+	@element icon 
+*/
+.button__icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+    width: 18px;
+    height: 18px;
+    margin: 0 12px;
+    font-weight: 400; font-size: 16px; line-height: 1;
+    font-family: "Segoe MDL2 Assets";
+}
+
+/* 
+	@element text 
+*/
+.button__text {
+    margin: 0 8px;
+    font-weight: 500; font-size: 14px; line-height: 20px; text-transform: uppercase;
+}
+
+/* 
+	@modifier outlined 
+*/
+.button--outlined {
+    background-color: var(--color-on-primary);
+    color: var(--color-primary);
+    box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.12);
+}
+
+/* .button--outlined .button__icon {} */
+
+.button--outlined .button__text {
+    margin-left: 16px;
+    margin-right: 16px;
+}
+
+/* 
+	@modifier contained 
+*/
+.button--contained {
+    background-color: var(--color-primary);
+    color: var(--color-on-primary);
+    box-shadow: 0 3px 1px -2px var(--color-black-20), 0 2px 2px 0 var(--color-black-14), 0 1px 5px 0 var(--color-black-12);
+}
+
+/* .button--contained .button__icon {} */
+
+.button--contained .button__text {
+    margin-left: 16px;
+    margin-right: 16px;
+}
+
+.button__icon + .button__text {
+    margin-left: calc(8px - 12px); /* 8px spec - 12px margin right of icon */
+}
+
+/* 
+	@modifier toggle 
+*/
+.button--toggle {
+    min-width: 48px;
+    height: 48px;
+    border-radius: 0;
+    background-color: var(--color-surface);
+    color: var(--color-on-surface);
+    box-shadow: inset 0 0 0 1px var(--color-black-12);
+}
+
+.button--toggle .button__icon {
+    width: 24px;
+    height: 24px;
+    font-size: 18px;
+}
+
+/* .button--toggle .button__text {} */
+
+/* 
+	@blockGroup group 
+*/
+.button-group {
+    display: inline-flex;
+    vertical-align: middle;
+}
+
+/* .button-group .button {} */
+
+/* .button-group .button--outlined {} */
+
+/* .button-group .button--contained {} */
+
+/* .button-group .button--toggle {} */
+
+.button-group .button--toggle + .button--toggle {
+    margin-left: -1px;
+}

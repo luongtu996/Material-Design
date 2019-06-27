@@ -1,0 +1,24 @@
+/* 
+    @component ripple
+*/
+@keyframes ripple-out {
+    0% {
+        width: 0%;
+        padding-top: 0%;
+    }
+    100% {
+        width: var(--ripple-circumference, 141.4213562373095%);
+        padding-top: var(--ripple-circumference, 141.4213562373095%);
+    }
+}
+
+@keyframes ripple-in {
+    0% {
+        width: 141.4213562373095%;
+        padding-top: 141.4213562373095%;
+    }
+    100% {
+        width: 141.4213562373095%;
+        padding-top: 141.4213562373095%;
+    }
+}

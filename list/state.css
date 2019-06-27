@@ -1,0 +1,64 @@
+/* 
+    @state list__item
+*/
+.list--with-action .list__item {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    user-select: none;
+}
+.list--with-action .list__item::after {
+    content: "";
+    position: absolute;
+    overflow: hidden;
+    pointer-events: none;
+    left: var(--ripple-left, 50%);
+    top: var(--ripple-top, 50%);
+    width: var(--ripple-circumference, 141.4213562373095%);
+    padding-top: var(--ripple-circumference, 141.4213562373095%);
+    border-radius: 50%;
+    transform: translate3d(-50%, -50%, 0) translate3d(var(--ripple-translateX, 0), var(--ripple-translateY, 0), 0);
+    background-color: var(--color-on-surface);
+    opacity: 0;
+}
+
+/* .list--with-action .list__item:hover {} */
+.list--with-action .list__item:hover::after { opacity: 0.04; /* dark: 0.08; */ }
+
+/* .list--with-action .list__item:focus {} */
+.list--with-action .list__item:focus::after { 
+    opacity: 0.12; 
+    /* dark: 0.24; */ 
+    /* opacity: 0; */
+    animation: var(--ripple-animation, ripple-out) 300ms ease-in-out;
+    transition: opacity 300ms ease-in-out;
+}
+
+/* .list--with-action .list__item:active {} */
+.list--with-action .list__item:active::after { opacity: 0.16; /* dark: 0.32; */ }
+
+/* .list--with-action .list__item[selected] {} */
+.list--with-action .list__item[selected]::after { 
+    background-color: var(--color-primary);
+    opacity: 0.08; /* dark: 0.16; */ 
+}
+
+.list--with-action .list__item[activated] {
+    color: var(--color-primary);
+}
+.list--with-action .list__item[activated]::after { 
+    background-color: var(--color-primary);
+    /* opacity: 0.12;  */
+    /* dark: 0.24; */ 
+    opacity: 0;
+}
+
+/* .list--with-action .list__item[dragged] {} */
+.list--with-action .list__item[dragged]::after { opacity: 0.08; /* dark: 0.16; */ }
+
+.list--with-action .list__item[disabled] {
+    cursor: default;
+    pointer-events: none;
+    opacity: 0.38;
+}
+.list--with-action .list__item[disabled]::after { opacity: 0; }
