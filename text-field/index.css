@@ -140,161 +140,161 @@
 /* 
 	@modifier icon-start 
 */
-/* .text-field--icon-start {} */
+/* .text-field--with-icon-start {} */
 
-.text-field--icon-start .text-field__input {
+.text-field--with-icon-start .text-field__input {
     padding-left: 0;
 }
 
-/* .text-field--icon-start .text-field__container {} */
+/* .text-field--with-icon-start .text-field__container {} */
 
-/* .text-field--icon-start .text-field__section {} */
+/* .text-field--with-icon-start .text-field__section {} */
 
-/* .text-field--icon-start .text-field__icon {} */
+/* .text-field--with-icon-start .text-field__icon {} */
 
-/* .text-field--icon-start .text-field__meta {} */
+/* .text-field--with-icon-start .text-field__meta {} */
 
-/* .text-field--icon-start .text-field__message {} */
+/* .text-field--with-icon-start .text-field__message {} */
 
-/* .text-field--icon-start .text-field__message-error {} */
+/* .text-field--with-icon-start .text-field__message-error {} */
 
-/* .text-field--icon-start .text-field__message-helper {} */
+/* .text-field--with-icon-start .text-field__message-helper {} */
 
-/* .text-field--icon-start .text-field__message-counter {} */
+/* .text-field--with-icon-start .text-field__message-counter {} */
 
-.text-field--icon-start .text-field__label {
+.text-field--with-icon-start .text-field__label {
     left: calc((12px + 24px + 12px) - 4px);
 }
 
-/* .text-field--icon-start .text-field__section--start {} */
+/* .text-field--with-icon-start .text-field__section--start {} */
 
-/* .text-field--icon-start .text-field__section--end {} */
+/* .text-field--with-icon-start .text-field__section--end {} */
 
 /* 
 	@modifier icon-end 
 */
-/* .text-field--icon-end {} */
+/* .text-field--with-icon-end {} */
 
-.text-field--icon-end .text-field__input {
+.text-field--with-icon-end .text-field__input {
     padding-right: 0;
 }
 
-/* .text-field--icon-end .text-field__container {} */
+/* .text-field--with-icon-end .text-field__container {} */
 
-/* .text-field--icon-end .text-field__section {} */
+/* .text-field--with-icon-end .text-field__section {} */
 
-/* .text-field--icon-end .text-field__icon {} */
+/* .text-field--with-icon-end .text-field__icon {} */
 
-/* .text-field--icon-end .text-field__meta {} */
+/* .text-field--with-icon-end .text-field__meta {} */
 
-/* .text-field--icon-end .text-field__message {} */
+/* .text-field--with-icon-end .text-field__message {} */
 
-/* .text-field--icon-end .text-field__message-error {} */
+/* .text-field--with-icon-end .text-field__message-error {} */
 
-/* .text-field--icon-end .text-field__message-helper {} */
+/* .text-field--with-icon-end .text-field__message-helper {} */
 
-/* .text-field--icon-end .text-field__message-counter {} */
+/* .text-field--with-icon-end .text-field__message-counter {} */
 
-/* .text-field--icon-end .text-field__label {} */
+/* .text-field--with-icon-end .text-field__label {} */
 
-/* .text-field--icon-end .text-field__section--start {} */
+/* .text-field--with-icon-end .text-field__section--start {} */
 
-/* .text-field--icon-end .text-field__section--end {} */
+/* .text-field--with-icon-end .text-field__section--end {} */
 
 /* 
 	@modifier meta-start 
 */
-/* .text-field--meta-start {} */
+/* .text-field--with-meta-start {} */
 
-.text-field--meta-start .text-field__input {
+.text-field--with-meta-start .text-field__input {
     padding-left: 0;
 }
 
-/* .text-field--meta-start .text-field__container {} */
+/* .text-field--with-meta-start .text-field__container {} */
 
-/* .text-field--meta-start .text-field__section {} */
+/* .text-field--with-meta-start .text-field__section {} */
 
-/* .text-field--meta-start .text-field__icon {} */
+/* .text-field--with-meta-start .text-field__icon {} */
 
-.text-field--meta-start .text-field__meta {
+.text-field--with-meta-start .text-field__meta {
     padding-right: 0;
 }
 
-/* .text-field--meta-start .text-field__message {} */
+/* .text-field--with-meta-start .text-field__message {} */
 
-/* .text-field--meta-start .text-field__message-error {} */
+/* .text-field--with-meta-start .text-field__message-error {} */
 
-/* .text-field--meta-start .text-field__message-helper {} */
+/* .text-field--with-meta-start .text-field__message-helper {} */
 
-/* .text-field--meta-start .text-field__message-counter {} */
+/* .text-field--with-meta-start .text-field__message-counter {} */
 
-/* .text-field--meta-start .text-field__label {} */
+/* .text-field--with-meta-start .text-field__label {} */
 
-/* .text-field--meta-start .text-field__section--start {} */
+/* .text-field--with-meta-start .text-field__section--start {} */
 
-/* .text-field--meta-start .text-field__section--end {} */
+/* .text-field--with-meta-start .text-field__section--end {} */
 
 /* 
 	@modifier meta-end 
 */
-/* .text-field--meta-end {} */
+/* .text-field--with-meta-end {} */
 
-.text-field--meta-end .text-field__input {
+.text-field--with-meta-end .text-field__input {
     padding-right: 0;
 }
 
-/* .text-field--meta-end .text-field__container {} */
+/* .text-field--with-meta-end .text-field__container {} */
 
-/* .text-field--meta-end .text-field__section {} */
+/* .text-field--with-meta-end .text-field__section {} */
 
-/* .text-field--meta-end .text-field__icon {} */
+/* .text-field--with-meta-end .text-field__icon {} */
 
-.text-field--meta-end .text-field__meta {
+.text-field--with-meta-end .text-field__meta {
     padding-left: 0;
 }
 
-/* .text-field--meta-end .text-field__message {} */
+/* .text-field--with-meta-end .text-field__message {} */
 
-/* .text-field--meta-end .text-field__message-error {} */
+/* .text-field--with-meta-end .text-field__message-error {} */
 
-/* .text-field--meta-end .text-field__message-helper {} */
+/* .text-field--with-meta-end .text-field__message-helper {} */
 
-/* .text-field--meta-end .text-field__message-counter {} */
+/* .text-field--with-meta-end .text-field__message-counter {} */
 
-/* .text-field--meta-end .text-field__label {} */
+/* .text-field--with-meta-end .text-field__label {} */
 
-/* .text-field--meta-end .text-field__section--start {} */
+/* .text-field--with-meta-end .text-field__section--start {} */
 
-/* .text-field--meta-end .text-field__section--end {} */
+/* .text-field--with-meta-end .text-field__section--end {} */
 
 /* 
 	@modifier label 
 */
-/* .text-field--label {} */
+/* .text-field--with-label {} */
 
-/* .text-field--label .text-field__input {} */
+/* .text-field--with-label .text-field__input {} */
 
-/* .text-field--label .text-field__container {} */
+/* .text-field--with-label .text-field__container {} */
 
-/* .text-field--label .text-field__section {} */
+/* .text-field--with-label .text-field__section {} */
 
-/* .text-field--label .text-field__icon {} */
+/* .text-field--with-label .text-field__icon {} */
 
-/* .text-field--label .text-field__meta {} */
+/* .text-field--with-label .text-field__meta {} */
 
-/* .text-field--label .text-field__message {} */
+/* .text-field--with-label .text-field__message {} */
 
-/* .text-field--label .text-field__message-error {} */
+/* .text-field--with-label .text-field__message-error {} */
 
-/* .text-field--label .text-field__message-helper {} */
+/* .text-field--with-label .text-field__message-helper {} */
 
-/* .text-field--label .text-field__message-counter {} */
+/* .text-field--with-label .text-field__message-counter {} */
 
-/* .text-field--label .text-field__label {} */
+/* .text-field--with-label .text-field__label {} */
 
-/* .text-field--label .text-field__section--start {} */
+/* .text-field--with-label .text-field__section--start {} */
 
-/* .text-field--label .text-field__section--end {} */
+/* .text-field--with-label .text-field__section--end {} */
 
 /* 
 	@modifier outlined 
@@ -336,43 +336,43 @@
     @debug
     @debug
 */
-.text-field--label .text-field__input:not(:focus)::placeholder {
+.text-field--with-label .text-field__input:not(:focus)::placeholder {
     color: transparent;
 }
 
-.text-field--label .text-field__input:placeholder-shown:not(:focus) ~ .text-field__section .text-field__meta {
+.text-field--with-label .text-field__input:placeholder-shown:not(:focus) ~ .text-field__section .text-field__meta {
     color: transparent;
 }
 
-.text-field--label:not(.text-field--outlined) .text-field__input:focus,
-.text-field--label:not(.text-field--outlined) .text-field__input:not(:placeholder-shown) {
+.text-field--with-label:not(.text-field--outlined) .text-field__input:focus,
+.text-field--with-label:not(.text-field--outlined) .text-field__input:not(:placeholder-shown) {
     padding-top: calc(40px - (24px - ((24px - 16px) / 2)));
     padding-bottom: calc(56px - 20px - 24px);
 }
 
-.text-field--label:not(.text-field--outlined) .text-field__input:focus ~ .text-field__section .text-field__meta,
-.text-field--label:not(.text-field--outlined) .text-field__input:not(:placeholder-shown) ~ .text-field__section .text-field__meta {
+.text-field--with-label:not(.text-field--outlined) .text-field__input:focus ~ .text-field__section .text-field__meta,
+.text-field--with-label:not(.text-field--outlined) .text-field__input:not(:placeholder-shown) ~ .text-field__section .text-field__meta {
     padding-top: calc(40px - (24px - ((24px - 16px) / 2)));
     padding-bottom: calc(56px - 20px - 24px);
 }
 
-.text-field--label .text-field__input:focus ~ .text-field__label,
-.text-field--label .text-field__input:not(:placeholder-shown) ~ .text-field__label {
+.text-field--with-label .text-field__input:focus ~ .text-field__label,
+.text-field--with-label .text-field__input:not(:placeholder-shown) ~ .text-field__label {
     top: calc(20px - (16px - ((16px - 12px) / 2)));
     font-weight: 400; font-size: 12px; line-height: 16px;
 }
 
-.text-field--label.text-field--outlined .text-field__input:focus ~ .text-field__label,
-.text-field--label.text-field--outlined .text-field__input:not(:placeholder-shown) ~ .text-field__label {
+.text-field--with-label.text-field--outlined .text-field__input:focus ~ .text-field__label,
+.text-field--with-label.text-field--outlined .text-field__input:not(:placeholder-shown) ~ .text-field__label {
     top: calc(0px - (16px / 2));
 }
 
-.text-field--label.text-field--outlined .text-field__input:focus ~ .text-field__label,
-.text-field--label.text-field--outlined .text-field__input:not(:placeholder-shown) ~ .text-field__label {
+.text-field--with-label.text-field--outlined .text-field__input:focus ~ .text-field__label,
+.text-field--with-label.text-field--outlined .text-field__input:not(:placeholder-shown) ~ .text-field__label {
     left: calc(12px - 4px);
 }
 
-.text-field--label.text-field--outlined .text-field__label::before {
+.text-field--with-label.text-field--outlined .text-field__label::before {
     content: "";
     position: absolute;
     left: 0;
@@ -382,8 +382,8 @@
     z-index: -1;
     background-color: white;
 }
-.text-field--label.text-field--outlined .text-field__input:focus ~ .text-field__label::before,
-.text-field--label.text-field--outlined .text-field__input:not(:placeholder-shown) ~ .text-field__label::before {
+.text-field--with-label.text-field--outlined .text-field__input:focus ~ .text-field__label::before,
+.text-field--with-label.text-field--outlined .text-field__input:not(:placeholder-shown) ~ .text-field__label::before {
     top: 8px;
     width: 100%;
     height: 2px;

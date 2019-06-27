@@ -39,3 +39,14 @@ input,
 input::-webkit-slider-thumb {
     -webkit-appearance: none;
 }
+
+/* 
+	@undefined undefined 
+*/
+table {
+    border-spacing: 0;
+}
+
+th {
+    text-align: left;
+}
