@@ -1,0 +1,99 @@
+/* 
+	@block banner 
+*/
+.banner {
+    display: flex;
+    width: 720px;
+    background-color: var(--color-surface);
+    color: var(--color-on-surface);
+}
+
+/* 
+	@element body 
+*/
+.banner__body {
+    display: flex;
+}
+
+/* 
+	@element text 
+*/
+.banner__text {
+    flex: 1;
+    margin: calc((90px - 60px) / 2) 24px;
+    font-weight: 400; font-size: 14px; line-height: 20px;
+}
+
+/* 
+	@element action-group 
+*/
+.banner__action-group {
+    display: flex;
+    align-self: flex-end;
+    padding: 8px;
+    padding-left: 90px;
+    margin-left: auto;
+}
+
+.banner__body ~ .banner__action-group {
+    padding-left: calc(90px - 24px);
+}
+
+/* 
+	@element action 
+*/
+/* .banner__action {} */
+
+.banner__action + .banner__action {
+    margin-left: 8px;
+}
+
+/* 
+	@element thumb 
+*/
+.banner__thumb {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+    width: 40px;
+    height: 40px;
+    margin: calc((72px - 40px) / 2) 16px;
+    border-radius: 50%;
+    font-weight: 400; font-size: 18px; line-height: 1;
+    font-family: "Segoe MDL2 Assets";
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.banner__thumb ~ .banner__text {
+    margin-left: calc(24px - 16px);
+}
+
+@media (max-width: 480px) {
+    .banner {
+        flex-wrap: wrap;
+        width: 100%;
+    }
+    .banner__text {
+        margin-left: 16px;
+        margin-right: 16px;
+        margin-top: 18px;
+        margin-bottom: 0;
+    }
+    .banner__action-group {
+        padding-left: 36px;
+        padding-top: 10px;
+    }
+    .banner__body ~ .banner__action-group {
+        padding-left: calc(36px - 16px);
+    }
+    .banner__thumb {
+        margin-top: 20px;
+        margin-bottom: 6px;
+    }
+    .banner__thumb ~ .banner__text {
+        margin-left: calc(16px - 16px);
+    }
+}

@@ -1,0 +1,8 @@
+/* 
+	@block divider 
+*/
+.divider {
+    height: 1px;
+    background-color: var(--color-black-12);
+    margin: 8px 0 7px 0;
+}

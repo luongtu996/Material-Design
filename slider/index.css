@@ -1,0 +1,33 @@
+/* 
+	@block slider 
+*/
+.slider {
+    display: inline-flex;
+    align-items: center;
+    vertical-align: middle;
+    height: 24px;
+}
+
+/* 
+	@element input 
+*/
+/* .slider__input {} */
+
+/* .slider__input::-webkit-slider-container {} */
+
+.slider__input::-webkit-slider-runnable-track {
+    height: 2px;
+    background-image: linear-gradient(var(--color-primary), var(--color-primary));
+    background-position: 0 100%;
+    background-size: 50% 100%;
+    background-repeat: no-repeat;
+    background-color: var(--color-primary-54);
+}
+
+.slider__input::-webkit-slider-thumb {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin-top: calc(0px - ((12px - 2px) / 2));
+    background-color: var(--color-primary);
+}

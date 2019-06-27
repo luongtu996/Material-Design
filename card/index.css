@@ -1,0 +1,16 @@
+/* 
+	@block card 
+*/
+.card {
+    border-radius: 4px;
+    background-color: var(--color-surface);
+    color: var(--color-focused-on-light);
+    box-shadow: 0 2px 1px -1px var(--color-black-20), 0 1px 1px 0 var(--color-black-14), 0 1px 3px 0 var(--color-black-12);
+}
+
+/* 
+@modifier outlined 
+*/
+.card--outlined {
+    box-shadow: inset 0 0 0 1px var(--color-black-12);
+}

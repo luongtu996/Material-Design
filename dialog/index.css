@@ -1,0 +1,99 @@
+/* 
+	@block dialog 
+*/
+.dialog {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate3d(-50%, -50%, 0);
+    z-index: 24;
+    display: inline-flex;
+    flex-direction: column;
+    min-width: calc(56px * 5);
+    width: 280px;
+    overflow: hidden;
+    border-radius: 4px;
+    background-color: var(--color-surface);
+    color: var(--color-unfocused-on-light);
+    /* 24 */
+    box-shadow: 0 11px 15px -7px var(--color-black-20), 0 24px 38px 3px var(--color-black-14), 0 9px 46px 8px var(--color-black-12);
+}
+
+/* 
+	@element header 
+*/
+.dialog__header {
+    display: flex;
+    min-height: 64px;
+}
+
+/* 
+	@element title 
+*/
+.dialog__title {
+    margin: calc((64px - 28px) / 2) 24px;
+    font-weight: 500; font-size: 20px; line-height: 28px;
+    color: var(--color-focused-on-light);
+}
+
+/* 
+	@element body 
+*/
+.dialog__body {
+    flex: 1;
+    padding: 24px 24px 0 24px;
+    font-weight: 400; font-size: 16px; line-height: 24px;
+}
+
+.dialog__header ~ .dialog__body {
+    margin-top: -24px;
+}
+
+/* 
+	@element action-group 
+*/
+.dialog__action-group {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    padding: 2px 8px;
+}
+
+.dialog__body ~ .dialog__action-group {
+    margin-top: 20px;
+}
+
+/* 
+	@element action 
+*/
+.dialog__action {
+    margin: 6px 0;
+}
+.dialog__action + .dialog__action {
+    margin-left: 8px;
+}
+
+/* 
+	@blockGroup scrim 
+*/
+.dialog-scrim {
+    position: fixed;
+    z-index: 23;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-black-32);
+}
+
+/* .dialog-scrim .dialog {} */
+
+/* 
+    @component list
+*/
+.dialog .list {
+    padding-top: 0;
+    margin-left: -16px;
+    margin-right: -16px;
+}

@@ -1,0 +1,23 @@
+/* 
+	@block menu 
+*/
+.menu {
+    display: inline-flex;
+    flex-direction: column;
+    overflow: hidden;
+    min-width: calc(56px * 2);
+    max-width: calc(56px * 5);
+    border-radius: 4px;
+    background-color: var(--color-surface);
+    color: var(--color-on-surface);
+    box-shadow: 0 5px 5px -3px var(--color-black-20), 0 8px 10px 1px var(--color-black-14), 0 3px 14px 2px var(--color-black-12);
+}
+
+/* 
+	@component list 
+*/
+.menu .list {}
+
+.menu .list__text {
+    font-weight: 400; font-size: 14px; line-height: 20px;
+}

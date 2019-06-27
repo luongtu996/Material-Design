@@ -1,0 +1,450 @@
+/* 
+	@block text-field 
+*/
+.text-field {
+    display: inline-grid;
+    grid-template-columns: auto 1fr auto;
+    position: relative;
+    width: 280px;
+}
+
+/* 
+	@element input 
+*/
+.text-field__input {
+    grid-column: 2/3;
+    grid-row: 1/2;
+    padding: calc((56px - 24px) / 2) 12px;
+    font-weight: 400; font-size: 16px; line-height: 24px;
+    background-color: transparent;
+    color: var(--color-focused-on-light);
+}
+
+.text-field__input::placeholder {
+    color: var(--color-unfocused-on-light);
+}
+
+/* 
+	@element container 
+*/
+.text-field__container {
+    grid-column: 1/4;
+    grid-row: 1/2;
+    z-index: -1;
+    border-radius: 4px 4px 0 0;
+    background-color: var(--color-black-04);
+    box-shadow: inset 0 -1px 0 0 var(--color-black-12);
+}
+
+/* 
+	@element section 
+*/
+.text-field__section {
+    display: flex;
+    align-items: center;
+}
+
+/* 
+	@elementModifier start 
+*/
+.text-field__section--start {
+    grid-column: 1/2;
+    grid-row: 1/2;
+}
+
+/* 
+	@elementModifier end 
+*/
+.text-field__section--end {
+    grid-column: 3/4;
+    grid-row: 1/2;
+    justify-content: flex-end;
+}
+
+/* 
+	@element icon 
+*/
+.text-field__icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+    width: 24px;
+    height: 24px;
+    margin: calc((56px - 24px) / 2) 12px;
+    font-weight: 400; font-size: 18px; line-height: 1;
+    font-family: "Segoe MDL2 Assets";
+    color: var(--color-unfocused-on-light);
+}
+
+/* 
+	@element meta 
+*/
+.text-field__meta {
+    padding: calc((56px - 24px) / 2) 12px;
+    font-weight: 400; font-size: 16px; line-height: 24px;
+}
+
+/* 
+	@element message 
+*/
+.text-field__message {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-column: 1/4;
+    grid-row: 2/3;
+    padding: calc(16px - (16px - ((16px - 12px) / 2))) 12px 0;
+    font-weight: 400; font-size: 12px; line-height: 16px;
+    color: var(--color-unfocused-on-light);
+}
+
+/* 
+	@element message-error 
+*/
+.text-field__message-error {
+    grid-column: 1/2;
+    grid-row: 1/2;
+    color: var(--color-error);
+}
+
+/* 
+	@element message-helper 
+*/
+.text-field__message-helper {
+    grid-column: 1/2;
+    grid-row: 1/2;
+}
+
+/* 
+	@element message-counter 
+*/
+.text-field__message-counter {
+    grid-column: 2/3;
+    grid-row: 1/2;
+}
+
+/* 
+	@element label 
+*/
+.text-field__label {
+    position: absolute;
+    left: calc(12px - 4px);
+    top: calc((56px - 24px) / 2);
+    pointer-events: none;
+    grid-column: 1/4;
+    grid-row: 1/2;
+    padding: 0 4px;
+    font-weight: 400; font-size: 16px; line-height: 24px;
+}
+
+/* 
+	@modifier icon-start 
+*/
+/* .text-field--icon-start {} */
+
+.text-field--icon-start .text-field__input {
+    padding-left: 0;
+}
+
+/* .text-field--icon-start .text-field__container {} */
+
+/* .text-field--icon-start .text-field__section {} */
+
+/* .text-field--icon-start .text-field__icon {} */
+
+/* .text-field--icon-start .text-field__meta {} */
+
+/* .text-field--icon-start .text-field__message {} */
+
+/* .text-field--icon-start .text-field__message-error {} */
+
+/* .text-field--icon-start .text-field__message-helper {} */
+
+/* .text-field--icon-start .text-field__message-counter {} */
+
+.text-field--icon-start .text-field__label {
+    left: calc((12px + 24px + 12px) - 4px);
+}
+
+/* .text-field--icon-start .text-field__section--start {} */
+
+/* .text-field--icon-start .text-field__section--end {} */
+
+/* 
+	@modifier icon-end 
+*/
+/* .text-field--icon-end {} */
+
+.text-field--icon-end .text-field__input {
+    padding-right: 0;
+}
+
+/* .text-field--icon-end .text-field__container {} */
+
+/* .text-field--icon-end .text-field__section {} */
+
+/* .text-field--icon-end .text-field__icon {} */
+
+/* .text-field--icon-end .text-field__meta {} */
+
+/* .text-field--icon-end .text-field__message {} */
+
+/* .text-field--icon-end .text-field__message-error {} */
+
+/* .text-field--icon-end .text-field__message-helper {} */
+
+/* .text-field--icon-end .text-field__message-counter {} */
+
+/* .text-field--icon-end .text-field__label {} */
+
+/* .text-field--icon-end .text-field__section--start {} */
+
+/* .text-field--icon-end .text-field__section--end {} */
+
+/* 
+	@modifier meta-start 
+*/
+/* .text-field--meta-start {} */
+
+.text-field--meta-start .text-field__input {
+    padding-left: 0;
+}
+
+/* .text-field--meta-start .text-field__container {} */
+
+/* .text-field--meta-start .text-field__section {} */
+
+/* .text-field--meta-start .text-field__icon {} */
+
+.text-field--meta-start .text-field__meta {
+    padding-right: 0;
+}
+
+/* .text-field--meta-start .text-field__message {} */
+
+/* .text-field--meta-start .text-field__message-error {} */
+
+/* .text-field--meta-start .text-field__message-helper {} */
+
+/* .text-field--meta-start .text-field__message-counter {} */
+
+/* .text-field--meta-start .text-field__label {} */
+
+/* .text-field--meta-start .text-field__section--start {} */
+
+/* .text-field--meta-start .text-field__section--end {} */
+
+/* 
+	@modifier meta-end 
+*/
+/* .text-field--meta-end {} */
+
+.text-field--meta-end .text-field__input {
+    padding-right: 0;
+}
+
+/* .text-field--meta-end .text-field__container {} */
+
+/* .text-field--meta-end .text-field__section {} */
+
+/* .text-field--meta-end .text-field__icon {} */
+
+.text-field--meta-end .text-field__meta {
+    padding-left: 0;
+}
+
+/* .text-field--meta-end .text-field__message {} */
+
+/* .text-field--meta-end .text-field__message-error {} */
+
+/* .text-field--meta-end .text-field__message-helper {} */
+
+/* .text-field--meta-end .text-field__message-counter {} */
+
+/* .text-field--meta-end .text-field__label {} */
+
+/* .text-field--meta-end .text-field__section--start {} */
+
+/* .text-field--meta-end .text-field__section--end {} */
+
+/* 
+	@modifier label 
+*/
+/* .text-field--label {} */
+
+/* .text-field--label .text-field__input {} */
+
+/* .text-field--label .text-field__container {} */
+
+/* .text-field--label .text-field__section {} */
+
+/* .text-field--label .text-field__icon {} */
+
+/* .text-field--label .text-field__meta {} */
+
+/* .text-field--label .text-field__message {} */
+
+/* .text-field--label .text-field__message-error {} */
+
+/* .text-field--label .text-field__message-helper {} */
+
+/* .text-field--label .text-field__message-counter {} */
+
+/* .text-field--label .text-field__label {} */
+
+/* .text-field--label .text-field__section--start {} */
+
+/* .text-field--label .text-field__section--end {} */
+
+/* 
+	@modifier outlined 
+*/
+/* .text-field--outlined {} */
+
+/* .text-field--outlined .text-field__input {} */
+
+.text-field--outlined .text-field__container {
+    border-radius: 4px;
+    background-color: transparent;
+    box-shadow: inset 0 0 0 1px var(--color-black-12);
+}
+
+/* .text-field--outlined .text-field__section {} */
+
+/* .text-field--outlined .text-field__icon {} */
+
+/* .text-field--outlined .text-field__meta {} */
+
+/* .text-field--outlined .text-field__message {} */
+
+/* .text-field--outlined .text-field__message-error {} */
+
+/* .text-field--outlined .text-field__message-helper {} */
+
+/* .text-field--outlined .text-field__message-counter {} */
+
+/* .text-field--outlined .text-field__label {} */
+
+/* .text-field--outlined .text-field__section--start {} */
+
+/* .text-field--outlined .text-field__section--end {} */
+
+/* 
+    @debug
+    @debug
+    @debug
+    @debug
+    @debug
+*/
+.text-field--label .text-field__input:not(:focus)::placeholder {
+    color: transparent;
+}
+
+.text-field--label .text-field__input:placeholder-shown:not(:focus) ~ .text-field__section .text-field__meta {
+    color: transparent;
+}
+
+.text-field--label:not(.text-field--outlined) .text-field__input:focus,
+.text-field--label:not(.text-field--outlined) .text-field__input:not(:placeholder-shown) {
+    padding-top: calc(40px - (24px - ((24px - 16px) / 2)));
+    padding-bottom: calc(56px - 20px - 24px);
+}
+
+.text-field--label:not(.text-field--outlined) .text-field__input:focus ~ .text-field__section .text-field__meta,
+.text-field--label:not(.text-field--outlined) .text-field__input:not(:placeholder-shown) ~ .text-field__section .text-field__meta {
+    padding-top: calc(40px - (24px - ((24px - 16px) / 2)));
+    padding-bottom: calc(56px - 20px - 24px);
+}
+
+.text-field--label .text-field__input:focus ~ .text-field__label,
+.text-field--label .text-field__input:not(:placeholder-shown) ~ .text-field__label {
+    top: calc(20px - (16px - ((16px - 12px) / 2)));
+    font-weight: 400; font-size: 12px; line-height: 16px;
+}
+
+.text-field--label.text-field--outlined .text-field__input:focus ~ .text-field__label,
+.text-field--label.text-field--outlined .text-field__input:not(:placeholder-shown) ~ .text-field__label {
+    top: calc(0px - (16px / 2));
+}
+
+.text-field--label.text-field--outlined .text-field__input:focus ~ .text-field__label,
+.text-field--label.text-field--outlined .text-field__input:not(:placeholder-shown) ~ .text-field__label {
+    left: calc(12px - 4px);
+}
+
+.text-field--label.text-field--outlined .text-field__label::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: -16px;
+    width: 0;
+    height: 1px;
+    z-index: -1;
+    background-color: white;
+}
+.text-field--label.text-field--outlined .text-field__input:focus ~ .text-field__label::before,
+.text-field--label.text-field--outlined .text-field__input:not(:placeholder-shown) ~ .text-field__label::before {
+    top: 8px;
+    width: 100%;
+    height: 2px;
+}
+
+.text-field__input:placeholder-shown:invalid ~ .text-field__message .text-field__message-error {
+    display: none;
+}
+.text-field__input:not(:placeholder-shown):valid ~ .text-field__message .text-field__message-error {
+    display: none;
+}
+.text-field__input:not(:placeholder-shown):invalid ~ .text-field__message .text-field__message-helper {
+    display: none;
+}
+.text-field__input:not([minlength]):not([maxlength]) ~ .text-field__message .text-field__message-counter {
+    display: none;
+}
+
+/* 
+    @theme
+    @theme
+    @theme
+    @theme
+    @theme
+*/
+/* .text-field:not(.text-field--outlined) .text-field__input:focus {} */
+.text-field:not(.text-field--outlined) .text-field__input:focus ~ .text-field__container {
+    background-color: var(--color-black-04);
+    box-shadow: inset 0 -2px 0 0 var(--color-primary);
+}
+/* .text-field:not(.text-field--outlined) .text-field__input:focus ~ .text-field__section {} */
+.text-field:not(.text-field--outlined) .text-field__input:focus ~ .text-field__section--start .text-field__icon {
+    color: var(--color-primary);
+}
+/* .text-field:not(.text-field--outlined) .text-field__input:focus ~ .text-field__meta {} */
+/* .text-field:not(.text-field--outlined) .text-field__input:focus ~ .text-field__message {} */
+/* .text-field:not(.text-field--outlined) .text-field__input:focus ~ .text-field__message-error {} */
+/* .text-field:not(.text-field--outlined) .text-field__input:focus ~ .text-field__message-helper {} */
+/* .text-field:not(.text-field--outlined) .text-field__input:focus ~ .text-field__message-counter {} */
+.text-field:not(.text-field--outlined) .text-field__input:focus ~ .text-field__label {
+    color: var(--color-primary);
+}
+/* .text-field:not(.text-field--outlined) .text-field__input:focus ~ .text-field__section--start {} */
+/* .text-field:not(.text-field--outlined) .text-field__input:focus ~ .text-field__section--end {} */
+
+/* .text-field.text-field--outlined .text-field__input:focus {} */
+.text-field.text-field--outlined .text-field__input:focus ~ .text-field__container {
+    background-color: transparent;
+    box-shadow: inset 0 0 0 2px var(--color-primary);
+}
+/* .text-field.text-field--outlined .text-field__input:focus ~ .text-field__section {} */
+.text-field.text-field--outlined .text-field__input:focus ~ .text-field__section--start .text-field__icon {
+    color: var(--color-primary);
+}
+/* .text-field.text-field--outlined .text-field__input:focus ~ .text-field__meta {} */
+/* .text-field.text-field--outlined .text-field__input:focus ~ .text-field__message {} */
+/* .text-field.text-field--outlined .text-field__input:focus ~ .text-field__message-error {} */
+/* .text-field.text-field--outlined .text-field__input:focus ~ .text-field__message-helper {} */
+/* .text-field.text-field--outlined .text-field__input:focus ~ .text-field__message-counter {} */
+.text-field.text-field--outlined .text-field__input:focus ~ .text-field__label {
+    color: var(--color-primary);
+}
+/* .text-field.text-field--outlined .text-field__input:focus ~ .text-field__section--start {} */
+/* .text-field.text-field--outlined .text-field__input:focus ~ .text-field__section--end {} */

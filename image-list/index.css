@@ -1,0 +1,191 @@
+/* 
+	@block image-list 
+*/
+.image-list {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    grid-gap: 4px;
+}
+
+/* 
+	@element item 
+*/
+.image-list__item {
+    grid-column-end: span 3;
+}
+
+/* 
+	@element container 
+*/
+.image-list__container {
+    position: relative;
+}
+.image-list__container::before {
+    content: "";
+    display: block;
+    padding-top: 100%;
+}
+
+/* 
+	@element thumb 
+*/
+.image-list__thumb {
+    object-fit: cover;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* 
+	@element protection 
+*/
+.image-list__protection {
+    display: flex;
+    align-items: center;
+    height: 48px;
+}
+
+/* 
+	@element text 
+*/
+.image-list__text {
+    flex: 1;
+    font-weight: 400; font-size: 16px; line-height: 24px;
+}
+
+/* 
+	@element action 
+*/
+.image-list__action {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+    width: 24px;
+    height: 24px;
+    margin-left: auto;
+    font-weight: 400; font-size: 18px; line-height: 1;
+    font-family: "Segoe MDL2 Assets";
+}
+
+.image-list__container .image-list__protection {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--color-unfocused-on-light);
+    color: var(--color-focused-on-dark);
+}
+.image-list__container .image-list__text {
+    margin-left: 16px;
+}
+.image-list__container .image-list__action {
+    margin-right: 16px;
+}
+
+/* 
+	@modifier standard 
+*/
+/* .image-list--standard {} */
+
+/* .image-list--standard .image-list__item {} */
+
+/* .image-list--standard .image-list__container {} */
+
+/* .image-list--standard .image-list__thumb {} */
+
+/* .image-list--standard .image-list__protection {} */
+
+/* .image-list--standard .image-list__text {} */
+
+/* .image-list--standard .image-list__action {} */
+
+/* 
+	@modifier quilted 
+*/
+/* .image-list--quilted {} */
+
+/* .image-list--quilted .image-list__item {} */
+.image-list--quilted .image-list__item:nth-child(8n+1),
+.image-list--quilted .image-list__item:nth-child(8n+6) {
+    grid-column-end: span 6;
+    grid-row-end: span 2;
+}
+.image-list--quilted .image-list__item:nth-child(8n+4),
+.image-list--quilted .image-list__item:nth-child(8n+5) {
+    grid-column-end: span 6;
+}
+.image-list--quilted .image-list__item:nth-child(8n+4) .image-list__container::before,
+.image-list--quilted .image-list__item:nth-child(8n+5) .image-list__container::before {
+    padding-top: calc(100% / 2);
+}
+
+/* .image-list--quilted .image-list__container {} */
+
+/* .image-list--quilted .image-list__thumb {} */
+
+/* .image-list--quilted .image-list__protection {} */
+
+/* .image-list--quilted .image-list__text {} */
+
+/* .image-list--quilted .image-list__action {} */
+
+/* 
+	@modifier woven 
+*/
+.image-list--woven {
+    align-items: center;
+}
+
+/* .image-list--woven .image-list__item {} */
+
+.image-list--woven .image-list__item:nth-child(8n+2) .image-list__container::before,
+.image-list--woven .image-list__item:nth-child(8n+4) .image-list__container::before,
+.image-list--woven .image-list__item:nth-child(8n+5) .image-list__container::before,
+.image-list--woven .image-list__item:nth-child(8n+7) .image-list__container::before {
+    padding-top: calc(100% / 5 * 7);
+}
+
+/* .image-list--woven .image-list__container {} */
+
+/* .image-list--woven .image-list__thumb {} */
+
+/* .image-list--woven .image-list__protection {} */
+
+/* .image-list--woven .image-list__text {} */
+
+/* .image-list--woven .image-list__action {} */
+
+/* 
+	@modifier masonry 
+*/
+.image-list--masonry {
+    display: block;
+    column-count: 4;
+    column-gap: 4px;
+}
+
+.image-list--masonry .image-list__item {
+    break-inside: avoid-column;
+    margin-bottom: 4px;
+}
+
+.image-list--masonry .image-list__container {
+    font-size: 0;
+    line-height: 0;
+}
+.image-list--masonry .image-list__container::before {
+    padding-top: 0;
+}
+
+.image-list--masonry .image-list__thumb {
+    position: relative;
+}
+
+/* .image-list--masonry .image-list__protection {} */
+
+/* .image-list--masonry .image-list__text {} */
+
+/* .image-list--masonry .image-list__action {} */
