@@ -42,6 +42,7 @@ class Ripple {
 // Register ripple here...
 document.querySelectorAll(".button").forEach(element => new Ripple(element))
 document.querySelectorAll(".fab").forEach(element => new Ripple(element))
+document.querySelectorAll(".chip").forEach(element => new Ripple(element))
 document.querySelectorAll(".bottom-navigation").forEach(element => new Ripple(element))
 document.querySelectorAll(".tab").forEach(element => new Ripple(element))
 document.querySelectorAll(".list--with-action .list__item").forEach(element => new Ripple(element))

@@ -127,6 +127,9 @@
 	@element label 
 */
 .text-field__label {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     position: absolute;
     left: calc(12px - 4px);
     top: calc((56px - 24px) / 2);
@@ -135,6 +138,12 @@
     grid-row: 1/2;
     padding: 0 4px;
     font-weight: 400; font-size: 16px; line-height: 24px;
+    transition: 
+    left 100ms ease-in-out,
+    top 100ms ease-in-out,
+    font-size 100ms ease-in-out,
+    line-height 100ms ease-in-out,
+    color 100ms ease-in-out;
 }
 
 /* 
@@ -375,12 +384,15 @@
 .text-field--with-label.text-field--outlined .text-field__label::before {
     content: "";
     position: absolute;
-    left: 0;
+    /* left: 0; */
     top: -16px;
     width: 0;
     height: 1px;
     z-index: -1;
     background-color: white;
+    transition: 
+    top 100ms ease-in-out,
+    width 100ms ease-in-out;
 }
 .text-field--with-label.text-field--outlined .text-field__input:focus ~ .text-field__label::before,
 .text-field--with-label.text-field--outlined .text-field__input:not(:placeholder-shown) ~ .text-field__label::before {
