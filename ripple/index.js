@@ -1,7 +1,9 @@
 class Ripple {
 
     constructor(element, options = {}) {
-        this.options = options
+        this.options = Object.assign({}, {
+            // defaults
+        }, options)
         this.trigger = element
         this.delegate = this.options.delegate || element
         this.pointerdown = this.pointerdown.bind(this)
@@ -47,6 +49,12 @@ document.querySelectorAll(".bottom-navigation").forEach(element => new Ripple(el
 document.querySelectorAll(".tab").forEach(element => new Ripple(element))
 document.querySelectorAll(".list--with-action .list__item").forEach(element => new Ripple(element))
 document.querySelectorAll(".top-app-bar__action").forEach(element => new Ripple(element, {
+    circumference: 40
+}))
+document.querySelectorAll(".side-sheet__action").forEach(element => new Ripple(element, {
+    circumference: 40
+}))
+document.querySelectorAll(".bottom-sheet__action").forEach(element => new Ripple(element, {
     circumference: 40
 }))
 document.querySelectorAll(".checkbox").forEach(element => new Ripple(element.querySelector(".checkbox__input"), {

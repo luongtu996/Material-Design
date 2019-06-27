@@ -1,0 +1,60 @@
+/* 
+    @state bottom-sheet__action
+*/
+.bottom-sheet__action {
+    --ripple-circumference: 166.66666666666669%;
+    position: relative;
+    /* overflow: hidden; */
+    cursor: pointer;
+    user-select: none;
+}
+.bottom-sheet__action::after {
+    content: "";
+    position: absolute;
+    overflow: hidden;
+    pointer-events: none;
+    left: var(--ripple-left, 50%);
+    top: var(--ripple-top, 50%);
+    width: var(--ripple-circumference, 141.4213562373095%);
+    padding-top: var(--ripple-circumference, 141.4213562373095%);
+    border-radius: 50%;
+    transform: translate3d(-50%, -50%, 0) translate3d(var(--ripple-translateX, 0), var(--ripple-translateY, 0), 0);
+    background-color: var(--color-primary);
+    opacity: 0;
+}
+
+/* .bottom-sheet__action:hover {} */
+.bottom-sheet__action:hover::after { opacity: 0.08; }
+
+/* .bottom-sheet__action:focus {} */
+.bottom-sheet__action:focus::after { 
+    opacity: 0.24; 
+    animation: var(--ripple-animation, ripple-out) 300ms ease-in-out;
+}
+
+/* .bottom-sheet__action:active {} */
+.bottom-sheet__action:active::after { opacity: 0.32; }
+
+/* .bottom-sheet__action[selected] {} */
+.bottom-sheet__action[selected]::after { 
+    background-color: var(--color-primary);
+    opacity: 0.16; 
+}
+
+.bottom-sheet__action[activated] {
+    color: var(--color-primary);
+}
+.bottom-sheet__action[activated]::after { 
+    background-color: var(--color-primary);
+    opacity: 0.24; 
+}
+
+/* .bottom-sheet__action[dragged] {} */
+.bottom-sheet__action[dragged]::after { opacity: 0.16; }
+
+.bottom-sheet__action[disabled] {
+    cursor: default;
+    pointer-events: none;
+    opacity: 0.38;
+}
+.bottom-sheet__action[disabled]::after { opacity: 0; }

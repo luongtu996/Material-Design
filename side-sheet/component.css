@@ -1,0 +1,116 @@
+/* 
+	@block side-sheet 
+*/
+.side-sheet {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 8; /* 16 */
+    width: 320px;
+    height: 100%;
+    background-color: var(--color-surface);
+    color: var(--color-focused-on-light);
+}
+
+/* 
+	@element header 
+*/
+.side-sheet__header {
+    display: flex;
+    align-items: center;
+    height: 64px;
+}
+
+/* 
+	@element title 
+*/
+.side-sheet__title {
+    flex: 1;
+    margin: calc((64px - 28px) / 2) 0 calc((64px - 28px) / 2) 16px;
+    font-weight: 500; font-size: 20px; line-height: 28px;
+}
+
+/* 
+	@element action 
+*/
+.side-sheet__action {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+    width: 24px;
+    height: 24px;
+    margin: calc((64px - 24px) / 2) 16px calc((64px - 24px) / 2) auto;
+    font-weight: 400; font-size: 18px; line-height: 1;
+    font-family: "Segoe MDL2 Assets";
+}
+.side-sheet__action::before {
+    content: "\E711";
+}
+
+/* 
+	@element body 
+*/
+.side-sheet__body {
+    flex: 1;
+    overflow: hidden auto;
+    padding: 0 16px;
+}
+
+/* 
+	@modifier modal 
+*/
+.side-sheet--modal {
+    /* 8 */
+    box-shadow: 0 5px 5px -3px var(--color-black-20), 0 8px 10px 1px var(--color-black-14), 0 3px 14px 2px var(--color-black-12);
+}
+
+/* .side-sheet--modal .side-sheet__header {} */
+
+/* .side-sheet--modal .side-sheet__title {} */
+
+/* .side-sheet--modal .side-sheet__action {} */
+
+/* .side-sheet--modal .side-sheet__body {} */
+
+/* 
+	@blockGroup scrim 
+*/
+.side-sheet-scrim {
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 7; /* 15 */
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-black-32);
+}
+
+/* .side-sheet-scrim .side-sheet {} */
+
+/* .side-sheet-scrim .side-sheet--modal {} */
+
+@media (max-width: 480px) {
+    .side-sheet {
+        z-index: 16; /* 16 */
+        width: calc(100% - 56px);
+    }
+    .side-sheet__header {
+        height: 56px;
+    }
+    .side-sheet__title {
+        margin: calc((56px - 28px) / 2) 0 calc((56px - 28px) / 2) 16px;
+    }
+    .side-sheet__action {
+        margin: calc((56px - 24px) / 2) 16px calc((56px - 24px) / 2) auto;
+    }
+    .side-sheet--modal {
+        /* 16 */
+        box-shadow: 0 8px 10px -5px var(--color-black-20), 0 16px 24px 2px var(--color-black-14), 0 6px 30px 5px var(--color-black-12);
+    }
+    .side-sheet-scrim {
+        z-index: 15; /* 15 */
+    }
+}
