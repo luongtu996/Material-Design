@@ -48,6 +48,9 @@ document.querySelectorAll(".chip").forEach(element => new Ripple(element))
 document.querySelectorAll(".bottom-navigation").forEach(element => new Ripple(element))
 document.querySelectorAll(".tab").forEach(element => new Ripple(element))
 document.querySelectorAll(".list--with-action .list__item").forEach(element => new Ripple(element))
+document.querySelectorAll(".text-field__icon").forEach(element => new Ripple(element, {
+    circumference: 40
+}))
 document.querySelectorAll(".top-app-bar__action").forEach(element => new Ripple(element, {
     circumference: 40
 }))
@@ -68,4 +71,7 @@ document.querySelectorAll(".radio").forEach(element => new Ripple(element.queryS
 document.querySelectorAll(".switch").forEach(element => new Ripple(element.querySelector(".switch__input"), {
     delegate: element.querySelector(".switch__thumb"),
     circumference: 40
+}))
+document.querySelectorAll(".text-field").forEach(element => new Ripple(element.querySelector(".text-field__input"), {
+    delegate: element.querySelector(".text-field__container")
 }))
