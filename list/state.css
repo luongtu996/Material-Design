@@ -48,9 +48,9 @@
 }
 .list--with-action .list__item[activated]::after { 
     background-color: var(--color-primary);
-    /* opacity: 0.12;  */
+    opacity: 0.12; 
     /* dark: 0.24; */ 
-    opacity: 0;
+    /* opacity: 0; */
 }
 
 /* .list--with-action .list__item[dragged] {} */

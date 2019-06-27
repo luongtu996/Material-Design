@@ -11,7 +11,7 @@
     overflow: hidden;
     width: 240px;
     height: 4px;
-    background-color: rgba(98, 0, 238, .12);
+    background-color: var(--color-primary-54);
 }
 
 .progress:not(.progress--circular)::before,
@@ -22,7 +22,7 @@
     top: 0;
     width: calc(var(--progress-value) * 1%);
     height: 100%;
-    background-color: #6200ee;
+    background-color: var(--color-primary);
 }
 
 /* .progress:not(.progress--circular)::after {} */
@@ -90,7 +90,7 @@
 
 .progress--circular circle {
     fill: none;
-    stroke: #6200ee;
+    stroke: var(--color-primary);
     stroke-width: 4;
     stroke-dasharray: 113.09733552923255;
     stroke-dashoffset: calc(113.09733552923255 * (1 - (var(--progress-value, 0) / 100)));
