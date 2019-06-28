@@ -1,39 +1,29 @@
 class Ripple {
 
     constructor(element, options = {}) {
-        this.options = Object.assign({}, {
-            // defaults
-        }, options)
+        this.options = Object.assign({}, {}, options)
         this.trigger = element
         this.delegate = this.options.delegate || element
-        this.pointerdown = this.pointerdown.bind(this)
 
-        // set default
         this.trigger.setAttribute("tabindex", 0)
         
-        // add event
-        this.trigger.addEventListener("pointerdown", this.pointerdown)
+        this.trigger.addEventListener("pointerdown", this.pointerdown.bind(this))
     }
 
     pointerdown(event) {
         let delegate = this.delegate
 
         delegate.style.setProperty("--ripple-animation", "none")
-        // reflow
         let rect = delegate.getBoundingClientRect()
         delegate.style.removeProperty("--ripple-animation")
-
-        rect.width = delegate.clientWidth
-        rect.height = delegate.clientHeight
     
-        // get actual circumference
-        let circumference = this.options.circumference || Math.sqrt(Math.pow(rect.width, 2) + Math.pow(rect.height, 2))
-        let left = (event.clientX - rect.left) / rect.width
-        let top = (event.clientY - rect.top) / rect.height
-        let translateX = (0.5 - left) * (rect.width / circumference)
-        let translateY = (0.5 - top) * (rect.width / circumference * (rect.height / rect.width))
+        let circumference = this.options.circumference || Math.sqrt(Math.pow(delegate.clientWidth, 2) + Math.pow(delegate.clientHeight, 2))
+        let left = (event.clientX - rect.left) / delegate.clientWidth
+        let top = (event.clientY - rect.top) / delegate.clientHeight
+        let translateX = (0.5 - left) * (delegate.clientWidth / circumference)
+        let translateY = (0.5 - top) * (delegate.clientWidth / circumference * (delegate.clientHeight / delegate.clientWidth))
     
-        delegate.style.setProperty("--ripple-circumference", `${circumference / rect.width * 100}%`)
+        delegate.style.setProperty("--ripple-circumference", `${circumference / delegate.clientWidth * 100}%`)
         delegate.style.setProperty("--ripple-left", `${left * 100}%`)
         delegate.style.setProperty("--ripple-top", `${top * 100}%`)
         delegate.style.setProperty("--ripple-translateX", `${translateX * 100}%`)
@@ -41,7 +31,6 @@ class Ripple {
     }
 }
 
-// Register ripple here...
 document.querySelectorAll(".button").forEach(element => new Ripple(element))
 document.querySelectorAll(".fab").forEach(element => new Ripple(element))
 document.querySelectorAll(".chip").forEach(element => new Ripple(element))

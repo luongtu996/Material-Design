@@ -31,11 +31,6 @@ body {
 	padding-top: calc(100% / 16 * 9);
 }
 
-a.list__item {
-	text-decoration: none;
-	color: inherit;
-}
-
 .demo-top-app-bar__title {
 	font-family: "Lobster";
 	/* font-weight: 400;  */

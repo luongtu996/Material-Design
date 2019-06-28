@@ -62,10 +62,13 @@
     position: absolute;
     z-index: 1;
     top: calc(100% - 2px);
-    left: 0;
-    width: 150px;
+    left: var(--tab-bar-indicator-left, 0);
+    width: var(--tab-bar-indicator-width, 150px);
     height: 2px;
     background-color: var(--color-primary);
+    transition: 
+    left 100ms ease-in-out,
+    width 100ms ease-in-out;
 }
 
 /* .tab-bar .tab {} */
@@ -85,8 +88,8 @@
 }
 
 .tab-bar.tab-bar--scrollable::before {
-    left: 52px;
-    width: 90px;
+    left: var(--tab-bar-indicator-left, 52px);
+    width: var(--tab-bar-indicator-width, 90px);
 }
 
 /* .tab-bar--scrollable .tab {} */

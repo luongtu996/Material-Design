@@ -1,5 +1,5 @@
 let classNames = new Set()
-let includesClassName = window.location.pathname.replace(/\//g, "")
+let includesClassName = window.location.pathname.split('/')[1]
 
 document.querySelectorAll("[class]").forEach(element => {
     element.getAttribute("class").split(" ").forEach(className => {

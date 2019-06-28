@@ -58,3 +58,45 @@
     opacity: 0.38;
 }
 .top-app-bar__action[disabled]::after { opacity: 0; }
+
+/* 
+    @state top-app-bar__action
+*/
+/* .top-app-bar--uncolored .top-app-bar__action {} */
+.top-app-bar--uncolored .top-app-bar__action::after {
+    background-color: var(--color-primary);
+    opacity: 0;
+}
+
+/* .top-app-bar--uncolored .top-app-bar__action:hover {} */
+.top-app-bar--uncolored .top-app-bar__action:hover::after { opacity: 0.04; }
+
+/* .top-app-bar--uncolored .top-app-bar__action:focus {} */
+.top-app-bar--uncolored .top-app-bar__action:focus::after { 
+    opacity: 0.12; 
+}
+
+/* .top-app-bar--uncolored .top-app-bar__action:active {} */
+.top-app-bar--uncolored .top-app-bar__action:active::after { opacity: 0.16; }
+
+/* .top-app-bar--uncolored .top-app-bar__action[selected] {} */
+.top-app-bar--uncolored .top-app-bar__action[selected]::after { 
+    background-color: var(--color-primary);
+    opacity: 0.08; 
+}
+
+.top-app-bar--uncolored .top-app-bar__action[activated] {
+    color: var(--color-primary);
+}
+.top-app-bar--uncolored .top-app-bar__action[activated]::after { 
+    background-color: var(--color-primary);
+    opacity: 0.12; 
+}
+
+/* .top-app-bar--uncolored .top-app-bar__action[dragged] {} */
+.top-app-bar--uncolored .top-app-bar__action[dragged]::after { opacity: 0.08; }
+
+.top-app-bar--uncolored .top-app-bar__action[disabled] {
+    opacity: 0.38;
+}
+.top-app-bar--uncolored .top-app-bar__action[disabled]::after { opacity: 0; }

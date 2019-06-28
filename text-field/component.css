@@ -343,11 +343,7 @@
 /* .text-field--outlined .text-field__section--end {} */
 
 /* 
-    @debug
-    @debug
-    @debug
-    @debug
-    @debug
+    @state
 */
 .text-field--with-label .text-field__input:not(:focus)::placeholder {
     color: transparent;
@@ -419,10 +415,6 @@
 }
 
 /* 
-    @theme
-    @theme
-    @theme
-    @theme
     @theme
 */
 /* .text-field:not(.text-field--outlined) .text-field__input:focus {} */
