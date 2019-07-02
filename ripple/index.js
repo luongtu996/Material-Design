@@ -55,6 +55,9 @@ document.querySelectorAll(".text-field").forEach(element => new Ripple(element.q
 document.querySelectorAll(".text-field__icon--control").forEach(element => new Ripple(element, {
     circumference: 40
 }))
+document.querySelectorAll(".image-list__action").forEach(element => new Ripple(element, {
+    circumference: 40
+}))
 document.querySelectorAll(".card__toolbar-action").forEach(element => new Ripple(element, {
     circumference: 40
 }))

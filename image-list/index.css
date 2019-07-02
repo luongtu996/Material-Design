@@ -191,3 +191,92 @@
 /* .image-list--masonry .image-list__text {} */
 
 /* .image-list--masonry .image-list__action {} */
+
+/* 
+	@state ripple 
+*/
+.image-list__action {
+    --ripple-circumference: 166.66666666666669%;
+    position: relative;
+    /* overflow: hidden; */
+    cursor: pointer;
+    user-select: none;
+}
+.image-list__action::after {
+    content: "";
+    position: absolute;
+    overflow: hidden;
+    pointer-events: none;
+    left: var(--ripple-left, 50%);
+    top: var(--ripple-top, 50%);
+    width: var(--ripple-circumference, 141.4213562373095%);
+    padding-top: var(--ripple-circumference, 141.4213562373095%);
+    border-radius: 50%;
+    transform: translate3d(-50%, -50%, 0) translate3d(var(--ripple-translateX, 0), var(--ripple-translateY, 0), 0);
+    background-color: var(--color-primary);
+    opacity: 0;
+}
+
+.image-list__action[disabled] {
+    cursor: default;
+    pointer-events: none;
+    opacity: 0.38;
+}
+.image-list__action[disabled]::after {
+    opacity: 0;
+}
+
+/* .image-list__action:hover {} */
+.image-list__action:hover::after {
+    opacity: 0.04;
+}
+
+/* .image-list__action:focus {} */
+.image-list__action:focus::after {
+    opacity: 0.12;
+    animation: var(--ripple-animation, ripple-out) 300ms ease-in-out forwards;
+}
+
+/* .image-list__action.image-list__action--filter[selected] {} */
+.image-list__action.image-list__action--filter:not([selected]):focus:not(:active)::after {
+    --ripple-left: 50%;
+    --ripple-top: 50%;
+    /* --ripple-circumference: 83.33333333333334%; */
+    --ripple-translateX: 0;
+    --ripple-translateY: 0;
+    --ripple-animation: ripple-in;
+}
+.image-list__action.image-list__action--filter[selected]::after {
+    background-color: var(--color-primary);
+    opacity: 0.08;
+    animation-name: ripple-out;
+    animation-fill-mode: backwards;
+}
+
+.image-list__action.image-list__action--choice[activated] {
+    color: var(--color-primary);
+}
+.image-list__action.image-list__action--choice:not([activated]):focus:not(:active)::after {
+    --ripple-left: 50%;
+    --ripple-top: 50%;
+    /* --ripple-circumference: 83.33333333333334%; */
+    --ripple-translateX: 0;
+    --ripple-translateY: 0;
+    --ripple-animation: ripple-in;
+}
+.image-list__action.image-list__action--choice[activated]::after {
+    background-color: var(--color-primary);
+    opacity: 0.12;
+    animation-name: ripple-out;
+    animation-fill-mode: backwards;
+}
+
+/* .image-list__action:active {} */
+.image-list__action:active::after {
+    opacity: 0.16;
+}
+
+/* .image-list__action[dragged] {} */
+.image-list__action[dragged]::after {
+    opacity: 0.08;
+}
