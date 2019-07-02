@@ -1,52 +1,46 @@
-/* 
-	@undefined undefined 
-*/
 * {
     margin: 0;
     border: 0;
     padding: 0;
     font: inherit;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: none;
 }
 
-/* 
-	@undefined undefined 
-*/
-*,
-*::before,
+*, 
+*::before, 
 *::after {
     box-sizing: border-box;
 }
 
-/* 
-	@undefined undefined 
-*/
 *:focus {
     outline: none;
 }
 
-/* 
-	@undefined undefined 
-*/
-ul,
-ol {
-    list-style-type: none;
-}
-
-/* 
-	@undefined undefined 
-*/
-input,
+input, 
 input::-webkit-slider-thumb {
     -webkit-appearance: none;
 }
 
-/* 
-	@undefined undefined 
-*/
+ul, 
+ol {
+    list-style-type: none;
+}
+
 table {
     border-spacing: 0;
 }
 
-th {
+table th {
     text-align: left;
+}
+
+.preload, 
+.preload::before, 
+.preload::after, 
+.preload *, 
+.preload *::before, 
+.preload *::after {
+    transition: none !important;
+    animation: none !important;
 }

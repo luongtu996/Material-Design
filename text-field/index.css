@@ -1,2 +1,685 @@
-@import "./component.css";
-@import "./state.css";
+/* 
+	@block text-field 
+*/
+.text-field {
+    display: inline-grid;
+    grid-template-columns: auto 1fr auto;
+    position: relative;
+    width: 280px;
+}
+
+/* 
+	@element input 
+*/
+.text-field__input {
+    grid-row: 1/2;
+    grid-column: 2/3;
+    padding: calc((56px - 24px) / 2) 12px;
+    font-weight: 400; font-size: 16px; line-height: 24px;
+    background-color: transparent;
+    color: var(--color-focused-on-light);
+}
+
+.text-field__input::placeholder {
+    color: var(--color-unfocused-on-light);
+}
+
+/* 
+	@element surface 
+*/
+.text-field__surface {
+    grid-row: 1/2;
+    grid-column: 1/4;
+    z-index: -1;
+    border-radius: 4px 4px 0 0;
+    background-color: var(--color-black-04);
+    box-shadow: inset 0 -1px 0 0 var(--color-black-12);
+}
+
+/* 
+	@element message 
+*/
+.text-field__message {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-row: 2/3;
+    grid-column: 1/4;
+    padding: calc(16px - 12px) 12px 0 12px;
+    font-weight: 400; font-size: 12px; line-height: 1;
+    color: var(--color-unfocused-on-light);
+}
+
+/* 
+	@element message-helper 
+*/
+.text-field__message-helper {
+    grid-row: 1/2;
+    grid-column: 1/2;
+}
+
+/* 
+	@element message-error 
+*/
+.text-field__message-error {
+    grid-row: 2/3;
+    grid-column: 1/2;
+    color: var(--color-error);
+}
+
+/* 
+	@element message-counter 
+*/
+.text-field__message-counter {
+    grid-row: 1/2;
+    grid-column: 2/3;
+}
+
+/* 
+	@element section 
+*/
+.text-field__section {
+    display: flex;
+    align-items: center;
+}
+
+/* 
+	@elementModifier start 
+*/
+.text-field__section--start {
+    grid-row: 1/2;
+    grid-column: 1/2;
+}
+
+/* 
+	@elementModifier end 
+*/
+.text-field__section--end {
+    grid-row: 1/2;
+    grid-column: 3/4;
+    justify-content: flex-end;
+}
+
+/* 
+	@element icon 
+*/
+.text-field__icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+    width: 24px;
+    height: 24px;
+    margin: calc((56px - 24px) / 2) 12px;
+    font: 400 18px/1 'Segoe MDL2 Assets';
+    color: var(--color-unfocused-on-light);
+}
+
+.text-field__icon + .text-field__icon {
+    margin-left: calc(16px - 12px);
+}
+
+.text-field__icon--error::before {
+    content: "\E783"
+}
+
+/* actionable */
+/* .text-field__icon--control {} */
+
+/* 
+	@element meta 
+*/
+.text-field__meta {
+    padding: calc((56px - 24px) / 2) 12px;
+    font-weight: 400; font-size: 16px; line-height: 24px;
+    color: var(--color-unfocused-on-light);
+}
+
+/* 
+	@element label 
+*/
+.text-field__label {
+    grid-row: 1/2;
+    grid-column: 1/4;
+    pointer-events: none;
+    position: absolute;
+    left: calc(12px - 4px);
+    top: calc((56px - 24px) / 2);
+    padding: 0 4px;
+    font-weight: 400; font-size: 16px; line-height: 24px;
+    transition: 
+    left 100ms ease-in-out,
+    top 100ms ease-in-out,
+    font-size 100ms ease-in-out,
+    line-height 100ms ease-in-out;
+    color: var(--color-unfocused-on-light);
+}
+
+/* 
+	@modifier with-start-icon 
+*/
+/* .text-field--with-start-icon {} */
+
+.text-field--with-start-icon .text-field__input {
+    padding-left: 0;
+}
+
+/* .text-field--with-start-icon .text-field__surface {} */
+
+/* .text-field--with-start-icon .text-field__message {} */
+
+/* .text-field--with-start-icon .text-field__message-helper {} */
+
+/* .text-field--with-start-icon .text-field__message-error {} */
+
+/* .text-field--with-start-icon .text-field__message-counter {} */
+
+/* .text-field--with-start-icon .text-field__section {} */
+
+/* .text-field--with-start-icon .text-field__section--start {} */
+
+/* .text-field--with-start-icon .text-field__section--end {} */
+
+/* .text-field--with-start-icon .text-field__icon {} */
+
+/* .text-field--with-start-icon .text-field__meta {} */
+
+.text-field--with-start-icon .text-field__label {
+    left: calc((12px + 24px + 12px) - 4px);
+}
+
+/* 
+	@modifier with-end-icon 
+*/
+/* .text-field--with-end-icon {} */
+
+.text-field--with-end-icon .text-field__input {
+    padding-right: 0;
+}
+
+/* .text-field--with-end-icon .text-field__surface {} */
+
+/* .text-field--with-end-icon .text-field__message {} */
+
+/* .text-field--with-end-icon .text-field__message-helper {} */
+
+/* .text-field--with-end-icon .text-field__message-error {} */
+
+/* .text-field--with-end-icon .text-field__message-counter {} */
+
+/* .text-field--with-end-icon .text-field__section {} */
+
+/* .text-field--with-end-icon .text-field__section--start {} */
+
+/* .text-field--with-end-icon .text-field__section--end {} */
+
+/* .text-field--with-end-icon .text-field__icon {} */
+
+/* .text-field--with-end-icon .text-field__meta {} */
+
+/* .text-field--with-end-icon .text-field__label {} */
+
+/* 
+	@modifier with-start-meta 
+*/
+/* .text-field--with-start-meta {} */
+
+.text-field--with-start-meta .text-field__input {
+    padding-left: 0;
+}
+
+/* .text-field--with-start-meta .text-field__surface {} */
+
+/* .text-field--with-start-meta .text-field__message {} */
+
+/* .text-field--with-start-meta .text-field__message-helper {} */
+
+/* .text-field--with-start-meta .text-field__message-error {} */
+
+/* .text-field--with-start-meta .text-field__message-counter {} */
+
+/* .text-field--with-start-meta .text-field__section {} */
+
+/* .text-field--with-start-meta .text-field__section--start {} */
+
+/* .text-field--with-start-meta .text-field__section--end {} */
+
+/* .text-field--with-start-meta .text-field__icon {} */
+
+.text-field--with-start-meta .text-field__meta {
+    padding-right: 0;
+}
+
+/* .text-field--with-start-meta .text-field__label {} */
+
+/* 
+	@modifier with-end-meta 
+*/
+/* .text-field--with-end-meta {} */
+
+.text-field--with-end-meta .text-field__input {
+    padding-right: 0;
+}
+
+/* .text-field--with-end-meta .text-field__surface {} */
+
+/* .text-field--with-end-meta .text-field__message {} */
+
+/* .text-field--with-end-meta .text-field__message-helper {} */
+
+/* .text-field--with-end-meta .text-field__message-error {} */
+
+/* .text-field--with-end-meta .text-field__message-counter {} */
+
+/* .text-field--with-end-meta .text-field__section {} */
+
+/* .text-field--with-end-meta .text-field__section--start {} */
+
+/* .text-field--with-end-meta .text-field__section--end {} */
+
+/* .text-field--with-end-meta .text-field__icon {} */
+
+.text-field--with-end-meta .text-field__meta {
+    padding-left: 0;
+}
+
+/* .text-field--with-end-meta .text-field__label {} */
+
+/* 
+	@modifier with-label 
+*/
+/* .text-field--with-label {} */
+
+/* .text-field--with-label .text-field__input {} */
+
+/* .text-field--with-label .text-field__surface {} */
+
+/* .text-field--with-label .text-field__message {} */
+
+/* .text-field--with-label .text-field__message-helper {} */
+
+/* .text-field--with-label .text-field__message-error {} */
+
+/* .text-field--with-label .text-field__message-counter {} */
+
+/* .text-field--with-label .text-field__section {} */
+
+/* .text-field--with-label .text-field__section--start {} */
+
+/* .text-field--with-label .text-field__section--end {} */
+
+/* .text-field--with-label .text-field__icon {} */
+
+/* .text-field--with-label .text-field__meta {} */
+
+/* .text-field--with-label .text-field__label {} */
+
+/* 
+	@modifier outlined 
+*/
+/* .text-field--outlined {} */
+
+/* .text-field--outlined .text-field__input {} */
+
+.text-field--outlined .text-field__surface {
+    border-radius: 4px;
+    background-color: transparent;
+    box-shadow: inset 0 0 0 1px var(--color-black-12);
+}
+
+/* .text-field--outlined .text-field__message {} */
+
+/* .text-field--outlined .text-field__message-helper {} */
+
+/* .text-field--outlined .text-field__message-error {} */
+
+/* .text-field--outlined .text-field__message-counter {} */
+
+/* .text-field--outlined .text-field__section {} */
+
+/* .text-field--outlined .text-field__section--start {} */
+
+/* .text-field--outlined .text-field__section--end {} */
+
+/* .text-field--outlined .text-field__icon {} */
+
+/* .text-field--outlined .text-field__meta {} */
+
+/* .text-field--outlined .text-field__label {} */
+
+/*  */
+.text-field__input:not(:placeholder-shown):invalid ~ .text-field__message .text-field__message-helper {
+    display: none;
+}
+.text-field__input:placeholder-shown ~ .text-field__message .text-field__message-error,
+.text-field__input:not(:placeholder-shown):valid ~ .text-field__message .text-field__message-error {
+    display: none;
+}
+.text-field__input:placeholder-shown ~ .text-field__section .text-field__icon--error,
+.text-field__input:not(:placeholder-shown):valid ~ .text-field__section .text-field__icon--error {
+    display: none;
+}
+.text-field__input:not([minlength]):not([maxlength]) ~ .text-field__message .text-field__message-counter {
+    display: none;
+}
+
+/*  */
+.text-field--with-label .text-field__input:not(:focus):placeholder-shown::placeholder {
+    color: transparent;
+}
+.text-field--with-label .text-field__input:not(:focus):placeholder-shown ~ .text-field__section .text-field__meta {
+    color: transparent;
+}
+
+/*  */
+.text-field--with-label:not(.text-field--outlined) .text-field__input:not(:placeholder-shown),
+.text-field--with-label:not(.text-field--outlined) .text-field__input:focus {
+    padding-top: calc(40px - (24px - ((24px - 16px) / 2)));
+    padding-bottom: calc(56px - 20px - 24px);
+}
+.text-field--with-label:not(.text-field--outlined) .text-field__input:not(:placeholder-shown) ~ .text-field__section .text-field__meta,
+.text-field--with-label:not(.text-field--outlined) .text-field__input:focus ~ .text-field__section .text-field__meta {
+    padding-top: calc(40px - (24px - ((24px - 16px) / 2)));
+    padding-bottom: calc(56px - 20px - 24px);
+}
+.text-field--with-label .text-field__input:not(:placeholder-shown) ~ .text-field__label,
+.text-field--with-label .text-field__input:focus ~ .text-field__label {
+    top: calc(20px - (16px - ((16px - 12px) / 2)));
+    font-weight: 400; font-size: 12px; line-height: 16px;
+}
+
+/*  */
+.text-field--with-label.text-field--outlined .text-field__label {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+.text-field--with-label.text-field--outlined .text-field__label::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    /* left: 0; */
+    top: -16px;
+    width: 0;
+    height: 1px;
+    background-color: #ffffff;
+    transition: 
+    top 100ms ease-in-out,
+    width 100ms ease-in-out,
+    height 100ms ease-in-out;
+}
+.text-field--with-label.text-field--outlined .text-field__input:not(:placeholder-shown) ~ .text-field__label::before,
+.text-field--with-label.text-field--outlined .text-field__input:focus ~ .text-field__label::before {
+    top: 8px;
+    width: 100%;
+    height: 2px;
+}
+
+.text-field--with-label.text-field--outlined .text-field__input:not(:placeholder-shown) ~ .text-field__label,
+.text-field--with-label.text-field--outlined .text-field__input:focus ~ .text-field__label {
+    top: calc(0px - (16px / 2));
+    left: calc(12px - 4px);
+}
+
+/* 
+	@state focus
+*/
+/* .text-field__input:focus {} */
+.text-field__input:focus ~ .text-field__surface {
+    box-shadow: inset 0 -2px 0 0 var(--color-primary);
+}
+/* .text-field__input:focus ~ .text-field__message {} */
+/* .text-field__input:focus ~ .text-field__message .text-field__message-helper {} */
+/* .text-field__input:focus ~ .text-field__message .text-field__message-error {} */
+/* .text-field__input:focus ~ .text-field__message .text-field__message-counter {} */
+/* .text-field__input:focus ~ .text-field__section {} */
+/* .text-field__input:focus ~ .text-field__section .text-field__icon {} */
+/* .text-field__input:focus ~ .text-field__section .text-field__meta {} */
+/* .text-field__input:focus ~ .text-field__section--start .text-field__icon {} */
+/* .text-field__input:focus ~ .text-field__section--start .text-field__meta {} */
+/* .text-field__input:focus ~ .text-field__section--end .text-field__icon {} */
+/* .text-field__input:focus ~ .text-field__section--end .text-field__meta {} */
+.text-field__input:focus ~ .text-field__label {
+    color: var(--color-primary);
+}
+
+/* 
+	@state error
+*/
+/* .text-field__input:not(:placeholder-shown):invalid {} */
+.text-field__input:not(:placeholder-shown):invalid ~ .text-field__surface {
+    box-shadow: inset 0 -2px 0 0 var(--color-error);
+}
+/* .text-field__input:not(:placeholder-shown):invalid ~ .text-field__message {} */
+/* .text-field__input:not(:placeholder-shown):invalid ~ .text-field__message .text-field__message-helper {} */
+/* .text-field__input:not(:placeholder-shown):invalid ~ .text-field__message .text-field__message-error {} */
+/* .text-field__input:not(:placeholder-shown):invalid ~ .text-field__message .text-field__message-counter {} */
+/* .text-field__input:not(:placeholder-shown):invalid ~ .text-field__section {} */
+/* .text-field__input:not(:placeholder-shown):invalid ~ .text-field__section .text-field__icon {} */
+.text-field__input:not(:placeholder-shown):invalid ~ .text-field__section .text-field__icon--error {
+    color: var(--color-error);
+}
+/* .text-field__input:not(:placeholder-shown):invalid ~ .text-field__section .text-field__meta {} */
+/* .text-field__input:not(:placeholder-shown):invalid ~ .text-field__section--start .text-field__icon {} */
+/* .text-field__input:not(:placeholder-shown):invalid ~ .text-field__section--start .text-field__meta {} */
+/* .text-field__input:not(:placeholder-shown):invalid ~ .text-field__section--end .text-field__icon {} */
+/* .text-field__input:not(:placeholder-shown):invalid ~ .text-field__section--end .text-field__meta {} */
+.text-field__input:not(:placeholder-shown):invalid ~ .text-field__label {
+    color: var(--color-error);
+}
+
+/* 
+	@state focus
+*/
+/* .text-field--outlined .text-field__input:focus {} */
+.text-field--outlined .text-field__input:focus ~ .text-field__surface {
+    box-shadow: inset 0 0 0 2px var(--color-primary);
+}
+/* .text-field--outlined .text-field__input:focus ~ .text-field__message {} */
+/* .text-field--outlined .text-field__input:focus ~ .text-field__message .text-field__message-helper {} */
+/* .text-field--outlined .text-field__input:focus ~ .text-field__message .text-field__message-error {} */
+/* .text-field--outlined .text-field__input:focus ~ .text-field__message .text-field__message-counter {} */
+/* .text-field--outlined .text-field__input:focus ~ .text-field__section {} */
+/* .text-field--outlined .text-field__input:focus ~ .text-field__section .text-field__icon {} */
+/* .text-field--outlined .text-field__input:focus ~ .text-field__section .text-field__meta {} */
+/* .text-field--outlined .text-field__input:focus ~ .text-field__section--start .text-field__icon {} */
+/* .text-field--outlined .text-field__input:focus ~ .text-field__section--start .text-field__meta {} */
+/* .text-field--outlined .text-field__input:focus ~ .text-field__section--end .text-field__icon {} */
+/* .text-field--outlined .text-field__input:focus ~ .text-field__section--end .text-field__meta {} */
+/* .text-field--outlined .text-field__input:focus ~ .text-field__label {} */
+
+/* 
+	@state error
+*/
+/* .text-field--outlined .text-field__input:not(:placeholder-shown):invalid {} */
+.text-field--outlined .text-field__input:not(:placeholder-shown):invalid ~ .text-field__surface {
+    box-shadow: inset 0 0 0 2px var(--color-error);
+}
+/* .text-field--outlined .text-field__input:not(:placeholder-shown):invalid ~ .text-field__message {} */
+/* .text-field--outlined .text-field__input:not(:placeholder-shown):invalid ~ .text-field__message .text-field__message-helper {} */
+/* .text-field--outlined .text-field__input:not(:placeholder-shown):invalid ~ .text-field__message .text-field__message-error {} */
+/* .text-field--outlined .text-field__input:not(:placeholder-shown):invalid ~ .text-field__message .text-field__message-counter {} */
+/* .text-field--outlined .text-field__input:not(:placeholder-shown):invalid ~ .text-field__section {} */
+/* .text-field--outlined .text-field__input:not(:placeholder-shown):invalid ~ .text-field__section .text-field__icon {} */
+/* .text-field--outlined .text-field__input:not(:placeholder-shown):invalid ~ .text-field__section .text-field__meta {} */
+/* .text-field--outlined .text-field__input:not(:placeholder-shown):invalid ~ .text-field__section--start .text-field__icon {} */
+/* .text-field--outlined .text-field__input:not(:placeholder-shown):invalid ~ .text-field__section--start .text-field__meta {} */
+/* .text-field--outlined .text-field__input:not(:placeholder-shown):invalid ~ .text-field__section--end .text-field__icon {} */
+/* .text-field--outlined .text-field__input:not(:placeholder-shown):invalid ~ .text-field__section--end .text-field__meta {} */
+/* .text-field--outlined .text-field__input:not(:placeholder-shown):invalid ~ .text-field__label {} */
+
+/* 
+	@state ripple 
+*/
+.text-field__icon--control {
+    --ripple-circumference: 166.66666666666669%;
+    position: relative;
+    /* overflow: hidden; */
+    cursor: pointer;
+    user-select: none;
+}
+.text-field__icon--control::after {
+    content: "";
+    position: absolute;
+    overflow: hidden;
+    pointer-events: none;
+    left: var(--ripple-left, 50%);
+    top: var(--ripple-top, 50%);
+    width: var(--ripple-circumference, 141.4213562373095%);
+    padding-top: var(--ripple-circumference, 141.4213562373095%);
+    border-radius: 50%;
+    transform: translate3d(-50%, -50%, 0) translate3d(var(--ripple-translateX, 0), var(--ripple-translateY, 0), 0);
+    background-color: var(--color-primary);
+    opacity: 0;
+}
+
+.text-field__icon--control[disabled] {
+    cursor: default;
+    pointer-events: none;
+    opacity: 0.38;
+}
+.text-field__icon--control[disabled]::after {
+    opacity: 0;
+}
+
+/* .text-field__icon--control:hover {} */
+.text-field__icon--control:hover::after {
+    opacity: 0.04;
+}
+
+/* .text-field__icon--control:focus {} */
+.text-field__icon--control:focus::after {
+    opacity: 0.12;
+    animation: var(--ripple-animation, ripple-out) 300ms ease-in-out forwards;
+}
+
+/* .text-field__icon--control.text-field__icon--control--filter[selected] {} */
+.text-field__icon--control.text-field__icon--control--filter:not([selected]):focus:not(:active)::after {
+    --ripple-left: 50%;
+    --ripple-top: 50%;
+    /* --ripple-circumference: 83.33333333333334%; */
+    --ripple-translateX: 0;
+    --ripple-translateY: 0;
+    --ripple-animation: ripple-in;
+}
+.text-field__icon--control.text-field__icon--control--filter[selected]::after {
+    background-color: var(--color-primary);
+    opacity: 0.08;
+    animation-name: ripple-out;
+    animation-fill-mode: backwards;
+}
+
+.text-field__icon--control.text-field__icon--control--choice[activated] {
+    color: var(--color-primary);
+}
+.text-field__icon--control.text-field__icon--control--choice:not([activated]):focus:not(:active)::after {
+    --ripple-left: 50%;
+    --ripple-top: 50%;
+    /* --ripple-circumference: 83.33333333333334%; */
+    --ripple-translateX: 0;
+    --ripple-translateY: 0;
+    --ripple-animation: ripple-in;
+}
+.text-field__icon--control.text-field__icon--control--choice[activated]::after {
+    background-color: var(--color-primary);
+    opacity: 0.12;
+    animation-name: ripple-out;
+    animation-fill-mode: backwards;
+}
+
+/* .text-field__icon--control:active {} */
+.text-field__icon--control:active::after {
+    opacity: 0.16;
+}
+
+/* .text-field__icon--control[dragged] {} */
+.text-field__icon--control[dragged]::after {
+    opacity: 0.08;
+}
+
+/* 
+	@state ripple 
+*/
+.text-field:not(.text-field--outlined) .text-field__input ~ .text-field__surface {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    user-select: none;
+}
+.text-field:not(.text-field--outlined) .text-field__input ~ .text-field__surface::after {
+    content: "";
+    position: absolute;
+    overflow: hidden;
+    pointer-events: none;
+    left: var(--ripple-left, 50%);
+    top: var(--ripple-top, 50%);
+    width: var(--ripple-circumference, 141.4213562373095%);
+    padding-top: var(--ripple-circumference, 141.4213562373095%);
+    border-radius: 50%;
+    transform: translate3d(-50%, -50%, 0) translate3d(var(--ripple-translateX, 0), var(--ripple-translateY, 0), 0);
+    background-color: var(--color-primary);
+    opacity: 0;
+}
+
+.text-field:not(.text-field--outlined) .text-field__input[disabled] ~ .text-field__surface {
+    cursor: default;
+    pointer-events: none;
+    opacity: 0.38;
+}
+.text-field:not(.text-field--outlined) .text-field__input[disabled] ~ .text-field__surface::after {
+    opacity: 0;
+}
+
+/* .text-field:not(.text-field--outlined) .text-field__input:hover ~ .text-field__surface {} */
+.text-field:not(.text-field--outlined) .text-field__input:hover ~ .text-field__surface::after {
+    opacity: 0.04;
+}
+
+/* .text-field:not(.text-field--outlined) .text-field__input:focus ~ .text-field__surface {} */
+.text-field:not(.text-field--outlined) .text-field__input:focus ~ .text-field__surface::after {
+    opacity: 0.12;
+    animation: var(--ripple-animation, ripple-out) 300ms ease-in-out forwards;
+}
+
+/* .text-field:not(.text-field--outlined) .text-field__input.text-field:not(.text-field--outlined) .text-field__input--filter[selected] ~ .text-field__surface {} */
+.text-field:not(.text-field--outlined) .text-field__input.text-field:not(.text-field--outlined) .text-field__input--filter:not([selected]):focus:not(:active) ~ .text-field__surface::after {
+    --ripple-left: 50%;
+    --ripple-top: 50%;
+    /* --ripple-circumference: 83.33333333333334%; */
+    --ripple-translateX: 0;
+    --ripple-translateY: 0;
+    --ripple-animation: ripple-in;
+}
+.text-field:not(.text-field--outlined) .text-field__input.text-field:not(.text-field--outlined) .text-field__input--filter[selected] ~ .text-field__surface::after {
+    background-color: var(--color-primary);
+    opacity: 0.08;
+    animation-name: ripple-out;
+    animation-fill-mode: backwards;
+}
+
+.text-field:not(.text-field--outlined) .text-field__input.text-field:not(.text-field--outlined) .text-field__input--choice[activated] ~ .text-field__surface {
+    color: var(--color-primary);
+}
+.text-field:not(.text-field--outlined) .text-field__input.text-field:not(.text-field--outlined) .text-field__input--choice:not([activated]):focus:not(:active) ~ .text-field__surface::after {
+    --ripple-left: 50%;
+    --ripple-top: 50%;
+    /* --ripple-circumference: 83.33333333333334%; */
+    --ripple-translateX: 0;
+    --ripple-translateY: 0;
+    --ripple-animation: ripple-in;
+}
+.text-field:not(.text-field--outlined) .text-field__input.text-field:not(.text-field--outlined) .text-field__input--choice[activated] ~ .text-field__surface::after {
+    background-color: var(--color-primary);
+    opacity: 0.12;
+    animation-name: ripple-out;
+    animation-fill-mode: backwards;
+}
+
+/* .text-field:not(.text-field--outlined) .text-field__input:active ~ .text-field__surface {} */
+.text-field:not(.text-field--outlined) .text-field__input:active ~ .text-field__surface::after {
+    opacity: 0.16;
+}
+
+/* .text-field:not(.text-field--outlined) .text-field__input[dragged] ~ .text-field__surface {} */
+.text-field:not(.text-field--outlined) .text-field__input[dragged] ~ .text-field__surface::after {
+    opacity: 0.08;
+}

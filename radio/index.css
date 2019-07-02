@@ -1,2 +1,158 @@
-@import "./component.css";
-@import "./state.css";
+/* 
+	@block radio 
+*/
+.radio {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+    position: relative;
+    width: 24px;
+    height: 24px;
+}
+
+/* 
+	@element input 
+*/
+.radio__input {
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+}
+
+/* 
+	@element track 
+*/
+.radio__track {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 2px solid var(--color-unfocused-on-light);
+}
+
+/* 
+	@element thumb 
+*/
+/* .radio__thumb {} */
+
+/* 
+	@state checked 
+*/
+.radio__input:checked ~ .radio__track {
+    border-color: var(--color-primary);
+}
+.radio__input:checked ~ .radio__track .radio__thumb {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: var(--color-primary);
+}
+
+/* 
+	@state ripple 
+*/
+.radio__input {
+    /* position: relative; */
+    /* overflow: hidden; */
+    cursor: pointer;
+    user-select: none;
+}
+.radio__input ~ .radio__track {
+    --ripple-circumference: 250%;
+    position: relative;
+    /* overflow: hidden; */
+    /* cursor: pointer; */
+    /* user-select: none; */
+}
+.radio__input ~ .radio__track::after {
+    content: "";
+    position: absolute;
+    overflow: hidden;
+    pointer-events: none;
+    left: var(--ripple-left, 50%);
+    top: var(--ripple-top, 50%);
+    width: var(--ripple-circumference, 141.4213562373095%);
+    padding-top: var(--ripple-circumference, 141.4213562373095%);
+    border-radius: 50%;
+    transform: translate3d(-50%, -50%, 0) translate3d(var(--ripple-translateX, 0), var(--ripple-translateY, 0), 0);
+    background-color: var(--color-primary);
+    opacity: 0;
+}
+
+.radio__input[disabled] {
+    cursor: default;
+    pointer-events: none;
+    /* opacity: 0.38; */
+}
+.radio__input[disabled] ~ .radio__track {
+    /* cursor: default; */
+    /* pointer-events: none; */
+    opacity: 0.38;
+}
+.radio__input[disabled] ~ .radio__track::after {
+    opacity: 0;
+}
+
+/* .radio__input:not(:checked) ~ .radio__track {} */
+.radio__input:not(:checked) ~ .radio__track::after {
+    background-color: var(--color-on-surface);
+}
+
+/* .radio__input:hover ~ .radio__track {} */
+.radio__input:hover ~ .radio__track::after {
+    opacity: 0.04;
+}
+
+/* .radio__input:focus ~ .radio__track {} */
+.radio__input:focus ~ .radio__track::after {
+    opacity: 0.12;
+    animation: var(--ripple-animation, ripple-out) 300ms ease-in-out forwards;
+}
+
+/* .radio__input.radio__input--filter[selected] ~ .radio__track {} */
+.radio__input.radio__input--filter:not([selected]):focus:not(:active) ~ .radio__track::after {
+    --ripple-left: 50%;
+    --ripple-top: 50%;
+    /* --ripple-circumference: 83.33333333333334%; */
+    --ripple-translateX: 0;
+    --ripple-translateY: 0;
+    --ripple-animation: ripple-in;
+}
+.radio__input.radio__input--filter[selected] ~ .radio__track::after {
+    background-color: var(--color-primary);
+    opacity: 0.08;
+    animation-name: ripple-out;
+    animation-fill-mode: backwards;
+}
+
+.radio__input.radio__input--choice[activated] ~ .radio__track {
+    color: var(--color-primary);
+}
+.radio__input.radio__input--choice:not([activated]):focus:not(:active) ~ .radio__track::after {
+    --ripple-left: 50%;
+    --ripple-top: 50%;
+    /* --ripple-circumference: 83.33333333333334%; */
+    --ripple-translateX: 0;
+    --ripple-translateY: 0;
+    --ripple-animation: ripple-in;
+}
+.radio__input.radio__input--choice[activated] ~ .radio__track::after {
+    background-color: var(--color-primary);
+    opacity: 0.12;
+    animation-name: ripple-out;
+    animation-fill-mode: backwards;
+}
+
+/* .radio__input:active ~ .radio__track {} */
+.radio__input:active ~ .radio__track::after {
+    opacity: 0.16;
+}
+
+/* .radio__input[dragged] ~ .radio__track {} */
+.radio__input[dragged] ~ .radio__track::after {
+    opacity: 0.08;
+}

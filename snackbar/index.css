@@ -2,17 +2,21 @@
 	@block snackbar 
 */
 .snackbar {
-    display: flex;
+    display: inline-flex;
     align-items: center;
     flex-wrap: wrap;
+    position: fixed;
+    z-index: 6;
+    left: 8px;
+    bottom: 8px;
     width: 344px;
-    min-height: 48px;
+    /* 360-344 = 16 */
+    padding-top: 6px;
     border-radius: 4px;
-    padding-bottom: 6px;
     background-color: var(--color-focused-on-light);
-    color: var(--color-unfocused-on-dark);
-    /* 6 */
+    color: var(--color-focused-on-dark);
     box-shadow: 0 3px 5px -1px var(--color-black-20), 0 6px 10px 0 var(--color-black-14), 0 1px 18px 0 var(--color-black-12);
+    /* 6 */
 }
 
 /* 
@@ -21,7 +25,7 @@
 .snackbar__text {
     flex: 1;
     min-width: 50%;
-    margin: calc((68px - 40px) / 2) 16px calc(14px - 6px);
+    margin: calc(((48px - 20px) / 2) - 6px) 16px calc((48px - 20px) / 2) 16px;
     font-weight: 400; font-size: 14px; line-height: 20px;
 }
 
@@ -29,6 +33,93 @@
 	@element action 
 */
 .snackbar__action {
-    margin: 6px 8px 0;
-    margin-left: auto;
+    margin: 0 8px 6px auto;
+}
+
+/* 
+	@state ripple 
+*/
+.snackbar__action {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    user-select: none;
+}
+.snackbar__action::after {
+    content: "";
+    position: absolute;
+    overflow: hidden;
+    pointer-events: none;
+    left: var(--ripple-left, 50%);
+    top: var(--ripple-top, 50%);
+    width: var(--ripple-circumference, 141.4213562373095%);
+    padding-top: var(--ripple-circumference, 141.4213562373095%);
+    border-radius: 50%;
+    transform: translate3d(-50%, -50%, 0) translate3d(var(--ripple-translateX, 0), var(--ripple-translateY, 0), 0);
+    background-color: var(--color-on-primary);
+    opacity: 0;
+}
+
+.snackbar__action[disabled] {
+    cursor: default;
+    pointer-events: none;
+    opacity: 0.38;
+}
+.snackbar__action[disabled]::after {
+    opacity: 0;
+}
+
+/* .snackbar__action:hover {} */
+.snackbar__action:hover::after {
+    opacity: 0.08;
+}
+
+/* .snackbar__action:focus {} */
+.snackbar__action:focus::after {
+    opacity: 0.24;
+    animation: var(--ripple-animation, ripple-out) 300ms ease-in-out forwards;
+}
+
+/* .snackbar__action.snackbar__action--filter[selected] {} */
+.snackbar__action.snackbar__action--filter:not([selected]):focus:not(:active)::after {
+    --ripple-left: 50%;
+    --ripple-top: 50%;
+    /* --ripple-circumference: 83.33333333333334%; */
+    --ripple-translateX: 0;
+    --ripple-translateY: 0;
+    --ripple-animation: ripple-in;
+}
+.snackbar__action.snackbar__action--filter[selected]::after {
+    background-color: var(--color-primary);
+    opacity: 0.16;
+    animation-name: ripple-out;
+    animation-fill-mode: backwards;
+}
+
+.snackbar__action.snackbar__action--choice[activated] {
+    color: var(--color-primary);
+}
+.snackbar__action.snackbar__action--choice:not([activated]):focus:not(:active)::after {
+    --ripple-left: 50%;
+    --ripple-top: 50%;
+    /* --ripple-circumference: 83.33333333333334%; */
+    --ripple-translateX: 0;
+    --ripple-translateY: 0;
+    --ripple-animation: ripple-in;
+}
+.snackbar__action.snackbar__action--choice[activated]::after {
+    background-color: var(--color-primary);
+    opacity: 0.24;
+    animation-name: ripple-out;
+    animation-fill-mode: backwards;
+}
+
+/* .snackbar__action:active {} */
+.snackbar__action:active::after {
+    opacity: 0.32;
+}
+
+/* .snackbar__action[dragged] {} */
+.snackbar__action[dragged]::after {
+    opacity: 0.16;
 }

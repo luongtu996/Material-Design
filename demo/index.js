@@ -1,5 +1,7 @@
+// CSS Naming class
 let classNames = new Set()
-let includesClassName = window.location.pathname.split('/')[1]
+let currentClassName = window.location.pathname.split("/")[1]
+// let currentClassName = "button"
 
 document.querySelectorAll("[class]").forEach(element => {
     element.getAttribute("class").split(" ").forEach(className => {
@@ -7,14 +9,14 @@ document.querySelectorAll("[class]").forEach(element => {
     })
 })
 
-let objClassNames = Array.from(classNames).filter(className => className.includes(includesClassName)).map(className => {
-    let name = className
-    let block = className.match(new RegExp(`^(${includesClassName})$`))
-    let element = className.match(new RegExp(`^${includesClassName}__((?!.*\\--).*)`))
-    let elementModifier = className.match(new RegExp(`^${includesClassName}__.*--(.*)`))
-    let modifier = className.match(new RegExp(`^${includesClassName}--(.*)`))
-    let blockGroup = className.match(new RegExp(`^${includesClassName}-((?!.*\\--)[\\w|\\d].*)$`))
-    let blockGroupModifier = className.match(new RegExp(`^${includesClassName}-[\\w|\\d].*--(.*)$`))
+let ObjClassNames = Array.from(classNames).filter(className => className.includes(currentClassName)).map(className => {
+    let name = className // name
+    let block = className.match(new RegExp(`^(${currentClassName})$`)) // block
+    let element = className.match(new RegExp(`^${currentClassName}__((?!.*\\--).*)$`)) // element
+    let modifier = className.match(new RegExp(`^${currentClassName}--(.*)$`)) // modifier
+    let elementModifier = className.match(new RegExp(`^${currentClassName}__.*--(.*)$`)) // elementModifier
+    let blockGroup = className.match(new RegExp(`^${currentClassName}-((?!.*\\--)[\\w|\\d].*)$`)) // blockGroup
+    let blockGroupModifier = className.match(new RegExp(`^${currentClassName}-[\\w|\\d].*--(.*)$`)) // blockGroupModifier
 
     let obj = {
         name
@@ -28,13 +30,13 @@ let objClassNames = Array.from(classNames).filter(className => className.include
         obj.type = "element"
         obj.value = element[1]
     }
-    if (elementModifier) {
-        obj.type = "elementModifier"
-        obj.value = elementModifier[1]
-    }
     if (modifier) {
         obj.type = "modifier"
         obj.value = modifier[1]
+    }
+    if (elementModifier) {
+        obj.type = "elementModifier"
+        obj.value = elementModifier[1]
     }
     if (blockGroup) {
         obj.type = "blockGroup"
@@ -48,7 +50,7 @@ let objClassNames = Array.from(classNames).filter(className => className.include
     return obj
 })
 
-let sortType = [
+let sortMap = [
     "block",
     "element",
     "elementModifier",
@@ -57,17 +59,17 @@ let sortType = [
     "blockGroupModifier",
 ]
 
-objClassNames.sort((a, b) => sortType.indexOf(a.type) - sortType.indexOf(b.type)).forEach(obj => {
-    let code = ""
+ObjClassNames.sort((a, b) => sortMap.indexOf(a.type) - sortMap.indexOf(b.type)).forEach(obj => {
+    let code = ``
 
-    code += `/* \n\t@${obj.type} ${obj.value} \n*/`
-    code += `\n.${obj.name} {}\n`
+    code += `/* \n\t@${obj.type} ${obj.value} \n*/\n`
+    code += `.${obj.name} {}\n`
 
     if (
         obj.type === "modifier"
     ) {
-        objClassNames.filter(cls => cls.type === "element" || cls.type === "elementModifier").forEach(cls => {
-            code += `\n.${obj.name} .${cls.name} {}\n`
+        ObjClassNames.filter(css => css.type === "element" || css.type === "elementModifier").forEach(css => {
+            code += `\n.${obj.name} .${css.name} {}\n`
         })
     }
 
@@ -75,8 +77,8 @@ objClassNames.sort((a, b) => sortType.indexOf(a.type) - sortType.indexOf(b.type)
         obj.type === "blockGroup" ||
         obj.type === "blockGroupModifier"
     ) {
-        objClassNames.filter(cls => cls.type === "block" || cls.type === "modifier").forEach(cls => {
-            code += `\n.${obj.name} .${cls.name} {}\n`
+        ObjClassNames.filter(css => css.type === "block" || css.type === "modifier").forEach(css => {
+            code += `\n.${obj.name} .${css.name} {}\n`
         })
     }
 

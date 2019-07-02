@@ -2,15 +2,237 @@
 	@block card 
 */
 .card {
+    overflow: hidden;
     border-radius: 4px;
     background-color: var(--color-surface);
-    color: var(--color-focused-on-light);
+    color: var(--color-unfocused-on-light);
     box-shadow: 0 2px 1px -1px var(--color-black-20), 0 1px 1px 0 var(--color-black-14), 0 1px 3px 0 var(--color-black-12);
+    /* 1 */
 }
 
 /* 
-@modifier outlined 
+	@element action-group 
+*/
+.card__action-group {
+    display: flex;
+    padding: 8px;
+}
+.card__action-group--vertical {
+    flex-direction: column;
+    align-items: flex-start;
+}
+.card__action-group--vertical .card__action-group-section {
+    flex-direction: column;
+    align-items: flex-start;
+}
+.card__action-group-section {
+    display: flex;
+    flex: 1;
+}
+/* .card__action-group-section--start {} */
+.card__action-group-section--end {
+    justify-content: flex-end;
+}
+
+/* 
+	@element action 
+*/
+.card__action {
+    min-width: calc(36px - 12px * 2);
+}
+.card__action + .card__action {
+    margin-left: 8px;
+}
+
+.card__action-group--vertical .card__action {
+    margin-left: 0;
+}
+.card__action-group--vertical .card__action + .card__action {
+    margin-top: 4px;
+}
+
+/* 
+	@element supporting 
+*/
+.card__supporting {
+    padding: calc(16px - ((20px - 14px) / 2)) 16px calc(24px - ((20px - 14px) / 2)) 16px;
+    font-weight: 400; font-size: 14px; line-height: 20px;
+}
+
+/* 
+	@element header 
+*/
+.card__header {
+    display: flex;
+    align-items: center;
+}
+.card__header-thumb {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+    width: 40px;
+    height: 40px;
+    margin: 16px;
+    border-radius: 50%;
+    font: 400 18px/1 'Segoe MDL2 Assets';
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.card__header-title {
+    margin: 16px;
+}
+.card__header-title-primary {
+    font-weight: 500; font-size: 14px; line-height: 20px;
+}
+.card__header-title-secondary {
+    font-weight: 400; font-size: 14px; line-height: 20px;
+}
+
+.card__header-thumb ~ .card__header-title {
+    margin-left: calc(16px - 16px);
+}
+
+/* 
+	@element primary 
+*/
+.card__primary {
+    padding: calc(24px - ((36px - 24px) / 2)) 16px calc(24px - ((20px - 14px) / 2)) 16px;
+}
+.card__primary-text {
+    font-weight: 400; font-size: 24px; line-height: 36px;
+}
+.card__primary-subtext {
+    font-weight: 400; font-size: 14px; line-height: 20px;
+}
+
+/* 
+	@element media 
+*/
+.card__media {
+    position: relative;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: #e5e5e5;
+}
+.card__media::before {
+    content: "";
+    display: block;
+    padding-top: calc(100% / 16 * 9);
+}
+.card__media-protection {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: var(--color-inactive-on-light);
+    color: var(--color-focused-on-dark);
+}
+.card__media--1::before {
+    padding-top: 100%;
+}
+.card__media--80 {
+    width: 80px;
+    height: 80px;
+}
+.card__media--120 {
+    width: 120px;
+    height: 120px;
+}
+.card__media--160 {
+    width: 160px;
+    height: 160px;
+}
+.card__media--240 {
+    width: 240px;
+    height: 240px;
+}
+.card__media--80::before { padding-top: 100%; }
+.card__media--120::before { padding-top: 100%; }
+.card__media--160::before { padding-top: 100%; }
+.card__media--240::before { padding-top: 100%; }
+
+.card__supporting + .card__action-group {
+    margin-top: calc(16px - 24px);
+}
+
+.card__primary + .card__action-group {
+    margin-top: calc(16px - 24px);
+}
+
+.card__primary + .card__supporting {
+    margin-top: calc(0px - 24px);
+}
+
+/* 
+	@element surface 
+*/
+.card__surface {
+    display: flex;
+}
+.card__surface .card__primary {
+    flex: 1;
+}
+.card__surface .card__media {
+    margin-top: 16px;
+    margin-right: 16px;
+}
+.card__surface .card__media--240 {
+    margin: 16px;
+}
+.card__surface .card__action-group {
+    margin-left: auto;
+}
+
+/* 
+	@modifier outlined 
 */
 .card--outlined {
     box-shadow: inset 0 0 0 1px var(--color-black-12);
 }
+
+/* .card--outlined .card__media {} */
+
+/* .card--outlined .card__supporting {} */
+
+/* .card--outlined .card__action-group {} */
+
+/* .card--outlined .card__action-group-section {} */
+
+/* .card--outlined .card__action {} */
+
+/* .card--outlined .card__header {} */
+
+/* .card--outlined .card__header-thumb {} */
+
+/* .card--outlined .card__header-title {} */
+
+/* .card--outlined .card__header-title-primary {} */
+
+/* .card--outlined .card__header-title-secondary {} */
+
+/* .card--outlined .card__primary {} */
+
+/* .card--outlined .card__primary-text {} */
+
+/* .card--outlined .card__primary-subtext {} */
+
+/* .card--outlined .card__media-protection {} */
+
+/* .card--outlined .card__surface {} */
+
+/* .card--outlined .card__action-group-section--start {} */
+
+/* .card--outlined .card__action-group--vertical {} */
+
+/* .card--outlined .card__action-group-section--end {} */
+
+/* .card--outlined .card__media--80 {} */
+
+/* .card--outlined .card__media--120 {} */
+
+/* .card--outlined .card__media--160 {} */
+
+/* .card--outlined .card__media--240 {} */

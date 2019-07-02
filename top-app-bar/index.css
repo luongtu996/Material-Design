@@ -1,2 +1,228 @@
-@import "./component.css";
-@import "./state.css";
+/* 
+	@block top-app-bar 
+*/
+.top-app-bar {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    z-index: 4;
+    left: 0;
+    top: 0;
+    width: 100%;
+    min-height: 64px;
+    background-color: var(--color-primary);
+    color: var(--color-on-primary);
+    box-shadow: 0 2px 4px -1px var(--color-black-20), 0 4px 5px 0 var(--color-black-14), 0 1px 10px 0 var(--color-black-12);
+    /* 4 */
+}
+
+/* 
+	@element row 
+*/
+.top-app-bar__row {
+    display: flex;
+}
+.top-app-bar__row:first-child {
+    flex: 1;
+}
+
+/* 
+	@element section 
+*/
+.top-app-bar__section {
+    display: flex;
+}
+
+/* 
+	@elementModifier start 
+*/
+.top-app-bar__section--start {
+    flex: 1;
+}
+
+/* 
+	@elementModifier center 
+*/
+/* .top-app-bar__section--center {} */
+
+/* 
+	@elementModifier end 
+*/
+.top-app-bar__section--end {
+    justify-content: flex-end;
+}
+
+/* 
+	@element action 
+*/
+.top-app-bar__action {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+    width: 24px;
+    height: 24px;
+    margin: calc((64px - 24px) / 2) 16px;
+    font: 400 18px/1 'Segoe MDL2 Assets';
+}
+
+/* 
+	@elementModifier navigation 
+*/
+/* .top-app-bar__action--navigation {} */
+
+/* 
+	@elementModifier menu 
+*/
+/* .top-app-bar__action--menu {} */
+
+/* 
+	@element title 
+*/
+.top-app-bar__title {
+    flex: 1;
+    align-self: flex-end;
+    margin: calc((64px - 28px) / 2) 0 calc((64px - 28px) / 2) 16px;
+    font-weight: 500; font-size: 20px; line-height: 28px;
+}
+
+.top-app-bar__action ~ .top-app-bar__title {
+    margin-left: calc(32px - 16px);
+}
+
+.top-app-bar__action ~ .top-app-bar__action {
+    margin-left: calc(24px - 16px);
+}
+
+/* 
+	@modifier extended 
+*/
+.top-app-bar--extended {
+    height: 128px;
+}
+
+/* .top-app-bar--extended .top-app-bar__row {} */
+
+/* .top-app-bar--extended .top-app-bar__section {} */
+
+/* .top-app-bar--extended .top-app-bar__action {} */
+
+.top-app-bar--extended .top-app-bar__title {
+    margin-bottom: calc(0px - ((28px - 24px) / 2) + 28px);
+    font-weight: 400; 
+    font-size: 24px; 
+    /* line-height: 36px; */
+}
+
+/* .top-app-bar--extended .top-app-bar__section--start {} */
+
+/* .top-app-bar--extended .top-app-bar__action--navigation {} */
+
+/* .top-app-bar--extended .top-app-bar__section--center {} */
+
+/* .top-app-bar--extended .top-app-bar__section--end {} */
+
+/* .top-app-bar--extended .top-app-bar__action--menu {} */
+
+@media (max-width: 480px) {
+    .top-app-bar {
+        min-height: 56px;
+    }
+    .top-app-bar__action {
+        margin-top: calc((56px - 24px) / 2);
+        margin-bottom: calc((56px - 24px) / 2);
+    }
+    .top-app-bar__title {
+        margin-top: calc((56px - 28px) / 2);
+        margin-bottom: calc((56px - 28px) / 2);
+    }
+}
+
+/* 
+	@state ripple 
+*/
+.top-app-bar__action {
+    --ripple-circumference: 166.66666666666669%;
+    position: relative;
+    /* overflow: hidden; */
+    cursor: pointer;
+    user-select: none;
+}
+.top-app-bar__action::after {
+    content: "";
+    position: absolute;
+    overflow: hidden;
+    pointer-events: none;
+    left: var(--ripple-left, 50%);
+    top: var(--ripple-top, 50%);
+    width: var(--ripple-circumference, 141.4213562373095%);
+    padding-top: var(--ripple-circumference, 141.4213562373095%);
+    border-radius: 50%;
+    transform: translate3d(-50%, -50%, 0) translate3d(var(--ripple-translateX, 0), var(--ripple-translateY, 0), 0);
+    background-color: var(--color-on-primary);
+    opacity: 0;
+}
+
+.top-app-bar__action[disabled] {
+    cursor: default;
+    pointer-events: none;
+    opacity: 0.38;
+}
+.top-app-bar__action[disabled]::after {
+    opacity: 0;
+}
+
+/* .top-app-bar__action:hover {} */
+.top-app-bar__action:hover::after {
+    opacity: 0.08;
+}
+
+/* .top-app-bar__action:focus {} */
+.top-app-bar__action:focus::after {
+    opacity: 0.24;
+    animation: var(--ripple-animation, ripple-out) 300ms ease-in-out forwards;
+}
+
+/* .top-app-bar__action.top-app-bar__action--filter[selected] {} */
+.top-app-bar__action.top-app-bar__action--filter:not([selected]):focus:not(:active)::after {
+    --ripple-left: 50%;
+    --ripple-top: 50%;
+    /* --ripple-circumference: 83.33333333333334%; */
+    --ripple-translateX: 0;
+    --ripple-translateY: 0;
+    --ripple-animation: ripple-in;
+}
+.top-app-bar__action.top-app-bar__action--filter[selected]::after {
+    background-color: var(--color-primary);
+    opacity: 0.16;
+    animation-name: ripple-out;
+    animation-fill-mode: backwards;
+}
+
+.top-app-bar__action.top-app-bar__action--choice[activated] {
+    color: var(--color-primary);
+}
+.top-app-bar__action.top-app-bar__action--choice:not([activated]):focus:not(:active)::after {
+    --ripple-left: 50%;
+    --ripple-top: 50%;
+    /* --ripple-circumference: 83.33333333333334%; */
+    --ripple-translateX: 0;
+    --ripple-translateY: 0;
+    --ripple-animation: ripple-in;
+}
+.top-app-bar__action.top-app-bar__action--choice[activated]::after {
+    background-color: var(--color-primary);
+    opacity: 0.24;
+    animation-name: ripple-out;
+    animation-fill-mode: backwards;
+}
+
+/* .top-app-bar__action:active {} */
+.top-app-bar__action:active::after {
+    opacity: 0.32;
+}
+
+/* .top-app-bar__action[dragged] {} */
+.top-app-bar__action[dragged]::after {
+    opacity: 0.16;
+}

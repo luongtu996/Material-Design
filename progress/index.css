@@ -1,8 +1,7 @@
 /* 
 	@block progress 
 */
-.progress:not(.progress--circular) {
-    /* --progress-value: 75; */
+.progress {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -14,8 +13,7 @@
     background-color: var(--color-primary-54);
 }
 
-.progress:not(.progress--circular)::before,
-.progress:not(.progress--circular)[indeterminate]::after {
+.progress::before {
     content: '';
     position: absolute;
     left: 0;
@@ -25,14 +23,75 @@
     background-color: var(--color-primary);
 }
 
-/* .progress:not(.progress--circular)::after {} */
+.progress[indeterminate]::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: calc(var(--progress-value) * 1%);
+    height: 100%;
+    background-color: var(--color-primary);
+}
 
-.progress:not(.progress--circular)[indeterminate]::before {
+.progress[indeterminate]::before {
     animation: progress-before 2s linear infinite;
 }
 
-.progress:not(.progress--circular)[indeterminate]::after {
+.progress[indeterminate]::after {
     animation: progress-after 2s linear 1s infinite;
+}
+
+/* 
+	@modifier circular 
+*/
+.progress--circular {
+    width: 48px;
+    height: 48px;
+    transform: rotate(-90deg);
+    background-color: transparent;
+}
+
+.progress--circular::before {
+    width: 0;
+    height: 0;
+}
+
+.progress--circular::after {
+    width: 0;
+    height: 0;
+}
+
+.progress--circular svg {
+    width: 40px;
+    height: 40px;
+}
+
+.progress--circular circle {
+    fill: none;
+    stroke: var(--color-primary);
+    stroke-width: 4;
+    stroke-dasharray: 113.09733552923255;
+    stroke-dashoffset: calc(113.09733552923255 * (1 - (var(--progress-value, 0) / 100)));
+}
+
+.progress--circular[indeterminate]::before {
+    animation: none;
+}
+
+.progress--circular[indeterminate]::after {
+    animation: none;
+}
+
+.progress--circular[indeterminate] {
+    animation: progress-circular 1.3333333333333333s linear infinite;
+}
+
+.progress--circular[indeterminate] svg {
+    animation: progress-circular-svg 5.333333333333333s steps(4) infinite;
+}
+
+.progress--circular[indeterminate] circle {
+    animation: progress-circular-circle 1.3333333333333333s ease-in-out infinite;
 }
 
 @keyframes progress-before {
@@ -57,7 +116,7 @@
         left: -175%;
         width: 100%;
     }
-    
+
     50% {
         left: 75%;
         width: 25%;
@@ -67,45 +126,6 @@
         left: 175%;
         width: 0;
     }
-}
-
-/* 
-	@modifier circular 
-*/
-.progress--circular {
-    /* --progress-value: 75; */
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    vertical-align: middle;
-    width: 48px;
-    height: 48px;
-    transform: rotate(-90deg);
-}
-
-.progress--circular svg {
-    width: 40px;
-    height: 40px;
-}
-
-.progress--circular circle {
-    fill: none;
-    stroke: var(--color-primary);
-    stroke-width: 4;
-    stroke-dasharray: 113.09733552923255;
-    stroke-dashoffset: calc(113.09733552923255 * (1 - (var(--progress-value, 0) / 100)));
-}
-
-.progress--circular[indeterminate] {
-    animation: progress-circular 1.3333333333333333s linear infinite;
-}
-
-.progress--circular[indeterminate] svg {
-    animation: progress-circular-svg 5.333333333333333s steps(4) infinite;
-}
-
-.progress--circular[indeterminate] circle {
-    animation: progress-circular-circle 1.3333333333333333s ease-in-out infinite;
 }
 
 @keyframes progress-circular {

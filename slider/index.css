@@ -13,8 +13,6 @@
 */
 /* .slider__input {} */
 
-/* .slider__input::-webkit-slider-container {} */
-
 .slider__input::-webkit-slider-runnable-track {
     height: 2px;
     background-image: linear-gradient(var(--color-primary), var(--color-primary));
@@ -27,7 +25,7 @@
 .slider__input::-webkit-slider-thumb {
     width: 12px;
     height: 12px;
-    border-radius: 50%;
     margin-top: calc(0px - ((12px - 2px) / 2));
+    border-radius: 50%;
     background-color: var(--color-primary);
 }

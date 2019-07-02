@@ -1,2 +1,162 @@
-@import "./component.css";
-@import "./state.css";
+/* 
+	@block fab 
+*/
+.fab {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 56px;
+    height: 56px;
+    border-radius: calc(56px / 2);
+    background-color: var(--color-secondary);
+    color: var(--color-on-secondary);
+    box-shadow: 0 3px 5px -1px var(--color-black-20), 0 6px 10px 0 var(--color-black-14), 0 1px 18px 0 var(--color-black-12);
+}
+
+/* 
+	@element icon 
+*/
+.fab__icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+    width: 24px;
+    height: 24px;
+    margin: 0 16px;
+    font: 400 18px/1 'Segoe MDL2 Assets';
+}
+
+/* 
+	@element text 
+*/
+.fab__text {
+    margin: 0 20px;
+    font-weight: 500; font-size: 14px; line-height: 20px; text-transform: uppercase;
+}
+
+/* 
+	@modifier mini 
+*/
+.fab--mini {
+    width: 40px;
+    height: 40px;
+    border-radius: calc(40px / 2);
+}
+
+.fab--mini .fab__icon {
+    margin-left: 8px;
+    margin-right: 8px;
+}
+
+.fab--mini .fab__text {}
+
+/* 
+	@modifier extended 
+*/
+.fab--extended {
+    min-width: 48px;
+    max-width: 100%;
+    width: auto;
+    height: 48px;
+    border-radius: calc(48px / 2);
+}
+
+.fab--extended .fab__icon {
+    margin-left: 12px;
+    margin-right: 12px;
+}
+
+.fab--extended .fab__text {}
+
+.fab__icon + .fab__text {
+    margin-left: calc(12px - 12px);
+}
+
+/* 
+	@state ripple 
+*/
+.fab {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    user-select: none;
+}
+.fab::after {
+    content: "";
+    position: absolute;
+    overflow: hidden;
+    pointer-events: none;
+    left: var(--ripple-left, 50%);
+    top: var(--ripple-top, 50%);
+    width: var(--ripple-circumference, 141.4213562373095%);
+    padding-top: var(--ripple-circumference, 141.4213562373095%);
+    border-radius: 50%;
+    transform: translate3d(-50%, -50%, 0) translate3d(var(--ripple-translateX, 0), var(--ripple-translateY, 0), 0);
+    background-color: var(--color-on-surface);
+    opacity: 0;
+}
+
+.fab[disabled] {
+    cursor: default;
+    pointer-events: none;
+    opacity: 0.38;
+}
+.fab[disabled]::after {
+    opacity: 0;
+}
+
+/* .fab:hover {} */
+.fab:hover::after {
+    opacity: 0.04;
+}
+
+/* .fab:focus {} */
+.fab:focus::after {
+    opacity: 0.12;
+    animation: var(--ripple-animation, ripple-out) 300ms ease-in-out forwards;
+}
+
+/* .fab.fab--filter[selected] {} */
+.fab.fab--filter:not([selected]):focus:not(:active)::after {
+    --ripple-left: 50%;
+    --ripple-top: 50%;
+    /* --ripple-circumference: 83.33333333333334%; */
+    --ripple-translateX: 0;
+    --ripple-translateY: 0;
+    --ripple-animation: ripple-in;
+}
+.fab.fab--filter[selected]::after {
+    background-color: var(--color-primary);
+    opacity: 0.08;
+    animation-name: ripple-out;
+    animation-fill-mode: backwards;
+}
+
+.fab.fab--choice[activated] {
+    color: var(--color-primary);
+}
+.fab.fab--choice:not([activated]):focus:not(:active)::after {
+    --ripple-left: 50%;
+    --ripple-top: 50%;
+    /* --ripple-circumference: 83.33333333333334%; */
+    --ripple-translateX: 0;
+    --ripple-translateY: 0;
+    --ripple-animation: ripple-in;
+}
+.fab.fab--choice[activated]::after {
+    background-color: var(--color-primary);
+    opacity: 0.12;
+    animation-name: ripple-out;
+    animation-fill-mode: backwards;
+}
+
+/* .fab:active {} */
+.fab:active::after {
+    opacity: 0.16;
+}
+
+/* .fab[dragged] {} */
+.fab[dragged]::after {
+    opacity: 0.08;
+}

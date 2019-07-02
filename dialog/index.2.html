@@ -9,22 +9,36 @@
     <link rel="stylesheet" href="../index.css">
 </head>
 
-<body class="demo-body">
+<body class="demo-body preload">
 
-    <div class="dialog">
-        <div class="dialog__body">Discard draft?</div>
-        <div class="dialog__action-group">
-            <div class="dialog__action button">
-                <div class="button__text">CANCEL</div>
-            </div>
-            <div class="dialog__action button">
-                <div class="button__text">DISCARD</div>
+    <div class="button" onclick="dialogOpen()">
+        <div class="button__text">open</div>
+    </div>
+
+    <div id="dialog" class="dialog dialog--closed">
+        <div class="dialog__surface">
+            <div class="dialog__body">Discard draft?</div>
+            <div class="dialog__action-group">
+                <div class="button dialog__action">
+                    <div class="button__text">CANCEL</div>
+                </div>
+                <div class="button dialog__action">
+                    <div class="button__text">DISCARD</div>
+                </div>
             </div>
         </div>
     </div>
-    <div class="dialog-scrim"></div>
+    <div class="dialog-scrim" onclick="dialogClose()"></div>
 
     <script src="../index.js" type="module"></script>
+    <script>
+        function dialogClose() {
+            document.querySelector("#dialog").classList.add("dialog--closed")
+        }
+        function dialogOpen() {
+            document.querySelector("#dialog").classList.remove("dialog--closed")
+        }
+    </script>
 </body>
 
 </html>

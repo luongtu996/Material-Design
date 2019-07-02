@@ -1,2 +1,237 @@
-@import "./component.css";
-@import "./state.css";
+/* 
+	@block side-sheet 
+*/
+.side-sheet {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    z-index: 8;
+    right: 0;
+    top: 0;
+    width: 320px;
+    height: 100%;
+    background-color: var(--color-surface);
+    color: var(--color-focused-on-light);
+}
+
+/* 
+	@element header 
+*/
+.side-sheet__header {
+    display: flex;
+    height: 64px;
+}
+
+/* 
+	@element title 
+*/
+.side-sheet__title {
+    flex: 1;
+    margin: calc((64px - 28px) / 2) 0 calc((64px - 28px) / 2) 16px;
+    font-weight: 500; font-size: 20px; line-height: 28px;
+}
+
+/* 
+	@element action 
+*/
+.side-sheet__action {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+    width: 24px;
+    height: 24px;
+    margin: calc((64px - 24px) / 2) 16px;
+    font: 400 18px/1 'Segoe MDL2 Assets';
+}
+
+/* 
+	@element body 
+*/
+.side-sheet__body {
+    overflow: hidden auto;
+    flex: 1;
+    padding: 0 16px;
+}
+
+/* 
+	@modifier modal 
+*/
+.side-sheet--modal {
+    box-shadow: 0 5px 5px -3px var(--color-black-20), 0 8px 10px 1px var(--color-black-14), 0 3px 14px 2px var(--color-black-12);
+    /* 8 */
+}
+
+/* .side-sheet--modal .side-sheet__header {} */
+
+/* .side-sheet--modal .side-sheet__title {} */
+
+/* .side-sheet--modal .side-sheet__action {} */
+
+/* .side-sheet--modal .side-sheet__body {} */
+
+/* 
+	@blockGroup scrim 
+*/
+.side-sheet-scrim {
+    position: fixed;
+    z-index: 7;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-black-32);
+}
+
+/* .side-sheet-scrim .side-sheet {} */
+
+/* .side-sheet-scrim .side-sheet--modal {} */
+
+@media (max-width: 480px) {
+    .side-sheet {
+        z-index: 16;
+        width: calc(100% - 56px);
+    }
+    .side-sheet__header {
+        height: 56px;
+    }
+    .side-sheet__title {
+        margin-top: calc((56px - 28px) / 2);
+        margin-bottom: calc((56px - 28px) / 2);
+    }
+    .side-sheet__action {
+        margin-top: calc((56px - 24px) / 2);
+        margin-bottom: calc((56px - 24px) / 2);
+    }
+    .side-sheet--modal {
+        box-shadow: 0 8px 10px -5px var(--color-black-20), 0 16px 24px 2px var(--color-black-14), 0 6px 30px 5px var(--color-black-12);
+        /* 16 */
+    }
+    .side-sheet-scrim {
+        z-index: 15;
+    }
+}
+
+/* 
+	@modifier closed 
+*/
+.side-sheet {
+    transition: 
+    transform 200ms ease-in-out;
+}
+.side-sheet.side-sheet--modal  {
+    transition: 
+    transform 200ms ease-in-out,
+    box-shadow 200ms ease-in-out;
+}
+.side-sheet-scrim {
+    transition: opacity 200ms ease-in-out;
+}
+
+.side-sheet--closed {
+    transform: translate3d(100%, 0, 0);
+}
+.side-sheet--closed.side-sheet--modal {
+    box-shadow: none;
+}
+.side-sheet--closed ~ .side-sheet-scrim {
+    pointer-events: none;
+    opacity: 0;
+}
+
+/* .side-sheet--closed .side-sheet__header {} */
+
+/* .side-sheet--closed .side-sheet__title {} */
+
+/* .side-sheet--closed .side-sheet__action {} */
+
+/* .side-sheet--closed .side-sheet__body {} */
+
+/* 
+	@state ripple 
+*/
+.side-sheet__action {
+    --ripple-circumference: 166.66666666666669%;
+    position: relative;
+    /* overflow: hidden; */
+    cursor: pointer;
+    user-select: none;
+}
+.side-sheet__action::after {
+    content: "";
+    position: absolute;
+    overflow: hidden;
+    pointer-events: none;
+    left: var(--ripple-left, 50%);
+    top: var(--ripple-top, 50%);
+    width: var(--ripple-circumference, 141.4213562373095%);
+    padding-top: var(--ripple-circumference, 141.4213562373095%);
+    border-radius: 50%;
+    transform: translate3d(-50%, -50%, 0) translate3d(var(--ripple-translateX, 0), var(--ripple-translateY, 0), 0);
+    background-color: var(--color-primary);
+    opacity: 0;
+}
+
+.side-sheet__action[disabled] {
+    cursor: default;
+    pointer-events: none;
+    opacity: 0.38;
+}
+.side-sheet__action[disabled]::after {
+    opacity: 0;
+}
+
+/* .side-sheet__action:hover {} */
+.side-sheet__action:hover::after {
+    opacity: 0.04;
+}
+
+/* .side-sheet__action:focus {} */
+.side-sheet__action:focus::after {
+    opacity: 0.12;
+    animation: var(--ripple-animation, ripple-out) 300ms ease-in-out forwards;
+}
+
+/* .side-sheet__action.side-sheet__action--filter[selected] {} */
+.side-sheet__action.side-sheet__action--filter:not([selected]):focus:not(:active)::after {
+    --ripple-left: 50%;
+    --ripple-top: 50%;
+    /* --ripple-circumference: 83.33333333333334%; */
+    --ripple-translateX: 0;
+    --ripple-translateY: 0;
+    --ripple-animation: ripple-in;
+}
+.side-sheet__action.side-sheet__action--filter[selected]::after {
+    background-color: var(--color-primary);
+    opacity: 0.08;
+    animation-name: ripple-out;
+    animation-fill-mode: backwards;
+}
+
+.side-sheet__action.side-sheet__action--choice[activated] {
+    color: var(--color-primary);
+}
+.side-sheet__action.side-sheet__action--choice:not([activated]):focus:not(:active)::after {
+    --ripple-left: 50%;
+    --ripple-top: 50%;
+    /* --ripple-circumference: 83.33333333333334%; */
+    --ripple-translateX: 0;
+    --ripple-translateY: 0;
+    --ripple-animation: ripple-in;
+}
+.side-sheet__action.side-sheet__action--choice[activated]::after {
+    background-color: var(--color-primary);
+    opacity: 0.12;
+    animation-name: ripple-out;
+    animation-fill-mode: backwards;
+}
+
+/* .side-sheet__action:active {} */
+.side-sheet__action:active::after {
+    opacity: 0.16;
+}
+
+/* .side-sheet__action[dragged] {} */
+.side-sheet__action[dragged]::after {
+    opacity: 0.08;
+}

@@ -1,2 +1,175 @@
-@import "./component.css";
-@import "./state.css";
+/* 
+	@block checkbox 
+*/
+.checkbox {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+    position: relative;
+    width: 24px;
+    height: 24px;
+}
+
+/* 
+	@element input 
+*/
+.checkbox__input {
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+}
+
+/* 
+	@element track 
+*/
+.checkbox__track {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 18px;
+    height: 18px;
+    border-radius: 2px;
+    border: 2px solid var(--color-unfocused-on-light);
+}
+
+/* 
+	@element thumb 
+*/
+/* .checkbox__thumb {} */
+
+/* 
+	@state indeterminate 
+*/
+.checkbox__input:indeterminate ~ .checkbox__track {
+    background-color: var(--color-primary);
+    border-color: var(--color-primary);
+}
+.checkbox__input:indeterminate ~ .checkbox__track .checkbox__thumb {
+    width: 10px;
+    height: 2px;
+    border: 2px solid var(--color-on-primary);
+    border-width: 0 0 2px 0;
+}
+
+/* 
+	@state checked 
+*/
+.checkbox__input:checked ~ .checkbox__track {
+    background-color: var(--color-primary);
+    border-color: var(--color-primary);
+}
+.checkbox__input:checked ~ .checkbox__track .checkbox__thumb {
+    width: 10px;
+    height: 5px;
+    border: 2px solid var(--color-on-primary);
+    border-width: 0 0 2px 2px;
+    transform: rotate(315deg);
+    margin-top: -2px;
+}
+
+/* 
+	@state ripple 
+*/
+.checkbox__input {
+    /* position: relative; */
+    /* overflow: hidden; */
+    cursor: pointer;
+    user-select: none;
+}
+.checkbox__input ~ .checkbox__track {
+    --ripple-circumference: 285.7142857142857%;
+    position: relative;
+    /* overflow: hidden; */
+    /* cursor: pointer; */
+    /* user-select: none; */
+}
+.checkbox__input ~ .checkbox__track::after {
+    content: "";
+    position: absolute;
+    overflow: hidden;
+    pointer-events: none;
+    left: var(--ripple-left, 50%);
+    top: var(--ripple-top, 50%);
+    width: var(--ripple-circumference, 141.4213562373095%);
+    padding-top: var(--ripple-circumference, 141.4213562373095%);
+    border-radius: 50%;
+    transform: translate3d(-50%, -50%, 0) translate3d(var(--ripple-translateX, 0), var(--ripple-translateY, 0), 0);
+    background-color: var(--color-primary);
+    opacity: 0;
+}
+
+.checkbox__input[disabled] {
+    cursor: default;
+    pointer-events: none;
+    /* opacity: 0.38; */
+}
+.checkbox__input[disabled] ~ .checkbox__track {
+    /* cursor: default; */
+    /* pointer-events: none; */
+    opacity: 0.38;
+}
+.checkbox__input[disabled] ~ .checkbox__track::after {
+    opacity: 0;
+}
+
+/* .checkbox__input:not(:indeterminate):not(:checked) ~ .checkbox__track {} */
+.checkbox__input:not(:indeterminate):not(:checked) ~ .checkbox__track::after {
+    background-color: var(--color-on-surface);
+}
+
+/* .checkbox__input:hover ~ .checkbox__track {} */
+.checkbox__input:hover ~ .checkbox__track::after {
+    opacity: 0.04;
+}
+
+/* .checkbox__input:focus ~ .checkbox__track {} */
+.checkbox__input:focus ~ .checkbox__track::after {
+    opacity: 0.12;
+    animation: var(--ripple-animation, ripple-out) 300ms ease-in-out forwards;
+}
+
+/* .checkbox__input.checkbox__input--filter[selected] ~ .checkbox__track {} */
+.checkbox__input.checkbox__input--filter:not([selected]):focus:not(:active) ~ .checkbox__track::after {
+    --ripple-left: 50%;
+    --ripple-top: 50%;
+    /* --ripple-circumference: 83.33333333333334%; */
+    --ripple-translateX: 0;
+    --ripple-translateY: 0;
+    --ripple-animation: ripple-in;
+}
+.checkbox__input.checkbox__input--filter[selected] ~ .checkbox__track::after {
+    background-color: var(--color-primary);
+    opacity: 0.08;
+    animation-name: ripple-out;
+    animation-fill-mode: backwards;
+}
+
+.checkbox__input.checkbox__input--choice[activated] ~ .checkbox__track {
+    color: var(--color-primary);
+}
+.checkbox__input.checkbox__input--choice:not([activated]):focus:not(:active) ~ .checkbox__track::after {
+    --ripple-left: 50%;
+    --ripple-top: 50%;
+    /* --ripple-circumference: 83.33333333333334%; */
+    --ripple-translateX: 0;
+    --ripple-translateY: 0;
+    --ripple-animation: ripple-in;
+}
+.checkbox__input.checkbox__input--choice[activated] ~ .checkbox__track::after {
+    background-color: var(--color-primary);
+    opacity: 0.12;
+    animation-name: ripple-out;
+    animation-fill-mode: backwards;
+}
+
+/* .checkbox__input:active ~ .checkbox__track {} */
+.checkbox__input:active ~ .checkbox__track::after {
+    opacity: 0.16;
+}
+
+/* .checkbox__input[dragged] ~ .checkbox__track {} */
+.checkbox__input[dragged] ~ .checkbox__track::after {
+    opacity: 0.08;
+}

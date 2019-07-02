@@ -9,94 +9,98 @@
     <link rel="stylesheet" href="../index.css">
 </head>
 
-<body class="demo-body">
+<body class="demo-body preload">
 
-    <div class="navigation-drawer navigation-drawer--modal">
+    <div class="button" onclick="navigationDrawerOpen()">
+        <div class="button__text">open</div>
+    </div>
+
+    <div id="navigationDrawer" class="navigation-drawer navigation-drawer--modal navigation-drawer--closed">
         <div class="navigation-drawer__header">
             <div class="navigation-drawer__title">Title</div>
             <div class="navigation-drawer__subtitle">
-                <div class="navigation-drawer__subtitle-text">Subtitle</div>
+                <div class="navigation-drawer__subtitle-text">subtext</div>
             </div>
         </div>
         <div class="navigation-drawer__body">
             <ul class="list list--with-action">
                 <li class="list__row">
-                    <ul class="list">
+                    <ul class="list list--with-action">
                         <li class="list__row">
                             <div class="list__item" activated>
-                                <div class="list__icon">&#xE701;</div>
-                                <div class="list__text">Item 1</div>
+                                <div class="list__icon">&#xE720;</div>
+                                <div class="list__text">Inbox</div>
                             </div>
                         </li>
                         <li class="list__row">
                             <div class="list__item">
-                                <div class="list__icon">&#xE702;</div>
-                                <div class="list__text">Item 2</div>
+                                <div class="list__icon">&#xE720;</div>
+                                <div class="list__text">Outbox</div>
                             </div>
                         </li>
                         <li class="list__row">
                             <div class="list__item">
-                                <div class="list__icon">&#xE703;</div>
-                                <div class="list__text">Item 3</div>
+                                <div class="list__icon">&#xE720;</div>
+                                <div class="list__text">Favorites</div>
                             </div>
                         </li>
                         <li class="list__row">
                             <div class="list__item">
-                                <div class="list__icon">&#xE704;</div>
-                                <div class="list__text">Item 4</div>
+                                <div class="list__icon">&#xE720;</div>
+                                <div class="list__text">Archive</div>
                             </div>
                         </li>
                         <li class="list__row">
                             <div class="list__item">
-                                <div class="list__icon">&#xE705;</div>
-                                <div class="list__text">Item 5</div>
+                                <div class="list__icon">&#xE720;</div>
+                                <div class="list__text">Trash</div>
                             </div>
                         </li>
                         <li class="list__row">
                             <div class="list__item">
-                                <div class="list__icon">&#xE706;</div>
-                                <div class="list__text">Item 6</div>
+                                <div class="list__icon">&#xE720;</div>
+                                <div class="list__text">Spam</div>
                             </div>
                         </li>
                     </ul>
                 </li>
                 <li class="list__row">
-                    <hr class="list__divider">
+                    <div class="list__divider"></div>
                     <div class="list__subheader">Labels</div>
-                    <ul class="list">
+                    <ul class="list list--with-action">
                         <li class="list__row">
                             <div class="list__item">
-                                <div class="list__icon">&#xE707;</div>
-                                <div class="list__text">Item 11</div>
+                                <div class="list__icon">&#xE720;</div>
+                                <div class="list__text">Family</div>
                             </div>
                         </li>
                         <li class="list__row">
                             <div class="list__item">
-                                <div class="list__icon">&#xE708;</div>
-                                <div class="list__text">Item 12</div>
+                                <div class="list__icon">&#xE720;</div>
+                                <div class="list__text">Friends</div>
                             </div>
                         </li>
                         <li class="list__row">
                             <div class="list__item">
-                                <div class="list__icon">&#xE709;</div>
-                                <div class="list__text">Item 13</div>
+                                <div class="list__icon">&#xE720;</div>
+                                <div class="list__text">Work</div>
                             </div>
                         </li>
                     </ul>
                 </li>
                 <li class="list__row">
-                    <hr class="list__divider">
-                    <ul class="list">
+                    <div class="list__divider"></div>
+                    <ul class="list list--with-action">
                         <li class="list__row">
                             <div class="list__item">
-                                <div class="list__icon">&#xE710;</div>
-                                <div class="list__text">Item 21</div>
+                                <div class="list__icon">&#xE720;</div>
+                                <div class="list__text">Settings &amp; account</div>
                             </div>
                         </li>
                         <li class="list__row">
                             <div class="list__item">
-                                <div class="list__icon">&#xE711;</div>
-                                <div class="list__text">Item 22</div>
+                                <div class="list__icon">&#xE720;</div>
+                                <div class="list__text">Help &amp; feedback</div>
                             </div>
                         </li>
                     </ul>
@@ -104,10 +108,17 @@
             </ul>
         </div>
     </div>
-    
-    <div class="navigation-drawer-scrim"></div>
+    <div class="navigation-drawer-scrim" onclick="navigationDrawerClose()"></div>
 
     <script src="../index.js" type="module"></script>
+    <script>
+        function navigationDrawerOpen() {
+            document.querySelector("#navigationDrawer").classList.remove("navigation-drawer--closed")
+        }
+        function navigationDrawerClose() {
+            document.querySelector("#navigationDrawer").classList.add("navigation-drawer--closed")
+        }
+    </script>
 </body>
 
 </html>

@@ -9,41 +9,55 @@
     <link rel="stylesheet" href="../index.css">
 </head>
 
-<body class="demo-body">
+<body class="demo-body preload">
 
-    <div class="dialog">
-        <div class="dialog__header">
-            <div class="dialog__title">Dialog header</div>
-        </div>
-        <div class="dialog__body">
-            <ul class="list">
-                <li class="list__row">
-                    <div class="list__item">
-                        <div class="list__thumb list__thumb--circle"
-                            style="background-image: url(https://i.pravatar.cc/300)"></div>
-                        <div class="list__text">user01@gmail.com</div>
-                    </div>
-                </li>
-                <li class="list__row">
-                    <div class="list__item">
-                        <div class="list__thumb list__thumb--circle"
-                            style="background-image: url(https://i.pravatar.cc/300)"></div>
-                        <div class="list__text">user02@gmail.com</div>
-                    </div>
-                </li>
-                <li class="list__row">
-                    <div class="list__item">
-                        <div class="list__thumb list__thumb--circle"
-                            style="background-image: url(https://i.pravatar.cc/300)"></div>
-                        <div class="list__text">Add account</div>
-                    </div>
-                </li>
-            </ul>
+    <div class="button" onclick="dialogOpen()">
+        <div class="button__text">open</div>
+    </div>
+
+    <div id="dialog" class="dialog dialog--closed">
+        <div class="dialog__surface">
+            <div class="dialog__header">
+                <div class="dialog__title">Dialog header</div>
+            </div>
+            <div class="dialog__body">
+                <ul class="list">
+                    <li class="list__row">
+                        <div class="list__item">
+                            <div class="list__thumb list__thumb--circle" style="background-image: url(https://i.pravatar.cc/300)">
+                            </div>
+                            <div class="list__text">user01@gmail.com</div>
+                        </div>
+                    </li>
+                    <li class="list__row">
+                        <div class="list__item">
+                            <div class="list__thumb list__thumb--circle" style="background-image: url(https://i.pravatar.cc/300)">
+                            </div>
+                            <div class="list__text">user02@gmail.com</div>
+                        </div>
+                    </li>
+                    <li class="list__row">
+                        <div class="list__item">
+                            <div class="list__thumb list__thumb--circle" style="background-image: url(https://i.pravatar.cc/300)">
+                            </div>
+                            <div class="list__text">Add account</div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
         </div>
     </div>
-    <div class="dialog-scrim"></div>
+    <div class="dialog-scrim" onclick="dialogClose()"></div>
 
     <script src="../index.js" type="module"></script>
+    <script>
+        function dialogClose() {
+            document.querySelector("#dialog").classList.add("dialog--closed")
+        }
+        function dialogOpen() {
+            document.querySelector("#dialog").classList.remove("dialog--closed")
+        }
+    </script>
 </body>
 
 </html>

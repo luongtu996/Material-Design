@@ -1,2 +1,422 @@
-@import "./component.css";
-@import "./state.css";
+/* 
+	@block list 
+*/
+.list {
+    display: flex;
+    flex-direction: column;
+    padding: 8px 0;
+    background-color: var(--color-surface);
+    color: var(--color-focused-on-light);
+}
+
+/* 
+	@element row 
+*/
+.list__row {
+    display: flex;
+    flex-direction: column;
+}
+
+/* 
+	@element item 
+*/
+.list__item {
+    display: flex;
+    align-items: center;
+    min-height: 48px;
+}
+
+/* 
+	@element thumb 
+*/
+.list__thumb {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+    width: 24px;
+    height: 24px;
+    font: 400 18px/1 'Segoe MDL2 Assets';
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: var(--color-unfocused-on-light);
+}
+
+/* 
+	@elementModifier circle 
+*/
+.list__thumb--circle {
+    width: 40px;
+    height: 40px;
+    margin: 8px 16px;
+    border-radius: 50%;
+}
+
+/* 
+	@elementModifier square 
+*/
+.list__thumb--square {
+    width: 56px;
+    height: 56px;
+    margin: 8px 16px;
+}
+
+/* 
+	@elementModifier rectangle 
+*/
+.list__thumb--rectangle {
+    width: 100px;
+    height: 56px;
+    margin: 8px 16px 8px 0;
+}
+
+/* 
+	@element text 
+*/
+.list__text {
+    flex: 1;
+    margin: 0 16px;
+    font-weight: 400; font-size: 16px; line-height: 24px;
+}
+
+/* 
+	@element text-primary 
+*/
+.list__text-primary {
+    font-weight: 400; font-size: 16px; line-height: 24px;
+}
+
+/* 
+	@element text-secondary 
+*/
+.list__text-secondary {
+    font-weight: 400; font-size: 14px; line-height: 20px;
+    color: var(--color-unfocused-on-light);
+}
+
+/* 
+	@element text-overline 
+*/
+.list__text-overline {
+    font-weight: 400; font-size: 10px; line-height: 12px; text-transform: uppercase;
+    color: var(--color-unfocused-on-light);
+}
+
+/* 
+	@element supporting 
+*/
+.list__supporting {
+    display: flex;
+    align-items: baseline;
+    flex: 1;
+}
+
+/* 
+	@element meta 
+*/
+.list__meta {
+    margin: 0 16px 0 28px;
+    font-weight: 400; font-size: 12px; line-height: 16px;
+    color: var(--color-unfocused-on-light);
+}
+
+/* 
+	@element action 
+*/
+.list__action {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+    width: 24px;
+    height: 24px;
+    margin: 12px 16px;
+    font: 400 18px/1 'Segoe MDL2 Assets';
+    background-color: #f5f5f5;
+    color: var(--color-unfocused-on-light);
+}
+
+/* 
+	@element icon 
+*/
+.list__icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+    width: 24px;
+    height: 24px;
+    margin: 16px;
+    font: 400 18px/1 'Segoe MDL2 Assets';
+    color: var(--color-unfocused-on-light);
+}
+
+.list__thumb ~ .list__text {
+    margin-left: calc(16px - 16px);
+}
+.list__text ~ .list__action {
+    margin-left: calc(16px - 16px);
+}
+.list__icon ~ .list__text {
+    margin-left: calc(32px - 16px);
+}
+.list__text ~ .list__meta {
+    margin-left: calc(28px - 16px);
+}
+
+/* 
+	@modifier two-line 
+*/
+/* .list--two-line {} */
+
+/* .list--two-line .list__row {} */
+
+.list--two-line .list__item {
+    min-height: 64px;
+}
+
+/* .list--two-line .list__text {} */
+
+/* .list--two-line .list__action {} */
+
+.list--two-line .list__icon {
+    margin-top: 16px;
+    margin-bottom: calc(72px - 16px - 24px);
+}
+
+/* .list--two-line .list__thumb {} */
+
+/* .list--two-line .list__supporting {} */
+
+/* .list--two-line .list__text-primary {} */
+
+/* .list--two-line .list__text-secondary {} */
+
+/* .list--two-line .list__meta {} */
+
+/* .list--two-line .list__text-overline {} */
+
+.list--two-line .list__thumb--circle {
+    margin-top: 16px;
+    margin-bottom: calc(72px - 16px - 40px);
+}
+
+.list--two-line .list__thumb--square {
+    width: 40px;
+    height: 40px;
+    margin-top: 16px;
+    margin-bottom: calc(72px - 16px - 40px);
+}
+
+/* .list--two-line .list__thumb--rectangle {} */
+
+/* 
+	@modifier three-line 
+*/
+/* .list--three-line {} */
+
+/* .list--three-line .list__row {} */
+
+.list--three-line .list__item {
+    height: 88px;
+}
+
+/* .list--three-line .list__text {} */
+
+.list--three-line .list__action {
+    margin-top: 16px;
+    margin-bottom: calc(88px - 16px - 24px);
+}
+
+.list--three-line .list__icon {
+    margin-top: 16px;
+    margin-bottom: calc(88px - 16px - 24px);
+}
+
+/* .list--three-line .list__thumb {} */
+
+/* .list--three-line .list__supporting {} */
+
+/* .list--three-line .list__text-primary {} */
+
+.list--three-line .list__text-secondary {
+    height: 40px;
+    overflow: hidden;
+}
+
+/* .list--three-line .list__meta {} */
+
+/* .list--three-line .list__text-overline {} */
+
+.list--three-line .list__text-overline ~ .list__text-secondary {
+    height: 20px;
+}
+
+.list--three-line .list__thumb--circle {
+    margin-top: 16px;
+    margin-bottom: calc(88px - 16px - 40px);
+}
+
+.list--three-line .list__thumb--square {
+    width: 40px;
+    height: 40px;
+    margin-top: 16px;
+    margin-bottom: calc(88px - 16px - 40px);
+}
+
+.list--three-line .list__thumb--rectangle {
+    margin-top: 16px;
+    margin-bottom: calc(88px - 16px - 56px);
+    margin-right: 20px;
+}
+
+/* 
+	@modifier with-action 
+*/
+/* .list--with-action {} */
+
+/* .list--with-action .list__row {} */
+
+/* .list--with-action .list__item {} */
+
+/* .list--with-action .list__text {} */
+
+/* .list--with-action .list__action {} */
+
+/* .list--with-action .list__icon {} */
+
+/* .list--with-action .list__thumb {} */
+
+/* .list--with-action .list__supporting {} */
+
+/* .list--with-action .list__text-primary {} */
+
+/* .list--with-action .list__text-secondary {} */
+
+/* .list--with-action .list__meta {} */
+
+/* .list--with-action .list__text-overline {} */
+
+/* .list--with-action .list__thumb--circle {} */
+
+/* .list--with-action .list__thumb--square {} */
+
+/* .list--with-action .list__thumb--rectangle {} */
+
+/* 
+    @component list
+*/
+.list .list {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.list__divider {
+    height: 1px;
+    margin: 8px 0 7px 0;
+    background-color: var(--color-black-12);
+}
+
+.list__subheader {
+    display: flex;
+    align-items: center;
+    height: 48px;
+    padding: 0 16px;
+    font-weight: 400; font-size: 14px; line-height: 20px;
+}
+
+.list__divider ~ .list__subheader {
+    margin-top: -8px;
+}
+.list__subheader ~ .list {
+    margin-top: -12px;
+}
+
+/* 
+	@state ripple 
+*/
+.list--with-action .list__item {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    user-select: none;
+}
+.list--with-action .list__item::after {
+    content: "";
+    position: absolute;
+    overflow: hidden;
+    pointer-events: none;
+    left: var(--ripple-left, 50%);
+    top: var(--ripple-top, 50%);
+    width: var(--ripple-circumference, 141.4213562373095%);
+    padding-top: var(--ripple-circumference, 141.4213562373095%);
+    border-radius: 50%;
+    transform: translate3d(-50%, -50%, 0) translate3d(var(--ripple-translateX, 0), var(--ripple-translateY, 0), 0);
+    background-color: var(--color-on-surface);
+    opacity: 0;
+}
+
+.list--with-action .list__item[disabled] {
+    cursor: default;
+    pointer-events: none;
+    opacity: 0.38;
+}
+.list--with-action .list__item[disabled]::after {
+    opacity: 0;
+}
+
+/* .list--with-action .list__item:hover {} */
+.list--with-action .list__item:hover::after {
+    opacity: 0.04;
+}
+
+/* .list--with-action .list__item:focus {} */
+.list--with-action .list__item:focus::after {
+    opacity: 0.12;
+    animation: var(--ripple-animation, ripple-out) 300ms ease-in-out forwards;
+}
+
+/* .list--with-action .list__item.list--with-action .list__item--filter[selected] {} */
+.list--with-action .list__item.list--with-action .list__item--filter:not([selected]):focus:not(:active)::after {
+    --ripple-left: 50%;
+    --ripple-top: 50%;
+    /* --ripple-circumference: 83.33333333333334%; */
+    --ripple-translateX: 0;
+    --ripple-translateY: 0;
+    --ripple-animation: ripple-in;
+}
+.list--with-action .list__item.list--with-action .list__item--filter[selected]::after {
+    background-color: var(--color-primary);
+    opacity: 0.08;
+    animation-name: ripple-out;
+    animation-fill-mode: backwards;
+}
+
+.list--with-action .list__item[activated] {
+    color: var(--color-primary);
+}
+.list--with-action .list__item:not([activated]):focus:not(:active)::after {
+    --ripple-left: 50%;
+    --ripple-top: 50%;
+    /* --ripple-circumference: 83.33333333333334%; */
+    --ripple-translateX: 0;
+    --ripple-translateY: 0;
+    --ripple-animation: ripple-in;
+}
+.list--with-action .list__item[activated]::after {
+    background-color: var(--color-primary);
+    opacity: 0.12;
+    animation-name: ripple-out;
+    animation-fill-mode: backwards;
+}
+
+/* .list--with-action .list__item:active {} */
+.list--with-action .list__item:active::after {
+    opacity: 0.16;
+}
+
+/* .list--with-action .list__item[dragged] {} */
+.list--with-action .list__item[dragged]::after {
+    opacity: 0.08;
+}

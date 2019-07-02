@@ -3,20 +3,27 @@
 */
 .dialog {
     position: fixed;
+    display: flex;
     left: 50%;
     top: 50%;
-    transform: translate3d(-50%, -50%, 0);
     z-index: 24;
-    display: inline-flex;
-    flex-direction: column;
-    min-width: calc(56px * 5);
+    transform: translate3d(-50%, -50%, 0);
     width: 280px;
+}
+
+/* 
+@block surface
+*/
+.dialog__surface {
+    display: flex;
+    flex-direction: column;
     overflow: hidden;
+    flex: 1;
     border-radius: 4px;
     background-color: var(--color-surface);
     color: var(--color-unfocused-on-light);
-    /* 24 */
     box-shadow: 0 11px 15px -7px var(--color-black-20), 0 24px 38px 3px var(--color-black-14), 0 9px 46px 8px var(--color-black-12);
+    /* 24 */
 }
 
 /* 
@@ -24,7 +31,6 @@
 */
 .dialog__header {
     display: flex;
-    min-height: 64px;
 }
 
 /* 
@@ -33,20 +39,20 @@
 .dialog__title {
     margin: calc((64px - 28px) / 2) 24px;
     font-weight: 500; font-size: 20px; line-height: 28px;
-    color: var(--color-focused-on-light);
 }
 
 /* 
 	@element body 
 */
 .dialog__body {
+    overflow: hidden auto;
     flex: 1;
     padding: 24px 24px 0 24px;
     font-weight: 400; font-size: 16px; line-height: 24px;
 }
 
 .dialog__header ~ .dialog__body {
-    margin-top: -24px;
+    padding-top: 0;
 }
 
 /* 
@@ -54,10 +60,9 @@
 */
 .dialog__action-group {
     display: flex;
-    align-items: center;
     justify-content: flex-end;
     flex-wrap: wrap;
-    padding: 2px 8px;
+    padding: 2px 8px 2px 8px;
 }
 
 .dialog__body ~ .dialog__action-group {
@@ -68,10 +73,7 @@
 	@element action 
 */
 .dialog__action {
-    margin: 6px 0;
-}
-.dialog__action + .dialog__action {
-    margin-left: 8px;
+    margin: 6px 0 6px 8px;
 }
 
 /* 
@@ -93,7 +95,43 @@
     @component list
 */
 .dialog .list {
+    margin-left: calc(0px - 16px);
+    margin-right: calc(0px - 16px);
     padding-top: 0;
-    margin-left: -16px;
-    margin-right: -16px;
+}
+
+/* 
+    @modifier scrollable
+*/
+.dialog--scrollable .dialog__body {
+    box-shadow: inset 0 1px 0 0 var(--color-black-12);
+}
+.dialog--scrollable .dialog__action-group {
+    box-shadow: inset 0 1px 0 0 var(--color-black-12);
+}
+
+/* 
+    @modifier closed
+*/
+.dialog {
+    transition: opacity 150ms ease-in-out;
+}
+.dialog__surface {
+    transition: transform 150ms ease-in-out;
+    transform: scale(1);
+}
+.dialog-scrim {
+    transition: opacity 150ms ease-in-out;
+}
+
+.dialog--closed {
+    pointer-events: none;
+    opacity: 0;
+}
+.dialog--closed .dialog__surface {
+    transform: scale(.9);
+}
+.dialog--closed ~ .dialog-scrim {
+    pointer-events: none;
+    opacity: 0;
 }

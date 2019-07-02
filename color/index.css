@@ -1,19 +1,19 @@
-/* 
-	@undefined undefined 
-*/
 :root {
-    --color-primary: #6200ee;
-    --color-secondary: #03dac6;
-    --color-surface: #ffffff;
+    /* --color-primary: #6200ee; */
+    --color-primary: #3F51B5;
+    /* --color-secondary: #03dac6; */
+    --color-secondary: #FF4081;
     --color-background: #ffffff;
+    --color-surface: #ffffff;
     --color-error: #b00020;
     
     --color-on-primary: #ffffff;
-    --color-on-secondary: #000000;
-    --color-on-surface: #000000;
+    /* --color-on-secondary: #000000; */
+    --color-on-secondary: #ffffff;
     --color-on-background: #000000;
+    --color-on-surface: #000000;
     --color-on-error: #ffffff;
-    
+
     --color-focused-on-light: rgba(0, 0, 0, 0.87);
     --color-unfocused-on-light: rgba(0, 0, 0, 0.54);
     --color-inactive-on-light: rgba(0, 0, 0, 0.38);
@@ -22,14 +22,13 @@
     --color-unfocused-on-dark: rgba(255, 255, 255, 0.70);
     --color-inactive-on-dark: rgba(255, 255, 255, 0.50);
     
-    /* spec not found, but required */
-
     --color-black-20: rgba(0, 0, 0, 0.20);
     --color-black-14: rgba(0, 0, 0, 0.14);
     --color-black-12: rgba(0, 0, 0, 0.12);
-    --color-black-32: rgba(0, 0, 0, 0.32);
+    
     --color-black-04: rgba(0, 0, 0, 0.04);
+    --color-black-32: rgba(0, 0, 0, 0.32);
     --color-black-90: rgba(97, 97, 97, 0.90);
-
-    --color-primary-54: rgba(98, 0, 238, 0.54);
+    /* --color-primary-54: rgba(98, 0, 238, 0.54); */
+    --color-primary-54: rgba(63, 81, 181, 0.54);
 }

@@ -3,20 +3,77 @@
 */
 .menu {
     display: inline-flex;
-    flex-direction: column;
-    overflow: hidden;
+    overflow: hidden auto;
+    position: fixed;
+    z-index: 8;
+    left: 0;
+    top: 0;
     min-width: calc(56px * 2);
     max-width: calc(56px * 5);
     border-radius: 4px;
     background-color: var(--color-surface);
-    color: var(--color-on-surface);
+    color: var(--color-focused-on-light);
     box-shadow: 0 5px 5px -3px var(--color-black-20), 0 8px 10px 1px var(--color-black-14), 0 3px 14px 2px var(--color-black-12);
+    /* 8 */
 }
 
 /* 
-	@component list 
+	@blockGroup scrim 
 */
-.menu .list {}
+.menu-scrim {
+    position: fixed;
+    z-index: 7;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    /* background-color: var(--color-black-32); */
+    background-color: transparent;
+}
+
+/* .menu-scrim .menu {} */
+
+/* .menu-scrim .menu--closed {} */
+
+/* 
+	@modifier closed 
+*/
+.menu {
+    transform: scale(1);
+    transform-origin: top left;
+    transition: 
+    opacity 200ms ease-in-out,
+    transform 200ms ease-in-out;
+}
+.menu .list {
+    transform: scale(1);
+    transition: transform 200ms ease-in-out;
+}
+.menu-scrim {
+    transition: opacity 200ms ease-in-out;
+}
+
+.menu--closed {
+    pointer-events: none;
+    transform: scale(0);
+    opacity: 0;
+}
+.menu--closed .list {
+    transform: scale(2);
+}
+.menu--closed ~ .menu-scrim {
+    pointer-events: none;
+    opacity: 0;
+}
+
+/* 
+    @component list
+*/
+.menu .list {
+    flex: 1;
+}
+
+/* .menu .list__item {} */
 
 .menu .list__text {
     font-weight: 400; font-size: 14px; line-height: 20px;

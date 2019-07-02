@@ -1,15 +1,16 @@
 class Ripple {
 
     constructor(element, options = {}) {
-        this.options = Object.assign({}, {}, options)
+        this.options = options
         this.trigger = element
         this.delegate = this.options.delegate || element
 
         this.trigger.setAttribute("tabindex", 0)
         
         this.trigger.addEventListener("pointerdown", this.pointerdown.bind(this))
+        this.delegate.addEventListener("animationend", this.animationend.bind(this))
     }
-
+    
     pointerdown(event) {
         let delegate = this.delegate
 
@@ -29,15 +30,32 @@ class Ripple {
         delegate.style.setProperty("--ripple-translateX", `${translateX * 100}%`)
         delegate.style.setProperty("--ripple-translateY", `${translateY * 100}%`)
     }
+    
+    animationend(event) {
+        let delegate = this.delegate
+    
+        delegate.style.removeProperty("--ripple-circumference")
+        delegate.style.removeProperty("--ripple-left")
+        delegate.style.removeProperty("--ripple-top")
+        delegate.style.removeProperty("--ripple-translateX")
+        delegate.style.removeProperty("--ripple-translateY")
+    }
 }
 
+document.querySelectorAll(".ripple").forEach(element => new Ripple(element))
 document.querySelectorAll(".button").forEach(element => new Ripple(element))
 document.querySelectorAll(".fab").forEach(element => new Ripple(element))
 document.querySelectorAll(".chip").forEach(element => new Ripple(element))
-document.querySelectorAll(".bottom-navigation").forEach(element => new Ripple(element))
 document.querySelectorAll(".tab").forEach(element => new Ripple(element))
+document.querySelectorAll(".bottom-navigation").forEach(element => new Ripple(element))
 document.querySelectorAll(".list--with-action .list__item").forEach(element => new Ripple(element))
-document.querySelectorAll(".text-field__icon").forEach(element => new Ripple(element, {
+document.querySelectorAll(".text-field").forEach(element => new Ripple(element.querySelector(".text-field__input"), {
+    delegate: element.querySelector(".text-field__surface")
+}))
+document.querySelectorAll(".text-field__icon--control").forEach(element => new Ripple(element, {
+    circumference: 40
+}))
+document.querySelectorAll(".card__toolbar-action").forEach(element => new Ripple(element, {
     circumference: 40
 }))
 document.querySelectorAll(".top-app-bar__action").forEach(element => new Ripple(element, {
@@ -47,6 +65,9 @@ document.querySelectorAll(".side-sheet__action").forEach(element => new Ripple(e
     circumference: 40
 }))
 document.querySelectorAll(".bottom-sheet__action").forEach(element => new Ripple(element, {
+    circumference: 40
+}))
+document.querySelectorAll(".bottom-app-bar__action").forEach(element => new Ripple(element, {
     circumference: 40
 }))
 document.querySelectorAll(".checkbox").forEach(element => new Ripple(element.querySelector(".checkbox__input"), {
@@ -61,6 +82,24 @@ document.querySelectorAll(".switch").forEach(element => new Ripple(element.query
     delegate: element.querySelector(".switch__thumb"),
     circumference: 40
 }))
-document.querySelectorAll(".text-field").forEach(element => new Ripple(element.querySelector(".text-field__input"), {
-    delegate: element.querySelector(".text-field__container")
-}))
+
+document.querySelectorAll(".ripple--filter").forEach(element => {
+    element.addEventListener("click", event => {
+        if (element.hasAttribute("selected")) {
+            element.removeAttribute("selected")
+        } else {
+            element.setAttribute("selected", "")
+        }
+    })
+})
+
+document.querySelectorAll(".ripple--choice").forEach(element => {
+    element.addEventListener("click", event => {
+        element.parentNode.querySelectorAll(".ripple--choice").forEach(element => element.removeAttribute("activated"))
+        if (element.hasAttribute("activated")) {
+            element.removeAttribute("activated")
+        } else {
+            element.setAttribute("activated", "")
+        }
+    })
+})

@@ -1,2 +1,154 @@
-@import "./component.css";
-@import "./state.css";
+/* 
+	@block bottom-navigation 
+*/
+.bottom-navigation {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    flex: 1;
+    min-width: 80px;
+    max-width: 168px;
+    height: 56px;
+    padding: 0 12px;
+}
+
+/* 
+	@element icon 
+*/
+.bottom-navigation__icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+    width: 24px;
+    height: 24px;
+    margin: calc((56px - 24px) / 2) 0;
+    font: 400 18px/1 'Segoe MDL2 Assets';
+}
+
+/* 
+	@element text 
+*/
+.bottom-navigation__text {
+    font-weight: 400; 
+    font-size: 0; 
+    line-height: 0;
+}
+
+.bottom-navigation[activated] .bottom-navigation__icon {
+    margin-top: 8px;
+}
+.bottom-navigation[activated] .bottom-navigation__text {
+    margin: -16px 0 12px 0;
+    font-size: 12px; 
+    line-height: 1;
+}
+
+/* 
+	@blockGroup bar 
+*/
+.bottom-navigation-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    z-index: 8;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: var(--color-surface);
+    color: var(--color-primary);
+    box-shadow: 0 5px 5px -3px var(--color-black-20), 0 8px 10px 1px var(--color-black-14), 0 3px 14px 2px var(--color-black-12);
+    /* 8 */
+}
+
+/* .bottom-navigation-bar .bottom-navigation {} */
+
+/* 
+	@state ripple 
+*/
+.bottom-navigation {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    user-select: none;
+}
+.bottom-navigation::after {
+    content: "";
+    position: absolute;
+    overflow: hidden;
+    pointer-events: none;
+    left: var(--ripple-left, 50%);
+    top: var(--ripple-top, 50%);
+    width: var(--ripple-circumference, 141.4213562373095%);
+    padding-top: var(--ripple-circumference, 141.4213562373095%);
+    border-radius: 50%;
+    transform: translate3d(-50%, -50%, 0) translate3d(var(--ripple-translateX, 0), var(--ripple-translateY, 0), 0);
+    background-color: var(--color-primary);
+    opacity: 0;
+}
+
+.bottom-navigation[disabled] {
+    cursor: default;
+    pointer-events: none;
+    opacity: 0.38;
+}
+.bottom-navigation[disabled]::after {
+    opacity: 0;
+}
+
+/* .bottom-navigation:hover {} */
+.bottom-navigation:hover::after {
+    opacity: 0.04;
+}
+
+/* .bottom-navigation:focus {} */
+.bottom-navigation:focus::after {
+    opacity: 0.12;
+    animation: var(--ripple-animation, ripple-out) 300ms ease-in-out forwards;
+}
+
+/* .bottom-navigation.bottom-navigation--filter[selected] {} */
+.bottom-navigation.bottom-navigation--filter:not([selected]):focus:not(:active)::after {
+    --ripple-left: 50%;
+    --ripple-top: 50%;
+    /* --ripple-circumference: 83.33333333333334%; */
+    --ripple-translateX: 0;
+    --ripple-translateY: 0;
+    --ripple-animation: ripple-in;
+}
+.bottom-navigation.bottom-navigation--filter[selected]::after {
+    background-color: var(--color-primary);
+    opacity: 0.08;
+    animation-name: ripple-out;
+    animation-fill-mode: backwards;
+}
+
+.bottom-navigation.bottom-navigation--choice[activated] {
+    color: var(--color-primary);
+}
+.bottom-navigation.bottom-navigation--choice:not([activated]):focus:not(:active)::after {
+    --ripple-left: 50%;
+    --ripple-top: 50%;
+    /* --ripple-circumference: 83.33333333333334%; */
+    --ripple-translateX: 0;
+    --ripple-translateY: 0;
+    --ripple-animation: ripple-in;
+}
+.bottom-navigation.bottom-navigation--choice[activated]::after {
+    background-color: var(--color-primary);
+    opacity: 0.12;
+    animation-name: ripple-out;
+    animation-fill-mode: backwards;
+}
+
+/* .bottom-navigation:active {} */
+.bottom-navigation:active::after {
+    opacity: 0.16;
+}
+
+/* .bottom-navigation[dragged] {} */
+.bottom-navigation[dragged]::after {
+    opacity: 0.08;
+}

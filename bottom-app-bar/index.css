@@ -1,0 +1,320 @@
+/* 
+	@block bottom-app-bar 
+*/
+.bottom-app-bar {
+    display: flex;
+    position: fixed;
+    z-index: 4;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 56px;
+    background-color: var(--color-primary);
+    color: var(--color-on-primary);
+    box-shadow: 0 2px 4px -1px var(--color-black-20), 0 4px 5px 0 var(--color-black-14), 0 1px 10px 0 var(--color-black-12);
+    /* 4 */
+}
+
+/* 
+	@element surface 
+*/
+.bottom-app-bar__surface {
+    display: flex;
+    flex: 1;
+}
+
+/* 
+	@element section 
+*/
+.bottom-app-bar__section {
+    display: flex;
+}
+
+/* 
+	@elementModifier start 
+*/
+.bottom-app-bar__section--start {
+    flex: 1;
+}
+
+/* 
+	@elementModifier center 
+*/
+/* .bottom-app-bar__section--center {} */
+
+/* 
+	@elementModifier end 
+*/
+.bottom-app-bar__section--end {
+    justify-content: flex-end;
+}
+
+/* 
+	@element action 
+*/
+.bottom-app-bar__action {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+    width: 24px;
+    height: 24px;
+    margin: calc((56px - 24px) / 2) 16px;
+    font: 400 18px/1 'Segoe MDL2 Assets';
+}
+
+.bottom-app-bar__action + .bottom-app-bar__action {
+    margin-left: calc(24px - 16px);
+}
+
+/* 
+	@elementModifier navigation 
+*/
+/* .bottom-app-bar__action--navigation {} */
+
+/* 
+	@elementModifier menu 
+*/
+/* .bottom-app-bar__action--menu {} */
+
+/* 
+    @component fab
+*/
+.bottom-app-bar .fab {
+    position: absolute;
+    left: calc(50% - (56px / 2));
+    top: calc(0% - (56px / 2));
+}
+
+/* 
+	@modifier fab-end 
+*/
+/* .bottom-app-bar--fab-end {} */
+
+.bottom-app-bar--fab-end .fab {
+    left: calc(100% - 56px - 16px);
+}
+
+/* .bottom-app-bar--fab-end .bottom-app-bar__surface {} */
+
+/* .bottom-app-bar--fab-end .bottom-app-bar__section {} */
+
+/* .bottom-app-bar--fab-end .bottom-app-bar__action {} */
+
+/* .bottom-app-bar--fab-end .bottom-app-bar__section--start {} */
+
+/* .bottom-app-bar--fab-end .bottom-app-bar__action--navigation {} */
+
+/* .bottom-app-bar--fab-end .bottom-app-bar__section--center {} */
+
+/* .bottom-app-bar--fab-end .bottom-app-bar__section--end {} */
+
+/* .bottom-app-bar--fab-end .bottom-app-bar__action--menu {} */
+
+/* 
+	@modifier fab-cut 
+*/
+.bottom-app-bar--fab-cut {
+    background-color: transparent;
+    box-shadow: none;
+}
+
+.bottom-app-bar--fab-cut::before {
+    content: "";
+    position: absolute;
+    z-index: -2;
+    width: calc(50% - (72px / 2));
+    height: 100%;
+    left: 0;
+    top: 0;
+    box-shadow: 0 2px 4px -1px var(--color-black-20), 0 4px 5px 0 var(--color-black-14), 0 1px 10px 0 var(--color-black-12);
+}
+
+.bottom-app-bar--fab-cut::after {
+    content: "";
+    position: absolute;
+    z-index: -2;
+    width: calc(50% - (72px / 2));
+    height: 100%;
+    left: calc(50% + (72px / 2));
+    top: 0;
+    box-shadow: 0 2px 4px -1px var(--color-black-20), 0 4px 5px 0 var(--color-black-14), 0 1px 10px 0 var(--color-black-12);
+}
+
+.bottom-app-bar--fab-cut .bottom-app-bar__surface {
+    position: relative;
+    overflow: hidden;
+}
+
+.bottom-app-bar--fab-cut .bottom-app-bar__surface::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    left: calc(50% - (72px / 2));
+    top: calc(0% - (72px / 2));
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    box-shadow: 0 0 0 9999px var(--color-primary);
+}
+
+.bottom-app-bar--fab-cut .bottom-app-bar__surface::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    left: calc(50% - (72px / 2));
+    top: calc(0% - (72px / 2));
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    box-shadow: 
+    inset 0 2px 4px -1px var(--color-black-20), 
+    inset 0 4px 5px 0 var(--color-black-14), 
+    inset 0 1px 10px 0 var(--color-black-12);
+}
+
+/* .bottom-app-bar--fab-cut .bottom-app-bar__section {} */
+
+/* .bottom-app-bar--fab-cut .bottom-app-bar__action {} */
+
+/* .bottom-app-bar--fab-cut .bottom-app-bar__section--start {} */
+
+/* .bottom-app-bar--fab-cut .bottom-app-bar__action--navigation {} */
+
+/* .bottom-app-bar--fab-cut .bottom-app-bar__section--center {} */
+
+/* .bottom-app-bar--fab-cut .bottom-app-bar__section--end {} */
+
+/* .bottom-app-bar--fab-cut .bottom-app-bar__action--menu {} */
+
+/* 
+    @modifier fab-end 
+	@modifier fab-cut 
+*/
+/* .bottom-app-bar--fab-end.bottom-app-bar--fab-cut {} */
+
+.bottom-app-bar--fab-end.bottom-app-bar--fab-cut::before {
+    width: calc(100% - 72px - 16px);
+}
+
+.bottom-app-bar--fab-end.bottom-app-bar--fab-cut::after {
+    width: 16px;
+    left: calc(100% - 16px);
+}
+
+.bottom-app-bar--fab-end.bottom-app-bar--fab-cut .fab {
+    left: calc(100% - 56px - 16px - 8px);
+}
+
+/* .bottom-app-bar--fab-end.bottom-app-bar--fab-cut .bottom-app-bar__surface {} */
+
+.bottom-app-bar--fab-end.bottom-app-bar--fab-cut .bottom-app-bar__surface::before {
+    left: calc(100% - 72px - 16px);
+}
+
+.bottom-app-bar--fab-end.bottom-app-bar--fab-cut .bottom-app-bar__surface::after {
+    left: calc(100% - 72px - 16px);
+}
+
+/* .bottom-app-bar--fab-end.bottom-app-bar--fab-cut .bottom-app-bar__section {} */
+
+/* .bottom-app-bar--fab-end.bottom-app-bar--fab-cut .bottom-app-bar__action {} */
+
+/* .bottom-app-bar--fab-end.bottom-app-bar--fab-cut .bottom-app-bar__section--start {} */
+
+/* .bottom-app-bar--fab-end.bottom-app-bar--fab-cut .bottom-app-bar__action--navigation {} */
+
+/* .bottom-app-bar--fab-end.bottom-app-bar--fab-cut .bottom-app-bar__section--center {} */
+
+/* .bottom-app-bar--fab-end.bottom-app-bar--fab-cut .bottom-app-bar__section--end {} */
+
+/* .bottom-app-bar--fab-end.bottom-app-bar--fab-cut .bottom-app-bar__action--menu {} */
+
+/* 
+	@state ripple 
+*/
+.bottom-app-bar__action {
+    --ripple-circumference: 166.66666666666669%;
+    position: relative;
+    /* overflow: hidden; */
+    cursor: pointer;
+    user-select: none;
+}
+.bottom-app-bar__action::after {
+    content: "";
+    position: absolute;
+    overflow: hidden;
+    pointer-events: none;
+    left: var(--ripple-left, 50%);
+    top: var(--ripple-top, 50%);
+    width: var(--ripple-circumference, 141.4213562373095%);
+    padding-top: var(--ripple-circumference, 141.4213562373095%);
+    border-radius: 50%;
+    transform: translate3d(-50%, -50%, 0) translate3d(var(--ripple-translateX, 0), var(--ripple-translateY, 0), 0);
+    background-color: var(--color-on-primary);
+    opacity: 0;
+}
+
+.bottom-app-bar__action[disabled] {
+    cursor: default;
+    pointer-events: none;
+    opacity: 0.38;
+}
+.bottom-app-bar__action[disabled]::after {
+    opacity: 0;
+}
+
+/* .bottom-app-bar__action:hover {} */
+.bottom-app-bar__action:hover::after {
+    opacity: 0.08;
+}
+
+/* .bottom-app-bar__action:focus {} */
+.bottom-app-bar__action:focus::after {
+    opacity: 0.24;
+    animation: var(--ripple-animation, ripple-out) 300ms ease-in-out forwards;
+}
+
+/* .bottom-app-bar__action.bottom-app-bar__action--filter[selected] {} */
+.bottom-app-bar__action.bottom-app-bar__action--filter:not([selected]):focus:not(:active)::after {
+    --ripple-left: 50%;
+    --ripple-top: 50%;
+    /* --ripple-circumference: 83.33333333333334%; */
+    --ripple-translateX: 0;
+    --ripple-translateY: 0;
+    --ripple-animation: ripple-in;
+}
+.bottom-app-bar__action.bottom-app-bar__action--filter[selected]::after {
+    background-color: var(--color-primary);
+    opacity: 0.16;
+    animation-name: ripple-out;
+    animation-fill-mode: backwards;
+}
+
+.bottom-app-bar__action.bottom-app-bar__action--choice[activated] {
+    color: var(--color-primary);
+}
+.bottom-app-bar__action.bottom-app-bar__action--choice:not([activated]):focus:not(:active)::after {
+    --ripple-left: 50%;
+    --ripple-top: 50%;
+    /* --ripple-circumference: 83.33333333333334%; */
+    --ripple-translateX: 0;
+    --ripple-translateY: 0;
+    --ripple-animation: ripple-in;
+}
+.bottom-app-bar__action.bottom-app-bar__action--choice[activated]::after {
+    background-color: var(--color-primary);
+    opacity: 0.24;
+    animation-name: ripple-out;
+    animation-fill-mode: backwards;
+}
+
+/* .bottom-app-bar__action:active {} */
+.bottom-app-bar__action:active::after {
+    opacity: 0.32;
+}
+
+/* .bottom-app-bar__action[dragged] {} */
+.bottom-app-bar__action[dragged]::after {
+    opacity: 0.16;
+}
