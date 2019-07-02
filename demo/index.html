@@ -10,7 +10,19 @@
 </head>
 
 <body>
+
+    <wk-element text="Ndiing"></wk-element>
+
     <script src="../index.js" type="module"></script>
+    <script>
+        let el = document.querySelector("wk-element")
+
+        el.addEventListener("onClick", event => {
+            console.log(event)
+
+            el.text = "Babe"
+        })
+    </script>
 </body>
 
 </html>
