@@ -52,6 +52,13 @@ document.querySelectorAll(".list--with-action .list__item").forEach(element => n
 document.querySelectorAll(".text-field").forEach(element => new Ripple(element.querySelector(".text-field__input"), {
     delegate: element.querySelector(".text-field__surface")
 }))
+document.querySelectorAll(".picker__title-action").forEach(element => new Ripple(element, {
+    circumference: 28
+}))
+document.querySelectorAll(".picker__action").forEach(element => new Ripple(element, {
+    circumference: 28
+}))
+document.querySelectorAll(".picker__grid:not(.picker__grid--week) .picker__column").forEach(element => new Ripple(element))
 document.querySelectorAll(".text-field__icon--control").forEach(element => new Ripple(element, {
     circumference: 40
 }))

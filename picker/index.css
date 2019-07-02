@@ -1,0 +1,426 @@
+/* 
+	@block picker 
+*/
+.picker {
+    display: inline-flex;
+    flex-direction: column;
+    border-radius: 4px;
+    background-color: var(--color-surface);
+    color: var(--color-focused-on-light);
+    box-shadow: 0 2px 1px -1px var(--color-black-20), 0 1px 1px 0 var(--color-black-14), 0 1px 3px 0 var(--color-black-12);
+    /* 1 */
+}
+
+/* 
+	@element header 
+*/
+.picker__header {
+    display: flex;
+    align-items: center;
+}
+
+/* 
+	@element section 
+*/
+.picker__section {
+    display: flex;
+}
+
+/* 
+	@elementModifier start 
+*/
+.picker__section--start {
+    flex: 1;
+}
+
+/* 
+	@elementModifier end 
+*/
+.picker__section--end {
+    justify-content: flex-end;
+    margin-left: auto;
+}
+
+/* 
+	@element title 
+*/
+.picker__title {
+    display: inline-flex;
+    align-items: center;
+    font-weight: 500; font-size: 14px; line-height: 20px;
+}
+
+/* 
+	@element title-text 
+*/
+.picker__title-text {
+    margin: 16px 4px 12px 24px;
+}
+
+/* 
+	@element title-action 
+*/
+.picker__title-action {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+    width: 24px;
+    height: 24px;
+    margin: 16px 0 12px 0;
+    font: 400 10px/1 'Segoe MDL2 Assets';
+}
+
+/* 
+	@element action 
+*/
+.picker__action {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+    width: 24px;
+    height: 24px;
+    margin: 16px 8px 12px 8px;
+    font: 400 12px/1 'Segoe MDL2 Assets';
+}
+
+.picker__action + .picker__action {
+    margin-left: calc(24px - 8px);
+}
+
+/* 
+	@element body 
+*/
+/* .picker__body {} */
+
+/* 
+	@element grid 
+*/
+.picker__grid {
+    display: grid;
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+    font-weight: 400; font-size: 12px; line-height: 16px;
+}
+
+/* 
+	@elementModifier week 
+*/
+.picker__grid--week {
+    margin: 0 16px;
+}
+
+/* 
+	@elementModifier day 
+*/
+.picker__grid--day {
+    margin: 0 16px 8px 16px;
+}
+
+/* 
+	@elementModifier year 
+*/
+.picker__grid--year {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    margin: 4px 20px 8px 12px;
+}
+
+/* 
+	@element column 
+*/
+.picker__column {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: calc(32px - (2px * 2));
+    height: calc(32px - (2px * 2));
+    margin: 2px;
+    border-radius: 50%;
+}
+
+.picker__grid--week .picker__column {
+    height: calc(36px - (2px * 2));
+}
+
+.picker__grid--year .picker__column {
+    width: calc(56px - (2px * 2));
+    border-radius: calc((56px - (2px * 2)) / 2);
+}
+
+.picker__column[activated] {
+    /* background-color: var(--color-primary); */
+    /* color: var(--color-on-primary); */
+    box-shadow: inset 0 0 0 1px var(--color-black-12);
+}
+.picker__column.picker__column--current {
+    background-color: var(--color-primary);
+    color: var(--color-on-primary);
+    box-shadow: none;
+}
+
+/* 
+	@state ripple 
+*/
+.picker__title-action {
+    --ripple-circumference: 116.66666666666667%;
+    position: relative;
+    /* overflow: hidden; */
+    cursor: pointer;
+    user-select: none;
+}
+.picker__title-action::after {
+    content: "";
+    position: absolute;
+    overflow: hidden;
+    pointer-events: none;
+    left: var(--ripple-left, 50%);
+    top: var(--ripple-top, 50%);
+    width: var(--ripple-circumference, 141.4213562373095%);
+    padding-top: var(--ripple-circumference, 141.4213562373095%);
+    border-radius: 50%;
+    transform: translate3d(-50%, -50%, 0) translate3d(var(--ripple-translateX, 0), var(--ripple-translateY, 0), 0);
+    background-color: var(--color-primary);
+    opacity: 0;
+}
+
+.picker__title-action[disabled] {
+    cursor: default;
+    pointer-events: none;
+    opacity: 0.38;
+}
+.picker__title-action[disabled]::after {
+    opacity: 0;
+}
+
+/* .picker__title-action:hover {} */
+.picker__title-action:hover::after {
+    opacity: 0.04;
+}
+
+/* .picker__title-action:focus {} */
+.picker__title-action:focus::after {
+    opacity: 0.12;
+    animation: var(--ripple-animation, ripple-out) 300ms ease-in-out forwards;
+}
+
+/* .picker__title-action.picker__title-action--filter[selected] {} */
+.picker__title-action.picker__title-action--filter:not([selected]):focus:not(:active)::after {
+    --ripple-left: 50%;
+    --ripple-top: 50%;
+    /* --ripple-circumference: 83.33333333333334%; */
+    --ripple-translateX: 0;
+    --ripple-translateY: 0;
+    --ripple-animation: ripple-in;
+}
+.picker__title-action.picker__title-action--filter[selected]::after {
+    background-color: var(--color-primary);
+    opacity: 0.08;
+    animation-name: ripple-out;
+    animation-fill-mode: backwards;
+}
+
+.picker__title-action.picker__title-action--choice[activated] {
+    color: var(--color-primary);
+}
+.picker__title-action.picker__title-action--choice:not([activated]):focus:not(:active)::after {
+    --ripple-left: 50%;
+    --ripple-top: 50%;
+    /* --ripple-circumference: 83.33333333333334%; */
+    --ripple-translateX: 0;
+    --ripple-translateY: 0;
+    --ripple-animation: ripple-in;
+}
+.picker__title-action.picker__title-action--choice[activated]::after {
+    background-color: var(--color-primary);
+    opacity: 0.12;
+    animation-name: ripple-out;
+    animation-fill-mode: backwards;
+}
+
+/* .picker__title-action:active {} */
+.picker__title-action:active::after {
+    opacity: 0.16;
+}
+
+/* .picker__title-action[dragged] {} */
+.picker__title-action[dragged]::after {
+    opacity: 0.08;
+}
+
+/* 
+	@state ripple 
+*/
+.picker__action {
+    --ripple-circumference: 116.66666666666667%;
+    position: relative;
+    /* overflow: hidden; */
+    cursor: pointer;
+    user-select: none;
+}
+.picker__action::after {
+    content: "";
+    position: absolute;
+    overflow: hidden;
+    pointer-events: none;
+    left: var(--ripple-left, 50%);
+    top: var(--ripple-top, 50%);
+    width: var(--ripple-circumference, 141.4213562373095%);
+    padding-top: var(--ripple-circumference, 141.4213562373095%);
+    border-radius: 50%;
+    transform: translate3d(-50%, -50%, 0) translate3d(var(--ripple-translateX, 0), var(--ripple-translateY, 0), 0);
+    background-color: var(--color-primary);
+    opacity: 0;
+}
+
+.picker__action[disabled] {
+    cursor: default;
+    pointer-events: none;
+    opacity: 0.38;
+}
+.picker__action[disabled]::after {
+    opacity: 0;
+}
+
+/* .picker__action:hover {} */
+.picker__action:hover::after {
+    opacity: 0.04;
+}
+
+/* .picker__action:focus {} */
+.picker__action:focus::after {
+    opacity: 0.12;
+    animation: var(--ripple-animation, ripple-out) 300ms ease-in-out forwards;
+}
+
+/* .picker__action.picker__action--filter[selected] {} */
+.picker__action.picker__action--filter:not([selected]):focus:not(:active)::after {
+    --ripple-left: 50%;
+    --ripple-top: 50%;
+    /* --ripple-circumference: 83.33333333333334%; */
+    --ripple-translateX: 0;
+    --ripple-translateY: 0;
+    --ripple-animation: ripple-in;
+}
+.picker__action.picker__action--filter[selected]::after {
+    background-color: var(--color-primary);
+    opacity: 0.08;
+    animation-name: ripple-out;
+    animation-fill-mode: backwards;
+}
+
+.picker__action.picker__action--choice[activated] {
+    color: var(--color-primary);
+}
+.picker__action.picker__action--choice:not([activated]):focus:not(:active)::after {
+    --ripple-left: 50%;
+    --ripple-top: 50%;
+    /* --ripple-circumference: 83.33333333333334%; */
+    --ripple-translateX: 0;
+    --ripple-translateY: 0;
+    --ripple-animation: ripple-in;
+}
+.picker__action.picker__action--choice[activated]::after {
+    background-color: var(--color-primary);
+    opacity: 0.12;
+    animation-name: ripple-out;
+    animation-fill-mode: backwards;
+}
+
+/* .picker__action:active {} */
+.picker__action:active::after {
+    opacity: 0.16;
+}
+
+/* .picker__action[dragged] {} */
+.picker__action[dragged]::after {
+    opacity: 0.08;
+}
+
+/* 
+	@state ripple 
+*/
+.picker__grid:not(.picker__grid--week) .picker__column {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    user-select: none;
+}
+.picker__grid:not(.picker__grid--week) .picker__column::after {
+    content: "";
+    position: absolute;
+    overflow: hidden;
+    pointer-events: none;
+    left: var(--ripple-left, 50%);
+    top: var(--ripple-top, 50%);
+    width: var(--ripple-circumference, 141.4213562373095%);
+    padding-top: var(--ripple-circumference, 141.4213562373095%);
+    border-radius: 50%;
+    transform: translate3d(-50%, -50%, 0) translate3d(var(--ripple-translateX, 0), var(--ripple-translateY, 0), 0);
+    background-color: var(--color-primary);
+    opacity: 0;
+}
+
+.picker__grid:not(.picker__grid--week) .picker__column[disabled] {
+    cursor: default;
+    pointer-events: none;
+    opacity: 0.38;
+}
+.picker__grid:not(.picker__grid--week) .picker__column[disabled]::after {
+    opacity: 0;
+}
+
+/* .picker__grid:not(.picker__grid--week) .picker__column:hover {} */
+.picker__grid:not(.picker__grid--week) .picker__column:hover::after {
+    opacity: 0.04;
+}
+
+/* .picker__grid:not(.picker__grid--week) .picker__column:focus {} */
+.picker__grid:not(.picker__grid--week) .picker__column:focus::after {
+    opacity: 0.12;
+    animation: var(--ripple-animation, ripple-out) 300ms ease-in-out forwards;
+}
+
+/* .picker__grid:not(.picker__grid--week) .picker__column.picker__grid:not(.picker__grid--week) .picker__column--filter[selected] {} */
+.picker__grid:not(.picker__grid--week) .picker__column.picker__grid:not(.picker__grid--week) .picker__column--filter:not([selected]):focus:not(:active)::after {
+    --ripple-left: 50%;
+    --ripple-top: 50%;
+    /* --ripple-circumference: 83.33333333333334%; */
+    --ripple-translateX: 0;
+    --ripple-translateY: 0;
+    --ripple-animation: ripple-in;
+}
+.picker__grid:not(.picker__grid--week) .picker__column.picker__grid:not(.picker__grid--week) .picker__column--filter[selected]::after {
+    background-color: var(--color-primary);
+    opacity: 0.08;
+    animation-name: ripple-out;
+    animation-fill-mode: backwards;
+}
+
+/* .picker__grid:not(.picker__grid--week) .picker__column[activated] {
+    color: var(--color-primary);
+} */
+.picker__grid:not(.picker__grid--week) .picker__column:not([activated]):focus:not(:active)::after {
+    --ripple-left: 50%;
+    --ripple-top: 50%;
+    /* --ripple-circumference: 83.33333333333334%; */
+    --ripple-translateX: 0;
+    --ripple-translateY: 0;
+    --ripple-animation: ripple-in;
+}
+.picker__grid:not(.picker__grid--week) .picker__column[activated]::after {
+    background-color: var(--color-primary);
+    /* opacity: 0.12; */
+    opacity: 0;
+    animation-name: ripple-out;
+    animation-fill-mode: backwards;
+}
+
+/* .picker__grid:not(.picker__grid--week) .picker__column:active {} */
+.picker__grid:not(.picker__grid--week) .picker__column:active::after {
+    opacity: 0.16;
+}
+
+/* .picker__grid:not(.picker__grid--week) .picker__column[dragged] {} */
+.picker__grid:not(.picker__grid--week) .picker__column[dragged]::after {
+    opacity: 0.08;
+}

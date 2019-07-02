@@ -32,7 +32,7 @@ Status | Component
 1 | list
 1 | menu
 1 | navigation-drawer
-0 | picker
+1 | picker
 1 | progress
 1 | checkbox
 1 | radio
