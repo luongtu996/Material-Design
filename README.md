@@ -1,51 +1,51 @@
 # Material Design
-Version 1.0.0
 
-### Components
-Status | Component
+Material Design is a visual language that synthesizes the classic principles of good design with the innovation of technology and science.
+
+## Components
+
+Our expanded and enhanced design system is unified with Material tools and components to improve workflow between design and development
+
+Component | Spec
 --- | ---
-2 | foundation
-2 | elevation
-2 | layout
-2 | color
-2 | typography
-2 | iconography
-2 | ripple
-1 | draggable
-1 | droppable
-1 | resizable
-1 | selectable
-1 | sortable
-2 | bottom-app-bar
-2 | top-app-bar
-1 | backdrop
-2 | banner
-2 | bottom-navigation
-2 | button
-2 | fab
-2 | card
-2 | chip
-2 | data-table
-2 | dialog
-2 | divider
-2 | image-list
-2 | list
-2 | menu
-2 | navigation-drawer
-2 | picker
-2 | progress
-2 | checkbox
-2 | radio
-2 | switch
-2 | bottom-sheet
-2 | side-sheet
-2 | slider
-2 | snackbar
-2 | tab
-2 | text-field
-2 | tooltip
-2 | demo
-
-1. Planned
-2. CSS Ready
-3. Web Component Ready
+foundation | [Design](https://material.io/design/)
+elevation | [Design](https://material.io/design/)
+layout | [Design](https://material.io/design/)
+color | [Design](https://material.io/design/)
+typography | [Design](https://material.io/design/)
+iconography | [Design](https://material.io/design/)
+ripple | [Design](https://material.io/design/)
+draggable | [Design](https://material.io/design/)
+droppable | [Design](https://material.io/design/)
+resizable | [Design](https://material.io/design/)
+selectable | [Design](https://material.io/design/)
+sortable | [Design](https://material.io/design/)
+bottom-app-bar | [Design](https://material.io/design/)
+top-app-bar | [Design](https://material.io/design/)
+backdrop | [Design](https://material.io/design/)
+banner | [Design](https://material.io/design/)
+bottom-navigation | [Design](https://material.io/design/)
+button | [Design](https://material.io/design/)
+fab | [Design](https://material.io/design/)
+card | [Design](https://material.io/design/)
+chip | [Design](https://material.io/design/)
+data-table | [Design](https://material.io/design/)
+dialog | [Design](https://material.io/design/)
+divider | [Design](https://material.io/design/)
+image-list | [Design](https://material.io/design/)
+list | [Design](https://material.io/design/)
+menu | [Design](https://material.io/design/)
+navigation-drawer | [Design](https://material.io/design/)
+picker | [Design](https://material.io/design/)
+progress | [Design](https://material.io/design/)
+checkbox | [Design](https://material.io/design/)
+radio | [Design](https://material.io/design/)
+switch | [Design](https://material.io/design/)
+bottom-sheet | [Design](https://material.io/design/)
+side-sheet | [Design](https://material.io/design/)
+slider | [Design](https://material.io/design/)
+snackbar | [Design](https://material.io/design/)
+tab | [Design](https://material.io/design/)
+text-field | [Design](https://material.io/design/)
+tooltip | [Design](https://material.io/design/)
+demo | [Design](https://material.io/design/)
