@@ -29,12 +29,12 @@ class AppComponent extends HTMLElement {
                                     <div class="list__text">Layout</div>
                                 </a>
                             </li>
-                            <li class="list__row">
+                            <!--<li class="list__row">
                                 <a href="#/color" class="list__item">
                                     <div class="list__icon">&#xE950;</div>
                                     <div class="list__text">Color</div>
                                 </a>
-                            </li>
+                            </li>-->
                             <li class="list__row">
                                 <a href="#/typography" class="list__item">
                                     <div class="list__icon">&#xE950;</div>
@@ -42,14 +42,14 @@ class AppComponent extends HTMLElement {
                                 </a>
                             </li>
                             <li class="list__row">
-                                <a href="#/iconography" class="list__item">
+                                <a href="#/icon" class="list__item">
                                     <div class="list__icon">&#xE950;</div>
-                                    <div class="list__text">Iconography</div>
+                                    <div class="list__text">Icon</div>
                                 </a>
                             </li>
                         </ul>
                     </li>
-                    <li class="list__row">
+                    <!--<li class="list__row">
                         <div class="list__divider"></div>
                         <div class="list__subheader">Interaction</div>
                         <ul class="list list--with-action">
@@ -90,7 +90,7 @@ class AppComponent extends HTMLElement {
                                 </a>
                             </li>
                         </ul>
-                    </li>
+                    </li>-->
                     <li class="list__row">
                         <div class="list__divider"></div>
                         <div class="list__subheader">Components</div>
@@ -107,12 +107,12 @@ class AppComponent extends HTMLElement {
                                     <div class="list__text">Top App Bar</div>
                                 </a>
                             </li>
-                            <li class="list__row">
+                            <!--<li class="list__row">
                                 <a href="#/backdrop" class="list__item">
                                     <div class="list__icon">&#xE950;</div>
                                     <div class="list__text">Backdrop</div>
                                 </a>
-                            </li>
+                            </li>-->
                             <li class="list__row">
                                 <a href="#/banner" class="list__item">
                                     <div class="list__icon">&#xE950;</div>

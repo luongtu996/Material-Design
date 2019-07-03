@@ -13,7 +13,7 @@ Component | Spec
 [layout](./tree/master/layout) | [Design](https://material.io/design/)
 [color](./tree/master/color) | [Design](https://material.io/design/)
 [typography](./tree/master/typography) | [Design](https://material.io/design/)
-[iconography](./tree/master/iconography) | [Design](https://material.io/design/)
+[icon](./tree/master/icon) | [Design](https://material.io/design/)
 [ripple](./tree/master/ripple) | [Design](https://material.io/design/)
 [draggable](./tree/master/draggable) | [Design](https://material.io/design/)
 [droppable](./tree/master/droppable) | [Design](https://material.io/design/)

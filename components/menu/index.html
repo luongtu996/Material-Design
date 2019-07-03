@@ -11,65 +11,11 @@
 
 <body>
 
-    <div class="button" onclick="menuOpen(this)">
-        <div class="button__text">open</div>
-    </div>
+    <iframe class="demo-iframe" src="./index.1.html" style="width: 360px;height: 640px;border: 0;"></iframe>
+    <a href="./index.1.html">./index.1.html</a>
     <br><br>
 
-    <div id="menu" class="menu menu--closed" style="height: calc((48px * 3) + (8px * 2));">
-        <ul class="list list--with-action">
-            <li class="list__row">
-                <div class="list__item">
-                    <div class="list__text">Item 1</div>
-                </div>
-            </li>
-            <li class="list__row">
-                <div class="list__item">
-                    <div class="list__text">Item 2</div>
-                </div>
-            </li>
-            <li class="list__row">
-                <div class="list__item">
-                    <div class="list__text">Item 3</div>
-                </div>
-            </li>
-            <li class="list__row">
-                <div class="list__item">
-                    <div class="list__text">Item 4</div>
-                </div>
-            </li>
-            <li class="list__row">
-                <div class="list__item">
-                    <div class="list__text">Item 5</div>
-                </div>
-            </li>
-            <li class="list__row">
-                <div class="list__item">
-                    <div class="list__text">Item 6</div>
-                </div>
-            </li>
-        </ul>
-    </div>
-    <div class="menu-scrim" onclick="menuClose(this)"></div>
-
     <script src="../index.js" type="module"></script>
-    <script>
-        function menuOpen(btn) {
-            // console.log(btn, event)
-            // console.log(btn.offsetLeft)
-            // console.log(btn.offsetTop + btn.clientHeight)
-            
-            let menu = document.querySelector("#menu");
-            menu.classList.remove("menu--closed")
-
-            menu.style.setProperty("left", `${btn.offsetLeft}px`)
-            menu.style.setProperty("top", `${btn.offsetTop + btn.clientHeight}px`)
-        }
-        function menuClose(btn) {
-            // console.log(btn, event)
-            document.querySelector("#menu").classList.add("menu--closed")
-        }
-    </script>
 </body>
 
 </html>
