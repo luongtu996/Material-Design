@@ -14,22 +14,22 @@ import LayoutComponent from "./app/layout/layout.js"
 // import ResizableComponent from "./app/resizable/resizable.js"
 // import SelectableComponent from "./app/selectable/selectable.js"
 // import SortableComponent from "./app/sortable/sortable.js"
-// import BottomAppBarComponent from "./app/bottomAppBar/bottomAppBar.js"
-// import TopAppBarComponent from "./app/topAppBar/topAppBar.js"
+import BottomAppBarComponent from "./app/bottomAppBar/bottomAppBar.js"
+import TopAppBarComponent from "./app/topAppBar/topAppBar.js"
 // import BackdropComponent from "./app/backdrop/backdrop.js"
-// import BannerComponent from "./app/banner/banner.js"
+import BannerComponent from "./app/banner/banner.js"
 // import BottomNavigationComponent from "./app/bottomNavigation/bottomNavigation.js"
 import ButtonComponent from "./app/button/button.js"
 import FabComponent from "./app/fab/fab.js"
 import CardComponent from "./app/card/card.js"
 import ChipComponent from "./app/chip/chip.js"
 import DataTableComponent from "./app/dataTable/dataTable.js"
-// import DialogComponent from "./app/dialog/dialog.js"
+import DialogComponent from "./app/dialog/dialog.js"
 // import DividerComponent from "./app/divider/divider.js"
 // import ImageListComponent from "./app/imageList/imageList.js"
 // import ListComponent from "./app/list/list.js"
 // import MenuComponent from "./app/menu/menu.js"
-// import NavigationDrawerComponent from "./app/navigationDrawer/navigationDrawer.js"
+import NavigationDrawerComponent from "./app/navigationDrawer/navigationDrawer.js"
 // import PickerComponent from "./app/picker/picker.js"
 import ProgressComponent from "./app/progress/progress.js"
 import CheckboxComponent from "./app/checkbox/checkbox.js"
@@ -57,22 +57,22 @@ new Router([
         // { path: "resizable", component: ResizableComponent },
         // { path: "selectable", component: SelectableComponent },
         // { path: "sortable", component: SortableComponent },
-        // { path: "bottom-app-bar", component: BottomAppBarComponent },
-        // { path: "top-app-bar", component: TopAppBarComponent },
+        { path: "bottom-app-bar", component: BottomAppBarComponent },
+        { path: "top-app-bar", component: TopAppBarComponent },
         // { path: "backdrop", component: BackdropComponent },
-        // { path: "banner", component: BannerComponent },
+        { path: "banner", component: BannerComponent },
         // { path: "bottom-navigation", component: BottomNavigationComponent },
         { path: "button", component: ButtonComponent },
         { path: "fab", component: FabComponent },
         { path: "card", component: CardComponent },
         { path: "chip", component: ChipComponent },
         { path: "data-table", component: DataTableComponent },
-        // { path: "dialog", component: DialogComponent },
+        { path: "dialog", component: DialogComponent },
         // { path: "divider", component: DividerComponent },
         // { path: "image-list", component: ImageListComponent },
         // { path: "list", component: ListComponent },
         // { path: "menu", component: MenuComponent },
-        // { path: "navigation-drawer", component: NavigationDrawerComponent },
+        { path: "navigation-drawer", component: NavigationDrawerComponent },
         // { path: "picker", component: PickerComponent },
         { path: "progress", component: ProgressComponent },
         { path: "checkbox", component: CheckboxComponent },
