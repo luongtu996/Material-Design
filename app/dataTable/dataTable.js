@@ -553,7 +553,7 @@ class DataTableComponent extends HTMLElement {
                         </table>
                         <div class="card__toolbar">
                             <div class="card__toolbar-section card__toolbar-section--end">
-                                <div class="card__toolbar-text">1-10 of 100</div>
+                                <div class="card__toolbar-text">1-20 of 100</div>
                                 <div class="card__toolbar-action">&#xE973;</div>
                                 <div class="card__toolbar-action">&#xE974;</div>
                             </div>
