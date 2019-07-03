@@ -6,7 +6,7 @@ class MenuComponent extends HTMLElement {
                 <div class="layout__grid">
                     <div class="layout__column layout__column--4-large layout__column--8-medium layout__column--4-small">
                     
-                        <iframe src="../components/menu/index.1.html" style="width: 360px;height: 640px;border: 0;"></iframe>
+                        <iframe src="./components/menu/index.1.html" style="width: 360px;height: 640px;border: 0;"></iframe>
 
                     </div>
                     <div class="layout__column layout__column--4-large layout__column--8-medium layout__column--4-small"></div>
