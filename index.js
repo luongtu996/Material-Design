@@ -36,12 +36,12 @@ import CheckboxComponent from "./app/checkbox/checkbox.js"
 import RadioComponent from "./app/radio/radio.js"
 import SwitchComponent from "./app/switch/switch.js"
 import BottomSheetComponent from "./app/bottomSheet/bottomSheet.js"
-// import SideSheetComponent from "./app/sideSheet/sideSheet.js"
-// import SliderComponent from "./app/slider/slider.js"
-// import SnackbarComponent from "./app/snackbar/snackbar.js"
+import SideSheetComponent from "./app/sideSheet/sideSheet.js"
+import SliderComponent from "./app/slider/slider.js"
+import SnackbarComponent from "./app/snackbar/snackbar.js"
 import TabComponent from "./app/tab/tab.js"
-// import TextFieldComponent from "./app/textField/textField.js"
-// import TooltipComponent from "./app/tooltip/tooltip.js"
+import TextFieldComponent from "./app/textField/textField.js"
+import TooltipComponent from "./app/tooltip/tooltip.js"
 
 new Router([
     { path: "", component: AppComponent, children: [
@@ -79,11 +79,11 @@ new Router([
         { path: "radio", component: RadioComponent },
         { path: "switch", component: SwitchComponent },
         { path: "bottom-sheet", component: BottomSheetComponent },
-        // { path: "side-sheet", component: SideSheetComponent },
-        // { path: "slider", component: SliderComponent },
-        // { path: "snackbar", component: SnackbarComponent },
+        { path: "side-sheet", component: SideSheetComponent },
+        { path: "slider", component: SliderComponent },
+        { path: "snackbar", component: SnackbarComponent },
         { path: "tab", component: TabComponent },
-        // { path: "text-field", component: TextFieldComponent },
-        // { path: "tooltip", component: TooltipComponent },
+        { path: "text-field", component: TextFieldComponent },
+        { path: "tooltip", component: TooltipComponent },
     ]}
 ])
