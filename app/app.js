@@ -11,12 +11,12 @@ class AppComponent extends HTMLElement {
                     <li class="list__row">
                         <div class="list__subheader">Foundation</div>
                         <ul class="list list--with-action">
-                            <li class="list__row">
+                            <!--<li class="list__row">
                                 <a href="#/foundation" class="list__item" activated>
                                     <div class="list__icon">&#xE950;</div>
                                     <div class="list__text">Foundation</div>
                                 </a>
-                            </li>
+                            </li>-->
                             <li class="list__row">
                                 <a href="#/elevation" class="list__item">
                                     <div class="list__icon">&#xE950;</div>
