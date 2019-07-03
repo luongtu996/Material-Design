@@ -1,41 +1,88 @@
-import "./foundation/index.js"
-import "./elevation/index.js"
-import "./layout/index.js"
-import "./color/index.js"
-import "./typography/index.js"
-import "./icon/index.js"
-import "./ripple/index.js"
-import "./draggable/index.js"
-import "./droppable/index.js"
-import "./resizable/index.js"
-import "./selectable/index.js"
-import "./sortable/index.js"
-import "./bottom-app-bar/index.js"
-import "./top-app-bar/index.js"
-import "./backdrop/index.js"
-import "./banner/index.js"
-import "./bottom-navigation/index.js"
-import "./button/index.js"
-import "./fab/index.js"
-import "./card/index.js"
-import "./chip/index.js"
-import "./data-table/index.js"
-import "./dialog/index.js"
-import "./divider/index.js"
-import "./image-list/index.js"
-import "./list/index.js"
-import "./menu/index.js"
-import "./navigation-drawer/index.js"
-import "./picker/index.js"
-import "./progress/index.js"
-import "./checkbox/index.js"
-import "./radio/index.js"
-import "./switch/index.js"
-import "./bottom-sheet/index.js"
-import "./side-sheet/index.js"
-import "./slider/index.js"
-import "./snackbar/index.js"
-import "./tab/index.js"
-import "./text-field/index.js"
-import "./tooltip/index.js"
-import "./demo/index.js"
+import Router from "./components/router/index.js"
+import AppComponent from "./app/app.js"
+
+import FoundationComponent from "./app/foundation/foundation.js"
+import ElevationComponent from "./app/elevation/elevation.js"
+import LayoutComponent from "./app/layout/layout.js"
+// import ColorComponent from "./app/color/color.js"
+// import TypographyComponent from "./app/typography/typography.js"
+// import IconographyComponent from "./app/iconography/iconography.js"
+// import RippleComponent from "./app/ripple/ripple.js"
+// import DraggableComponent from "./app/draggable/draggable.js"
+// import DroppableComponent from "./app/droppable/droppable.js"
+// import ResizableComponent from "./app/resizable/resizable.js"
+// import SelectableComponent from "./app/selectable/selectable.js"
+// import SortableComponent from "./app/sortable/sortable.js"
+// import BottomAppBarComponent from "./app/bottomAppBar/bottomAppBar.js"
+// import TopAppBarComponent from "./app/topAppBar/topAppBar.js"
+// import BackdropComponent from "./app/backdrop/backdrop.js"
+// import BannerComponent from "./app/banner/banner.js"
+// import BottomNavigationComponent from "./app/bottomNavigation/bottomNavigation.js"
+import ButtonComponent from "./app/button/button.js"
+// import FabComponent from "./app/fab/fab.js"
+// import CardComponent from "./app/card/card.js"
+// import ChipComponent from "./app/chip/chip.js"
+// import DataTableComponent from "./app/dataTable/dataTable.js"
+// import DialogComponent from "./app/dialog/dialog.js"
+// import DividerComponent from "./app/divider/divider.js"
+// import ImageListComponent from "./app/imageList/imageList.js"
+// import ListComponent from "./app/list/list.js"
+// import MenuComponent from "./app/menu/menu.js"
+// import NavigationDrawerComponent from "./app/navigationDrawer/navigationDrawer.js"
+// import PickerComponent from "./app/picker/picker.js"
+// import ProgressComponent from "./app/progress/progress.js"
+// import CheckboxComponent from "./app/checkbox/checkbox.js"
+// import RadioComponent from "./app/radio/radio.js"
+// import SwitchComponent from "./app/switch/switch.js"
+// import BottomSheetComponent from "./app/bottomSheet/bottomSheet.js"
+// import SideSheetComponent from "./app/sideSheet/sideSheet.js"
+// import SliderComponent from "./app/slider/slider.js"
+// import SnackbarComponent from "./app/snackbar/snackbar.js"
+// import TabComponent from "./app/tab/tab.js"
+// import TextFieldComponent from "./app/textField/textField.js"
+// import TooltipComponent from "./app/tooltip/tooltip.js"
+
+new Router([
+    { path: "", component: AppComponent, children: [
+        { path: "foundation", component: FoundationComponent },
+        { path: "elevation", component: ElevationComponent },
+        { path: "layout", component: LayoutComponent },
+        // { path: "color", component: ColorComponent },
+        // { path: "typography", component: TypographyComponent },
+        // { path: "iconography", component: IconographyComponent },
+        // { path: "ripple", component: RippleComponent },
+        // { path: "draggable", component: DraggableComponent },
+        // { path: "droppable", component: DroppableComponent },
+        // { path: "resizable", component: ResizableComponent },
+        // { path: "selectable", component: SelectableComponent },
+        // { path: "sortable", component: SortableComponent },
+        // { path: "bottom-app-bar", component: BottomAppBarComponent },
+        // { path: "top-app-bar", component: TopAppBarComponent },
+        // { path: "backdrop", component: BackdropComponent },
+        // { path: "banner", component: BannerComponent },
+        // { path: "bottom-navigation", component: BottomNavigationComponent },
+        { path: "button", component: ButtonComponent },
+        // { path: "fab", component: FabComponent },
+        // { path: "card", component: CardComponent },
+        // { path: "chip", component: ChipComponent },
+        // { path: "data-table", component: DataTableComponent },
+        // { path: "dialog", component: DialogComponent },
+        // { path: "divider", component: DividerComponent },
+        // { path: "image-list", component: ImageListComponent },
+        // { path: "list", component: ListComponent },
+        // { path: "menu", component: MenuComponent },
+        // { path: "navigation-drawer", component: NavigationDrawerComponent },
+        // { path: "picker", component: PickerComponent },
+        // { path: "progress", component: ProgressComponent },
+        // { path: "checkbox", component: CheckboxComponent },
+        // { path: "radio", component: RadioComponent },
+        // { path: "switch", component: SwitchComponent },
+        // { path: "bottom-sheet", component: BottomSheetComponent },
+        // { path: "side-sheet", component: SideSheetComponent },
+        // { path: "slider", component: SliderComponent },
+        // { path: "snackbar", component: SnackbarComponent },
+        // { path: "tab", component: TabComponent },
+        // { path: "text-field", component: TextFieldComponent },
+        // { path: "tooltip", component: TooltipComponent },
+    ]}
+])

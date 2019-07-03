@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>WK</title>
+    <link rel="stylesheet" href="../index.css">
+</head>
+
+<body class="demo-body preload">
+
+    <div class="button" onclick="navigationDrawerOpen()">
+        <div class="button__text">open</div>
+    </div>
+
+    <div id="navigationDrawer" class="navigation-drawer navigation-drawer--modal navigation-drawer--closed">
+        <div class="navigation-drawer__header">
+            <div class="navigation-drawer__title">Title</div>
+        </div>
+        <div class="navigation-drawer__body">
+            <ul class="list list--with-action">
+                <li class="list__row">
+                    <ul class="list list--with-action">
+                        <li class="list__row">
+                            <a href="#/" class="list__item" activated>
+                                <div class="list__icon">&#xE720;</div>
+                                <div class="list__text">Inbox</div>
+                            </a>
+                        </li>
+                        <li class="list__row">
+                            <a href="#/" class="list__item">
+                                <div class="list__icon">&#xE720;</div>
+                                <div class="list__text">Outbox</div>
+                            </a>
+                        </li>
+                        <li class="list__row">
+                            <a href="#/" class="list__item">
+                                <div class="list__icon">&#xE720;</div>
+                                <div class="list__text">Favorites</div>
+                            </a>
+                        </li>
+                        <li class="list__row">
+                            <a href="#/" class="list__item">
+                                <div class="list__icon">&#xE720;</div>
+                                <div class="list__text">Archive</div>
+                            </a>
+                        </li>
+                        <li class="list__row">
+                            <a href="#/" class="list__item">
+                                <div class="list__icon">&#xE720;</div>
+                                <div class="list__text">Trash</div>
+                            </a>
+                        </li>
+                        <li class="list__row">
+                            <a href="#/" class="list__item">
+                                <div class="list__icon">&#xE720;</div>
+                                <div class="list__text">Spam</div>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="list__row">
+                    <div class="list__divider"></div>
+                    <div class="list__subheader">Labels</div>
+                    <ul class="list list--with-action">
+                        <li class="list__row">
+                            <a href="#/" class="list__item">
+                                <div class="list__icon">&#xE720;</div>
+                                <div class="list__text">Family</div>
+                            </a>
+                        </li>
+                        <li class="list__row">
+                            <a href="#/" class="list__item">
+                                <div class="list__icon">&#xE720;</div>
+                                <div class="list__text">Friends</div>
+                            </a>
+                        </li>
+                        <li class="list__row">
+                            <a href="#/" class="list__item">
+                                <div class="list__icon">&#xE720;</div>
+                                <div class="list__text">Work</div>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="list__row">
+                    <div class="list__divider"></div>
+                    <ul class="list list--with-action">
+                        <li class="list__row">
+                            <a href="#/" class="list__item">
+                                <div class="list__icon">&#xE720;</div>
+                                <div class="list__text">Settings &amp; account</div>
+                            </a>
+                        </li>
+                        <li class="list__row">
+                            <a href="#/" class="list__item">
+                                <div class="list__icon">&#xE720;</div>
+                                <div class="list__text">Help &amp; feedback</div>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="navigation-drawer-scrim" onclick="navigationDrawerClose()"></div>
+
+    <script src="../index.js" type="module"></script>
+    <script>
+        function navigationDrawerOpen() {
+            document.querySelector("#navigationDrawer").classList.remove("navigation-drawer--closed")
+        }
+        function navigationDrawerClose() {
+            document.querySelector("#navigationDrawer").classList.add("navigation-drawer--closed")
+        }
+    </script>
+</body>
+
+</html>
