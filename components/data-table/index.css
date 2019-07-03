@@ -6,7 +6,9 @@
     overflow: auto;
     /* table-layout: fixed; */
     width: 100%;
-    height: calc(48px * 10);
+    /* height: 100%; */
+    flex: 1;
+    /* height: calc(48px * 10); */
     background-color: var(--color-surface);
     color: var(--color-focused-on-light);
 }

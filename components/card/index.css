@@ -2,6 +2,8 @@
 	@block card 
 */
 .card {
+    display: flex;
+    flex-direction: column;
     overflow: hidden;
     border-radius: 4px;
     background-color: var(--color-surface);

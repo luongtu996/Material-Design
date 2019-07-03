@@ -277,7 +277,6 @@ class AppComponent extends HTMLElement {
                     </div>
                     <div class="top-app-bar__section top-app-bar__section--center"></div>
                     <div class="top-app-bar__section top-app-bar__section--end">
-                        <div class="top-app-bar__action">&#xE72D;</div>
                         <div class="top-app-bar__action">&#xE721;</div>
                         <div class="top-app-bar__action top-app-bar__action--menu">&#xE712;</div>
                     </div>
