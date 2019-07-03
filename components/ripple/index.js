@@ -1,6 +1,4 @@
-"use strict";
-
-class Ripple {
+export default class Ripple {
 
     constructor(element, options = {}) {
         this.options = options

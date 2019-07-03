@@ -1,23 +1,211 @@
-document.querySelectorAll(".button").forEach(element => {
-    element.addEventListener("click", click)
+/**
+ * @import Ripple
+ */
+import Ripple from "../ripple/index.js";
 
-    function click(event) {
-        if (element.classList.contains("button--toggle")) {
+/**
+ * @class WKButton
+ */
+class WKButton extends HTMLElement {
 
-            let buttonGroup = element.parentNode
-            let multiple = buttonGroup.hasAttribute("multiple")
+    constructor() {
 
-            // choice
-            if (!multiple) {
-                Array.from(buttonGroup.children).forEach(element => element.removeAttribute("activated"))
-            }
+        super()
 
-            // filter
-            if (element.hasAttribute("activated")) {
-                element.removeAttribute("activated")
-            } else {
-                element.setAttribute("activated", "")
-            }
+        if (this.textContent) {
+            this.text = this.textContent
         }
     }
-})
+
+    render() {
+
+        this.innerHTML = `
+            ${this.icon ? `<div class="button__icon">${this.icon}</div>` : ``}
+            ${this.text ? `<div class="button__text">${this.text}</div>` : ``}
+        `
+    }
+
+    connectedCallback() {
+        this.render()
+
+        new Ripple(this)
+
+        this.addEventListener("click", this.click)
+    }
+    
+    disconnectedCallback() {
+
+        this.removeEventListener("click", this.click)
+    }
+
+    adoptedCallback() {}
+
+    attributeChangedCallback(name, oldValue, newValue) {
+
+        if (oldValue != newValue) {
+            this.render()
+        }
+    }
+
+    static get observedAttributes() {
+
+        return [
+            "outlined",
+			"icon",
+			"text",
+			"contained",
+			"toggle",
+			
+        ]
+    }
+
+    click(event) {
+
+        this.dispatchEvent(new CustomEvent("onClick", {
+            detail: {
+                event
+            }
+        }))
+    }
+
+    get outlined() {
+
+        return this.getAttribute("outlined")
+    }
+
+	set outlined(value) {
+
+        if (this.outlined) {
+            this.removeAttribute("outlined")
+        } else {
+            this.setAttribute("outlined", "")
+        }
+    }
+
+	get icon() {
+
+        return this.getAttribute("icon")
+    }
+
+	set icon(value) {
+
+        this.setAttribute("icon", value)
+    }
+
+	get text() {
+
+        return this.getAttribute("text")
+    }
+
+	set text(value) {
+
+        this.setAttribute("text", value)
+    }
+
+	get contained() {
+
+        return this.getAttribute("contained")
+    }
+
+	set contained(value) {
+
+        if (this.contained) {
+            this.removeAttribute("contained")
+        } else {
+            this.setAttribute("contained", "")
+        }
+    }
+
+	get toggle() {
+
+        return this.getAttribute("toggle")
+    }
+
+	set toggle(value) {
+
+        if (this.toggle) {
+            this.removeAttribute("toggle")
+        } else {
+            this.setAttribute("toggle", "")
+        }
+    }
+
+	
+}
+
+customElements.define("wk-button", WKButton)
+
+
+
+
+/**
+ * @class WKButtonGroup
+ */
+class WKButtonGroup extends HTMLElement {
+
+    constructor() {
+
+        super()
+    }
+
+    render() {
+
+        // this.innerHTML = `
+        // `
+    }
+
+    connectedCallback() {
+        this.render()
+
+        // this.addEventListener("click", this.click)
+    }
+    
+    disconnectedCallback() {
+
+        // this.removeEventListener("click", this.click)
+    }
+
+    adoptedCallback() {}
+
+    attributeChangedCallback(name, oldValue, newValue) {
+
+        if (oldValue != newValue) {
+            this.render()
+        }
+    }
+
+    static get observedAttributes() {
+
+        return [
+            "multiple",
+			
+        ]
+    }
+
+    // click(event) {
+
+    //     this.dispatchEvent(new CustomEvent("onClick", {
+    //         detail: {
+    //             event
+    //         }
+    //     }))
+    // }
+
+    get multiple() {
+
+        return this.getAttribute("multiple")
+    }
+
+	set multiple(value) {
+
+        if (this.multiple) {
+            this.removeAttribute("multiple")
+        } else {
+            this.setAttribute("multiple", "")
+        }
+    }
+
+	
+}
+
+customElements.define("wk-button-group", WKButtonGroup)

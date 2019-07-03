@@ -1,4 +1,26 @@
-class WKElement extends HTMLElement {
+let attrs = []
+let tag = "wk-button-group"
+let cls = tag.split("-").map((tag, index) => {
+    if (index > 0) {
+        tag = tag.charAt(0).toUpperCase() + tag.slice(1)
+    } else {
+        tag = tag.toUpperCase()
+    }
+    return tag
+}).join("")
+
+document.querySelectorAll(tag).forEach(element => {
+    Array.from(element.attributes).forEach(attr => {
+        if (!attrs.find(obj => obj.name === attr.name)) {
+            attrs.push({
+                name: attr.name,
+                type: attr.value === "true" ? "boolean" : "string"
+            })
+        }
+    })
+})
+
+console.log(`class ${cls} extends HTMLElement {
 
     constructor() {
 
@@ -7,9 +29,8 @@ class WKElement extends HTMLElement {
 
     render() {
 
-        this.innerHTML = `
-            Hello ${this.text}!
-        `
+        this.innerHTML = \`
+        \`
     }
 
     connectedCallback() {
@@ -35,7 +56,7 @@ class WKElement extends HTMLElement {
     static get observedAttributes() {
 
         return [
-            "text"
+            ${attrs.map(attr => `"${attr.name}",\n\t\t\t`).join("")}
         ]
     }
 
@@ -48,15 +69,20 @@ class WKElement extends HTMLElement {
         }))
     }
 
-    get text() {
+    ${attrs.map(attr => `get ${attr.name}() {
 
-        return this.getAttribute("text")
-    }
+        return this.getAttribute("${attr.name}")
+    }\n\n\t${attr.type === "boolean" ? `set ${attr.name}(value) {
 
-    set text(value) {
+        if (this.${attr.name}) {
+            this.removeAttribute("${attr.name}")
+        } else {
+            this.setAttribute("${attr.name}", "")
+        }
+    }\n\n\t` : `set ${attr.name}(value) {
 
-        return this.setAttribute("text", value)
-    }
+        this.setAttribute("${attr.name}", value)
+    }\n\n\t`}`).join("")}
 }
 
-customElements.define("wk-element", WKElement)
+customElements.define("${tag}", ${cls})`)

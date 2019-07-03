@@ -6,64 +6,37 @@ class ButtonComponent extends HTMLElement {
                 <div class="layout__grid">
 
                     <div class="layout__column layout__column--3-large layout__column--4-medium layout__column--2-small">
-                        <div class="button">
-                            <div class="button__text">text</div>
-                        </div>
+                        <wk-button>text</wk-button>
                     </div>
                     <div class="layout__column layout__column--3-large layout__column--4-medium layout__column--2-small">
-                        <div class="button button--outlined">
-                            <div class="button__text">text</div>
-                        </div>
+                        <wk-button outlined>text</wk-button>
                     </div>
                     <div class="layout__column layout__column--3-large layout__column--4-medium layout__column--2-small">
-                        <div class="button button--contained">
-                            <div class="button__text">text</div>
-                        </div>
+                        <wk-button contained>text</wk-button>
                     </div>
                     <div class="layout__column layout__column--3-large layout__column--4-medium layout__column--2-small">
-                        <div class="button-group">
-                            <div class="button button--toggle" selected>
-                                <div class="button__icon">&#xE719;</div>
-                            </div>
-                            <div class="button button--toggle">
-                                <div class="button__icon">&#xE720;</div>
-                            </div>
-                            <div class="button button--toggle">
-                                <div class="button__icon">&#xE722;</div>
-                            </div>
-                        </div>
+                        <wk-button-group>
+                            <wk-button toggle icon="&#xE721;"></wk-button>
+                            <wk-button toggle icon="&#xE722;"></wk-button>
+                            <wk-button toggle icon="&#xE723;"></wk-button>
+                        </wk-button-group>
                     </div>
 
                     <div class="layout__column layout__column--3-large layout__column--4-medium layout__column--2-small">
-                        <div class="button">
-                            <div class="button__icon">&#xE720;</div>
-                            <div class="button__text">text</div>
-                        </div>
+                        <wk-button icon="&#xE721;">text</wk-button>
                     </div>
                     <div class="layout__column layout__column--3-large layout__column--4-medium layout__column--2-small">
-                        <div class="button button--outlined">
-                            <div class="button__icon">&#xE720;</div>
-                            <div class="button__text">text</div>
-                        </div>
+                        <wk-button icon="&#xE721;" outlined>text</wk-button>
                     </div>
                     <div class="layout__column layout__column--3-large layout__column--4-medium layout__column--2-small">
-                        <div class="button button--contained">
-                            <div class="button__icon">&#xE720;</div>
-                            <div class="button__text">text</div>
-                        </div>
+                        <wk-button icon="&#xE721;" contained>text</wk-button>
                     </div>
                     <div class="layout__column layout__column--3-large layout__column--4-medium layout__column--2-small">
-                        <div class="button-group" multiple>
-                            <div class="button button--toggle" selected>
-                                <div class="button__icon">&#xE719;</div>
-                            </div>
-                            <div class="button button--toggle">
-                                <div class="button__icon">&#xE720;</div>
-                            </div>
-                            <div class="button button--toggle">
-                                <div class="button__icon">&#xE722;</div>
-                            </div>
-                        </div>
+                        <wk-button-group multiple>
+                            <wk-button toggle icon="&#xE721;"></wk-button>
+                            <wk-button toggle icon="&#xE722;"></wk-button>
+                            <wk-button toggle icon="&#xE723;"></wk-button>
+                        </wk-button-group>
                     </div>
 
                 </div>
