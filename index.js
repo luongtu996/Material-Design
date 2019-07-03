@@ -1,5 +1,6 @@
 import Router from "./components/router/index.js"
 import AppComponent from "./app/app.js"
+// import "./components/index.js"
 
 import FoundationComponent from "./app/foundation/foundation.js"
 import ElevationComponent from "./app/elevation/elevation.js"
@@ -19,10 +20,10 @@ import LayoutComponent from "./app/layout/layout.js"
 // import BannerComponent from "./app/banner/banner.js"
 // import BottomNavigationComponent from "./app/bottomNavigation/bottomNavigation.js"
 import ButtonComponent from "./app/button/button.js"
-// import FabComponent from "./app/fab/fab.js"
-// import CardComponent from "./app/card/card.js"
-// import ChipComponent from "./app/chip/chip.js"
-// import DataTableComponent from "./app/dataTable/dataTable.js"
+import FabComponent from "./app/fab/fab.js"
+import CardComponent from "./app/card/card.js"
+import ChipComponent from "./app/chip/chip.js"
+import DataTableComponent from "./app/dataTable/dataTable.js"
 // import DialogComponent from "./app/dialog/dialog.js"
 // import DividerComponent from "./app/divider/divider.js"
 // import ImageListComponent from "./app/imageList/imageList.js"
@@ -31,7 +32,7 @@ import ButtonComponent from "./app/button/button.js"
 // import NavigationDrawerComponent from "./app/navigationDrawer/navigationDrawer.js"
 // import PickerComponent from "./app/picker/picker.js"
 // import ProgressComponent from "./app/progress/progress.js"
-// import CheckboxComponent from "./app/checkbox/checkbox.js"
+import CheckboxComponent from "./app/checkbox/checkbox.js"
 // import RadioComponent from "./app/radio/radio.js"
 // import SwitchComponent from "./app/switch/switch.js"
 // import BottomSheetComponent from "./app/bottomSheet/bottomSheet.js"
@@ -62,10 +63,10 @@ new Router([
         // { path: "banner", component: BannerComponent },
         // { path: "bottom-navigation", component: BottomNavigationComponent },
         { path: "button", component: ButtonComponent },
-        // { path: "fab", component: FabComponent },
-        // { path: "card", component: CardComponent },
-        // { path: "chip", component: ChipComponent },
-        // { path: "data-table", component: DataTableComponent },
+        { path: "fab", component: FabComponent },
+        { path: "card", component: CardComponent },
+        { path: "chip", component: ChipComponent },
+        { path: "data-table", component: DataTableComponent },
         // { path: "dialog", component: DialogComponent },
         // { path: "divider", component: DividerComponent },
         // { path: "image-list", component: ImageListComponent },
@@ -74,7 +75,7 @@ new Router([
         // { path: "navigation-drawer", component: NavigationDrawerComponent },
         // { path: "picker", component: PickerComponent },
         // { path: "progress", component: ProgressComponent },
-        // { path: "checkbox", component: CheckboxComponent },
+        { path: "checkbox", component: CheckboxComponent },
         // { path: "radio", component: RadioComponent },
         // { path: "switch", component: SwitchComponent },
         // { path: "bottom-sheet", component: BottomSheetComponent },
