@@ -31,15 +31,15 @@ import DataTableComponent from "./app/dataTable/dataTable.js"
 // import MenuComponent from "./app/menu/menu.js"
 // import NavigationDrawerComponent from "./app/navigationDrawer/navigationDrawer.js"
 // import PickerComponent from "./app/picker/picker.js"
-// import ProgressComponent from "./app/progress/progress.js"
+import ProgressComponent from "./app/progress/progress.js"
 import CheckboxComponent from "./app/checkbox/checkbox.js"
-// import RadioComponent from "./app/radio/radio.js"
-// import SwitchComponent from "./app/switch/switch.js"
+import RadioComponent from "./app/radio/radio.js"
+import SwitchComponent from "./app/switch/switch.js"
 // import BottomSheetComponent from "./app/bottomSheet/bottomSheet.js"
 // import SideSheetComponent from "./app/sideSheet/sideSheet.js"
 // import SliderComponent from "./app/slider/slider.js"
 // import SnackbarComponent from "./app/snackbar/snackbar.js"
-// import TabComponent from "./app/tab/tab.js"
+import TabComponent from "./app/tab/tab.js"
 // import TextFieldComponent from "./app/textField/textField.js"
 // import TooltipComponent from "./app/tooltip/tooltip.js"
 
@@ -74,15 +74,15 @@ new Router([
         // { path: "menu", component: MenuComponent },
         // { path: "navigation-drawer", component: NavigationDrawerComponent },
         // { path: "picker", component: PickerComponent },
-        // { path: "progress", component: ProgressComponent },
+        { path: "progress", component: ProgressComponent },
         { path: "checkbox", component: CheckboxComponent },
-        // { path: "radio", component: RadioComponent },
-        // { path: "switch", component: SwitchComponent },
+        { path: "radio", component: RadioComponent },
+        { path: "switch", component: SwitchComponent },
         // { path: "bottom-sheet", component: BottomSheetComponent },
         // { path: "side-sheet", component: SideSheetComponent },
         // { path: "slider", component: SliderComponent },
         // { path: "snackbar", component: SnackbarComponent },
-        // { path: "tab", component: TabComponent },
+        { path: "tab", component: TabComponent },
         // { path: "text-field", component: TextFieldComponent },
         // { path: "tooltip", component: TooltipComponent },
     ]}

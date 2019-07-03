@@ -95,4 +95,9 @@
 .top-app-bar ~ .viewport {
     margin-top: calc(64px + 24px);
 }
-/* .viewport {} */
+/* .viewport {
+    background-color: #f5f5f5;
+} */
+body {
+    background-color: #f5f5f5;
+}

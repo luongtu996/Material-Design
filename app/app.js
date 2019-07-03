@@ -4,7 +4,7 @@ class AppComponent extends HTMLElement {
         this.innerHTML = `
             <div class="navigation-drawer" style="z-index: 3;">
                 <div class="navigation-drawer__header">
-                    <div class="navigation-drawer__title">WK</div>
+                    <div class="navigation-drawer__title">Material Design</div>
                 </div>
                 <div class="navigation-drawer__body">
                 <ul class="list list--with-action">
@@ -273,7 +273,7 @@ class AppComponent extends HTMLElement {
                 <div class="top-app-bar__row">
                     <div class="top-app-bar__section top-app-bar__section--start">
                         <div class="top-app-bar__action top-app-bar__action--navigation">&#xE700;</div>
-                        <div class="top-app-bar__title">WK</div>
+                        <div class="top-app-bar__title">Material Design</div>
                     </div>
                     <div class="top-app-bar__section top-app-bar__section--center"></div>
                     <div class="top-app-bar__section top-app-bar__section--end">
