@@ -2,10 +2,10 @@ class DataTableComponent extends HTMLElement {
 
     connectedCallback() {
         this.innerHTML = `
-            <div class="layout" style="display:flex;align-items: stretch;height:calc(100vh - 64px - 24px);">
+            <div class="layout" style="display:flex;align-items: stretch;height:calc(100vh - 64px - 24px - 24px);">
                 <div class="layout__grid" style="display:flex;flex: 1;align-items: stretch;">
                     <div class="layout__column layout__column--12-large layout__column--8-medium layout__column--4-small" style="flex: 1;">
-                    <div class="card" style="height:calc(100vh - 64px - 24px);">
+                    <div class="card" style="height:calc(100vh - 64px - 24px - 24px);">
                         <div class="card__toolbar">
                             <div class="card__toolbar-section card__toolbar-section--start">
                                 <div class="card__toolbar-title">Title</div>
