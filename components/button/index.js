@@ -61,6 +61,21 @@ class WKButton extends HTMLElement {
 
     click(event) {
 
+        if (this.toggle) {
+
+            let wkButtonGroup = this.parentNode
+
+            if (!wkButtonGroup.multiple) {
+                Array.from(wkButtonGroup.children).forEach(wkButton => wkButton.removeAttribute("activated"))
+            }
+
+            if (this.hasAttribute("activated")) {
+                this.removeAttribute("activated")
+            } else {
+                this.setAttribute("activated", "")
+            }
+        }
+
         this.dispatchEvent(new CustomEvent("onClick", {
             detail: {
                 event
@@ -70,7 +85,7 @@ class WKButton extends HTMLElement {
 
     get outlined() {
 
-        return this.getAttribute("outlined")
+        return this.hasAttribute("outlined")
     }
 
 	set outlined(value) {
@@ -104,7 +119,7 @@ class WKButton extends HTMLElement {
 
 	get contained() {
 
-        return this.getAttribute("contained")
+        return this.hasAttribute("contained")
     }
 
 	set contained(value) {
@@ -118,7 +133,7 @@ class WKButton extends HTMLElement {
 
 	get toggle() {
 
-        return this.getAttribute("toggle")
+        return this.hasAttribute("toggle")
     }
 
 	set toggle(value) {
@@ -193,7 +208,7 @@ class WKButtonGroup extends HTMLElement {
 
     get multiple() {
 
-        return this.getAttribute("multiple")
+        return this.hasAttribute("multiple")
     }
 
 	set multiple(value) {
