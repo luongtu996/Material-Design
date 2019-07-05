@@ -1,7 +1,7 @@
 // CSS Naming class
 let classNames = new Set()
-let currentClassName = window.location.pathname.split("/")[1]
-// let currentClassName = "button"
+// let currentClassName = window.location.pathname.split("/")[1]
+let currentClassName = "card"
 
 document.querySelectorAll("[class]").forEach(element => {
     element.getAttribute("class").split(" ").forEach(className => {

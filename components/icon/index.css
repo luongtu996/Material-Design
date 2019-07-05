@@ -10,3 +10,97 @@
     height: 24px;
     font: 400 18px/1 'Segoe MDL2 Assets';
 }
+
+/* 
+	@modifier actionable 
+*/
+/* .icon--actionable {} */
+
+/* 
+	@state ripple 
+*/
+.icon--actionable {
+    --ripple-circumference: 166.66666666666669%;
+    position: relative;
+    /* overflow: hidden; */
+    cursor: pointer;
+    user-select: none;
+}
+.icon--actionable::after {
+    content: "";
+    position: absolute;
+    overflow: hidden;
+    pointer-events: none;
+    left: var(--ripple-left, 50%);
+    top: var(--ripple-top, 50%);
+    width: var(--ripple-circumference, 141.4213562373095%);
+    padding-top: var(--ripple-circumference, 141.4213562373095%);
+    border-radius: 50%;
+    transform: translate3d(-50%, -50%, 0) translate3d(var(--ripple-translateX, 0), var(--ripple-translateY, 0), 0);
+    background-color: var(--color-primary);
+    opacity: 0;
+}
+
+.icon--actionable[disabled] {
+    cursor: default;
+    pointer-events: none;
+    opacity: 0.38;
+}
+.icon--actionable[disabled]::after {
+    opacity: 0;
+}
+
+/* .icon--actionable:hover {} */
+.icon--actionable:hover::after {
+    opacity: 0.04;
+}
+
+/* .icon--actionable:focus {} */
+.icon--actionable:focus::after {
+    opacity: 0.12;
+    animation: var(--ripple-animation, ripple-out) 300ms ease-in-out forwards;
+}
+
+/* .icon--actionable.icon--actionable--filter[selected] {} */
+.icon--actionable.icon--actionable--filter:not([selected]):focus:not(:active)::after {
+    --ripple-left: 50%;
+    --ripple-top: 50%;
+    /* --ripple-circumference: 83.33333333333334%; */
+    --ripple-translateX: 0;
+    --ripple-translateY: 0;
+    --ripple-animation: ripple-in;
+}
+.icon--actionable.icon--actionable--filter[selected]::after {
+    background-color: var(--color-primary);
+    opacity: 0.08;
+    animation-name: ripple-out;
+    animation-fill-mode: backwards;
+}
+
+.icon--actionable.icon--actionable--choice[activated] {
+    color: var(--color-primary);
+}
+.icon--actionable.icon--actionable--choice:not([activated]):focus:not(:active)::after {
+    --ripple-left: 50%;
+    --ripple-top: 50%;
+    /* --ripple-circumference: 83.33333333333334%; */
+    --ripple-translateX: 0;
+    --ripple-translateY: 0;
+    --ripple-animation: ripple-in;
+}
+.icon--actionable.icon--actionable--choice[activated]::after {
+    background-color: var(--color-primary);
+    opacity: 0.12;
+    animation-name: ripple-out;
+    animation-fill-mode: backwards;
+}
+
+/* .icon--actionable:active {} */
+.icon--actionable:active::after {
+    opacity: 0.16;
+}
+
+/* .icon--actionable[dragged] {} */
+.icon--actionable[dragged]::after {
+    opacity: 0.08;
+}
