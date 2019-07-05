@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="../color/index.css">
     <link rel="stylesheet" href="../icon/index.css">
     <link rel="stylesheet" href="../ripple/index.css">
+    <link rel="stylesheet" href="../layout/index.css">
     <link rel="stylesheet" href="./index.css">
 </head>
 
@@ -19,14 +20,24 @@
 
     <div class="layout">
         <div class="layout__grid">
-            <div class="layout__column layout__column--12-large">
-                <wk-icon>&#xE720;</wk-icon>
-                <wk-icon actionable="true">&#xE720;</wk-icon>
-            </div>
+            <div class="layout__column"></div>
+            <div class="layout__column layout__column--1-large"></div>
+            <div class="layout__column layout__column--1-medium"></div>
+            <div class="layout__column layout__column--1-small"></div>
         </div>
     </div>
 
+    <wk-layout>
+        <wk-layout-grid>
+            <wk-layout-column column="1"></wk-layout-column>
+            <wk-layout-column columnLarge="1"></wk-layout-column>
+            <wk-layout-column columnMedium="1"></wk-layout-column>
+            <wk-layout-column columnSmall="1"></wk-layout-column>
+        </wk-layout-grid>
+    </wk-layout>
+
     <script src="../ripple/index.js" type="module"></script>
+    <script src="../layout/index.js" type="module"></script>
     <script src="./index.js" type="module"></script>
     <script src="./index.3.js" type="module"></script>
     <!-- <script src="./index.1.js" type="module"></script> -->

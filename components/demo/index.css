@@ -26,13 +26,13 @@
     }
 }
 
-.layout {
+wk-layout {
     margin-top: 24px;
     margin-bottom: 24px;
 }
 
 @media (max-width: 480px) {
-    .layout {
+    wk-layout {
         margin-top: 16px;
         margin-bottom: 16px;
     }

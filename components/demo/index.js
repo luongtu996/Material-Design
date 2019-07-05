@@ -1,6 +1,6 @@
 window.addEventListener("load", event => {
     let attrs = []
-    let tag = "wk-icon"
+    let tag = "wk-layout-column"
 
     document.querySelectorAll(tag).forEach(element => {
         Array.from(element.attributes).forEach(attr => {
