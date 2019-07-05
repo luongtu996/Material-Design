@@ -36,8 +36,8 @@ class CardComponent extends HTMLElement {
                             </div>
                             <div class="card__footer">
                                 <div class="card__section card__section--start">
-                                    <div class="button"><span class="button__text">action</span></div>
-                                    <div class="button"><span class="button__text">action</span></div>
+                                    <wk-button>Action</wk-button>
+                                    <wk-button>Action</wk-button>
                                 </div>
                             </div>
                         </div>
@@ -60,8 +60,8 @@ class CardComponent extends HTMLElement {
                             <div class="card__media card__media--16-9"></div>
                             <div class="card__footer">
                                 <div class="card__section card__section--start card__section--vertical">
-                                    <div class="button"><span class="button__text">action</span></div>
-                                    <div class="button"><span class="button__text">action</span></div>
+                                    <wk-button>Action</wk-button>
+                                    <wk-button>Action</wk-button>
                                 </div>
                             </div>
                         </div>
@@ -77,11 +77,11 @@ class CardComponent extends HTMLElement {
                             </div>
                             <div class="card__footer">
                                 <div class="card__section card__section--start">
-                                    <div class="button"><span class="button__text">action</span></div>
-                                    <div class="button"><span class="button__text">action</span></div>
+                                    <wk-button>Action</wk-button>
+                                    <wk-button>Action</wk-button>
                                 </div>
                                 <div class="card__section card__section--end">
-                                    <div class="icon icon--actionable">&#xE971;</div>
+                                    <wk-icon actionable>&#xE971;</wk-icon>
                                 </div>
                             </div>
                         </div>
@@ -98,11 +98,11 @@ class CardComponent extends HTMLElement {
                             </div>
                             <div class="card__footer">
                                 <div class="card__section card__section--start">
-                                    <div class="button"><span class="button__text">action</span></div>
-                                    <div class="button"><span class="button__text">action</span></div>
+                                    <wk-button>Action</wk-button>
+                                    <wk-button>Action</wk-button>
                                 </div>
                                 <div class="card__section card__section--end">
-                                    <div class="icon icon--actionable">&#xE972;</div>
+                                    <wk-icon actionable>&#xE972;</wk-icon>
                                 </div>
                             </div>
                             <div class="card__body">
@@ -133,8 +133,8 @@ class CardComponent extends HTMLElement {
                             </div>
                             <div class="card__footer">
                                 <div class="card__section card__section--start">
-                                    <div class="button"><span class="button__text">action</span></div>
-                                    <div class="button"><span class="button__text">action</span></div>
+                                    <wk-button>Action</wk-button>
+                                    <wk-button>Action</wk-button>
                                 </div>
                             </div>
                         </div>
@@ -145,9 +145,9 @@ class CardComponent extends HTMLElement {
                             <div class="card__media card__media--16-9"></div>
                             <div class="card__footer">
                                 <div class="card__section card__section--end">
-                                    <div class="icon icon--actionable">&#xE8E1;</div>
-                                    <div class="icon icon--actionable">&#xE8BD;</div>
-                                    <div class="icon icon--actionable">&#xE72D;</div>
+                                    <wk-icon actionable>&#xE8E1;</wk-icon>
+                                    <wk-icon actionable>&#xE8BD;</wk-icon>
+                                    <wk-icon actionable>&#xE72D;</wk-icon>
                                 </div>
                             </div>
                         </div>
@@ -163,8 +163,8 @@ class CardComponent extends HTMLElement {
                                     </div>
                                     <div class="card__footer">
                                         <div class="card__section card__section--start">
-                                            <div class="button"><span class="button__text">action</span></div>
-                                            <div class="button"><span class="button__text">action</span></div>
+                                            <wk-button>Action</wk-button>
+                                            <wk-button>Action</wk-button>
                                         </div>
                                     </div>
                                 </div>
@@ -186,9 +186,9 @@ class CardComponent extends HTMLElement {
                                 </div>
                                 <div class="card__footer">
                                     <div class="card__section card__section--end">
-                                        <div class="icon icon--actionable">&#xE8E1;</div>
-                                        <div class="icon icon--actionable">&#xE8BD;</div>
-                                        <div class="icon icon--actionable">&#xE72D;</div>
+                                        <wk-icon actionable>&#xE8E1;</wk-icon>
+                                        <wk-icon actionable>&#xE8BD;</wk-icon>
+                                        <wk-icon actionable>&#xE72D;</wk-icon>
                                     </div>
                                 </div>
                             </div>
@@ -202,9 +202,9 @@ class CardComponent extends HTMLElement {
                                 </div>
                                 <div class="card__footer">
                                     <div class="card__section card__section--end">
-                                        <div class="icon icon--actionable">&#xE8E1;</div>
-                                        <div class="icon icon--actionable">&#xE8BD;</div>
-                                        <div class="icon icon--actionable">&#xE72D;</div>
+                                        <wk-icon actionable>&#xE8E1;</wk-icon>
+                                        <wk-icon actionable>&#xE8BD;</wk-icon>
+                                        <wk-icon actionable>&#xE72D;</wk-icon>
                                     </div>
                                 </div>
                             </div>
@@ -223,8 +223,8 @@ class CardComponent extends HTMLElement {
                             </div>
                             <div class="card__footer">
                                 <div class="card__section card__section--start">
-                                    <div class="button"><span class="button__text">action</span></div>
-                                    <div class="button"><span class="button__text">action</span></div>
+                                    <wk-button>Action</wk-button>
+                                    <wk-button>Action</wk-button>
                                 </div>
                             </div>
                         </div>
@@ -242,8 +242,8 @@ class CardComponent extends HTMLElement {
                             </div>
                             <div class="card__footer">
                                 <div class="card__section card__section--start">
-                                    <div class="button"><span class="button__text">action</span></div>
-                                    <div class="button"><span class="button__text">action</span></div>
+                                    <wk-button>Action</wk-button>
+                                    <wk-button>Action</wk-button>
                                 </div>
                             </div>
                         </div>
@@ -261,8 +261,8 @@ class CardComponent extends HTMLElement {
                             </div>
                             <div class="card__footer">
                                 <div class="card__section card__section--start">
-                                    <div class="button"><span class="button__text">action</span></div>
-                                    <div class="button"><span class="button__text">action</span></div>
+                                    <wk-button>Action</wk-button>
+                                    <wk-button>Action</wk-button>
                                 </div>
                             </div>
                         </div>
@@ -276,9 +276,9 @@ class CardComponent extends HTMLElement {
                                 <div class="card__media card__media--240"></div>
                                 <div class="card__footer">
                                     <div class="card__section card__section--start card__section--vertical">
-                                        <div class="icon icon--actionable">&#xE8E1;</div>
-                                        <div class="icon icon--actionable">&#xE8BD;</div>
-                                        <div class="icon icon--actionable">&#xE72D;</div>
+                                        <wk-icon actionable>&#xE8E1;</wk-icon>
+                                        <wk-icon actionable>&#xE8BD;</wk-icon>
+                                        <wk-icon actionable>&#xE72D;</wk-icon>
                                     </div>
                                 </div>
                             </div>
@@ -291,19 +291,19 @@ class CardComponent extends HTMLElement {
                             <div class="card__header">
                                 <div class="card__row">
                                     <div class="card__section card__section--start">
-                                        <div class="icon">&#xEA37;</div>
+                                        <wk-icon>&#xEA37;</wk-icon>
                                         <div class="card__title">Title</div>
                                     </div>
                                     <div class="card__section card__section--end">
-                                        <div class="icon icon--actionable">&#xE71C;</div>
-                                        <div class="icon icon--actionable">&#xE721;</div>
-                                        <div class="icon icon--actionable">&#xE712;</div>
+                                        <wk-icon actionable>&#xE71C;</wk-icon>
+                                        <wk-icon actionable>&#xE721;</wk-icon>
+                                        <wk-icon actionable>&#xE712;</wk-icon>
                                     </div>
                                 </div>
                                 <div class="card__row" hidden>
                                     <div class="card__section card__section--start">
-                                        <div class="button"><span class="button__text">add</span></div>
-                                        <div class="button"><span class="button__text">remove</span></div>
+                                        <wk-button>add</wk-button>
+                                        <wk-button>remove</wk-button>
                                     </div>
                                 </div>
                                 <div class="card__row" hidden>
@@ -314,8 +314,8 @@ class CardComponent extends HTMLElement {
                             </div>
                             <div class="card__footer">
                                 <div class="card__section card__section--end">
-                                    <div class="icon icon--actionable">&#xE973;</div>
-                                    <div class="icon icon--actionable">&#xE974;</div>
+                                    <wk-icon actionable>&#xE973;</wk-icon>
+                                    <wk-icon actionable>&#xE974;</wk-icon>
                                 </div>
                             </div>
                         </div>
@@ -327,19 +327,19 @@ class CardComponent extends HTMLElement {
                             <div class="card__header">
                                 <div class="card__row" hidden>
                                     <div class="card__section card__section--start">
-                                        <div class="icon">&#xEA37;</div>
+                                        <wk-icon>&#xEA37;</wk-icon>
                                         <div class="card__title">Title</div>
                                     </div>
                                     <div class="card__section card__section--end">
-                                        <div class="icon icon--actionable">&#xE71C;</div>
-                                        <div class="icon icon--actionable">&#xE721;</div>
-                                        <div class="icon icon--actionable">&#xE712;</div>
+                                        <wk-icon actionable>&#xE71C;</wk-icon>
+                                        <wk-icon actionable>&#xE721;</wk-icon>
+                                        <wk-icon actionable>&#xE712;</wk-icon>
                                     </div>
                                 </div>
                                 <div class="card__row">
                                     <div class="card__section card__section--start">
-                                        <div class="button"><span class="button__text">add</span></div>
-                                        <div class="button"><span class="button__text">remove</span></div>
+                                        <wk-button>add</wk-button>
+                                        <wk-button>remove</wk-button>
                                     </div>
                                 </div>
                                 <div class="card__row" hidden>
@@ -350,8 +350,8 @@ class CardComponent extends HTMLElement {
                             </div>
                             <div class="card__footer">
                                 <div class="card__section card__section--end">
-                                    <div class="icon icon--actionable">&#xE973;</div>
-                                    <div class="icon icon--actionable">&#xE974;</div>
+                                    <wk-icon actionable>&#xE973;</wk-icon>
+                                    <wk-icon actionable>&#xE974;</wk-icon>
                                 </div>
                             </div>
                         </div>
@@ -363,19 +363,19 @@ class CardComponent extends HTMLElement {
                             <div class="card__header">
                                 <div class="card__row" hidden>
                                     <div class="card__section card__section--start">
-                                        <div class="icon">&#xEA37;</div>
+                                        <wk-icon>&#xEA37;</wk-icon>
                                         <div class="card__title">Title</div>
                                     </div>
                                     <div class="card__section card__section--end">
-                                        <div class="icon icon--actionable">&#xE71C;</div>
-                                        <div class="icon icon--actionable">&#xE721;</div>
-                                        <div class="icon icon--actionable">&#xE712;</div>
+                                        <wk-icon actionable>&#xE71C;</wk-icon>
+                                        <wk-icon actionable>&#xE721;</wk-icon>
+                                        <wk-icon actionable>&#xE712;</wk-icon>
                                     </div>
                                 </div>
                                 <div class="card__row" hidden>
                                     <div class="card__section card__section--start">
-                                        <div class="button"><span class="button__text">add</span></div>
-                                        <div class="button"><span class="button__text">remove</span></div>
+                                        <wk-button>add</wk-button>
+                                        <wk-button>remove</wk-button>
                                     </div>
                                 </div>
                                 <div class="card__row">
@@ -386,8 +386,8 @@ class CardComponent extends HTMLElement {
                             </div>
                             <div class="card__footer">
                                 <div class="card__section card__section--end">
-                                    <div class="icon icon--actionable">&#xE973;</div>
-                                    <div class="icon icon--actionable">&#xE974;</div>
+                                    <wk-icon actionable>&#xE973;</wk-icon>
+                                    <wk-icon actionable>&#xE974;</wk-icon>
                                 </div>
                             </div>
                         </div>
@@ -407,7 +407,7 @@ class CardComponent extends HTMLElement {
                                         </div>
                                     </div>
                                     <div class="card__section card__section--end">
-                                        <div class="icon icon--actionable">&#xE712;</div>
+                                        <wk-icon actionable>&#xE712;</wk-icon>
                                     </div>
                                 </div>
                             </div>
@@ -417,8 +417,8 @@ class CardComponent extends HTMLElement {
                             </div>
                             <div class="card__footer">
                                 <div class="card__section card__section--start">
-                                    <div class="button"><span class="button__text">action</span></div>
-                                    <div class="button"><span class="button__text">action</span></div>
+                                    <wk-button>Action</wk-button>
+                                    <wk-button>Action</wk-button>
                                 </div>
                             </div>
                         </div>
@@ -444,11 +444,11 @@ class CardComponent extends HTMLElement {
                             </div>
                             <div class="card__footer">
                                 <div class="card__section card__section--start">
-                                    <div class="button"><span class="button__text">action</span></div>
-                                    <div class="button"><span class="button__text">action</span></div>
+                                    <wk-button>Action</wk-button>
+                                    <wk-button>Action</wk-button>
                                 </div>
                                 <div class="card__section card__section--end">
-                                    <div class="icon icon--actionable">&#xE712;</div>
+                                    <wk-icon actionable>&#xE712;</wk-icon>
                                 </div>
                             </div>
                         </div>
@@ -488,8 +488,8 @@ class CardComponent extends HTMLElement {
                             </div>
                             <div class="card__footer">
                                 <div class="card__section card__section--start">
-                                    <div class="button"><span class="button__text">action</span></div>
-                                    <div class="button"><span class="button__text">action</span></div>
+                                    <wk-button>Action</wk-button>
+                                    <wk-button>Action</wk-button>
                                 </div>
                             </div>
                         </div>
@@ -512,8 +512,8 @@ class CardComponent extends HTMLElement {
                             <div class="card__media card__media--16-9"></div>
                             <div class="card__footer">
                                 <div class="card__section card__section--start card__section--vertical">
-                                    <div class="button"><span class="button__text">action</span></div>
-                                    <div class="button"><span class="button__text">action</span></div>
+                                    <wk-button>Action</wk-button>
+                                    <wk-button>Action</wk-button>
                                 </div>
                             </div>
                         </div>
@@ -529,11 +529,11 @@ class CardComponent extends HTMLElement {
                             </div>
                             <div class="card__footer">
                                 <div class="card__section card__section--start">
-                                    <div class="button"><span class="button__text">action</span></div>
-                                    <div class="button"><span class="button__text">action</span></div>
+                                    <wk-button>Action</wk-button>
+                                    <wk-button>Action</wk-button>
                                 </div>
                                 <div class="card__section card__section--end">
-                                    <div class="icon icon--actionable">&#xE971;</div>
+                                    <wk-icon actionable>&#xE971;</wk-icon>
                                 </div>
                             </div>
                         </div>
@@ -550,11 +550,11 @@ class CardComponent extends HTMLElement {
                             </div>
                             <div class="card__footer">
                                 <div class="card__section card__section--start">
-                                    <div class="button"><span class="button__text">action</span></div>
-                                    <div class="button"><span class="button__text">action</span></div>
+                                    <wk-button>Action</wk-button>
+                                    <wk-button>Action</wk-button>
                                 </div>
                                 <div class="card__section card__section--end">
-                                    <div class="icon icon--actionable">&#xE972;</div>
+                                    <wk-icon actionable>&#xE972;</wk-icon>
                                 </div>
                             </div>
                             <div class="card__body">
@@ -581,8 +581,8 @@ class CardComponent extends HTMLElement {
                             </div>
                             <div class="card__footer">
                                 <div class="card__section card__section--start">
-                                    <div class="button"><span class="button__text">action</span></div>
-                                    <div class="button"><span class="button__text">action</span></div>
+                                    <wk-button>Action</wk-button>
+                                    <wk-button>Action</wk-button>
                                 </div>
                             </div>
                         </div>
@@ -593,9 +593,9 @@ class CardComponent extends HTMLElement {
                             <div class="card__media card__media--16-9"></div>
                             <div class="card__footer">
                                 <div class="card__section card__section--end">
-                                    <div class="icon icon--actionable">&#xE8E1;</div>
-                                    <div class="icon icon--actionable">&#xE8BD;</div>
-                                    <div class="icon icon--actionable">&#xE72D;</div>
+                                    <wk-icon actionable>&#xE8E1;</wk-icon>
+                                    <wk-icon actionable>&#xE8BD;</wk-icon>
+                                    <wk-icon actionable>&#xE72D;</wk-icon>
                                 </div>
                             </div>
                         </div>
@@ -611,8 +611,8 @@ class CardComponent extends HTMLElement {
                                     </div>
                                     <div class="card__footer">
                                         <div class="card__section card__section--start">
-                                            <div class="button"><span class="button__text">action</span></div>
-                                            <div class="button"><span class="button__text">action</span></div>
+                                            <wk-button>Action</wk-button>
+                                            <wk-button>Action</wk-button>
                                         </div>
                                     </div>
                                 </div>
@@ -634,9 +634,9 @@ class CardComponent extends HTMLElement {
                                 </div>
                                 <div class="card__footer">
                                     <div class="card__section card__section--end">
-                                        <div class="icon icon--actionable">&#xE8E1;</div>
-                                        <div class="icon icon--actionable">&#xE8BD;</div>
-                                        <div class="icon icon--actionable">&#xE72D;</div>
+                                        <wk-icon actionable>&#xE8E1;</wk-icon>
+                                        <wk-icon actionable>&#xE8BD;</wk-icon>
+                                        <wk-icon actionable>&#xE72D;</wk-icon>
                                     </div>
                                 </div>
                             </div>
@@ -650,9 +650,9 @@ class CardComponent extends HTMLElement {
                                 </div>
                                 <div class="card__footer">
                                     <div class="card__section card__section--end">
-                                        <div class="icon icon--actionable">&#xE8E1;</div>
-                                        <div class="icon icon--actionable">&#xE8BD;</div>
-                                        <div class="icon icon--actionable">&#xE72D;</div>
+                                        <wk-icon actionable>&#xE8E1;</wk-icon>
+                                        <wk-icon actionable>&#xE8BD;</wk-icon>
+                                        <wk-icon actionable>&#xE72D;</wk-icon>
                                     </div>
                                 </div>
                             </div>
@@ -671,8 +671,8 @@ class CardComponent extends HTMLElement {
                             </div>
                             <div class="card__footer">
                                 <div class="card__section card__section--start">
-                                    <div class="button"><span class="button__text">action</span></div>
-                                    <div class="button"><span class="button__text">action</span></div>
+                                    <wk-button>Action</wk-button>
+                                    <wk-button>Action</wk-button>
                                 </div>
                             </div>
                         </div>
@@ -690,8 +690,8 @@ class CardComponent extends HTMLElement {
                             </div>
                             <div class="card__footer">
                                 <div class="card__section card__section--start">
-                                    <div class="button"><span class="button__text">action</span></div>
-                                    <div class="button"><span class="button__text">action</span></div>
+                                    <wk-button>Action</wk-button>
+                                    <wk-button>Action</wk-button>
                                 </div>
                             </div>
                         </div>
@@ -709,8 +709,8 @@ class CardComponent extends HTMLElement {
                             </div>
                             <div class="card__footer">
                                 <div class="card__section card__section--start">
-                                    <div class="button"><span class="button__text">action</span></div>
-                                    <div class="button"><span class="button__text">action</span></div>
+                                    <wk-button>Action</wk-button>
+                                    <wk-button>Action</wk-button>
                                 </div>
                             </div>
                         </div>
@@ -724,9 +724,9 @@ class CardComponent extends HTMLElement {
                                 <div class="card__media card__media--240"></div>
                                 <div class="card__footer">
                                     <div class="card__section card__section--start card__section--vertical">
-                                        <div class="icon icon--actionable">&#xE8E1;</div>
-                                        <div class="icon icon--actionable">&#xE8BD;</div>
-                                        <div class="icon icon--actionable">&#xE72D;</div>
+                                        <wk-icon actionable>&#xE8E1;</wk-icon>
+                                        <wk-icon actionable>&#xE8BD;</wk-icon>
+                                        <wk-icon actionable>&#xE72D;</wk-icon>
                                     </div>
                                 </div>
                             </div>
@@ -739,19 +739,19 @@ class CardComponent extends HTMLElement {
                             <div class="card__header">
                                 <div class="card__row">
                                     <div class="card__section card__section--start">
-                                        <div class="icon">&#xEA37;</div>
+                                        <wk-icon>&#xEA37;</wk-icon>
                                         <div class="card__title">Title</div>
                                     </div>
                                     <div class="card__section card__section--end">
-                                        <div class="icon icon--actionable">&#xE71C;</div>
-                                        <div class="icon icon--actionable">&#xE721;</div>
-                                        <div class="icon icon--actionable">&#xE712;</div>
+                                        <wk-icon actionable>&#xE71C;</wk-icon>
+                                        <wk-icon actionable>&#xE721;</wk-icon>
+                                        <wk-icon actionable>&#xE712;</wk-icon>
                                     </div>
                                 </div>
                                 <div class="card__row" hidden>
                                     <div class="card__section card__section--start">
-                                        <div class="button"><span class="button__text">add</span></div>
-                                        <div class="button"><span class="button__text">remove</span></div>
+                                        <wk-button>add</wk-button>
+                                        <wk-button>remove</wk-button>
                                     </div>
                                 </div>
                                 <div class="card__row" hidden>
@@ -762,8 +762,8 @@ class CardComponent extends HTMLElement {
                             </div>
                             <div class="card__footer">
                                 <div class="card__section card__section--end">
-                                    <div class="icon icon--actionable">&#xE973;</div>
-                                    <div class="icon icon--actionable">&#xE974;</div>
+                                    <wk-icon actionable>&#xE973;</wk-icon>
+                                    <wk-icon actionable>&#xE974;</wk-icon>
                                 </div>
                             </div>
                         </div>
@@ -775,19 +775,19 @@ class CardComponent extends HTMLElement {
                             <div class="card__header">
                                 <div class="card__row" hidden>
                                     <div class="card__section card__section--start">
-                                        <div class="icon">&#xEA37;</div>
+                                        <wk-icon>&#xEA37;</wk-icon>
                                         <div class="card__title">Title</div>
                                     </div>
                                     <div class="card__section card__section--end">
-                                        <div class="icon icon--actionable">&#xE71C;</div>
-                                        <div class="icon icon--actionable">&#xE721;</div>
-                                        <div class="icon icon--actionable">&#xE712;</div>
+                                        <wk-icon actionable>&#xE71C;</wk-icon>
+                                        <wk-icon actionable>&#xE721;</wk-icon>
+                                        <wk-icon actionable>&#xE712;</wk-icon>
                                     </div>
                                 </div>
                                 <div class="card__row">
                                     <div class="card__section card__section--start">
-                                        <div class="button"><span class="button__text">add</span></div>
-                                        <div class="button"><span class="button__text">remove</span></div>
+                                        <wk-button>add</wk-button>
+                                        <wk-button>remove</wk-button>
                                     </div>
                                 </div>
                                 <div class="card__row" hidden>
@@ -798,8 +798,8 @@ class CardComponent extends HTMLElement {
                             </div>
                             <div class="card__footer">
                                 <div class="card__section card__section--end">
-                                    <div class="icon icon--actionable">&#xE973;</div>
-                                    <div class="icon icon--actionable">&#xE974;</div>
+                                    <wk-icon actionable>&#xE973;</wk-icon>
+                                    <wk-icon actionable>&#xE974;</wk-icon>
                                 </div>
                             </div>
                         </div>
@@ -811,19 +811,19 @@ class CardComponent extends HTMLElement {
                             <div class="card__header">
                                 <div class="card__row" hidden>
                                     <div class="card__section card__section--start">
-                                        <div class="icon">&#xEA37;</div>
+                                        <wk-icon>&#xEA37;</wk-icon>
                                         <div class="card__title">Title</div>
                                     </div>
                                     <div class="card__section card__section--end">
-                                        <div class="icon icon--actionable">&#xE71C;</div>
-                                        <div class="icon icon--actionable">&#xE721;</div>
-                                        <div class="icon icon--actionable">&#xE712;</div>
+                                        <wk-icon actionable>&#xE71C;</wk-icon>
+                                        <wk-icon actionable>&#xE721;</wk-icon>
+                                        <wk-icon actionable>&#xE712;</wk-icon>
                                     </div>
                                 </div>
                                 <div class="card__row" hidden>
                                     <div class="card__section card__section--start">
-                                        <div class="button"><span class="button__text">add</span></div>
-                                        <div class="button"><span class="button__text">remove</span></div>
+                                        <wk-button>add</wk-button>
+                                        <wk-button>remove</wk-button>
                                     </div>
                                 </div>
                                 <div class="card__row">
@@ -834,8 +834,8 @@ class CardComponent extends HTMLElement {
                             </div>
                             <div class="card__footer">
                                 <div class="card__section card__section--end">
-                                    <div class="icon icon--actionable">&#xE973;</div>
-                                    <div class="icon icon--actionable">&#xE974;</div>
+                                    <wk-icon actionable>&#xE973;</wk-icon>
+                                    <wk-icon actionable>&#xE974;</wk-icon>
                                 </div>
                             </div>
                         </div>
@@ -855,7 +855,7 @@ class CardComponent extends HTMLElement {
                                         </div>
                                     </div>
                                     <div class="card__section card__section--end">
-                                        <div class="icon icon--actionable">&#xE712;</div>
+                                        <wk-icon actionable>&#xE712;</wk-icon>
                                     </div>
                                 </div>
                             </div>
@@ -865,8 +865,8 @@ class CardComponent extends HTMLElement {
                             </div>
                             <div class="card__footer">
                                 <div class="card__section card__section--start">
-                                    <div class="button"><span class="button__text">action</span></div>
-                                    <div class="button"><span class="button__text">action</span></div>
+                                    <wk-button>Action</wk-button>
+                                    <wk-button>Action</wk-button>
                                 </div>
                             </div>
                         </div>
@@ -892,11 +892,11 @@ class CardComponent extends HTMLElement {
                             </div>
                             <div class="card__footer">
                                 <div class="card__section card__section--start">
-                                    <div class="button"><span class="button__text">action</span></div>
-                                    <div class="button"><span class="button__text">action</span></div>
+                                    <wk-button>Action</wk-button>
+                                    <wk-button>Action</wk-button>
                                 </div>
                                 <div class="card__section card__section--end">
-                                    <div class="icon icon--actionable">&#xE712;</div>
+                                    <wk-icon actionable>&#xE712;</wk-icon>
                                 </div>
                             </div>
                         </div>

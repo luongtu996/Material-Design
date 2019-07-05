@@ -258,20 +258,20 @@
 /* 
 	@component icon 
 */
-.card .icon {
+.card wk-icon {
     margin: calc((64px - 24px) / 2) 16px;
 }
 
-.card .icon + .icon {
+.card wk-icon + wk-icon {
     margin-left: calc(24px - 16px);
 }
 
-.card__footer .icon {
+.card__footer wk-icon {
     margin-top: calc((52px - 24px) / 2);
     margin-bottom: calc((52px - 24px) / 2);
 }
 
-.card__section--vertical .icon + .icon {
+.card__section--vertical wk-icon + wk-icon {
     margin-left: 16px;
     margin-top: calc(16px - 8px);
 }
@@ -279,20 +279,20 @@
 /* 
 	@component button 
 */
-.card .button {
+.card wk-button {
     margin: calc((64px - 36px) / 2) 8px;
 }
 
-.card .button + .button {
+.card wk-button + wk-button {
     margin-left: calc(8px - 8px);
 }
 
-.card__footer .button {
+.card__footer wk-button {
     margin-top: calc((52px - 36px) / 2);
     margin-bottom: calc((52px - 36px) / 2);
 }
 
-.card__section--vertical .button + .button {
+.card__section--vertical wk-button + wk-button {
     margin-left: 8px;
     margin-top: calc(4px - 8px);
 }
