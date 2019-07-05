@@ -77,8 +77,8 @@ wk-icon[actionable]:focus::after {
     animation: var(--ripple-animation, ripple-out) 300ms ease-in-out forwards;
 }
 
-/* wk-icon[actionable]wk-icon[actionable]--filter[selected] {} */
-wk-icon[actionable]wk-icon[actionable]--filter:not([selected]):focus:not(:active)::after {
+/* wk-icon[actionable][filter][selected] {} */
+wk-icon[actionable][filter]:not([selected]):focus:not(:active)::after {
     --ripple-left: 50%;
     --ripple-top: 50%;
     /* --ripple-circumference: 83.33333333333334%; */
@@ -86,17 +86,17 @@ wk-icon[actionable]wk-icon[actionable]--filter:not([selected]):focus:not(:active
     --ripple-translateY: 0;
     --ripple-animation: ripple-in;
 }
-wk-icon[actionable]wk-icon[actionable]--filter[selected]::after {
+wk-icon[actionable][filter][selected]::after {
     background-color: var(--color-primary);
     opacity: 0.08;
     animation-name: ripple-out;
     animation-fill-mode: backwards;
 }
 
-wk-icon[actionable]wk-icon[actionable]--choice[activated] {
+wk-icon[actionable][choice][activated] {
     color: var(--color-primary);
 }
-wk-icon[actionable]wk-icon[actionable]--choice:not([activated]):focus:not(:active)::after {
+wk-icon[actionable][choice]:not([activated]):focus:not(:active)::after {
     --ripple-left: 50%;
     --ripple-top: 50%;
     /* --ripple-circumference: 83.33333333333334%; */
@@ -104,7 +104,7 @@ wk-icon[actionable]wk-icon[actionable]--choice:not([activated]):focus:not(:activ
     --ripple-translateY: 0;
     --ripple-animation: ripple-in;
 }
-wk-icon[actionable]wk-icon[actionable]--choice[activated]::after {
+wk-icon[actionable][choice][activated]::after {
     background-color: var(--color-primary);
     opacity: 0.12;
     animation-name: ripple-out;
