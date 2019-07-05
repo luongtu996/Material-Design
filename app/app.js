@@ -272,7 +272,7 @@ class AppComponent extends HTMLElement {
             <div id="navScrimTrigger" class="navigation-drawer-scrim">
             </div>
 
-            <wk-top-app-bar id="navTrigger" navigation menu label="Material Design" actions="#demo"></wk-top-app-bar>
+            <wk-top-app-bar id="navTrigger" colored navigation menu label="Material Design" actions="#demo"></wk-top-app-bar>
 
             <div id="demo">
                 <wk-icon actionable>&#xE721;</wk-icon>
