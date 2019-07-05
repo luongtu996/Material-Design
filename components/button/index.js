@@ -55,6 +55,7 @@ class WKButton extends HTMLElement {
 			"text",
 			"contained",
 			"toggle",
+			"disabled",
 			
         ]
     }
@@ -142,6 +143,20 @@ class WKButton extends HTMLElement {
             this.removeAttribute("toggle")
         } else {
             this.setAttribute("toggle", "")
+        }
+    }
+
+	get disabled() {
+
+        return this.hasAttribute("disabled")
+    }
+
+	set disabled(value) {
+
+        if (this.disabled) {
+            this.removeAttribute("disabled")
+        } else {
+            this.setAttribute("disabled", "")
         }
     }
 

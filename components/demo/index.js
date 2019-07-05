@@ -1,18 +1,19 @@
-let attrs = []
-let tag = "wk-switch"
+window.addEventListener("load", event => {
+    let attrs = []
+    let tag = "wk-button-group"
 
-document.querySelectorAll(tag).forEach(element => {
-    Array.from(element.attributes).forEach(attr => {
-        if (!attrs.find(obj => obj.name === attr.name)) {
-            attrs.push({
-                name: attr.name,
-                type: attr.value === "true" ? "boolean" : "string"
-            })
-        }
+    document.querySelectorAll(tag).forEach(element => {
+        Array.from(element.attributes).forEach(attr => {
+            if (!attrs.find(obj => obj.name === attr.name)) {
+                attrs.push({
+                    name: attr.name,
+                    type: attr.value === "true" ? "boolean" : "string"
+                })
+            }
+        })
     })
-})
 
-console.log(`# ${tag}
+    console.log(`# ${tag}
 
 ## Props
 
@@ -25,3 +26,5 @@ ${attrs.map(attr => `${attr.name} | ${attr.type} | ...\n`).join("")}
 Event Name | Params | Description
 --- | --- | ---
 ... | ... | ...`)
+
+})
