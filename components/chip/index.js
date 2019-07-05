@@ -216,3 +216,57 @@ class WKChip extends HTMLElement {
 }
 
 customElements.define("wk-chip", WKChip)
+
+class WKChipGroup extends HTMLElement {
+
+    constructor() {
+
+        super()
+    }
+
+    render() {
+
+        // this.innerHTML = `
+        // `
+    }
+
+    connectedCallback() {
+        this.render()
+
+        // this.addEventListener("click", this.click)
+    }
+    
+    disconnectedCallback() {
+
+        // this.removeEventListener("click", this.click)
+    }
+
+    adoptedCallback() {}
+
+    attributeChangedCallback(name, oldValue, newValue) {
+
+        if (oldValue != newValue) {
+            this.render()
+        }
+    }
+
+    static get observedAttributes() {
+
+        return [
+            
+        ]
+    }
+
+    // click(event) {
+
+    //     this.dispatchEvent(new CustomEvent("onClick", {
+    //         detail: {
+    //             event
+    //         }
+    //     }))
+    // }
+
+    
+}
+
+customElements.define("wk-chip-group", WKChipGroup)

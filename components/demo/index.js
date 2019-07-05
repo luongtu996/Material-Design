@@ -1,5 +1,5 @@
 let attrs = []
-let tag = "wk-chip"
+let tag = "wk-chip-group"
 let cls = tag.split("-").map((tag, index) => {
     if (index > 0) {
         tag = tag.charAt(0).toUpperCase() + tag.slice(1)
