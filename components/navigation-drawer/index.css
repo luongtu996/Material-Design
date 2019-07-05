@@ -6,7 +6,7 @@
     flex-direction: column;
     overflow: hidden auto;
     position: fixed;
-    z-index: 8;
+    /* z-index: 8; */
     left: 0;
     top: 0;
     width: 256px;
@@ -112,6 +112,7 @@
 	@modifier modal 
 */
 .navigation-drawer--modal {
+    z-index: 8;
     box-shadow: 0 5px 5px -3px var(--color-black-20), 0 8px 10px 1px var(--color-black-14), 0 3px 14px 2px var(--color-black-12);
     /* 8 */
 }
