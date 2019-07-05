@@ -1,7 +1,7 @@
 /* 
 	@block chip 
 */
-.chip {
+wk-chip {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -97,43 +97,43 @@
 /* 
 	@modifier input 
 */
-/* .chip--input {} */
+/* wk-chip[input] {} */
 
-/* .chip--input .chip__thumb {} */
+/* wk-chip[input] .chip__thumb {} */
 
-/* .chip--input .chip__text {} */
+/* wk-chip[input] .chip__text {} */
 
-/* .chip--input .chip__remove {} */
+/* wk-chip[input] .chip__remove {} */
 
-/* .chip--input .chip__checkmark {} */
+/* wk-chip[input] .chip__checkmark {} */
 
 /* 
 	@modifier choice 
 */
-/* .chip--choice {} */
+/* wk-chip[choice] {} */
 
-/* .chip--choice .chip__thumb {} */
+/* wk-chip[choice] .chip__thumb {} */
 
-/* .chip--choice .chip__text {} */
+/* wk-chip[choice] .chip__text {} */
 
-/* .chip--choice .chip__remove {} */
+/* wk-chip[choice] .chip__remove {} */
 
-/* .chip--choice .chip__checkmark {} */
+/* wk-chip[choice] .chip__checkmark {} */
 
 /* 
 	@modifier filter 
 */
-/* .chip--filter {} */
+/* wk-chip[filter] {} */
 
-/* .chip--filter .chip__thumb {} */
+/* wk-chip[filter] .chip__thumb {} */
 
-/* .chip--filter .chip__text {} */
+/* wk-chip[filter] .chip__text {} */
 
-/* .chip--filter .chip__remove {} */
+/* wk-chip[filter] .chip__remove {} */
 
-/* .chip--filter .chip__checkmark {} */
+/* wk-chip[filter] .chip__checkmark {} */
 
-.chip--filter:not([selected]) .chip__checkmark {
+wk-chip[filter]:not([selected]) .chip__checkmark {
     width: 0;
     height: 0;
     overflow: hidden;
@@ -142,37 +142,37 @@
 /* 
 	@modifier action 
 */
-/* .chip--action {} */
+/* wk-chip[action] {} */
 
-/* .chip--action .chip__thumb {} */
+/* wk-chip[action] .chip__thumb {} */
 
-/* .chip--action .chip__text {} */
+/* wk-chip[action] .chip__text {} */
 
-/* .chip--action .chip__remove {} */
+/* wk-chip[action] .chip__remove {} */
 
-/* .chip--action .chip__checkmark {} */
+/* wk-chip[action] .chip__checkmark {} */
 
 /* 
 	@modifier outlined 
 */
-.chip--outlined {
+wk-chip[outlined] {
     background-color: transparent;
     color: var(--color-focused-on-light);
     box-shadow: inset 0 0 0 1px var(--color-black-12);
 }
 
-/* .chip--outlined .chip__thumb {} */
+/* wk-chip[outlined] .chip__thumb {} */
 
-/* .chip--outlined .chip__text {} */
+/* wk-chip[outlined] .chip__text {} */
 
-/* .chip--outlined .chip__remove {} */
+/* wk-chip[outlined] .chip__remove {} */
 
-/* .chip--outlined .chip__checkmark {} */
+/* wk-chip[outlined] .chip__checkmark {} */
 
 /* 
 	@blockGroup group 
 */
-.chip-group {
+wk-chip-group {
     display: flex;
     flex-wrap: wrap;
     vertical-align: middle;
@@ -180,31 +180,31 @@
     padding-top: 8px;
 }
 
-.chip-group .chip {
+wk-chip-group wk-chip {
     margin-right: 8px;
     margin-bottom: 8px;
 }
 
-/* .chip-group .chip--input {} */
+/* wk-chip-group wk-chip[input] {} */
 
-/* .chip-group .chip--choice {} */
+/* wk-chip-group wk-chip[choice] {} */
 
-/* .chip-group .chip--filter {} */
+/* wk-chip-group wk-chip[filter] {} */
 
-/* .chip-group .chip--action {} */
+/* wk-chip-group wk-chip[action] {} */
 
-/* .chip-group .chip--outlined {} */
+/* wk-chip-group wk-chip[outlined] {} */
 
 /* 
 	@state ripple 
 */
-.chip {
+wk-chip {
     position: relative;
     overflow: hidden;
     cursor: pointer;
     user-select: none;
 }
-.chip::after {
+wk-chip::after {
     content: "";
     position: absolute;
     overflow: hidden;
@@ -219,28 +219,28 @@
     opacity: 0;
 }
 
-.chip[disabled] {
+wk-chip[disabled] {
     cursor: default;
     pointer-events: none;
     opacity: 0.38;
 }
-.chip[disabled]::after {
+wk-chip[disabled]::after {
     opacity: 0;
 }
 
-/* .chip:hover {} */
-.chip:hover::after {
+/* wk-chip:hover {} */
+wk-chip:hover::after {
     opacity: 0.04;
 }
 
-/* .chip:focus {} */
-.chip:focus::after {
+/* wk-chip:focus {} */
+wk-chip:focus::after {
     opacity: 0.12;
     animation: var(--ripple-animation, ripple-out) 300ms ease-in-out forwards;
 }
 
-/* .chip.chip--filter[selected] {} */
-.chip.chip--filter:not([selected]):focus:not(:active)::after {
+/* wk-chip[filter][selected] {} */
+wk-chip[filter]:not([selected]):focus:not(:active)::after {
     --ripple-left: 50%;
     --ripple-top: 50%;
     /* --ripple-circumference: 83.33333333333334%; */
@@ -248,17 +248,17 @@
     --ripple-translateY: 0;
     --ripple-animation: ripple-in;
 }
-.chip.chip--filter[selected]::after {
+wk-chip[filter][selected]::after {
     background-color: var(--color-primary);
     opacity: 0.08;
     animation-name: ripple-out;
     animation-fill-mode: backwards;
 }
 
-.chip.chip--choice[activated] {
+wk-chip[choice][activated] {
     color: var(--color-primary);
 }
-.chip.chip--choice:not([activated]):focus:not(:active)::after {
+wk-chip[choice]:not([activated]):focus:not(:active)::after {
     --ripple-left: 50%;
     --ripple-top: 50%;
     /* --ripple-circumference: 83.33333333333334%; */
@@ -266,19 +266,19 @@
     --ripple-translateY: 0;
     --ripple-animation: ripple-in;
 }
-.chip.chip--choice[activated]::after {
+wk-chip[choice][activated]::after {
     background-color: var(--color-primary);
     opacity: 0.12;
     animation-name: ripple-out;
     animation-fill-mode: backwards;
 }
 
-/* .chip:active {} */
-.chip:active::after {
+/* wk-chip:active {} */
+wk-chip:active::after {
     opacity: 0.16;
 }
 
-/* .chip[dragged] {} */
-.chip[dragged]::after {
+/* wk-chip[dragged] {} */
+wk-chip[dragged]::after {
     opacity: 0.08;
 }

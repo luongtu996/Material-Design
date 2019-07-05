@@ -60,7 +60,7 @@ class WKElement extends HTMLElement {
 
     get toggle() {
 
-        return this.getAttribute("toggle")
+        return this.hasAttribute("toggle")
     }
 
     set toggle(value) {
