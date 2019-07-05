@@ -16,6 +16,10 @@
     outline: none;
 }
 
+[hidden] {
+    display: none;
+}
+
 input, 
 input::-webkit-slider-thumb {
     -webkit-appearance: none;
