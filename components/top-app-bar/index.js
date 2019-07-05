@@ -37,8 +37,12 @@ class WKTopAppBar extends HTMLElement {
         this.topAppBarActionNavigation = this.querySelector(".top-app-bar__action--navigation")
         this.topAppBarActionMenu = this.querySelector(".top-app-bar__action--menu")
 
-        this.topAppBarActionNavigation.addEventListener("click", this.navigationClick.bind(this))
-        this.topAppBarActionMenu.addEventListener("click", this.menuClick.bind(this))
+        if (this.topAppBarActionNavigation) {
+            this.topAppBarActionNavigation.addEventListener("click", this.navigationClick.bind(this))
+        }
+        if (this.topAppBarActionMenu) {
+            this.topAppBarActionMenu.addEventListener("click", this.menuClick.bind(this))
+        }
     }
     
     disconnectedCallback() {

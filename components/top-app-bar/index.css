@@ -40,7 +40,9 @@ wk-top-app-bar-section[start] {
 /* 
 	@elementModifier end 
 */
-/* wk-top-app-bar-section[end] {} */
+wk-top-app-bar-section[end] {
+    margin-left: auto;
+}
 
 /* 
 	@element action 
