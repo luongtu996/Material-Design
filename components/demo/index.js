@@ -19,4 +19,9 @@ console.log(`# ${tag}
 Prop Name | Type | Description
 --- | --- | ---
 ${attrs.map(attr => `${attr.name} | ${attr.type} | ...\n`).join("")}
-`)
+
+## Events
+
+Event Name | Params | Description
+--- | --- | ---
+... | ... | ...`)
