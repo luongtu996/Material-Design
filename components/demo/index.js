@@ -1,6 +1,6 @@
 window.addEventListener("load", event => {
     let attrs = []
-    let tag = "wk-chip"
+    let tag = "wk-icon"
 
     document.querySelectorAll(tag).forEach(element => {
         Array.from(element.attributes).forEach(attr => {

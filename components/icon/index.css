@@ -1,7 +1,7 @@
 /* 
 	@block icon 
 */
-.icon {
+wk-icon {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -14,19 +14,19 @@
 /* 
 	@modifier actionable 
 */
-/* .icon--actionable {} */
+/* wk-icon[actionable] {} */
 
 /* 
 	@state ripple 
 */
-.icon--actionable {
+wk-icon[actionable] {
     --ripple-circumference: 166.66666666666669%;
     position: relative;
     /* overflow: hidden; */
     cursor: pointer;
     user-select: none;
 }
-.icon--actionable::after {
+wk-icon[actionable]::after {
     content: "";
     position: absolute;
     overflow: hidden;
@@ -41,28 +41,28 @@
     opacity: 0;
 }
 
-.icon--actionable[disabled] {
+wk-icon[actionable][disabled] {
     cursor: default;
     pointer-events: none;
     opacity: 0.38;
 }
-.icon--actionable[disabled]::after {
+wk-icon[actionable][disabled]::after {
     opacity: 0;
 }
 
-/* .icon--actionable:hover {} */
-.icon--actionable:hover::after {
+/* wk-icon[actionable]:hover {} */
+wk-icon[actionable]:hover::after {
     opacity: 0.04;
 }
 
-/* .icon--actionable:focus {} */
-.icon--actionable:focus::after {
+/* wk-icon[actionable]:focus {} */
+wk-icon[actionable]:focus::after {
     opacity: 0.12;
     animation: var(--ripple-animation, ripple-out) 300ms ease-in-out forwards;
 }
 
-/* .icon--actionable.icon--actionable--filter[selected] {} */
-.icon--actionable.icon--actionable--filter:not([selected]):focus:not(:active)::after {
+/* wk-icon[actionable]wk-icon[actionable]--filter[selected] {} */
+wk-icon[actionable]wk-icon[actionable]--filter:not([selected]):focus:not(:active)::after {
     --ripple-left: 50%;
     --ripple-top: 50%;
     /* --ripple-circumference: 83.33333333333334%; */
@@ -70,17 +70,17 @@
     --ripple-translateY: 0;
     --ripple-animation: ripple-in;
 }
-.icon--actionable.icon--actionable--filter[selected]::after {
+wk-icon[actionable]wk-icon[actionable]--filter[selected]::after {
     background-color: var(--color-primary);
     opacity: 0.08;
     animation-name: ripple-out;
     animation-fill-mode: backwards;
 }
 
-.icon--actionable.icon--actionable--choice[activated] {
+wk-icon[actionable]wk-icon[actionable]--choice[activated] {
     color: var(--color-primary);
 }
-.icon--actionable.icon--actionable--choice:not([activated]):focus:not(:active)::after {
+wk-icon[actionable]wk-icon[actionable]--choice:not([activated]):focus:not(:active)::after {
     --ripple-left: 50%;
     --ripple-top: 50%;
     /* --ripple-circumference: 83.33333333333334%; */
@@ -88,19 +88,19 @@
     --ripple-translateY: 0;
     --ripple-animation: ripple-in;
 }
-.icon--actionable.icon--actionable--choice[activated]::after {
+wk-icon[actionable]wk-icon[actionable]--choice[activated]::after {
     background-color: var(--color-primary);
     opacity: 0.12;
     animation-name: ripple-out;
     animation-fill-mode: backwards;
 }
 
-/* .icon--actionable:active {} */
-.icon--actionable:active::after {
+/* wk-icon[actionable]:active {} */
+wk-icon[actionable]:active::after {
     opacity: 0.16;
 }
 
-/* .icon--actionable[dragged] {} */
-.icon--actionable[dragged]::after {
+/* wk-icon[actionable][dragged] {} */
+wk-icon[actionable][dragged]::after {
     opacity: 0.08;
 }

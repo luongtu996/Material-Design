@@ -1,5 +1,5 @@
 let attrs = []
-let tag = "wk-checkbox"
+let tag = "wk-icon"
 let cls = tag.split("-").map((tag, index) => {
     if (index > 0) {
         tag = tag.charAt(0).toUpperCase() + tag.slice(1)
