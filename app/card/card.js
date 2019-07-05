@@ -8,7 +8,7 @@ class CardComponent extends HTMLElement {
                     <!--  -->
                     <div class="layout__column layout__column--3-large">
 
-                        <div class="card">
+                        <div class="demo-card card">
                             <div class="card__media card__media--16-9"></div>
                             <div class="card__body">
                                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae, voluptate.
@@ -18,7 +18,7 @@ class CardComponent extends HTMLElement {
                     </div>
                     <div class="layout__column layout__column--3-large">
 
-                        <div class="card">
+                        <div class="demo-card card">
                             <div class="card__header">
                                 <div class="card__row">
                                     <div class="card__section card__section--start">
@@ -45,7 +45,7 @@ class CardComponent extends HTMLElement {
                     </div>
                     <div class="layout__column layout__column--3-large">
 
-                        <div class="card">
+                        <div class="demo-card card">
                             <div class="card__header">
                                 <div class="card__row">
                                     <div class="card__section card__section--start">
@@ -69,7 +69,7 @@ class CardComponent extends HTMLElement {
                     </div>
                     <div class="layout__column layout__column--3-large">
 
-                        <div class="card">
+                        <div class="demo-card card">
                             <div class="card__media card__media--16-9"></div>
                             <div class="card__primary">
                                 <div class="card__title">Title</div>
@@ -90,7 +90,7 @@ class CardComponent extends HTMLElement {
 
                     <div class="layout__column layout__column--3-large">
 
-                        <div class="card" style="height: 506.5px;">
+                        <div class="demo-card card" style="height: 506.5px;">
                             <div class="card__media card__media--16-9"></div>
                             <div class="card__primary">
                                 <div class="card__title">Title</div>
@@ -120,7 +120,7 @@ class CardComponent extends HTMLElement {
                     </div>
                     <div class="layout__column layout__column--3-large">
 
-                        <div class="card">
+                        <div class="demo-card card">
                             <div class="card__primary">
                                 <div class="card__title">Title</div>
                                 <div class="card__subtitle">Subitle</div>
@@ -141,7 +141,7 @@ class CardComponent extends HTMLElement {
 
                     </div>
                     <div class="layout__column layout__column--3-large">
-                        <div class="card">
+                        <div class="demo-card card">
                             <div class="card__media card__media--16-9"></div>
                             <div class="card__footer">
                                 <div class="card__section card__section--end">
@@ -154,7 +154,7 @@ class CardComponent extends HTMLElement {
                     </div>
                     <div class="layout__column layout__column--3-large">
 
-                        <div class="card">
+                        <div class="demo-card card">
                             <div class="card__media card__media--1-1">
                                 <div class="card__protection">
                                     <div class="card__primary">
@@ -175,8 +175,8 @@ class CardComponent extends HTMLElement {
 
                     <div class="layout__column layout__column--3-large">
 
-                        <div class="demo-card">
-                            <div class="card">
+                        <div class="demo-card-group">
+                            <div class="demo-card card">
                                 <div class="card__media card__media--1-1">
                                     <div class="card__protection">
                                         <div class="card__primary">
@@ -192,7 +192,7 @@ class CardComponent extends HTMLElement {
                                     </div>
                                 </div>
                             </div>
-                            <div class="card">
+                            <div class="demo-card card">
                                 <div class="card__media card__media--1-1">
                                     <div class="card__protection">
                                         <div class="card__primary">
@@ -213,7 +213,7 @@ class CardComponent extends HTMLElement {
                     </div>
                     <div class="layout__column layout__column--3-large">
 
-                        <div class="card">
+                        <div class="demo-card card">
                             <div class="card__content">
                                 <div class="card__primary">
                                     <div class="card__title">Title</div>
@@ -232,7 +232,7 @@ class CardComponent extends HTMLElement {
                     </div>
                     <div class="layout__column layout__column--3-large">
 
-                        <div class="card">
+                        <div class="demo-card card">
                             <div class="card__content">
                                 <div class="card__primary">
                                     <div class="card__title">Title</div>
@@ -251,7 +251,7 @@ class CardComponent extends HTMLElement {
                     </div>
                     <div class="layout__column layout__column--3-large">
 
-                        <div class="card">
+                        <div class="demo-card card">
                             <div class="card__content">
                                 <div class="card__primary">
                                     <div class="card__title">Title</div>
@@ -271,7 +271,7 @@ class CardComponent extends HTMLElement {
 
                     <div class="layout__column layout__column--3-large">
 
-                        <div class="card">
+                        <div class="demo-card card">
                             <div class="card__content">
                                 <div class="card__media card__media--240"></div>
                                 <div class="card__footer">
@@ -287,7 +287,7 @@ class CardComponent extends HTMLElement {
                     </div>
                     <div class="layout__column layout__column--3-large">
 
-                        <div class="card">
+                        <div class="demo-card card">
                             <div class="card__header">
                                 <div class="card__row">
                                     <div class="card__section card__section--start">
@@ -323,7 +323,7 @@ class CardComponent extends HTMLElement {
                     </div>
                     <div class="layout__column layout__column--3-large">
 
-                        <div class="card">
+                        <div class="demo-card card">
                             <div class="card__header">
                                 <div class="card__row" hidden>
                                     <div class="card__section card__section--start">
@@ -359,7 +359,7 @@ class CardComponent extends HTMLElement {
                     </div>
                     <div class="layout__column layout__column--3-large">
 
-                        <div class="card">
+                        <div class="demo-card card">
                             <div class="card__header">
                                 <div class="card__row" hidden>
                                     <div class="card__section card__section--start">
@@ -396,7 +396,7 @@ class CardComponent extends HTMLElement {
 
                     <div class="layout__column layout__column--3-large">
 
-                        <div class="card">
+                        <div class="demo-card card">
                             <div class="card__header">
                                 <div class="card__row">
                                     <div class="card__section card__section--start">
@@ -426,7 +426,7 @@ class CardComponent extends HTMLElement {
                     </div>
                     <div class="layout__column layout__column--3-large">
 
-                        <div class="card">
+                        <div class="demo-card card">
                             <div class="card__header">
                                 <div class="card__row">
                                     <div class="card__section card__section--start">
@@ -460,7 +460,7 @@ class CardComponent extends HTMLElement {
                     <!--  -->
                     <div class="layout__column layout__column--3-large">
 
-                        <div class="card card--outlined">
+                        <div class="demo-card card card--outlined">
                             <div class="card__media card__media--16-9"></div>
                             <div class="card__body">
                                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae, voluptate.
@@ -470,7 +470,7 @@ class CardComponent extends HTMLElement {
                     </div>
                     <div class="layout__column layout__column--3-large">
 
-                        <div class="card card--outlined">
+                        <div class="demo-card card card--outlined">
                             <div class="card__header">
                                 <div class="card__row">
                                     <div class="card__section card__section--start">
@@ -497,7 +497,7 @@ class CardComponent extends HTMLElement {
                     </div>
                     <div class="layout__column layout__column--3-large">
 
-                        <div class="card card--outlined">
+                        <div class="demo-card card card--outlined">
                             <div class="card__header">
                                 <div class="card__row">
                                     <div class="card__section card__section--start">
@@ -521,7 +521,7 @@ class CardComponent extends HTMLElement {
                     </div>
                     <div class="layout__column layout__column--3-large">
 
-                        <div class="card card--outlined">
+                        <div class="demo-card card card--outlined">
                             <div class="card__media card__media--16-9"></div>
                             <div class="card__primary">
                                 <div class="card__title">Title</div>
@@ -542,7 +542,7 @@ class CardComponent extends HTMLElement {
 
                     <div class="layout__column layout__column--3-large">
 
-                        <div class="card card--outlined">
+                        <div class="demo-card card card--outlined">
                             <div class="card__media card__media--16-9"></div>
                             <div class="card__primary">
                                 <div class="card__title">Title</div>
@@ -568,7 +568,7 @@ class CardComponent extends HTMLElement {
                     </div>
                     <div class="layout__column layout__column--3-large">
 
-                        <div class="card card--outlined">
+                        <div class="demo-card card card--outlined">
                             <div class="card__primary">
                                 <div class="card__title">Title</div>
                                 <div class="card__subtitle">Subitle</div>
@@ -589,7 +589,7 @@ class CardComponent extends HTMLElement {
 
                     </div>
                     <div class="layout__column layout__column--3-large">
-                        <div class="card card--outlined">
+                        <div class="demo-card card card--outlined">
                             <div class="card__media card__media--16-9"></div>
                             <div class="card__footer">
                                 <div class="card__section card__section--end">
@@ -602,7 +602,7 @@ class CardComponent extends HTMLElement {
                     </div>
                     <div class="layout__column layout__column--3-large">
 
-                        <div class="card card--outlined">
+                        <div class="demo-card card card--outlined">
                             <div class="card__media card__media--1-1">
                                 <div class="card__protection">
                                     <div class="card__primary">
@@ -623,8 +623,8 @@ class CardComponent extends HTMLElement {
 
                     <div class="layout__column layout__column--3-large">
 
-                        <div class="demo-card">
-                            <div class="card card--outlined">
+                        <div class="demo-card-group">
+                            <div class="demo-card card card--outlined">
                                 <div class="card__media card__media--1-1">
                                     <div class="card__protection">
                                         <div class="card__primary">
@@ -640,7 +640,7 @@ class CardComponent extends HTMLElement {
                                     </div>
                                 </div>
                             </div>
-                            <div class="card card--outlined">
+                            <div class="demo-card card card--outlined">
                                 <div class="card__media card__media--1-1">
                                     <div class="card__protection">
                                         <div class="card__primary">
@@ -661,7 +661,7 @@ class CardComponent extends HTMLElement {
                     </div>
                     <div class="layout__column layout__column--3-large">
 
-                        <div class="card card--outlined">
+                        <div class="demo-card card card--outlined">
                             <div class="card__content">
                                 <div class="card__primary">
                                     <div class="card__title">Title</div>
@@ -680,7 +680,7 @@ class CardComponent extends HTMLElement {
                     </div>
                     <div class="layout__column layout__column--3-large">
 
-                        <div class="card card--outlined">
+                        <div class="demo-card card card--outlined">
                             <div class="card__content">
                                 <div class="card__primary">
                                     <div class="card__title">Title</div>
@@ -699,7 +699,7 @@ class CardComponent extends HTMLElement {
                     </div>
                     <div class="layout__column layout__column--3-large">
 
-                        <div class="card card--outlined">
+                        <div class="demo-card card card--outlined">
                             <div class="card__content">
                                 <div class="card__primary">
                                     <div class="card__title">Title</div>
@@ -719,7 +719,7 @@ class CardComponent extends HTMLElement {
 
                     <div class="layout__column layout__column--3-large">
 
-                        <div class="card card--outlined">
+                        <div class="demo-card card card--outlined">
                             <div class="card__content">
                                 <div class="card__media card__media--240"></div>
                                 <div class="card__footer">
@@ -735,7 +735,7 @@ class CardComponent extends HTMLElement {
                     </div>
                     <div class="layout__column layout__column--3-large">
 
-                        <div class="card card--outlined">
+                        <div class="demo-card card card--outlined">
                             <div class="card__header">
                                 <div class="card__row">
                                     <div class="card__section card__section--start">
@@ -771,7 +771,7 @@ class CardComponent extends HTMLElement {
                     </div>
                     <div class="layout__column layout__column--3-large">
 
-                        <div class="card card--outlined">
+                        <div class="demo-card card card--outlined">
                             <div class="card__header">
                                 <div class="card__row" hidden>
                                     <div class="card__section card__section--start">
@@ -807,7 +807,7 @@ class CardComponent extends HTMLElement {
                     </div>
                     <div class="layout__column layout__column--3-large">
 
-                        <div class="card card--outlined">
+                        <div class="demo-card card card--outlined">
                             <div class="card__header">
                                 <div class="card__row" hidden>
                                     <div class="card__section card__section--start">
@@ -844,7 +844,7 @@ class CardComponent extends HTMLElement {
 
                     <div class="layout__column layout__column--3-large">
 
-                        <div class="card card--outlined">
+                        <div class="demo-card card card--outlined">
                             <div class="card__header">
                                 <div class="card__row">
                                     <div class="card__section card__section--start">
@@ -874,7 +874,7 @@ class CardComponent extends HTMLElement {
                     </div>
                     <div class="layout__column layout__column--3-large">
 
-                        <div class="card card--outlined">
+                        <div class="demo-card card card--outlined">
                             <div class="card__header">
                                 <div class="card__row">
                                     <div class="card__section card__section--start">

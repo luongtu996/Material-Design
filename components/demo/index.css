@@ -7,22 +7,22 @@
     background-image: url(https://i.pravatar.cc/300);
 }
 
-.demo-card {
+.demo-card-group {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     grid-gap: 8px;
 }
 
-.demo-card .card {
+.demo-card-group .demo-card {
     width: auto;
 }
 
 @media (min-width: 840px) {
-    .card {
+    .demo-card {
         width: 344px;
     }
 
-    .demo-card {
+    .demo-card-group {
         width: 344px;
     }
 }
