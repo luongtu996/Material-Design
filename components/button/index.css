@@ -1,8 +1,7 @@
 /* 
 	@block button 
 */
-wk-button,
-.button {
+wk-button {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -39,49 +38,43 @@ wk-button,
 /* 
 	@modifier outlined 
 */
-wk-button[outlined],
-.button--outlined {
+wk-button[outlined] {
     background-color: transparent;
     color: var(--color-primary);
     box-shadow: inset 0 0 0 1px var(--color-black-12);
 }
 
-wk-button[outlined] .button__text,
-.button--outlined .button__text {
+wk-button[outlined] .button__text {
     margin-left: 16px;
     margin-right: 16px;
 }
 
-/* .button--outlined .button__icon {} */
+/* wk-button[outlined] .button__icon {} */
 
 /* 
 	@modifier contained 
 */
-wk-button[contained],
-.button--contained {
+wk-button[contained] {
     background-color: var(--color-primary);
     color: var(--color-on-primary);
     box-shadow: 0 3px 1px -2px var(--color-black-20), 0 2px 2px 0 var(--color-black-14), 0 1px 5px 0 var(--color-black-12);
 }
 
-wk-button[contained] .button__text,
-.button--contained .button__text {
+wk-button[contained] .button__text {
     margin-left: 16px;
     margin-right: 16px;
 }
 
-/* .button--contained .button__icon {} */
+/* wk-button[contained] .button__icon {} */
 
-wk-button .button__icon + .button__text,
-.button__icon + .button__text {
+wk-button .button__icon + .button__text {
     margin-left: calc(8px - 12px);
 }
 
 /* 
 	@modifier toggle 
 */
-wk-button[toggle],
-.button--toggle {
+wk-button[toggle] {
     min-width: 48px;
     height: 48px;
     border-radius: 0;
@@ -90,10 +83,9 @@ wk-button[toggle],
     box-shadow: inset 0 0 0 1px var(--color-black-12);
 }
 
-/* .button--toggle .button__text {} */
+/* wk-button[toggle] .button__text {} */
 
-wk-button[toggle] .button__icon,
-.button--toggle .button__icon {
+wk-button[toggle] .button__icon {
     width: 24px;
     height: 24px;
     font-size: 18px;
@@ -102,42 +94,37 @@ wk-button[toggle] .button__icon,
 /* 
 	@blockGroup group 
 */
-wk-button-group,
-.button-group {
+wk-button-group {
     display: inline-flex;
     vertical-align: middle;
 }
 
-/* .button-group .button {} */
+/* wk-button-group wk-button {} */
 
-/* .button-group .button--outlined {} */
+/* wk-button-group wk-button[outlined] {} */
 
-/* .button-group .button--contained {} */
+/* wk-button-group wk-button[contained] {} */
 
-/* .button-group .button--toggle {} */
+/* wk-button-group wk-button[toggle] {} */
 
-wk-button-group wk-button[toggle] + wk-button[toggle],
-.button-group .button--toggle + .button--toggle {
+wk-button-group wk-button[toggle] + wk-button[toggle] {
     margin-left: -1px;
 }
 
-wk-button-group wk-button[toggle][activated],
-.button-group .button--toggle[activated] {
+wk-button-group wk-button[toggle][activated] {
     z-index: 1;
 }
 
 /* 
 	@state button 
 */
-wk-button,
-.button {
+wk-button {
     position: relative;
     overflow: hidden;
     cursor: pointer;
     user-select: none;
 }
-wk-button::after,
-.button::after {
+wk-button::after {
     content: "";
     position: absolute;
     overflow: hidden;
@@ -152,32 +139,28 @@ wk-button::after,
     opacity: 0;
 }
 
-wk-button[disabled],
-.button[disabled] {
+wk-button[disabled] {
     cursor: default;
     pointer-events: none;
     opacity: 0.38;
 }
-wk-button[disabled]::after,
-.button[disabled]::after {
+wk-button[disabled]::after {
     opacity: 0;
 }
 
-/* .button:hover {} */
-wk-button:hover::after,
-.button:hover::after {
+/* wk-button:hover {} */
+wk-button:hover::after {
     opacity: 0.04;
 }
 
-/* .button:focus {} */
-wk-button:focus::after,
-.button:focus::after {
+/* wk-button:focus {} */
+wk-button:focus::after {
     opacity: 0.12;
     animation: var(--ripple-animation, ripple-out) 300ms ease-in-out forwards;
 }
 
-/* .button.button--filter[selected] {} */
-.button.button--filter:not([selected]):focus:not(:active)::after {
+/* wk-button[filter][selected] {} */
+wk-button[filter]:not([selected]):focus:not(:active)::after {
     --ripple-left: 50%;
     --ripple-top: 50%;
     /* --ripple-circumference: 83.33333333333334%; */
@@ -185,7 +168,7 @@ wk-button:focus::after,
     --ripple-translateY: 0;
     --ripple-animation: ripple-in;
 }
-.button.button--filter[selected]::after {
+wk-button[filter][selected]::after {
     background-color: var(--color-primary);
     opacity: 0.08;
     animation-name: ripple-out;
@@ -210,51 +193,45 @@ wk-button[toggle][activated]::after {
     animation-fill-mode: backwards;
 }
 
-/* .button:active {} */
-wk-button:active::after,
-.button:active::after {
+/* wk-button:active {} */
+wk-button:active::after {
     opacity: 0.16;
 }
 
-/* .button[dragged] {} */
-.button[dragged]::after {
+/* wk-button[dragged] {} */
+wk-button[dragged]::after {
     opacity: 0.08;
 }
 
 /* 
 	@state button 
 */
-/* .button--contained {} */
-wk-button[contained]::after,
-.button--contained::after {
+/* wk-button[contained] {} */
+wk-button[contained]::after {
     background-color: var(--color-on-primary);
     opacity: 0;
 }
 
-wk-button[contained][disabled],
-.button--contained[disabled] {
+wk-button[contained][disabled] {
     opacity: 0.38;
 }
-wk-button[contained][disabled]::after,
-.button--contained[disabled]::after {
+wk-button[contained][disabled]::after {
     opacity: 0;
 }
 
-/* .button--contained:hover {} */
-wk-button[contained]:hover::after,
-.button--contained:hover::after {
+/* wk-button[contained]:hover {} */
+wk-button[contained]:hover::after {
     opacity: 0.08;
 }
 
-/* .button--contained:focus {} */
-wk-button[contained]:focus::after,
-.button--contained:focus::after {
+/* wk-button[contained]:focus {} */
+wk-button[contained]:focus::after {
     opacity: 0.24;
 }
 
-/* .button--contained.button--filter[selected] {} */
-/* .button--contained.button--filter:not([selected]):focus:not(:active)::after {} */
-.button--contained.button--filter[selected]::after {
+/* wk-button[contained]wk-button[filter][selected] {} */
+/* wk-button[contained]wk-button[filter]:not([selected]):focus:not(:active)::after {} */
+wk-button[contained]wk-button[filter][selected]::after {
     background-color: var(--color-primary);
     opacity: 0.16;
 }
@@ -268,14 +245,12 @@ wk-button[toggle][activated]::after {
     opacity: 0.24;
 }
 
-/* .button--contained:active {} */
-wk-button[contained]:active::after,
-.button--contained:active::after {
+/* wk-button[contained]:active {} */
+wk-button[contained]:active::after {
     opacity: 0.32;
 }
 
-/* .button--contained[dragged] {} */
-wk-button[contained][dragged]::after,
-.button--contained[dragged]::after {
+/* wk-button[contained][dragged] {} */
+wk-button[contained][dragged]::after {
     opacity: 0.16;
 }
