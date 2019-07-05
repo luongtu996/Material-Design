@@ -31,9 +31,9 @@
 }
 
 /* 
-	@element action-group 
+	@element footer 
 */
-.banner__action-group {
+.banner__footer {
     display: flex;
     justify-content: flex-end;
     align-self: flex-end;
@@ -41,7 +41,7 @@
     margin-left: auto;
 }
 
-.banner__body ~ .banner__action-group {
+.banner__body ~ .banner__footer {
     padding-left: calc(90px - 24px);
 }
 
@@ -49,7 +49,7 @@
 	@element action 
 */
 /* .banner__action {} */
-.banner__action-group wk-button + wk-button {
+.banner__footer wk-button + wk-button {
     margin-left: 8px;
 }
 
@@ -83,10 +83,10 @@
     .banner__text {
         margin: 18px 16px 0 16px;
     }
-    .banner__action-group {
+    .banner__footer {
         padding: 10px 8px 8px 36px;
     }
-    .banner__body ~ .banner__action-group {
+    .banner__body ~ .banner__footer {
         padding-left: calc(36px - 16px);
     }
     .banner__thumb {
