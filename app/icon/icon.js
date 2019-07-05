@@ -2,10 +2,10 @@ class IconComponent extends HTMLElement {
 
     connectedCallback() {
         this.innerHTML = `
-            <div class="layout">
-                <div class="layout__grid">
-                    <div class="layout__column layout__column--12-large layout__column--8-medium layout__column--4-small">
-                    
+            <wk-layout>
+                <wk-layout-grid>
+                    <wk-layout-column columnLarge="12" columnMedium="8" columnSmall="4">
+
                         <wk-icon actionable title="GlobalNavigationButton">&#xE700;</wk-icon>
                         <wk-icon title="Wifi">&#xE701;</wk-icon>
                         <wk-icon title="Bluetooth">&#xE702;</wk-icon>
@@ -1366,11 +1366,9 @@ class IconComponent extends HTMLElement {
                         <wk-icon title="UpdateStatusDot">&#xF83F;</wk-icon>
                         <wk-icon title="Eject">&#xF847;</wk-icon>
 
-                    </div>
-                    <div class="layout__column layout__column--12-large layout__column--8-medium layout__column--4-small"></div>
-                    <div class="layout__column layout__column--12-large layout__column--8-medium layout__column--4-small"></div>
-                </div>
-            </div>
+                    </wk-layout-column>
+                </wk-layout-grid>
+            </wk-layout>
         `
     }
 }
