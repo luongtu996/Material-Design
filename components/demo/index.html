@@ -12,58 +12,44 @@
     <link rel="stylesheet" href="../color/index.css">
     <link rel="stylesheet" href="../icon/index.css">
     <link rel="stylesheet" href="../ripple/index.css">
-    <link rel="stylesheet" href="../layout/index.css">
+    <link rel="stylesheet" href="../top-app-bar/index.css">
     <link rel="stylesheet" href="./index.css">
 </head>
 
 <body>
 
-    
-
-    <br><br>
-
-    
-
-    <br><br>
-
-    <div class="top-app-bar top-app-bar--colored">
-        <div class="top-app-bar__row">
-            <div class="top-app-bar__section top-app-bar__section--start">
-                <wk-icon class="top-app-bar__action top-app-bar__action--navigation" actionable></wk-icon>
+    <!-- <wk-top-app-bar extended colored navigation menu title="Title">
+        <wk-top-app-bar-row>
+            <wk-top-app-bar-section start>
+                <wk-icon class="top-app-bar__action top-app-bar__action--navigation"></wk-icon>
                 <div class="top-app-bar__title">Title</div>
-            </div>
-            <div class="top-app-bar__section top-app-bar__section--end">
-                <wk-icon actionable>&#xE713;</wk-icon>
-                <wk-icon actionable>&#xE721;</wk-icon>
-                <wk-icon class="top-app-bar__action top-app-bar__action--menu" actionable></wk-icon>
-            </div>
-        </div>
+            </wk-top-app-bar-section>
+            <wk-top-app-bar-section end>
+                <wk-icon class="top-app-bar__action top-app-bar__action--menu"></wk-icon>
+            </wk-top-app-bar-section>
+        </wk-top-app-bar-row>
+    </wk-top-app-bar> -->
+
+    <!-- <wk-top-app-bar extended colored navigation menu title="Title"></wk-top-app-bar> -->
+    <!-- <wk-top-app-bar colored navigation menu title="Title"></wk-top-app-bar> -->
+    <!-- <wk-top-app-bar navigation menu title="Title"></wk-top-app-bar> -->
+    <!-- <wk-top-app-bar menu title="Title"></wk-top-app-bar> -->
+    <!-- <wk-top-app-bar title="Title"></wk-top-app-bar> -->
+    <wk-top-app-bar title="Title" actions="#actions"></wk-top-app-bar>
+
+    <div id="actions">
+        <wk-icon actionable>&#xE713;</wk-icon>
+        <wk-icon actionable>&#xE721;</wk-icon>
     </div>
-
-    <br><br>
-
-    <div class="top-app-bar top-app-bar--colored top-app-bar--extended">
-        <div class="top-app-bar__row">
-            <div class="top-app-bar__section top-app-bar__section--start">
-                <wk-icon class="top-app-bar__action top-app-bar__action--navigation" actionable></wk-icon>
-                <div class="top-app-bar__title">Title</div>
-            </div>
-            <div class="top-app-bar__section top-app-bar__section--end">
-                <wk-icon actionable>&#xE713;</wk-icon>
-                <wk-icon actionable>&#xE721;</wk-icon>
-                <wk-icon class="top-app-bar__action top-app-bar__action--menu" actionable></wk-icon>
-            </div>
-        </div>
-    </div>
-
-    <br><br>
 
     <script src="../ripple/index.js" type="module"></script>
     <script src="../icon/index.js" type="module"></script>
     <script src="../layout/index.js" type="module"></script>
+    <script src="../top-app-bar/index.js" type="module"></script>
+
     <script src="./index.3.js" type="module"></script>
     <!-- <script src="./index.2.js" type="module"></script> -->
-    <script src="./index.1.js" type="module"></script>
+    <!-- <script src="./index.1.js" type="module"></script> -->
     <script src="./index.js" type="module"></script>
 </body>
 

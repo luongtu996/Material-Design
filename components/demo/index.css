@@ -46,7 +46,7 @@ wk-layout {
     margin-left: 256px;
 }
 
-.top-app-bar ~ .viewport {
+wk-top-app-bar ~ .viewport {
     margin-top: calc(64px + 24px);
 }
 

@@ -11,21 +11,25 @@
 
 <body>
 
-    <div class="top-app-bar">
-        <div class="top-app-bar__row">
-            <div class="top-app-bar__section top-app-bar__section--start">
-                <wk-icon class="top-app-bar__action top-app-bar__action--navigation" actionable></wk-icon>
-                <div class="top-app-bar__title">Title</div>
-            </div>
-            <div class="top-app-bar__section top-app-bar__section--end">
-                <wk-icon actionable>&#xE713;</wk-icon>
-                <wk-icon actionable>&#xE721;</wk-icon>
-                <wk-icon class="top-app-bar__action top-app-bar__action--menu" actionable></wk-icon>
-            </div>
-        </div>
+    <wk-top-app-bar id="test" navigation menu label="Title" actions="#demo"></wk-top-app-bar>
+
+    <div id="demo">
+        <wk-icon actionable>&#xE713;</wk-icon>
+        <wk-icon actionable>&#xE721;</wk-icon>
     </div>
 
     <script src="../index.js" type="module"></script>
+    <script>
+        let test = document.querySelector('#test')
+
+        test.addEventListener("onNavigationClick", event => {
+            console.log(event)
+        })
+
+        test.addEventListener("onMenuClick", event => {
+            console.log(event)
+        })
+    </script>
 </body>
 
 </html>

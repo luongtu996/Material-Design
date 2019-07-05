@@ -272,18 +272,10 @@ class AppComponent extends HTMLElement {
             <div id="navScrimTrigger" class="navigation-drawer-scrim">
             </div>
 
-            <div class="top-app-bar">
-                <div class="top-app-bar__row">
-                    <div class="top-app-bar__section top-app-bar__section--start">
-                        <wk-icon id="navTrigger" class="top-app-bar__action top-app-bar__action--navigation" actionable></wk-icon>
-                        <div class="top-app-bar__title">Material Design</div>
-                    </div>
-                    <div class="top-app-bar__section top-app-bar__section--end">
-                        <wk-icon actionable>&#xE713;</wk-icon>
-                        <wk-icon actionable>&#xE721;</wk-icon>
-                        <wk-icon class="top-app-bar__action top-app-bar__action--menu" actionable></wk-icon>
-                    </div>
-                </div>
+            <wk-top-app-bar id="navTrigger" navigation menu label="Material Design" actions="#demo"></wk-top-app-bar>
+
+            <div id="demo">
+                <wk-icon actionable>&#xE721;</wk-icon>
             </div>
 
             <main class="viewport">
@@ -295,7 +287,7 @@ class AppComponent extends HTMLElement {
         let navTrigger = this.querySelector("#navTrigger")
         let navScrimTrigger = this.querySelector("#navScrimTrigger")
 
-        navTrigger.addEventListener("click", click)
+        navTrigger.addEventListener("onNavigationClick", click)
         navScrimTrigger.addEventListener("click", click)
 
         function click() {
