@@ -38,9 +38,9 @@
     }
 }
 
-/* .viewport {
-    margin: 24px;
-} */
+.viewport {
+    transition: margin 200ms ease-in-out;
+}
 
 .navigation-drawer:not(.navigation-drawer--modal):not(.navigation-drawer--closed) ~ .viewport {
     margin-left: 256px;
