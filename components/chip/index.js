@@ -63,6 +63,24 @@ class WKChip extends HTMLElement {
 
     click(event) {
 
+        if (this.choice) {
+            Array.from(this.parentNode.children).forEach(wkChip => wkChip.removeAttribute("activated"))
+
+            if (this.hasAttribute("activated")) {
+                this.removeAttribute("activated")
+            } else {
+                this.setAttribute("activated", "")
+            }
+        }
+
+        if (this.filter) {
+            if (this.hasAttribute("selected")) {
+                this.removeAttribute("selected")
+            } else {
+                this.setAttribute("selected", "")
+            }
+        }
+
         this.dispatchEvent(new CustomEvent("onClick", {
             detail: {
                 event
