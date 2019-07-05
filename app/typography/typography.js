@@ -6,19 +6,19 @@ class TypographyComponent extends HTMLElement {
                 <wk-layout-grid>
                     <wk-layout-column columnLarge="12" columnMedium="8" columnSmall="4">
 
-                        <h1 wkTypography="h1">H1</h1>
-                        <h2 wkTypography="h2">H2</h2>
-                        <h3 wkTypography="h3">H3</h3>
-                        <h4 wkTypography="h4">H4</h4>
-                        <h5 wkTypography="h5">H5</h5>
-                        <h6 wkTypography="h6">H6</h6>
-                        <h1 wkTypography="subtitle1">Subtitle1</h1>
-                        <h2 wkTypography="subtitle2">Subtitle2</h2>
-                        <p wkTypography="body1">Body1</p>
-                        <p wkTypography="body2">Body2</p>
-                        <p wkTypography="button">BUTTON</p>
-                        <p wkTypography="caption">Caption</p>
-                        <p wkTypography="overline">OVERLINE</p>
+                        <h1 wkTypography="h1">Typography</h1>
+                        <h2 wkTypography="h2">Typography</h2>
+                        <h3 wkTypography="h3">Typography</h3>
+                        <h4 wkTypography="h4">Typography</h4>
+                        <h5 wkTypography="h5">Typography</h5>
+                        <h6 wkTypography="h6">Typography</h6>
+                        <h1 wkTypography="subtitle1">Typography</h1>
+                        <h2 wkTypography="subtitle2">Typography</h2>
+                        <p wkTypography="body1">Typography</p>
+                        <p wkTypography="body2">Typography</p>
+                        <p wkTypography="button">Typography</p>
+                        <p wkTypography="caption">Typography</p>
+                        <p wkTypography="overline">Typography</p>
 
                     </wk-layout-column>
                 </wk-layout-grid>
