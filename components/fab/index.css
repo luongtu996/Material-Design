@@ -1,8 +1,7 @@
 /* 
 	@block fab 
 */
-wk-fab,
-.fab {
+wk-fab {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -39,26 +38,23 @@ wk-fab,
 /* 
 	@modifier mini 
 */
-wk-fab[mini],
-.fab--mini {
+wk-fab[mini] {
     width: 40px;
     height: 40px;
     border-radius: calc(40px / 2);
 }
 
-wk-fab[mini] .fab__icon,
-.fab--mini .fab__icon {
+wk-fab[mini] .fab__icon {
     margin-left: 8px;
     margin-right: 8px;
 }
 
-/* .fab--mini .fab__text {} */
+/* wk-fab[mini] .fab__text {} */
 
 /* 
 	@modifier extended 
 */
-wk-fab[extended],
-.fab--extended {
+wk-fab[extended] {
     min-width: 48px;
     max-width: 100%;
     width: auto;
@@ -66,15 +62,13 @@ wk-fab[extended],
     border-radius: calc(48px / 2);
 }
 
-wk-fab[extended] .fab__icon,
-.fab--extended .fab__icon {
+wk-fab[extended] .fab__icon {
     margin-left: 12px;
     margin-right: 12px;
 }
 
-/* .fab--extended .fab__text {} */
+/* wk-fab[extended] .fab__text {} */
 
-wk-fab .fab__icon + .fab__text,
 .fab__icon + .fab__text {
     margin-left: calc(12px - 12px);
 }
@@ -82,15 +76,13 @@ wk-fab .fab__icon + .fab__text,
 /* 
 	@state ripple 
 */
-wk-fab,
-.fab {
+wk-fab {
     position: relative;
     overflow: hidden;
     cursor: pointer;
     user-select: none;
 }
-wk-fab::after,
-.fab::after {
+wk-fab::after {
     content: "";
     position: absolute;
     overflow: hidden;
@@ -105,32 +97,28 @@ wk-fab::after,
     opacity: 0;
 }
 
-wk-fab[disabled],
-.fab[disabled] {
+wk-fab[disabled] {
     cursor: default;
     pointer-events: none;
     opacity: 0.38;
 }
-wk-fab[disabled]::after,
-.fab[disabled]::after {
+wk-fab[disabled]::after {
     opacity: 0;
 }
 
-/* .fab:hover {} */
-wk-fab:hover::after,
-.fab:hover::after {
+/* wk-fab:hover {} */
+wk-fab:hover::after {
     opacity: 0.04;
 }
 
-/* .fab:focus {} */
-wk-fab:focus::after,
-.fab:focus::after {
+/* wk-fab:focus {} */
+wk-fab:focus::after {
     opacity: 0.12;
     animation: var(--ripple-animation, ripple-out) 300ms ease-in-out forwards;
 }
 
-/* .fab.fab--filter[selected] {} */
-.fab.fab--filter:not([selected]):focus:not(:active)::after {
+/* wk-fab[filter][selected] {} */
+wk-fab[filter]:not([selected]):focus:not(:active)::after {
     --ripple-left: 50%;
     --ripple-top: 50%;
     /* --ripple-circumference: 83.33333333333334%; */
@@ -138,17 +126,17 @@ wk-fab:focus::after,
     --ripple-translateY: 0;
     --ripple-animation: ripple-in;
 }
-.fab.fab--filter[selected]::after {
+wk-fab[filter][selected]::after {
     background-color: var(--color-primary);
     opacity: 0.08;
     animation-name: ripple-out;
     animation-fill-mode: backwards;
 }
 
-.fab.fab--choice[activated] {
+wk-fab[choice][activated] {
     color: var(--color-primary);
 }
-.fab.fab--choice:not([activated]):focus:not(:active)::after {
+wk-fab[choice]:not([activated]):focus:not(:active)::after {
     --ripple-left: 50%;
     --ripple-top: 50%;
     /* --ripple-circumference: 83.33333333333334%; */
@@ -156,20 +144,19 @@ wk-fab:focus::after,
     --ripple-translateY: 0;
     --ripple-animation: ripple-in;
 }
-.fab.fab--choice[activated]::after {
+wk-fab[choice][activated]::after {
     background-color: var(--color-primary);
     opacity: 0.12;
     animation-name: ripple-out;
     animation-fill-mode: backwards;
 }
 
-/* .fab:active {} */
-wk-fab:active::after,
-.fab:active::after {
+/* wk-fab:active {} */
+wk-fab:active::after {
     opacity: 0.16;
 }
 
-/* .fab[dragged] {} */
-.fab[dragged]::after {
+/* wk-fab[dragged] {} */
+wk-fab[dragged]::after {
     opacity: 0.08;
 }
