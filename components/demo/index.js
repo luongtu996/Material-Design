@@ -1,9 +1,22 @@
-let attrs = new Set()
+let attrs = []
+let tag = "wk-checkbox"
 
-document.querySelectorAll("wk-checkbox").forEach(element => {
+document.querySelectorAll(tag).forEach(element => {
     Array.from(element.attributes).forEach(attr => {
-        attrs.add(attr.name)
+        if (!attrs.find(obj => obj.name === attr.name)) {
+            attrs.push({
+                name: attr.name,
+                type: attr.value === "true" ? "boolean" : "string"
+            })
+        }
     })
 })
 
-console.log(attrs)
+console.log(`# ${tag}
+
+## Props
+
+Prop Name | Type | Description
+--- | --- | ---
+${attrs.map(attr => `${attr.name} | ${attr.type} | ...\n`).join("")}
+`)
