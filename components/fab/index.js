@@ -1,7 +1,7 @@
 /**
  * @import Ripple
  */
-import Ripple from "../ripple/index.js";
+import Ripple from "../ripple/index.js"
 
 /**
  * @class WKFab
