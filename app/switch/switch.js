@@ -4,27 +4,33 @@ class SwitchComponent extends HTMLElement {
         this.innerHTML = `
             <div class="layout">
                 <div class="layout__grid">
-                    <div class="layout__column layout__column--4-large layout__column--8-medium layout__column--4-small">
                     
-                        <div class="switch">
-                            <input type="checkbox" class="switch__input">
-                            <div class="switch__track">
-                                <div class="switch__thumb"></div>
-                            </div>
-                        </div>
+                    <div class="layout__column layout__column--3-large">
+
+                        <wk-switch name="switch1" value="value" required></wk-switch>
 
                     </div>
-                    <div class="layout__column layout__column--4-large layout__column--8-medium layout__column--4-small">
-                    
-                        <div class="switch">
-                            <input type="checkbox" class="switch__input" checked>
-                            <div class="switch__track">
-                                <div class="switch__thumb"></div>
-                            </div>
-                        </div>
+                    <div class="layout__column layout__column--3-large"></div>
+                    <div class="layout__column layout__column--3-large">
+
+                        <wk-switch name="switch1" checked></wk-switch>
 
                     </div>
-                    <div class="layout__column layout__column--4-large layout__column--8-medium layout__column--4-small"></div>
+                    <div class="layout__column layout__column--3-large"></div>
+
+                    <div class="layout__column layout__column--3-large">
+
+                        <wk-switch name="switch2" disabled></wk-switch>
+
+                    </div>
+                    <div class="layout__column layout__column--3-large"></div>
+                    <div class="layout__column layout__column--3-large">
+
+                        <wk-switch name="switch2" disabled checked></wk-switch>
+
+                    </div>
+                    <div class="layout__column layout__column--3-large"></div>
+
                 </div>
             </div>
         `

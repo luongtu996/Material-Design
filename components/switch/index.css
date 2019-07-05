@@ -1,7 +1,7 @@
 /* 
 	@block switch 
 */
-.switch {
+wk-switch {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -99,10 +99,15 @@
     pointer-events: none;
     /* opacity: 0.38; */
 }
-.switch__input[disabled] ~ .switch__track .switch__thumb {
+.switch__input[disabled] ~ .switch__track {
     /* cursor: default; */
     /* pointer-events: none; */
     opacity: 0.38;
+}
+.switch__input[disabled] ~ .switch__track .switch__thumb {
+    /* cursor: default; */
+    /* pointer-events: none; */
+    /* opacity: 0.38; */
 }
 .switch__input[disabled] ~ .switch__track .switch__thumb::after {
     opacity: 0;

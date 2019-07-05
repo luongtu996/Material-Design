@@ -1,5 +1,5 @@
 let attrs = []
-let tag = "wk-radio"
+let tag = "wk-switch"
 
 document.querySelectorAll(tag).forEach(element => {
     Array.from(element.attributes).forEach(attr => {
