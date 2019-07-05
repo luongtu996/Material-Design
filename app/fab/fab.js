@@ -23,6 +23,24 @@ class FabComponent extends HTMLElement {
                         <wk-fab extended icon="&#xE720;">text</wk-fab>
                     </div>
 
+                    <div class="layout__column layout__column--4-large layout__column--8-medium layout__column--4-small">
+                        <wk-fab disabled icon="&#xE720;"></wk-fab>
+                    </div>
+                    <div class="layout__column layout__column--4-large layout__column--8-medium layout__column--4-small">
+                        <wk-fab disabled mini icon="&#xE720;"></wk-fab>
+                    </div>
+                    <div class="layout__column layout__column--4-large layout__column--8-medium layout__column--4-small"></div>
+
+                    <div class="layout__column layout__column--4-large layout__column--8-medium layout__column--4-small">
+                        <wk-fab disabled extended icon="&#xE720;"></wk-fab>
+                    </div>
+                    <div class="layout__column layout__column--4-large layout__column--8-medium layout__column--4-small">
+                        <wk-fab disabled extended>text</wk-fab>
+                    </div>
+                    <div class="layout__column layout__column--4-large layout__column--8-medium layout__column--4-small">
+                        <wk-fab disabled extended icon="&#xE720;">text</wk-fab>
+                    </div>
+
                 </div>
             </div>
         `
