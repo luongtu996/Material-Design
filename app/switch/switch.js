@@ -2,37 +2,37 @@ class SwitchComponent extends HTMLElement {
 
     connectedCallback() {
         this.innerHTML = `
-            <div class="layout">
-                <div class="layout__grid">
+            <wk-layout>
+                <wk-layout-grid>
                     
-                    <div class="layout__column layout__column--3-large">
+                    <wk-layout-column columnLarge="3"">
 
                         <wk-switch name="switch1" value="value" required></wk-switch>
 
-                    </div>
-                    <div class="layout__column layout__column--3-large"></div>
-                    <div class="layout__column layout__column--3-large">
+                    </wk-layout-column>
+                    <wk-layout-column columnLarge="3""></wk-layout-column>
+                    <wk-layout-column columnLarge="3"">
 
                         <wk-switch name="switch1" checked></wk-switch>
 
-                    </div>
-                    <div class="layout__column layout__column--3-large"></div>
+                    </wk-layout-column>
+                    <wk-layout-column columnLarge="3""></wk-layout-column>
 
-                    <div class="layout__column layout__column--3-large">
+                    <wk-layout-column columnLarge="3"">
 
                         <wk-switch name="switch2" disabled></wk-switch>
 
-                    </div>
-                    <div class="layout__column layout__column--3-large"></div>
-                    <div class="layout__column layout__column--3-large">
+                    </wk-layout-column>
+                    <wk-layout-column columnLarge="3""></wk-layout-column>
+                    <wk-layout-column columnLarge="3"">
 
                         <wk-switch name="switch2" disabled checked></wk-switch>
 
-                    </div>
-                    <div class="layout__column layout__column--3-large"></div>
+                    </wk-layout-column>
+                    <wk-layout-column columnLarge="3""></wk-layout-column>
 
-                </div>
-            </div>
+                </wk-layout-grid>
+            </wk-layout>
         `
     }
 }
