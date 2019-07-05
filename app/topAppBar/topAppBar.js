@@ -2,21 +2,32 @@ class TopAppBarComponent extends HTMLElement {
 
     connectedCallback() {
         this.innerHTML = `
-            <div class="layout">
-                <div class="layout__grid">
-                    <div class="layout__column layout__column--4-large layout__column--8-medium layout__column--4-small">
+            <wk-layout>
+                <wk-layout-grid>
+
+                    <wk-layout-column columnLarge="3" columnMedium="8" columnSmall="4">
                     
                         <iframe class="demo-iframe" src="./components/top-app-bar/index.1.html"></iframe>
 
-                    </div>
-                    <div class="layout__column layout__column--4-large layout__column--8-medium layout__column--4-small">
+                    </wk-layout-column>
+                    <wk-layout-column columnLarge="3" columnMedium="8" columnSmall="4">
                     
                         <iframe class="demo-iframe" src="./components/top-app-bar/index.2.html"></iframe>
 
-                    </div>
-                    <div class="layout__column layout__column--4-large layout__column--8-medium layout__column--4-small"></div>
-                </div>
-            </div>
+                    </wk-layout-column>
+                    <wk-layout-column columnLarge="3" columnMedium="8" columnSmall="4">
+                    
+                        <iframe class="demo-iframe" src="./components/top-app-bar/index.3.html"></iframe>
+
+                    </wk-layout-column>
+                    <wk-layout-column columnLarge="3" columnMedium="8" columnSmall="4">
+                    
+                        <iframe class="demo-iframe" src="./components/top-app-bar/index.4.html"></iframe>
+
+                    </wk-layout-column>
+
+                </wk-layout-grid>
+            </wk-layout>
         `
     }
 }

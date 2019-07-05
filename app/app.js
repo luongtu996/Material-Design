@@ -275,16 +275,15 @@ class AppComponent extends HTMLElement {
             <div class="top-app-bar">
                 <div class="top-app-bar__row">
                     <div class="top-app-bar__section top-app-bar__section--start">
-                        <div id="navTrigger" class="top-app-bar__action top-app-bar__action--navigation">&#xE700;</div>
+                        <wk-icon id="navTrigger" class="top-app-bar__action top-app-bar__action--navigation" actionable></wk-icon>
                         <div class="top-app-bar__title">Material Design</div>
                     </div>
-                    <div class="top-app-bar__section top-app-bar__section--center"></div>
                     <div class="top-app-bar__section top-app-bar__section--end">
-                        <div class="top-app-bar__action">&#xE721;</div>
-                        <div class="top-app-bar__action top-app-bar__action--menu">&#xE712;</div>
+                        <wk-icon actionable>&#xE713;</wk-icon>
+                        <wk-icon actionable>&#xE721;</wk-icon>
+                        <wk-icon class="top-app-bar__action top-app-bar__action--menu" actionable></wk-icon>
                     </div>
                 </div>
-                <div class="top-app-bar__row"></div>
             </div>
 
             <main class="viewport">
