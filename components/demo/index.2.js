@@ -10,6 +10,9 @@ class WKElement extends HTMLElement {
         this.innerHTML = `
             Hello ${this.text}!
         `
+
+        console.log(JSON.parse(this.json))
+        console.log(JSON.parse(this.array))
     }
 
     connectedCallback() {
@@ -35,7 +38,9 @@ class WKElement extends HTMLElement {
     static get observedAttributes() {
 
         return [
-            "text"
+            "text",
+            "json",
+            "array",
         ]
     }
 
@@ -46,6 +51,16 @@ class WKElement extends HTMLElement {
                 event
             }
         }))
+    }
+
+    get json() {
+
+        return this.getAttribute("json")
+    }
+
+    get array() {
+
+        return this.getAttribute("array")
     }
 
     get text() {
