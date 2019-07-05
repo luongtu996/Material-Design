@@ -2,7 +2,7 @@ class AppComponent extends HTMLElement {
 
     connectedCallback() {
         this.innerHTML = `
-            <div class="navigation-drawer" style="z-index: 3;">
+            <div id="nav" class="navigation-drawer">
                 <div class="navigation-drawer__header">
                     <div class="navigation-drawer__title">Material Design</div>
                 </div>
@@ -269,10 +269,13 @@ class AppComponent extends HTMLElement {
                 </div>
             </div>
 
+            <div id="navScrimTrigger" class="navigation-drawer-scrim">
+            </div>
+
             <div class="top-app-bar">
                 <div class="top-app-bar__row">
                     <div class="top-app-bar__section top-app-bar__section--start">
-                        <div class="top-app-bar__action top-app-bar__action--navigation">&#xE700;</div>
+                        <div id="navTrigger" class="top-app-bar__action top-app-bar__action--navigation">&#xE700;</div>
                         <div class="top-app-bar__title">Material Design</div>
                     </div>
                     <div class="top-app-bar__section top-app-bar__section--center"></div>
@@ -288,6 +291,21 @@ class AppComponent extends HTMLElement {
                 <wk-router></wk-router>
             </main>
         `
+
+        let nav = this.querySelector("#nav")
+        let navTrigger = this.querySelector("#navTrigger")
+        let navScrimTrigger = this.querySelector("#navScrimTrigger")
+
+        navTrigger.addEventListener("click", click)
+        navScrimTrigger.addEventListener("click", click)
+
+        function click() {
+            if (nav.classList.contains("navigation-drawer--closed")) {
+                nav.classList.remove("navigation-drawer--closed")
+            } else {
+                nav.classList.add("navigation-drawer--closed")
+            }
+        }
     }
 }
 customElements.define("app-component", AppComponent)

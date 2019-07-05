@@ -216,6 +216,7 @@
 .navigation-drawer--closed.navigation-drawer--modal {
     box-shadow: none;
 }
+.navigation-drawer:not(.navigation-drawer--modal) ~ .navigation-drawer-scrim,
 .navigation-drawer--closed ~ .navigation-drawer-scrim {
     pointer-events: none;
     opacity: 0;

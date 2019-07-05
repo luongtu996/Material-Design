@@ -38,7 +38,11 @@
     }
 }
 
-.navigation-drawer ~ .viewport {
+/* .viewport {
+    margin: 24px;
+} */
+
+.navigation-drawer:not(.navigation-drawer--modal):not(.navigation-drawer--closed) ~ .viewport {
     margin-left: 256px;
 }
 
