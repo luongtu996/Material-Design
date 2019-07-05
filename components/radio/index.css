@@ -1,7 +1,7 @@
 /* 
 	@block radio 
 */
-.radio {
+wk-radio {
     display: inline-flex;
     align-items: center;
     justify-content: center;

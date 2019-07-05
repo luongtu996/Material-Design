@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="../button/index.css">
     <link rel="stylesheet" href="../icon/index.css">
     <link rel="stylesheet" href="../ripple/index.css">
-    <link rel="stylesheet" href="../checkbox/index.css">
+    <link rel="stylesheet" href="../radio/index.css">
     <link rel="stylesheet" href="./index.css">
 </head>
 
@@ -24,34 +24,26 @@
             
             <div class="layout__column layout__column--3-large">
 
-                <wk-checkbox name="name" value="value" required="true"></wk-checkbox>
+                <wk-radio name="radio1" value="value" required></wk-radio>
 
             </div>
+            <div class="layout__column layout__column--3-large"></div>
             <div class="layout__column layout__column--3-large">
 
-                <wk-checkbox indeterminate="true"></wk-checkbox>
-
-            </div>
-            <div class="layout__column layout__column--3-large">
-
-                <wk-checkbox checked="true"></wk-checkbox>
+                <wk-radio name="radio1" checked></wk-radio>
 
             </div>
             <div class="layout__column layout__column--3-large"></div>
 
             <div class="layout__column layout__column--3-large">
 
-                <wk-checkbox disabled="true"></wk-checkbox>
+                <wk-radio name="radio2" disabled></wk-radio>
 
             </div>
+            <div class="layout__column layout__column--3-large"></div>
             <div class="layout__column layout__column--3-large">
 
-                <wk-checkbox disabled indeterminate></wk-checkbox>
-
-            </div>
-            <div class="layout__column layout__column--3-large">
-
-                <wk-checkbox disabled checked></wk-checkbox>
+                <wk-radio name="radio2" disabled checked></wk-radio>
 
             </div>
             <div class="layout__column layout__column--3-large"></div>
@@ -60,9 +52,9 @@
     </div>
 
     <script src="../ripple/index.js" type="module"></script>
-    <script src="../checkbox/index.js" type="module"></script>
-    <script src="./index.js" type="module"></script>
-    <!-- <script src="./index.3.js" type="module"></script> -->
+    <script src="../radio/index.js" type="module"></script>
+    <!-- <script src="./index.js" type="module"></script> -->
+    <script src="./index.3.js" type="module"></script>
     <!-- <script src="./index.1.js" type="module"></script> -->
 </body>
 

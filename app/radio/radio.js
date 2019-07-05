@@ -4,23 +4,33 @@ class RadioComponent extends HTMLElement {
         this.innerHTML = `
             <div class="layout">
                 <div class="layout__grid">
-                    <div class="layout__column layout__column--4-large layout__column--8-medium layout__column--4-small">
-                        <div class="radio">
-                            <input type="radio" class="radio__input" name="radio">
-                            <div class="radio__track">
-                                <div class="radio__thumb"></div>
-                            </div>
-                        </div>
+                    
+                    <div class="layout__column layout__column--3-large">
+
+                        <wk-radio name="radio1" value="value" required></wk-radio>
+
                     </div>
-                    <div class="layout__column layout__column--4-large layout__column--8-medium layout__column--4-small">
-                        <div class="radio">
-                            <input type="radio" class="radio__input" name="radio" checked>
-                            <div class="radio__track">
-                                <div class="radio__thumb"></div>
-                            </div>
-                        </div>
+                    <div class="layout__column layout__column--3-large"></div>
+                    <div class="layout__column layout__column--3-large">
+
+                        <wk-radio name="radio1" checked></wk-radio>
+
                     </div>
-                    <div class="layout__column layout__column--4-large layout__column--8-medium layout__column--4-small"></div>
+                    <div class="layout__column layout__column--3-large"></div>
+
+                    <div class="layout__column layout__column--3-large">
+
+                        <wk-radio name="radio2" disabled></wk-radio>
+
+                    </div>
+                    <div class="layout__column layout__column--3-large"></div>
+                    <div class="layout__column layout__column--3-large">
+
+                        <wk-radio name="radio2" disabled checked></wk-radio>
+
+                    </div>
+                    <div class="layout__column layout__column--3-large"></div>
+
                 </div>
             </div>
         `
