@@ -9,13 +9,13 @@ class DataTableComponent extends HTMLElement {
                             <div class="card__header">
                                 <div class="card__row">
                                     <div class="card__section card__section--start">
-                                        <div class="icon">&#xEA37;</div>
+                                        <wk-icon>&#xEA37;</wk-icon>
                                         <div class="card__title">Title</div>
                                     </div>
                                     <div class="card__section card__section--end">
-                                        <div class="icon icon--actionable">&#xE71C;</div>
-                                        <div class="icon icon--actionable">&#xE721;</div>
-                                        <div class="icon icon--actionable">&#xE712;</div>
+                                        <wk-icon actionable>&#xE71C;</wk-icon>
+                                        <wk-icon actionable>&#xE721;</wk-icon>
+                                        <wk-icon actionable>&#xE712;</wk-icon>
                                     </div>
                                 </div>
                             </div>
@@ -24,12 +24,7 @@ class DataTableComponent extends HTMLElement {
                                     <tr>
                                         <th class="data-table__cell data-table__cell--with-checkbox">
                                             <div class="data-table__item">
-                                                <div class="checkbox">
-                                                    <input type="checkbox" class="checkbox__input">
-                                                    <div class="checkbox__track">
-                                                        <div class="checkbox__thumb"></div>
-                                                    </div>
-                                                </div>
+                                                <wk-checkbox></wk-checkbox>
                                             </div>
                                         </th>
                                         <th class="data-table__cell">
@@ -70,12 +65,7 @@ class DataTableComponent extends HTMLElement {
                                     <tr>
                                         <td class="data-table__cell data-table__cell--with-checkbox">
                                             <div class="data-table__item">
-                                                <div class="checkbox">
-                                                    <input type="checkbox" class="checkbox__input">
-                                                    <div class="checkbox__track">
-                                                        <div class="checkbox__thumb"></div>
-                                                    </div>
-                                                </div>
+                                                <wk-checkbox></wk-checkbox>
                                             </div>
                                         </td>
                                         <td class="data-table__cell">
@@ -107,12 +97,7 @@ class DataTableComponent extends HTMLElement {
                                     <tr>
                                         <td class="data-table__cell data-table__cell--with-checkbox">
                                             <div class="data-table__item">
-                                                <div class="checkbox">
-                                                    <input type="checkbox" class="checkbox__input">
-                                                    <div class="checkbox__track">
-                                                        <div class="checkbox__thumb"></div>
-                                                    </div>
-                                                </div>
+                                                <wk-checkbox></wk-checkbox>
                                             </div>
                                         </td>
                                         <td class="data-table__cell">
@@ -144,12 +129,7 @@ class DataTableComponent extends HTMLElement {
                                     <tr>
                                         <td class="data-table__cell data-table__cell--with-checkbox">
                                             <div class="data-table__item">
-                                                <div class="checkbox">
-                                                    <input type="checkbox" class="checkbox__input">
-                                                    <div class="checkbox__track">
-                                                        <div class="checkbox__thumb"></div>
-                                                    </div>
-                                                </div>
+                                                <wk-checkbox></wk-checkbox>
                                             </div>
                                         </td>
                                         <td class="data-table__cell">
@@ -181,12 +161,7 @@ class DataTableComponent extends HTMLElement {
                                     <tr>
                                         <td class="data-table__cell data-table__cell--with-checkbox">
                                             <div class="data-table__item">
-                                                <div class="checkbox">
-                                                    <input type="checkbox" class="checkbox__input">
-                                                    <div class="checkbox__track">
-                                                        <div class="checkbox__thumb"></div>
-                                                    </div>
-                                                </div>
+                                                <wk-checkbox></wk-checkbox>
                                             </div>
                                         </td>
                                         <td class="data-table__cell">
@@ -218,12 +193,7 @@ class DataTableComponent extends HTMLElement {
                                     <tr>
                                         <td class="data-table__cell data-table__cell--with-checkbox">
                                             <div class="data-table__item">
-                                                <div class="checkbox">
-                                                    <input type="checkbox" class="checkbox__input">
-                                                    <div class="checkbox__track">
-                                                        <div class="checkbox__thumb"></div>
-                                                    </div>
-                                                </div>
+                                                <wk-checkbox></wk-checkbox>
                                             </div>
                                         </td>
                                         <td class="data-table__cell">
@@ -255,12 +225,7 @@ class DataTableComponent extends HTMLElement {
                                     <tr>
                                         <td class="data-table__cell data-table__cell--with-checkbox">
                                             <div class="data-table__item">
-                                                <div class="checkbox">
-                                                    <input type="checkbox" class="checkbox__input">
-                                                    <div class="checkbox__track">
-                                                        <div class="checkbox__thumb"></div>
-                                                    </div>
-                                                </div>
+                                                <wk-checkbox></wk-checkbox>
                                             </div>
                                         </td>
                                         <td class="data-table__cell">
@@ -292,12 +257,7 @@ class DataTableComponent extends HTMLElement {
                                     <tr>
                                         <td class="data-table__cell data-table__cell--with-checkbox">
                                             <div class="data-table__item">
-                                                <div class="checkbox">
-                                                    <input type="checkbox" class="checkbox__input">
-                                                    <div class="checkbox__track">
-                                                        <div class="checkbox__thumb"></div>
-                                                    </div>
-                                                </div>
+                                                <wk-checkbox></wk-checkbox>
                                             </div>
                                         </td>
                                         <td class="data-table__cell">
@@ -329,12 +289,7 @@ class DataTableComponent extends HTMLElement {
                                     <tr>
                                         <td class="data-table__cell data-table__cell--with-checkbox">
                                             <div class="data-table__item">
-                                                <div class="checkbox">
-                                                    <input type="checkbox" class="checkbox__input">
-                                                    <div class="checkbox__track">
-                                                        <div class="checkbox__thumb"></div>
-                                                    </div>
-                                                </div>
+                                                <wk-checkbox></wk-checkbox>
                                             </div>
                                         </td>
                                         <td class="data-table__cell">
@@ -366,12 +321,7 @@ class DataTableComponent extends HTMLElement {
                                     <tr>
                                         <td class="data-table__cell data-table__cell--with-checkbox">
                                             <div class="data-table__item">
-                                                <div class="checkbox">
-                                                    <input type="checkbox" class="checkbox__input">
-                                                    <div class="checkbox__track">
-                                                        <div class="checkbox__thumb"></div>
-                                                    </div>
-                                                </div>
+                                                <wk-checkbox></wk-checkbox>
                                             </div>
                                         </td>
                                         <td class="data-table__cell">
@@ -403,12 +353,7 @@ class DataTableComponent extends HTMLElement {
                                     <tr>
                                         <td class="data-table__cell data-table__cell--with-checkbox">
                                             <div class="data-table__item">
-                                                <div class="checkbox">
-                                                    <input type="checkbox" class="checkbox__input">
-                                                    <div class="checkbox__track">
-                                                        <div class="checkbox__thumb"></div>
-                                                    </div>
-                                                </div>
+                                                <wk-checkbox></wk-checkbox>
                                             </div>
                                         </td>
                                         <td class="data-table__cell">
@@ -440,12 +385,7 @@ class DataTableComponent extends HTMLElement {
                                     <tr>
                                         <td class="data-table__cell data-table__cell--with-checkbox">
                                             <div class="data-table__item">
-                                                <div class="checkbox">
-                                                    <input type="checkbox" class="checkbox__input">
-                                                    <div class="checkbox__track">
-                                                        <div class="checkbox__thumb"></div>
-                                                    </div>
-                                                </div>
+                                                <wk-checkbox></wk-checkbox>
                                             </div>
                                         </td>
                                         <td class="data-table__cell">
@@ -477,12 +417,7 @@ class DataTableComponent extends HTMLElement {
                                     <tr>
                                         <td class="data-table__cell data-table__cell--with-checkbox">
                                             <div class="data-table__item">
-                                                <div class="checkbox">
-                                                    <input type="checkbox" class="checkbox__input">
-                                                    <div class="checkbox__track">
-                                                        <div class="checkbox__thumb"></div>
-                                                    </div>
-                                                </div>
+                                                <wk-checkbox></wk-checkbox>
                                             </div>
                                         </td>
                                         <td class="data-table__cell">
@@ -514,12 +449,7 @@ class DataTableComponent extends HTMLElement {
                                     <tr>
                                         <td class="data-table__cell data-table__cell--with-checkbox">
                                             <div class="data-table__item">
-                                                <div class="checkbox">
-                                                    <input type="checkbox" class="checkbox__input">
-                                                    <div class="checkbox__track">
-                                                        <div class="checkbox__thumb"></div>
-                                                    </div>
-                                                </div>
+                                                <wk-checkbox></wk-checkbox>
                                             </div>
                                         </td>
                                         <td class="data-table__cell">
@@ -551,12 +481,7 @@ class DataTableComponent extends HTMLElement {
                                     <tr>
                                         <td class="data-table__cell data-table__cell--with-checkbox">
                                             <div class="data-table__item">
-                                                <div class="checkbox">
-                                                    <input type="checkbox" class="checkbox__input">
-                                                    <div class="checkbox__track">
-                                                        <div class="checkbox__thumb"></div>
-                                                    </div>
-                                                </div>
+                                                <wk-checkbox></wk-checkbox>
                                             </div>
                                         </td>
                                         <td class="data-table__cell">
@@ -588,12 +513,7 @@ class DataTableComponent extends HTMLElement {
                                     <tr>
                                         <td class="data-table__cell data-table__cell--with-checkbox">
                                             <div class="data-table__item">
-                                                <div class="checkbox">
-                                                    <input type="checkbox" class="checkbox__input">
-                                                    <div class="checkbox__track">
-                                                        <div class="checkbox__thumb"></div>
-                                                    </div>
-                                                </div>
+                                                <wk-checkbox></wk-checkbox>
                                             </div>
                                         </td>
                                         <td class="data-table__cell">
@@ -625,12 +545,7 @@ class DataTableComponent extends HTMLElement {
                                     <tr>
                                         <td class="data-table__cell data-table__cell--with-checkbox">
                                             <div class="data-table__item">
-                                                <div class="checkbox">
-                                                    <input type="checkbox" class="checkbox__input">
-                                                    <div class="checkbox__track">
-                                                        <div class="checkbox__thumb"></div>
-                                                    </div>
-                                                </div>
+                                                <wk-checkbox></wk-checkbox>
                                             </div>
                                         </td>
                                         <td class="data-table__cell">
@@ -662,12 +577,7 @@ class DataTableComponent extends HTMLElement {
                                     <tr>
                                         <td class="data-table__cell data-table__cell--with-checkbox">
                                             <div class="data-table__item">
-                                                <div class="checkbox">
-                                                    <input type="checkbox" class="checkbox__input">
-                                                    <div class="checkbox__track">
-                                                        <div class="checkbox__thumb"></div>
-                                                    </div>
-                                                </div>
+                                                <wk-checkbox></wk-checkbox>
                                             </div>
                                         </td>
                                         <td class="data-table__cell">
@@ -699,12 +609,7 @@ class DataTableComponent extends HTMLElement {
                                     <tr>
                                         <td class="data-table__cell data-table__cell--with-checkbox">
                                             <div class="data-table__item">
-                                                <div class="checkbox">
-                                                    <input type="checkbox" class="checkbox__input">
-                                                    <div class="checkbox__track">
-                                                        <div class="checkbox__thumb"></div>
-                                                    </div>
-                                                </div>
+                                                <wk-checkbox></wk-checkbox>
                                             </div>
                                         </td>
                                         <td class="data-table__cell">
@@ -736,12 +641,7 @@ class DataTableComponent extends HTMLElement {
                                     <tr>
                                         <td class="data-table__cell data-table__cell--with-checkbox">
                                             <div class="data-table__item">
-                                                <div class="checkbox">
-                                                    <input type="checkbox" class="checkbox__input">
-                                                    <div class="checkbox__track">
-                                                        <div class="checkbox__thumb"></div>
-                                                    </div>
-                                                </div>
+                                                <wk-checkbox></wk-checkbox>
                                             </div>
                                         </td>
                                         <td class="data-table__cell">
@@ -773,12 +673,7 @@ class DataTableComponent extends HTMLElement {
                                     <tr>
                                         <td class="data-table__cell data-table__cell--with-checkbox">
                                             <div class="data-table__item">
-                                                <div class="checkbox">
-                                                    <input type="checkbox" class="checkbox__input">
-                                                    <div class="checkbox__track">
-                                                        <div class="checkbox__thumb"></div>
-                                                    </div>
-                                                </div>
+                                                <wk-checkbox></wk-checkbox>
                                             </div>
                                         </td>
                                         <td class="data-table__cell">
@@ -811,8 +706,8 @@ class DataTableComponent extends HTMLElement {
                             </table>
                             <div class="card__footer">
                                 <div class="card__section card__section--end">
-                                    <div class="icon icon--actionable">&#xE973;</div>
-                                    <div class="icon icon--actionable">&#xE974;</div>
+                                    <wk-icon actionable>&#xE973;</wk-icon>
+                                    <wk-icon actionable>&#xE974;</wk-icon>
                                 </div>
                             </div>
                         </div>
