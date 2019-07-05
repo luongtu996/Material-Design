@@ -80,7 +80,7 @@
 /* 
     @component fab
 */
-.bottom-app-bar .fab {
+.bottom-app-bar wk-fab {
     position: absolute;
     left: calc(50% - (56px / 2));
     top: calc(0% - (56px / 2));
@@ -91,7 +91,7 @@
 */
 /* .bottom-app-bar--fab-end {} */
 
-.bottom-app-bar--fab-end .fab {
+.bottom-app-bar--fab-end wk-fab {
     left: calc(100% - 56px - 16px);
 }
 
@@ -202,7 +202,7 @@
     left: calc(100% - 16px);
 }
 
-.bottom-app-bar--fab-end.bottom-app-bar--fab-cut .fab {
+.bottom-app-bar--fab-end.bottom-app-bar--fab-cut wk-fab {
     left: calc(100% - 56px - 16px - 8px);
 }
 
