@@ -2,47 +2,47 @@ class FabComponent extends HTMLElement {
 
     connectedCallback() {
         this.innerHTML = `
-            <div class="layout">
-                <div class="layout__grid">
+            <wk-layout>
+                <wk-layout-grid>
 
-                    <div class="layout__column layout__column--4-large layout__column--8-medium layout__column--4-small">
+                    <wk-layout-column columnLarge="4" columnMedium="8" columnSmall="4">
                         <wk-fab icon="&#xE720;"></wk-fab>
-                    </div>
-                    <div class="layout__column layout__column--4-large layout__column--8-medium layout__column--4-small">
+                    </wk-layout-column>
+                    <wk-layout-column columnLarge="4" columnMedium="8" columnSmall="4">
                         <wk-fab mini icon="&#xE720;"></wk-fab>
-                    </div>
-                    <div class="layout__column layout__column--4-large layout__column--8-medium layout__column--4-small"></div>
+                    </wk-layout-column>
+                    <wk-layout-column columnLarge="4" columnMedium="8" columnSmall="4""></wk-layout-column>
 
-                    <div class="layout__column layout__column--4-large layout__column--8-medium layout__column--4-small">
+                    <wk-layout-column columnLarge="4" columnMedium="8" columnSmall="4">
                         <wk-fab extended icon="&#xE720;"></wk-fab>
-                    </div>
-                    <div class="layout__column layout__column--4-large layout__column--8-medium layout__column--4-small">
+                    </wk-layout-column>
+                    <wk-layout-column columnLarge="4" columnMedium="8" columnSmall="4">
                         <wk-fab extended>text</wk-fab>
-                    </div>
-                    <div class="layout__column layout__column--4-large layout__column--8-medium layout__column--4-small">
+                    </wk-layout-column>
+                    <wk-layout-column columnLarge="4" columnMedium="8" columnSmall="4">
                         <wk-fab extended icon="&#xE720;">text</wk-fab>
-                    </div>
+                    </wk-layout-column>
 
-                    <div class="layout__column layout__column--4-large layout__column--8-medium layout__column--4-small">
+                    <wk-layout-column columnLarge="4" columnMedium="8" columnSmall="4">
                         <wk-fab disabled icon="&#xE720;"></wk-fab>
-                    </div>
-                    <div class="layout__column layout__column--4-large layout__column--8-medium layout__column--4-small">
+                    </wk-layout-column>
+                    <wk-layout-column columnLarge="4" columnMedium="8" columnSmall="4">
                         <wk-fab disabled mini icon="&#xE720;"></wk-fab>
-                    </div>
-                    <div class="layout__column layout__column--4-large layout__column--8-medium layout__column--4-small"></div>
+                    </wk-layout-column>
+                    <wk-layout-column columnLarge="4" columnMedium="8" columnSmall="4""></wk-layout-column>
 
-                    <div class="layout__column layout__column--4-large layout__column--8-medium layout__column--4-small">
+                    <wk-layout-column columnLarge="4" columnMedium="8" columnSmall="4">
                         <wk-fab disabled extended icon="&#xE720;"></wk-fab>
-                    </div>
-                    <div class="layout__column layout__column--4-large layout__column--8-medium layout__column--4-small">
+                    </wk-layout-column>
+                    <wk-layout-column columnLarge="4" columnMedium="8" columnSmall="4">
                         <wk-fab disabled extended>text</wk-fab>
-                    </div>
-                    <div class="layout__column layout__column--4-large layout__column--8-medium layout__column--4-small">
+                    </wk-layout-column>
+                    <wk-layout-column columnLarge="4" columnMedium="8" columnSmall="4">
                         <wk-fab disabled extended icon="&#xE720;">text</wk-fab>
-                    </div>
+                    </wk-layout-column>
 
-                </div>
-            </div>
+                </wk-layout-grid>
+            </wk-layout>
         `
     }
 }
