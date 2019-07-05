@@ -1,6 +1,6 @@
 window.addEventListener("load", event => {
     let attrs = []
-    let tag = "wk-fab"
+    let tag = "wk-chip"
 
     document.querySelectorAll(tag).forEach(element => {
         Array.from(element.attributes).forEach(attr => {

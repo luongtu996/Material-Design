@@ -7,10 +7,10 @@ class ChipComponent extends HTMLElement {
 
                     <div class="layout__column layout__column--3-large">
                         <wk-chip-group>
-                            <wk-chip thumb="https://i.pravatar.cc/300">Input</wk-chip>
-                            <wk-chip icon="&#xE722;">Input</wk-chip>
-                            <wk-chip>Input</wk-chip>
-                            <wk-chip remove="true">Input</wk-chip>
+                            <wk-chip input thumb="https://i.pravatar.cc/300">Input</wk-chip>
+                            <wk-chip input icon="&#xE722;">Input</wk-chip>
+                            <wk-chip input>Input</wk-chip>
+                            <wk-chip input remove>Input</wk-chip>
                         </wk-chip-group>
                     </div>
                     <div class="layout__column layout__column--3-large">
@@ -38,9 +38,10 @@ class ChipComponent extends HTMLElement {
                     <div class="layout__column layout__column--3-large">
                         <wk-chip-group>
                             <wk-chip outlined thumb="https://i.pravatar.cc/300">Input</wk-chip>
+                            <wk-chip disabled thumb="https://i.pravatar.cc/300">Input</wk-chip>
                             <wk-chip outlined icon="&#xE722;">Input</wk-chip>
                             <wk-chip outlined>Input</wk-chip>
-                            <wk-chip outlined remove="true">Input</wk-chip>
+                            <wk-chip outlined remove>Input</wk-chip>
                         </wk-chip-group>
                     </div>
                     <div class="layout__column layout__column--3-large">
