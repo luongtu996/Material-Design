@@ -2,37 +2,37 @@ class RadioComponent extends HTMLElement {
 
     connectedCallback() {
         this.innerHTML = `
-            <div class="layout">
-                <div class="layout__grid">
+            <wk-layout>
+                <wk-layout-grid>
                     
-                    <div class="layout__column layout__column--3-large">
+                    <wk-layout-column columnLarge="3">
 
                         <wk-radio name="radio1" value="value" required></wk-radio>
 
-                    </div>
-                    <div class="layout__column layout__column--3-large"></div>
-                    <div class="layout__column layout__column--3-large">
+                    </wk-layout-column>
+                    <wk-layout-column columnLarge="3"></wk-layout-column>
+                    <wk-layout-column columnLarge="3">
 
                         <wk-radio name="radio1" checked></wk-radio>
 
-                    </div>
-                    <div class="layout__column layout__column--3-large"></div>
+                    </wk-layout-column>
+                    <wk-layout-column columnLarge="3"></wk-layout-column>
 
-                    <div class="layout__column layout__column--3-large">
+                    <wk-layout-column columnLarge="3">
 
                         <wk-radio name="radio2" disabled></wk-radio>
 
-                    </div>
-                    <div class="layout__column layout__column--3-large"></div>
-                    <div class="layout__column layout__column--3-large">
+                    </wk-layout-column>
+                    <wk-layout-column columnLarge="3"></wk-layout-column>
+                    <wk-layout-column columnLarge="3">
 
                         <wk-radio name="radio2" disabled checked></wk-radio>
 
-                    </div>
-                    <div class="layout__column layout__column--3-large"></div>
+                    </wk-layout-column>
+                    <wk-layout-column columnLarge="3"></wk-layout-column>
 
-                </div>
-            </div>
+                </wk-layout-grid>
+            </wk-layout>
         `
     }
 }
