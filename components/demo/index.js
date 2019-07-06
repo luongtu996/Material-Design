@@ -1,6 +1,6 @@
 window.addEventListener("load", event => {
     let attrs = []
-    let tag = "wk-tab-bar"
+    let tag = "wk-top-app-bar"
 
     document.querySelectorAll(tag).forEach(element => {
         Array.from(element.attributes).forEach(attr => {
