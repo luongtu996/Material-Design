@@ -67,10 +67,10 @@ wk-tab-bar[scrollable]::-webkit-scrollbar {
     display: none;
 }
 
-wk-tab-bar[scrollable]::before {
+/* wk-tab-bar[scrollable]::before {
     left: var(--tab-bar-before-left);
     width: var(--tab-bar-before-width);
-}
+} */
 
 /* wk-tab-bar[scrollable] wk-tab {} */
 
