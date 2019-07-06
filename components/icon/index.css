@@ -3,13 +3,13 @@
 */
 @font-face {
     font-family: "Segoe MDL2 Assets";
-    src: url("./fonts/SegMDL20.eot"); /* IE9 Compat Modes */
-    src: url("./fonts/SegMDL20.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
-        url("./fonts/SegMDL20.otf") format("opentype"), /* Open Type Font */
-        url("./fonts/SegMDL20.svg") format("svg"), /* Legacy iOS */
-        url("./fonts/SegMDL20.ttf") format("truetype"), /* Safari, Android, iOS */
-        url("./fonts/SegMDL20.woff") format("woff"), /* Modern Browsers */
-        url("./fonts/SegMDL20.woff2") format("woff2"); /* Modern Browsers */
+    src: url("./fonts/SegMDL20.eot");
+    src: url("./fonts/SegMDL20.eot?#iefix") format("embedded-opentype"),
+        url("./fonts/SegMDL20.otf") format("opentype"),
+        url("./fonts/SegMDL20.svg") format("svg"),
+        url("./fonts/SegMDL20.ttf") format("truetype"),
+        url("./fonts/SegMDL20.woff") format("woff"),
+        url("./fonts/SegMDL20.woff2") format("woff2");
     font-weight: normal;
     font-style: normal;
 }
