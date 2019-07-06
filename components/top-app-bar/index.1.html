@@ -14,8 +14,8 @@
     <wk-top-app-bar id="test" navigation menu label="Title" actions="#demo"></wk-top-app-bar>
 
     <div id="demo" hidden>
-        <wk-icon actionable>&#xE713;</wk-icon>
-        <wk-icon actionable>&#xE721;</wk-icon>
+        <wk-icon id="settings" actionable>&#xE713;</wk-icon>
+        <wk-icon id="search" actionable>&#xE721;</wk-icon>
     </div>
 
     <script src="../index.js" type="module"></script>
@@ -23,12 +23,24 @@
         let test = document.querySelector('#test')
 
         test.addEventListener("onNavigationClick", event => {
-            console.log(event)
+            alert("navigation clicked")
         })
 
         test.addEventListener("onMenuClick", event => {
-            console.log(event)
+            alert("menu clicked")
         })
+
+        // Need promise
+        window.addEventListener("load", event => {
+            document.querySelector('#settings').addEventListener("click", event => {
+                alert("settings clicked")
+            })
+    
+            document.querySelector('#search').addEventListener("click", event => {
+                alert("search clicked")
+            })
+        })
+
     </script>
 </body>
 
