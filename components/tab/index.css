@@ -1,10 +1,9 @@
 /* 
 	@block tab 
 */
-.tab {
-    display: inline-flex;
+wk-tab {
+    display: flex;
     align-items: center;
-    justify-content: center;
     flex-direction: column;
     min-width: 90px;
     max-width: 360px;
@@ -15,102 +14,92 @@
     color: var(--color-unfocused-on-light);
 }
 
+wk-tab[activated] {
+    background-color: var(--color-surface);
+    color: var(--color-primary);
+}
+
 /* 
 	@element text 
 */
 .tab__text {
-    margin: calc((48px - 24px) / 2) 0;
-    font-weight: 500; font-size: 14px; line-height: 20px; text-transform: uppercase;
-}
-
-/* 
-	@element icon 
-*/
-.tab__icon {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    vertical-align: middle;
-    width: 24px;
-    height: 24px;
-    margin: calc((48px - 24px) / 2) 0;
-    font: 400 18px/1 'Segoe MDL2 Assets';
-}
-
-.tab__icon ~ .tab__text {
-    margin-top: calc(-12px + (72px - 68px));
+    margin: calc((48px - 20px) / 2) 0;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    text-transform: uppercase;
 }
 
 /* 
 	@blockGroup bar 
 */
-.tab-bar {
+wk-tab-bar {
     display: flex;
     position: relative;
     background-color: var(--color-surface);
     color: var(--color-unfocused-on-light);
 }
 
-.tab-bar::before {
+wk-tab-bar::before {
     content: "";
     position: absolute;
     z-index: 1;
-    left: var(--tab-bar-before-left, 0);
+    left: var(--tab-bar-before-left);
     bottom: 0;
-    width: var(--tab-bar-before-width, 0);
+    width: var(--tab-bar-before-width);
     height: 2px;
     background-color: var(--color-primary);
-    transition: 
-    left 150ms ease-in-out,
-    width 150ms ease-in-out;
 }
 
-.tab-bar:not(.tab-bar--scrollable) .tab {
-    flex: 1;
-}
-
-/* .tab-bar .tab {} */
+/* wk-tab-bar wk-tab {} */
 
 /* 
 	@blockGroupModifier scrollable 
 */
-.tab-bar--scrollable {
+wk-tab-bar[scrollable] {
     overflow: auto hidden;
 }
 
-.tab-bar--scrollable::-webkit-scrollbar {
+wk-tab-bar[scrollable]::-webkit-scrollbar {
     display: none;
 }
 
-.tab-bar--scrollable::before {
-    left: var(--tab-bar-before-left, 0);
-    width: var(--tab-bar-before-width, 0);
+wk-tab-bar[scrollable]::before {
+    left: var(--tab-bar-before-left);
+    width: var(--tab-bar-before-width);
 }
 
-/* .tab-bar--scrollable .tab {} */
+/* wk-tab-bar[scrollable] wk-tab {} */
 
-.tab-bar--scrollable .tab:first-child {
+wk-tab-bar[scrollable] wk-tab:first-child {
     margin-left: 52px;
 }
 
+wk-tab-bar:not([scrollable]) wk-tab {
+    flex: 1;
+}
+
 /* 
-    @state activated
+    @component icon
 */
-.tab[activated] {
-    background-color: var(--color-surface);
-    color: var(--color-primary);
+wk-tab wk-icon {
+    margin: calc((48px - 24px) / 2) 0;
+}
+
+wk-tab wk-icon + .tab__text {
+    margin-top: calc(-12px + (72px - 70px));
 }
 
 /* 
 	@state ripple 
 */
-.tab {
+wk-tab {
     position: relative;
     overflow: hidden;
     cursor: pointer;
     user-select: none;
 }
-.tab::after {
+wk-tab::after {
     content: "";
     position: absolute;
     overflow: hidden;
@@ -125,28 +114,29 @@
     opacity: 0;
 }
 
-.tab[disabled] {
+wk-tab[disabled] {
     cursor: default;
     pointer-events: none;
     opacity: 0.38;
 }
-.tab[disabled]::after {
+wk-tab[disabled]::after {
     opacity: 0;
 }
 
-/* .tab:hover {} */
-.tab:hover::after {
+/* wk-tab:hover {} */
+wk-tab:hover::after {
     opacity: 0.04;
 }
 
-/* .tab:focus {} */
-.tab:focus::after {
+/* wk-tab:focus {} */
+wk-tab:focus::after {
     opacity: 0.12;
     animation: var(--ripple-animation, ripple-out) 300ms ease-in-out forwards;
+    transition: opacity 300ms ease-in-out;
 }
 
-/* .tab.tab--filter[selected] {} */
-.tab.tab--filter:not([selected]):focus:not(:active)::after {
+/* wk-tab--filter[selected] {} */
+wk-tab--filter:not([selected]):focus:not(:active)::after {
     --ripple-left: 50%;
     --ripple-top: 50%;
     /* --ripple-circumference: 83.33333333333334%; */
@@ -154,17 +144,17 @@
     --ripple-translateY: 0;
     --ripple-animation: ripple-in;
 }
-.tab.tab--filter[selected]::after {
+wk-tab--filter[selected]::after {
     background-color: var(--color-primary);
     opacity: 0.08;
     animation-name: ripple-out;
     animation-fill-mode: backwards;
 }
 
-.tab.tab--choice[activated] {
+wk-tab[activated] {
     color: var(--color-primary);
 }
-.tab.tab--choice:not([activated]):focus:not(:active)::after {
+wk-tab:not([activated]):focus:not(:active)::after {
     --ripple-left: 50%;
     --ripple-top: 50%;
     /* --ripple-circumference: 83.33333333333334%; */
@@ -172,19 +162,20 @@
     --ripple-translateY: 0;
     --ripple-animation: ripple-in;
 }
-.tab.tab--choice[activated]::after {
+wk-tab[activated]::after {
     background-color: var(--color-primary);
-    opacity: 0.12;
+    /* opacity: 0.12; */
+    opacity: 0;
     animation-name: ripple-out;
     animation-fill-mode: backwards;
 }
 
-/* .tab:active {} */
-.tab:active::after {
+/* wk-tab:active {} */
+wk-tab:active::after {
     opacity: 0.16;
 }
 
-/* .tab[dragged] {} */
-.tab[dragged]::after {
+/* wk-tab[dragged] {} */
+wk-tab[dragged]::after {
     opacity: 0.08;
 }

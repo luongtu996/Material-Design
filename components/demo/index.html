@@ -12,44 +12,91 @@
     <link rel="stylesheet" href="../color/index.css">
     <link rel="stylesheet" href="../icon/index.css">
     <link rel="stylesheet" href="../ripple/index.css">
-    <link rel="stylesheet" href="../top-app-bar/index.css">
+    <link rel="stylesheet" href="../tab/index.css">
     <link rel="stylesheet" href="./index.css">
 </head>
 
 <body>
 
-    <!-- <wk-top-app-bar extended colored navigation menu title="Title">
-        <wk-top-app-bar-row>
-            <wk-top-app-bar-section start>
-                <wk-icon class="top-app-bar__action top-app-bar__action--navigation"></wk-icon>
-                <div class="top-app-bar__title">Title</div>
-            </wk-top-app-bar-section>
-            <wk-top-app-bar-section end>
-                <wk-icon class="top-app-bar__action top-app-bar__action--menu"></wk-icon>
-            </wk-top-app-bar-section>
-        </wk-top-app-bar-row>
-    </wk-top-app-bar> -->
+    <wk-layout>
+        <wk-layout-grid>
 
-    <!-- <wk-top-app-bar extended colored navigation menu title="Title"></wk-top-app-bar> -->
-    <!-- <wk-top-app-bar colored navigation menu title="Title"></wk-top-app-bar> -->
-    <!-- <wk-top-app-bar navigation menu title="Title"></wk-top-app-bar> -->
-    <!-- <wk-top-app-bar menu title="Title"></wk-top-app-bar> -->
-    <!-- <wk-top-app-bar title="Title"></wk-top-app-bar> -->
-    <wk-top-app-bar label="Title" actions="#actions"></wk-top-app-bar>
+            <wk-layout-column columnLarge="3">
 
-    <div id="actions">
-        <wk-icon actionable>&#xE713;</wk-icon>
-        <wk-icon actionable>&#xE721;</wk-icon>
-    </div>
+                <wk-tab-bar>
+                    <wk-tab activated="true" text="Item 1">Item 1</wk-tab>
+                    <wk-tab>Item 1</wk-tab>
+                    <wk-tab>Item 1</wk-tab>
+                </wk-tab-bar>
+
+            </wk-layout-column>
+            <wk-layout-column columnLarge="3">
+
+                <wk-tab-bar>
+                    <wk-tab activated icon="&#xE720;"></wk-tab>
+                    <wk-tab icon="&#xE721;"></wk-tab>
+                    <wk-tab icon="&#xE722;"></wk-tab>
+                </wk-tab-bar>
+
+            </wk-layout-column>
+            <wk-layout-column columnLarge="3">
+
+                <wk-tab-bar>
+                    <wk-tab activated icon="&#xE720;">Item 1</wk-tab>
+                    <wk-tab icon="&#xE721;">Item 1</wk-tab>
+                    <wk-tab icon="&#xE722;">Item 1</wk-tab>
+                </wk-tab-bar>
+
+            </wk-layout-column>
+            <wk-layout-column columnLarge="3"></wk-layout-column>
+
+            <wk-layout-column columnLarge="3">
+
+                <wk-tab-bar scrollable="true">
+                    <wk-tab activated>Item 1</wk-tab>
+                    <wk-tab>Item 2</wk-tab>
+                    <wk-tab>Item 3</wk-tab>
+                    <wk-tab>Item 4</wk-tab>
+                    <wk-tab>Item 5</wk-tab>
+                    <wk-tab>Item 6</wk-tab>
+                    <wk-tab>Item 7</wk-tab>
+                    <wk-tab>Item 8</wk-tab>
+                    <wk-tab>Item 9</wk-tab>
+                    <wk-tab>Item 10</wk-tab>
+                </wk-tab-bar>
+
+            </wk-layout-column>
+            <wk-layout-column columnLarge="3">
+
+                <wk-tab-bar scrollable>
+                    <wk-tab activated icon="&#xE720;"></wk-tab>
+                    <wk-tab icon="&#xE721;"></wk-tab>
+                    <wk-tab icon="&#xE722;"></wk-tab>
+                </wk-tab-bar>
+
+            </wk-layout-column>
+            <wk-layout-column columnLarge="3">
+
+                <wk-tab-bar scrollable>
+                    <wk-tab activated icon="&#xE720;">Item 1</wk-tab>
+                    <wk-tab icon="&#xE721;">Item 1</wk-tab>
+                    <wk-tab icon="&#xE722;">Item 1</wk-tab>
+                </wk-tab-bar>
+
+            </wk-layout-column>
+            <wk-layout-column columnLarge="3"></wk-layout-column>
+
+        </wk-layout-grid>
+    </wk-layout>
 
     <script src="../ripple/index.js" type="module"></script>
     <script src="../icon/index.js" type="module"></script>
     <script src="../layout/index.js" type="module"></script>
-    <script src="../top-app-bar/index.js" type="module"></script>
+    <script src="../tab/index.js" type="module"></script>
 
     <script src="./index.3.js" type="module"></script>
     <!-- <script src="./index.2.js" type="module"></script> -->
-    <!-- <script src="./index.1.js" type="module"></script> -->
+    <script src="./index.1.js" type="module"></script>
     <script src="./index.js" type="module"></script>
 </body>
 

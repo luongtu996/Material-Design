@@ -1,5 +1,5 @@
 let attrs = []
-let tag = "wk-top-app-bar"
+let tag = "wk-tab-bar"
 let cls = tag.split("-").map((tag, index) => {
     if (index > 0) {
         tag = tag.charAt(0).toUpperCase() + tag.slice(1)

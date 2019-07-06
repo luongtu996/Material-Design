@@ -2,126 +2,76 @@ class TabComponent extends HTMLElement {
 
     connectedCallback() {
         this.innerHTML = `
-            <div class="layout">
-                <div class="layout__grid">
-                    <div class="layout__column layout__column--4-large layout__column--8-medium layout__column--4-small">
+            <wk-layout>
+                <wk-layout-grid>
 
-                        <div class="tab-bar" style="width: 360px;">
-                            <div class="tab" activated>
-                                <div class="tab__text">Text 1</div>
-                            </div>
-                            <div class="tab">
-                                <div class="tab__text">Text 2</div>
-                            </div>
-                            <div class="tab">
-                                <div class="tab__text">Text 3</div>
-                            </div>
-                        </div>
+                    <wk-layout-column columnLarge="3">
 
-                    </div>
-                    <div class="layout__column layout__column--4-large layout__column--8-medium layout__column--4-small">
+                        <wk-tab-bar>
+                            <wk-tab activated="true" text="Item 1">Item 1</wk-tab>
+                            <wk-tab>Item 1</wk-tab>
+                            <wk-tab>Item 1</wk-tab>
+                        </wk-tab-bar>
 
-                        <div class="tab-bar" style="width: 360px;">
-                            <div class="tab" activated>
-                                <div class="tab__icon">&#xE720;</div>
-                            </div>
-                            <div class="tab">
-                                <div class="tab__icon">&#xE721;</div>
-                            </div>
-                            <div class="tab">
-                                <div class="tab__icon">&#xE722;</div>
-                            </div>
-                        </div>
+                    </wk-layout-column>
+                    <wk-layout-column columnLarge="3">
 
-                    </div>
-                    <div class="layout__column layout__column--4-large layout__column--8-medium layout__column--4-small">
+                        <wk-tab-bar>
+                            <wk-tab activated icon="&#xE720;"></wk-tab>
+                            <wk-tab icon="&#xE721;"></wk-tab>
+                            <wk-tab icon="&#xE722;"></wk-tab>
+                        </wk-tab-bar>
 
-                        <div class="tab-bar" style="width: 360px;">
-                            <div class="tab" activated>
-                                <div class="tab__icon">&#xE720;</div>
-                                <div class="tab__text">Text 1</div>
-                            </div>
-                            <div class="tab">
-                                <div class="tab__icon">&#xE721;</div>
-                                <div class="tab__text">Text 2</div>
-                            </div>
-                            <div class="tab">
-                                <div class="tab__icon">&#xE722;</div>
-                                <div class="tab__text">Text 3</div>
-                            </div>
-                        </div>
+                    </wk-layout-column>
+                    <wk-layout-column columnLarge="3">
 
-                    </div>
-                    <div class="layout__column layout__column--4-large layout__column--8-medium layout__column--4-small">
+                        <wk-tab-bar>
+                            <wk-tab activated icon="&#xE720;">Item 1</wk-tab>
+                            <wk-tab icon="&#xE721;">Item 1</wk-tab>
+                            <wk-tab icon="&#xE722;">Item 1</wk-tab>
+                        </wk-tab-bar>
 
-                        <div class="tab-bar tab-bar--scrollable" style="width: 360px;">
-                            <div class="tab" activated>
-                                <div class="tab__text">Text 1</div>
-                            </div>
-                            <div class="tab">
-                                <div class="tab__text">Text 2</div>
-                            </div>
-                            <div class="tab">
-                                <div class="tab__text">Text 3</div>
-                            </div>
-                            <div class="tab">
-                                <div class="tab__text">Text 4</div>
-                            </div>
-                            <div class="tab">
-                                <div class="tab__text">Text 5</div>
-                            </div>
-                        </div>
+                    </wk-layout-column>
+                    <wk-layout-column columnLarge="3"></wk-layout-column>
 
-                    </div>
-                    <div class="layout__column layout__column--4-large layout__column--8-medium layout__column--4-small">
+                    <wk-layout-column columnLarge="3">
 
-                        <div class="tab-bar tab-bar--scrollable" style="width: 360px;">
-                            <div class="tab" activated>
-                                <div class="tab__icon">&#xE720;</div>
-                            </div>
-                            <div class="tab">
-                                <div class="tab__icon">&#xE721;</div>
-                            </div>
-                            <div class="tab">
-                                <div class="tab__icon">&#xE722;</div>
-                            </div>
-                            <div class="tab">
-                                <div class="tab__icon">&#xE723;</div>
-                            </div>
-                            <div class="tab">
-                                <div class="tab__icon">&#xE724;</div>
-                            </div>
-                        </div>
+                        <wk-tab-bar scrollable="true">
+                            <wk-tab activated>Item 1</wk-tab>
+                            <wk-tab>Item 2</wk-tab>
+                            <wk-tab>Item 3</wk-tab>
+                            <wk-tab>Item 4</wk-tab>
+                            <wk-tab>Item 5</wk-tab>
+                            <wk-tab>Item 6</wk-tab>
+                            <wk-tab>Item 7</wk-tab>
+                            <wk-tab>Item 8</wk-tab>
+                            <wk-tab>Item 9</wk-tab>
+                            <wk-tab>Item 10</wk-tab>
+                        </wk-tab-bar>
 
-                    </div>
-                    <div class="layout__column layout__column--4-large layout__column--8-medium layout__column--4-small">
+                    </wk-layout-column>
+                    <wk-layout-column columnLarge="3">
 
-                        <div class="tab-bar tab-bar--scrollable" style="width: 360px;">
-                            <div class="tab" activated>
-                                <div class="tab__icon">&#xE720;</div>
-                                <div class="tab__text">Text 1</div>
-                            </div>
-                            <div class="tab">
-                                <div class="tab__icon">&#xE721;</div>
-                                <div class="tab__text">Text 2</div>
-                            </div>
-                            <div class="tab">
-                                <div class="tab__icon">&#xE722;</div>
-                                <div class="tab__text">Text 3</div>
-                            </div>
-                            <div class="tab">
-                                <div class="tab__icon">&#xE723;</div>
-                                <div class="tab__text">Text 4</div>
-                            </div>
-                            <div class="tab">
-                                <div class="tab__icon">&#xE724;</div>
-                                <div class="tab__text">Text 5</div>
-                            </div>
-                        </div>
+                        <wk-tab-bar scrollable>
+                            <wk-tab activated icon="&#xE720;"></wk-tab>
+                            <wk-tab icon="&#xE721;"></wk-tab>
+                            <wk-tab icon="&#xE722;"></wk-tab>
+                        </wk-tab-bar>
 
-                    </div>
-                </div>
-            </div>
+                    </wk-layout-column>
+                    <wk-layout-column columnLarge="3">
+
+                        <wk-tab-bar scrollable>
+                            <wk-tab activated icon="&#xE720;">Item 1</wk-tab>
+                            <wk-tab icon="&#xE721;">Item 1</wk-tab>
+                            <wk-tab icon="&#xE722;">Item 1</wk-tab>
+                        </wk-tab-bar>
+
+                    </wk-layout-column>
+                    <wk-layout-column columnLarge="3"></wk-layout-column>
+
+                </wk-layout-grid>
+            </wk-layout>
         `
     }
 }

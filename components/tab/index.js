@@ -1,27 +1,190 @@
-window.addEventListener("load", event => {
-    document.querySelectorAll(".tab-bar").forEach(element => {
-        let tabs = element.querySelectorAll(".tab")
+import Ripple from "../ripple/index.js"
 
-        tabs.forEach(tab => {
+class WKTab extends HTMLElement {
 
-            if (tab.hasAttribute("activated")) {
-                element.style.setProperty("--tab-bar-before-left", `${tab.offsetLeft}px`)
-                element.style.setProperty("--tab-bar-before-width", `${tab.clientWidth}px`)
+    constructor() {
 
-                element.scrollLeft = (tab.offsetLeft + tab.clientWidth) - element.clientWidth + tab.clientWidth
+        super()
+
+        if (this.textContent) {
+            this.text = this.textContent
+        }
+    }
+
+    render() {
+
+        this.innerHTML = `
+            ${this.icon ? `<wk-icon>${this.icon}</wk-icon>` : ``}
+            ${this.text ? `<div class="tab__text">${this.text}</div>` : ``}
+        `
+    }
+
+    connectedCallback() {
+        this.render()
+
+        new Ripple(this)
+
+        if (this.activated) {
+            this.setIndicator()
+        }
+
+        this.addEventListener("click", this.click)
+    }
+    
+    disconnectedCallback() {
+
+        this.removeEventListener("click", this.click)
+    }
+
+    adoptedCallback() {}
+
+    attributeChangedCallback(name, oldValue, newValue) {
+
+        if (oldValue != newValue) {
+            this.render()
+        }
+    }
+
+    static get observedAttributes() {
+
+        return [
+            "activated",
+			"text",
+			"icon",
+			
+        ]
+    }
+
+    click(event) {
+
+        Array.from(this.parentNode.children).forEach(tab => tab.removeAttribute("activated"))
+
+        if (this.hasAttribute("activated")) {
+            this.removeAttribute("activated")
+        } else {
+            this.setAttribute("activated", "")
+        }
+
+        this.setIndicator()
+
+        this.dispatchEvent(new CustomEvent("onClick", {
+            detail: {
+                event
             }
+        }))
+    }
 
-            tab.addEventListener("click", click)
+    setIndicator() {
+        this.parentNode.style.setProperty("--tab-bar-before-left", `${this.offsetLeft}px`)
+        this.parentNode.style.setProperty("--tab-bar-before-width", `${this.clientWidth}px`)
 
-            function click(event) {
-                tabs.forEach(tab => tab.removeAttribute("activated"))
-                tab.setAttribute("activated", "")
+        this.parentNode.scrollLeft = (this.offsetLeft + this.clientWidth) - this.parentNode.clientWidth + this.clientWidth
+    }
 
-                element.style.setProperty("--tab-bar-before-left", `${tab.offsetLeft}px`)
-                element.style.setProperty("--tab-bar-before-width", `${tab.clientWidth}px`)
+    get activated() {
 
-                element.scrollLeft = (tab.offsetLeft + tab.clientWidth) - element.clientWidth + tab.clientWidth
-            }
-        })
-    })
-})
+        return this.hasAttribute("activated")
+    }
+
+    set activated(value) {
+
+        if (this.activated) {
+            this.removeAttribute("activated")
+        } else {
+            this.setAttribute("activated", "")
+        }
+    }
+
+	get text() {
+
+        return this.getAttribute("text")
+    }
+
+    set text(value) {
+
+        this.setAttribute("text", value)
+    }
+
+	get icon() {
+
+        return this.getAttribute("icon")
+    }
+
+    set icon(value) {
+
+        this.setAttribute("icon", value)
+    }
+
+	
+}
+
+customElements.define("wk-tab", WKTab)
+
+class WKTabBar extends HTMLElement {
+
+    constructor() {
+
+        super()
+    }
+
+    render() {
+
+        // this.innerHTML = `
+        // `
+    }
+
+    connectedCallback() {
+        this.render()
+
+        // this.addEventListener("click", this.click)
+    }
+    
+    disconnectedCallback() {
+
+        // this.removeEventListener("click", this.click)
+    }
+
+    adoptedCallback() {}
+
+    attributeChangedCallback(name, oldValue, newValue) {
+
+        if (oldValue != newValue) {
+            this.render()
+        }
+    }
+
+    static get observedAttributes() {
+
+        return [
+            "scrollable",
+			
+        ]
+    }
+
+    // click(event) {
+
+    //     this.dispatchEvent(new CustomEvent("onClick", {
+    //         detail: {
+    //             event
+    //         }
+    //     }))
+    // }
+
+    get scrollable() {
+
+        return this.hasAttribute("scrollable")
+    }
+
+    set scrollable(value) {
+
+        if (this.scrollable) {
+            this.removeAttribute("scrollable")
+        } else {
+            this.setAttribute("scrollable", "")
+        }
+    }
+
+	
+}
+
+customElements.define("wk-tab-bar", WKTabBar)
