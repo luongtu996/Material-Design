@@ -14,7 +14,7 @@ class WKTab extends HTMLElement {
     render() {
 
         this.innerHTML = `
-            ${this.icon ? `<wk-icon>${this.icon}</wk-icon>` : ``}
+            ${this.icon ? `<wk-icon class="tab__icon">${this.icon}</wk-icon>` : ``}
             ${this.text ? `<div class="tab__text">${this.text}</div>` : ``}
         `
     }
