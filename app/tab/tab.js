@@ -70,6 +70,15 @@ class TabComponent extends HTMLElement {
                     </wk-layout-column>
                     <wk-layout-column columnLarge="3"></wk-layout-column>
 
+                    <wk-layout-column columnLarge="3">
+                    
+                    <iframe class="demo-iframe" src="./components/tab/index.1.html"></iframe>
+
+                    </wk-layout-column>
+                    <wk-layout-column columnLarge="3"></wk-layout-column>
+                    <wk-layout-column columnLarge="3"></wk-layout-column>
+                    <wk-layout-column columnLarge="3"></wk-layout-column>
+
                 </wk-layout-grid>
             </wk-layout>
         `

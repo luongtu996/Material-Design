@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>WK</title>
+    <link rel="stylesheet" href="../index.css">
+</head>
+
+<body>
+
+    <wk-top-app-bar id="test" navigation menu label="Title" actions="#demo">
+        <wk-top-app-bar-row>
+            <wk-tab-bar scrollable>
+                <wk-tab activated>Item 1</wk-tab>
+                <wk-tab>Item 2</wk-tab>
+                <wk-tab>Item 3</wk-tab>
+                <wk-tab>Item 4</wk-tab>
+                <wk-tab>Item 5</wk-tab>
+                <wk-tab>Item 6</wk-tab>
+                <wk-tab>Item 7</wk-tab>
+                <wk-tab>Item 8</wk-tab>
+                <wk-tab>Item 9</wk-tab>
+                <wk-tab>Item 10</wk-tab>
+            </wk-tab-bar>
+        </wk-top-app-bar-row>
+    </wk-top-app-bar>
+
+    <div id="demo" hidden>
+        <wk-icon actionable>&#xE713;</wk-icon>
+        <wk-icon actionable>&#xE721;</wk-icon>
+    </div>
+
+    <script src="../index.js" type="module"></script>
+    <script>
+        let test = document.querySelector('#test')
+
+        test.addEventListener("onNavigationClick", event => {
+            console.log(event)
+        })
+
+        test.addEventListener("onMenuClick", event => {
+            console.log(event)
+        })
+    </script>
+</body>
+
+</html>
