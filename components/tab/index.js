@@ -25,7 +25,7 @@ class WKTab extends HTMLElement {
         new Ripple(this)
 
         if (this.activated) {
-            this.setIndicator()
+            this.updateIndicator()
         }
 
         this.addEventListener("click", this.click)
@@ -65,7 +65,7 @@ class WKTab extends HTMLElement {
             this.setAttribute("activated", "")
         }
 
-        this.setIndicator()
+        this.updateIndicator()
 
         this.dispatchEvent(new CustomEvent("onClick", {
             detail: {
@@ -74,7 +74,7 @@ class WKTab extends HTMLElement {
         }))
     }
 
-    setIndicator() {
+    updateIndicator() {
         this.parentNode.style.setProperty("--tab-bar-before-left", `${this.offsetLeft}px`)
         this.parentNode.style.setProperty("--tab-bar-before-width", `${this.clientWidth}px`)
 

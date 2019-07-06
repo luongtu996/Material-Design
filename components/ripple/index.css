@@ -42,8 +42,8 @@
     animation: var(--ripple-animation, ripple-out) 300ms ease-in-out forwards;
 }
 
-/* .ripple.ripple--filter[selected] {} */
-.ripple.ripple--filter:not([selected]):focus:not(:active)::after {
+/* .ripple--filter[selected] {} */
+.ripple--filter:not([selected]):focus:not(:active)::after {
     --ripple-left: 50%;
     --ripple-top: 50%;
     /* --ripple-circumference: 83.33333333333334%; */
@@ -51,17 +51,17 @@
     --ripple-translateY: 0;
     --ripple-animation: ripple-in;
 }
-.ripple.ripple--filter[selected]::after {
+.ripple--filter[selected]::after {
     background-color: var(--color-primary);
     opacity: 0.08;
     animation-name: ripple-out;
     animation-fill-mode: backwards;
 }
 
-.ripple.ripple--choice[activated] {
+.ripple--choice[activated] {
     color: var(--color-primary);
 }
-.ripple.ripple--choice:not([activated]):focus:not(:active)::after {
+.ripple--choice:not([activated]):focus:not(:active)::after {
     --ripple-left: 50%;
     --ripple-top: 50%;
     /* --ripple-circumference: 83.33333333333334%; */
@@ -69,7 +69,7 @@
     --ripple-translateY: 0;
     --ripple-animation: ripple-in;
 }
-.ripple.ripple--choice[activated]::after {
+.ripple--choice[activated]::after {
     background-color: var(--color-primary);
     opacity: 0.12;
     animation-name: ripple-out;
