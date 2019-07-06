@@ -1,7 +1,7 @@
 /* 
     @font-face "Segoe UI"
 */
-@font-face {
+/* @font-face {
     font-family: "Segoe UI";
     src: url("./fonts/segoeuil.eot");
     src: url("./fonts/segoeuil.eot?#iefix") format("embedded-opentype"),
@@ -38,7 +38,7 @@
         url("./fonts/seguisb.woff2") format("woff2");
     font-weight: 500;
     font-style: normal;
-}
+} */
 
 /* 
 	@block typography 
