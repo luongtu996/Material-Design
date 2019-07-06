@@ -8,7 +8,7 @@ class TabComponent extends HTMLElement {
                     <wk-layout-column columnLarge="3">
 
                         <wk-tab-bar>
-                            <wk-tab activated="true" text="Item 1">Item 1</wk-tab>
+                            <wk-tab activated text="Item 1">Item 1</wk-tab>
                             <wk-tab>Item 1</wk-tab>
                             <wk-tab>Item 1</wk-tab>
                         </wk-tab-bar>
@@ -36,7 +36,7 @@ class TabComponent extends HTMLElement {
 
                     <wk-layout-column columnLarge="3">
 
-                        <wk-tab-bar scrollable="true">
+                        <wk-tab-bar scrollable>
                             <wk-tab activated>Item 1</wk-tab>
                             <wk-tab>Item 2</wk-tab>
                             <wk-tab>Item 3</wk-tab>
