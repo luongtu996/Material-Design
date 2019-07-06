@@ -1,3 +1,4 @@
+/*  */
 * {
     margin: 0;
     border: 0;
@@ -6,30 +7,36 @@
     -webkit-tap-highlight-color: transparent;
 }
 
+/*  */
 *, 
 *::before, 
 *::after {
     box-sizing: border-box;
 }
 
+/*  */
 *:focus {
     outline: none;
 }
 
+/*  */
 [hidden] {
     display: none;
 }
 
+/*  */
 input, 
 input::-webkit-slider-thumb {
     -webkit-appearance: none;
 }
 
+/*  */
 ul, 
 ol {
     list-style-type: none;
 }
 
+/*  */
 table {
     border-spacing: 0;
 }
@@ -38,12 +45,4 @@ table th {
     text-align: left;
 }
 
-.preload, 
-.preload::before, 
-.preload::after, 
-.preload *, 
-.preload *::before, 
-.preload *::after {
-    transition: none !important;
-    animation: none !important;
-}
+/*  */
