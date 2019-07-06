@@ -49,6 +49,9 @@ wk-tab-bar::before {
     width: var(--tab-bar-before-width);
     height: 2px;
     background-color: var(--color-primary);
+    transition: 
+    left 100ms ease-in-out,
+    width 100ms ease-in-out;
 }
 
 /* wk-tab-bar wk-tab {} */
